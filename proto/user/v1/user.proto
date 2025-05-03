@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package user.v1;  
+
+
+// Messages
+message Credentials {
+    string email = 1;
+    string password = 2;
+}
+
+message LoginRequest {
+    Credentials credentials = 1;
+}
+
+message LoginResponse {
+    string token = 1;
+    bool is_valid = 2;
+}
+
+// Service
+service UserService {
+    rpc Login(LoginRequest) returns (LoginResponse);
+}
