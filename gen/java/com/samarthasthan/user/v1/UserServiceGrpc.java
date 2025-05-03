@@ -1,4 +1,4 @@
-package com.user.v1;
+package com.samarthasthan.user.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
@@ -18,29 +18,29 @@ public final class UserServiceGrpc {
   public static final java.lang.String SERVICE_NAME = "user.v1.UserService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.user.v1.LoginRequest,
-      com.user.v1.LoginResponse> getLoginMethod;
+  private static volatile io.grpc.MethodDescriptor<com.samarthasthan.user.v1.LoginRequest,
+      com.samarthasthan.user.v1.LoginResponse> getLoginMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Login",
-      requestType = com.user.v1.LoginRequest.class,
-      responseType = com.user.v1.LoginResponse.class,
+      requestType = com.samarthasthan.user.v1.LoginRequest.class,
+      responseType = com.samarthasthan.user.v1.LoginResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.user.v1.LoginRequest,
-      com.user.v1.LoginResponse> getLoginMethod() {
-    io.grpc.MethodDescriptor<com.user.v1.LoginRequest, com.user.v1.LoginResponse> getLoginMethod;
+  public static io.grpc.MethodDescriptor<com.samarthasthan.user.v1.LoginRequest,
+      com.samarthasthan.user.v1.LoginResponse> getLoginMethod() {
+    io.grpc.MethodDescriptor<com.samarthasthan.user.v1.LoginRequest, com.samarthasthan.user.v1.LoginResponse> getLoginMethod;
     if ((getLoginMethod = UserServiceGrpc.getLoginMethod) == null) {
       synchronized (UserServiceGrpc.class) {
         if ((getLoginMethod = UserServiceGrpc.getLoginMethod) == null) {
           UserServiceGrpc.getLoginMethod = getLoginMethod =
-              io.grpc.MethodDescriptor.<com.user.v1.LoginRequest, com.user.v1.LoginResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.samarthasthan.user.v1.LoginRequest, com.samarthasthan.user.v1.LoginResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Login"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.user.v1.LoginRequest.getDefaultInstance()))
+                  com.samarthasthan.user.v1.LoginRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.user.v1.LoginResponse.getDefaultInstance()))
+                  com.samarthasthan.user.v1.LoginResponse.getDefaultInstance()))
               .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("Login"))
               .build();
         }
@@ -117,8 +117,8 @@ public final class UserServiceGrpc {
 
     /**
      */
-    default void login(com.user.v1.LoginRequest request,
-        io.grpc.stub.StreamObserver<com.user.v1.LoginResponse> responseObserver) {
+    default void login(com.samarthasthan.user.v1.LoginRequest request,
+        io.grpc.stub.StreamObserver<com.samarthasthan.user.v1.LoginResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLoginMethod(), responseObserver);
     }
   }
@@ -158,8 +158,8 @@ public final class UserServiceGrpc {
 
     /**
      */
-    public void login(com.user.v1.LoginRequest request,
-        io.grpc.stub.StreamObserver<com.user.v1.LoginResponse> responseObserver) {
+    public void login(com.samarthasthan.user.v1.LoginRequest request,
+        io.grpc.stub.StreamObserver<com.samarthasthan.user.v1.LoginResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getLoginMethod(), getCallOptions()), request, responseObserver);
     }
@@ -186,7 +186,7 @@ public final class UserServiceGrpc {
 
     /**
      */
-    public com.user.v1.LoginResponse login(com.user.v1.LoginRequest request) {
+    public com.samarthasthan.user.v1.LoginResponse login(com.samarthasthan.user.v1.LoginRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getLoginMethod(), getCallOptions(), request);
     }
@@ -213,7 +213,7 @@ public final class UserServiceGrpc {
 
     /**
      */
-    public com.user.v1.LoginResponse login(com.user.v1.LoginRequest request) {
+    public com.samarthasthan.user.v1.LoginResponse login(com.samarthasthan.user.v1.LoginRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getLoginMethod(), getCallOptions(), request);
     }
@@ -240,8 +240,8 @@ public final class UserServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.user.v1.LoginResponse> login(
-        com.user.v1.LoginRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.samarthasthan.user.v1.LoginResponse> login(
+        com.samarthasthan.user.v1.LoginRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getLoginMethod(), getCallOptions()), request);
     }
@@ -267,8 +267,8 @@ public final class UserServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_LOGIN:
-          serviceImpl.login((com.user.v1.LoginRequest) request,
-              (io.grpc.stub.StreamObserver<com.user.v1.LoginResponse>) responseObserver);
+          serviceImpl.login((com.samarthasthan.user.v1.LoginRequest) request,
+              (io.grpc.stub.StreamObserver<com.samarthasthan.user.v1.LoginResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -292,8 +292,8 @@ public final class UserServiceGrpc {
           getLoginMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.user.v1.LoginRequest,
-              com.user.v1.LoginResponse>(
+              com.samarthasthan.user.v1.LoginRequest,
+              com.samarthasthan.user.v1.LoginResponse>(
                 service, METHODID_LOGIN)))
         .build();
   }
@@ -304,7 +304,7 @@ public final class UserServiceGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return com.user.v1.UserProto.getDescriptor();
+      return com.samarthasthan.user.v1.UserProto.getDescriptor();
     }
 
     @java.lang.Override

@@ -3,7 +3,7 @@
 // source: user/v1/user.proto
 // Protobuf Java Version: 4.29.3
 
-package com.user.v1;
+package com.samarthasthan.user.v1;
 
 public interface LoginRequestOrBuilder extends
     // @@protoc_insertion_point(interface_extends:user.v1.LoginRequest)
@@ -18,9 +18,9 @@ public interface LoginRequestOrBuilder extends
    * <code>.user.v1.Credentials credentials = 1 [json_name = "credentials"];</code>
    * @return The credentials.
    */
-  com.user.v1.Credentials getCredentials();
+  com.samarthasthan.user.v1.Credentials getCredentials();
   /**
    * <code>.user.v1.Credentials credentials = 1 [json_name = "credentials"];</code>
    */
-  com.user.v1.CredentialsOrBuilder getCredentialsOrBuilder();
+  com.samarthasthan.user.v1.CredentialsOrBuilder getCredentialsOrBuilder();
 }

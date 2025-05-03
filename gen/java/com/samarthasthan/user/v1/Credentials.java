@@ -3,7 +3,7 @@
 // source: user/v1/user.proto
 // Protobuf Java Version: 4.29.3
 
-package com.user.v1;
+package com.samarthasthan.user.v1;
 
 /**
  * <pre>
@@ -37,15 +37,15 @@ private static final long serialVersionUID = 0L;
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.user.v1.UserProto.internal_static_user_v1_Credentials_descriptor;
+    return com.samarthasthan.user.v1.UserProto.internal_static_user_v1_Credentials_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.user.v1.UserProto.internal_static_user_v1_Credentials_fieldAccessorTable
+    return com.samarthasthan.user.v1.UserProto.internal_static_user_v1_Credentials_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.user.v1.Credentials.class, com.user.v1.Credentials.Builder.class);
+            com.samarthasthan.user.v1.Credentials.class, com.samarthasthan.user.v1.Credentials.Builder.class);
   }
 
   public static final int EMAIL_FIELD_NUMBER = 1;
@@ -171,10 +171,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.user.v1.Credentials)) {
+    if (!(obj instanceof com.samarthasthan.user.v1.Credentials)) {
       return super.equals(obj);
     }
-    com.user.v1.Credentials other = (com.user.v1.Credentials) obj;
+    com.samarthasthan.user.v1.Credentials other = (com.samarthasthan.user.v1.Credentials) obj;
 
     if (!getEmail()
         .equals(other.getEmail())) return false;
@@ -200,44 +200,44 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.user.v1.Credentials parseFrom(
+  public static com.samarthasthan.user.v1.Credentials parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.user.v1.Credentials parseFrom(
+  public static com.samarthasthan.user.v1.Credentials parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.user.v1.Credentials parseFrom(
+  public static com.samarthasthan.user.v1.Credentials parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.user.v1.Credentials parseFrom(
+  public static com.samarthasthan.user.v1.Credentials parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.user.v1.Credentials parseFrom(byte[] data)
+  public static com.samarthasthan.user.v1.Credentials parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.user.v1.Credentials parseFrom(
+  public static com.samarthasthan.user.v1.Credentials parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.user.v1.Credentials parseFrom(java.io.InputStream input)
+  public static com.samarthasthan.user.v1.Credentials parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.user.v1.Credentials parseFrom(
+  public static com.samarthasthan.user.v1.Credentials parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -245,26 +245,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static com.user.v1.Credentials parseDelimitedFrom(java.io.InputStream input)
+  public static com.samarthasthan.user.v1.Credentials parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.user.v1.Credentials parseDelimitedFrom(
+  public static com.samarthasthan.user.v1.Credentials parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.user.v1.Credentials parseFrom(
+  public static com.samarthasthan.user.v1.Credentials parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.user.v1.Credentials parseFrom(
+  public static com.samarthasthan.user.v1.Credentials parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -277,7 +277,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.user.v1.Credentials prototype) {
+  public static Builder newBuilder(com.samarthasthan.user.v1.Credentials prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -302,21 +302,21 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessage.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:user.v1.Credentials)
-      com.user.v1.CredentialsOrBuilder {
+      com.samarthasthan.user.v1.CredentialsOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.user.v1.UserProto.internal_static_user_v1_Credentials_descriptor;
+      return com.samarthasthan.user.v1.UserProto.internal_static_user_v1_Credentials_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.user.v1.UserProto.internal_static_user_v1_Credentials_fieldAccessorTable
+      return com.samarthasthan.user.v1.UserProto.internal_static_user_v1_Credentials_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.user.v1.Credentials.class, com.user.v1.Credentials.Builder.class);
+              com.samarthasthan.user.v1.Credentials.class, com.samarthasthan.user.v1.Credentials.Builder.class);
     }
 
-    // Construct using com.user.v1.Credentials.newBuilder()
+    // Construct using com.samarthasthan.user.v1.Credentials.newBuilder()
     private Builder() {
 
     }
@@ -338,17 +338,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.user.v1.UserProto.internal_static_user_v1_Credentials_descriptor;
+      return com.samarthasthan.user.v1.UserProto.internal_static_user_v1_Credentials_descriptor;
     }
 
     @java.lang.Override
-    public com.user.v1.Credentials getDefaultInstanceForType() {
-      return com.user.v1.Credentials.getDefaultInstance();
+    public com.samarthasthan.user.v1.Credentials getDefaultInstanceForType() {
+      return com.samarthasthan.user.v1.Credentials.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.user.v1.Credentials build() {
-      com.user.v1.Credentials result = buildPartial();
+    public com.samarthasthan.user.v1.Credentials build() {
+      com.samarthasthan.user.v1.Credentials result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -356,14 +356,14 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.user.v1.Credentials buildPartial() {
-      com.user.v1.Credentials result = new com.user.v1.Credentials(this);
+    public com.samarthasthan.user.v1.Credentials buildPartial() {
+      com.samarthasthan.user.v1.Credentials result = new com.samarthasthan.user.v1.Credentials(this);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(com.user.v1.Credentials result) {
+    private void buildPartial0(com.samarthasthan.user.v1.Credentials result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.email_ = email_;
@@ -375,16 +375,16 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.user.v1.Credentials) {
-        return mergeFrom((com.user.v1.Credentials)other);
+      if (other instanceof com.samarthasthan.user.v1.Credentials) {
+        return mergeFrom((com.samarthasthan.user.v1.Credentials)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.user.v1.Credentials other) {
-      if (other == com.user.v1.Credentials.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.samarthasthan.user.v1.Credentials other) {
+      if (other == com.samarthasthan.user.v1.Credentials.getDefaultInstance()) return this;
       if (!other.getEmail().isEmpty()) {
         email_ = other.email_;
         bitField0_ |= 0x00000001;
@@ -596,12 +596,12 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:user.v1.Credentials)
-  private static final com.user.v1.Credentials DEFAULT_INSTANCE;
+  private static final com.samarthasthan.user.v1.Credentials DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.user.v1.Credentials();
+    DEFAULT_INSTANCE = new com.samarthasthan.user.v1.Credentials();
   }
 
-  public static com.user.v1.Credentials getDefaultInstance() {
+  public static com.samarthasthan.user.v1.Credentials getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
@@ -637,7 +637,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public com.user.v1.Credentials getDefaultInstanceForType() {
+  public com.samarthasthan.user.v1.Credentials getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

@@ -3,7 +3,7 @@
 // source: user/v1/user.proto
 // Protobuf Java Version: 4.29.3
 
-package com.user.v1;
+package com.samarthasthan.user.v1;
 
 public interface CredentialsOrBuilder extends
     // @@protoc_insertion_point(interface_extends:user.v1.Credentials)
