@@ -6,10 +6,10 @@ managed:
       value: github.com/samarthasthan/services-commons/gen
 plugins:
   - remote: buf.build/protocolbuffers/go
-    out: gen
+    out: gen/go
     opt: paths=source_relative
   - remote: buf.build/connectrpc/go
-    out: gen
+    out: gen/go
     opt: paths=source_relative
   - remote: buf.build/protocolbuffers/java:v29.3
     out: gen/java
