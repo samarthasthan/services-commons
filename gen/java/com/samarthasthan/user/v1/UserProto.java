@@ -56,11 +56,11 @@ public final class UserProto {
       "ntials\"@\n\rLoginResponse\022\024\n\005token\030\001 \001(\tR\005" +
       "token\022\031\n\010is_valid\030\002 \001(\010R\007isValid2E\n\013User" +
       "Service\0226\n\005Login\022\025.user.v1.LoginRequest\032" +
-      "\026.user.v1.LoginResponseB\241\001\n\031com.samartha" +
-      "sthan.user.v1B\tUserProtoP\001Z<github.com/s" +
-      "amarthasthan/services-commons/gen/user/v" +
-      "1;userv1\242\002\003UXX\252\002\007User.V1\312\002\007User\\V1\342\002\023Use" +
-      "r\\V1\\GPBMetadata\352\002\010User::V1b\006proto3"
+      "\026.user.v1.LoginResponseB\244\001\n\031com.samartha" +
+      "sthan.user.v1B\tUserProtoP\001Z?github.com/s" +
+      "amarthasthan/services-commons/gen/go/use" +
+      "r/v1;userv1\242\002\003UXX\252\002\007User.V1\312\002\007User\\V1\342\002\023" +
+      "User\\V1\\GPBMetadata\352\002\010User::V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

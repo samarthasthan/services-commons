@@ -3,7 +3,7 @@ managed:
   enabled: true
   override:
     - file_option: go_package_prefix
-      value: github.com/samarthasthan/services-commons/gen
+      value: github.com/samarthasthan/services-commons/gen/go
     - file_option: java_package_prefix
       value: com.samarthasthan
 plugins:
