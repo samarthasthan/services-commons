@@ -1,3 +1,4 @@
+# This generate code for grpc.client
 version: v2
 managed:
   enabled: true
@@ -10,7 +11,7 @@ plugins:
   - remote: buf.build/protocolbuffers/go
     out: gen/go
     opt: paths=source_relative
-  - remote: buf.build/connectrpc/go
+  - remote: buf.build/grpc/go
     out: gen/go
     opt: paths=source_relative
   - remote: buf.build/protocolbuffers/java:v29.3
@@ -19,3 +20,25 @@ plugins:
     out: gen/java
 inputs:
   - directory: proto
+# this generate for http.client
+# version: v2
+# managed:
+#   enabled: true
+#   override:
+#     - file_option: go_package_prefix
+#       value: github.com/samarthasthan/services-commons/gen/go
+#     - file_option: java_package_prefix
+#       value: com.samarthasthan
+# plugins:
+#   - remote: buf.build/protocolbuffers/go
+#     out: gen/go
+#     opt: paths=source_relative
+#   - remote: buf.build/connectrpc/go
+#     out: gen/go
+#     opt: paths=source_relative
+#   - remote: buf.build/protocolbuffers/java:v29.3
+#     out: gen/java
+#   - remote: buf.build/grpc/java:v1.70.0
+#     out: gen/java
+# inputs:
+#   - directory: proto
