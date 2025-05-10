@@ -2,23 +2,71 @@ syntax = "proto3";
 
 package user.v1;
 
+import "buf/validate/validate.proto";
 
-// Messages
-message Credentials {
-    string email = 1;
-    string password = 2;
+option go_package = "github.com/samarthasthan/services-commons/gen/go/user/v1;userv1";
+
+enum UserRole {
+  USER_ROLE_UNSPECIFIED = 0;
+  USER_ROLE_PUBLIC = 1;
+  USER_ROLE_PARTNER = 2;
+  USER_ROLE_STAFF = 3;
+  USER_ROLE_ADMIN = 4;
 }
 
-message LoginRequest {
-    Credentials credentials = 1;
+message SignUpRequest {
+  string email = 1 [(buf.validate.field).string.email = true];
+  string password = 2 [(buf.validate.field).string = {min_len: 8, max_len: 32}];
+  string full_name = 3 [(buf.validate.field).string = {min_len: 1, max_len: 100}];
+  UserRole role = 4 [(buf.validate.field).enum = {defined_only: true}];
 }
 
-message LoginResponse {
-    string token = 1;
-    bool is_valid = 2;
+message SignUpResponse {
+  string user_id = 1;
 }
 
-// Service
-service UserService {
-    rpc Login(LoginRequest) returns (LoginResponse);
+message SignInRequest {
+  string email = 1 [(buf.validate.field).string.email = true];
+  string password = 2 [(buf.validate.field).string.min_len = 8];
+}
+
+message SignInResponse {
+  string user_id = 1;
+  string access_token = 2;
+  string refresh_token = 3;
+}
+
+message UpdateProfileRequest {
+  string user_id = 1 [(buf.validate.field).string.min_len = 1];
+  string bio = 2 [(buf.validate.field).string = {max_len: 300}];
+  string avatar_url = 3 [(buf.validate.field).string.uri = true];
+}
+
+message UpdateProfileResponse {}
+
+message ForgotPasswordRequest {
+  string email = 1 [(buf.validate.field).string.email = true];
+}
+
+message ResetPasswordRequest {
+  string email = 1 [(buf.validate.field).string.email = true];
+  string otp = 2 [(buf.validate.field).string.len = 6];
+  string new_password = 3 [(buf.validate.field).string = {min_len: 8, max_len: 32}];
+}
+
+message DeleteUserRequest {
+  string user_id = 1 [(buf.validate.field).string.min_len = 1];
+}
+
+message GetUserProfileRequest {
+  string user_id = 1 [(buf.validate.field).string.min_len = 1];
+}
+
+message GetUserProfileResponse {
+  string user_id = 1;
+  string email = 2;
+  string full_name = 3;
+  string bio = 4;
+  string avatar_url = 5;
+  UserRole role = 6;
 }

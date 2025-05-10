@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package auth.v1;
+
+import "buf/validate/validate.proto";
+
+option go_package = "github.com/samarthasthan/services-commons/gen/go/auth/v1;authv1";
+
+message GenerateTokenRequest {
+  string user_id = 1 [(buf.validate.field).string.min_len = 1];
+  string role = 2 [(buf.validate.field).string.min_len = 1];
+}
+
+message GenerateTokenResponse {
+  string access_token = 1;
+  string refresh_token = 2;
+}
+
+message ValidateTokenRequest {
+  string access_token = 1 [(buf.validate.field).string.min_len = 10];
+}
+
+message ValidateTokenResponse {
+  string user_id = 1;
+  string role = 2;
+  bool is_valid = 3;
+}
+
+message RefreshTokenRequest {
+  string refresh_token = 1 [(buf.validate.field).string.min_len = 10];
+}
+
+message RefreshTokenResponse {
+  string access_token = 1;
+}
+
+message SendOtpRequest {
+  string email_or_phone = 1 [(buf.validate.field).string = {min_len: 5, max_len: 100}];
+}
+
+message VerifyOtpRequest {
+  string email_or_phone = 1;
+  string otp = 2 [(buf.validate.field).string.len = 6];
+}
