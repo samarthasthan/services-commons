@@ -6,7 +6,7 @@ import (
 )
 
 type Client struct {
-	conn *grpc.ClientConn
+	Conn *grpc.ClientConn
 }
 
 func NewClient(addr string) (*Client, error) {
@@ -15,11 +15,11 @@ func NewClient(addr string) (*Client, error) {
 		return nil, err
 	}
 	return &Client{
-		conn: conn,
+		Conn: conn,
 	}, nil
 }
 
 // Graceful shutdown
 func (c *Client) Close() error {
-	return c.conn.Close()
+	return c.Conn.Close()
 }
