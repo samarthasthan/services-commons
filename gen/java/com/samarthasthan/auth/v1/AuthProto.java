@@ -55,16 +55,6 @@ public final class AuthProto {
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_auth_v1_RefreshTokenResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_auth_v1_SendOtpRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_auth_v1_SendOtpRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_auth_v1_VerifyOtpRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_auth_v1_VerifyOtpRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -75,39 +65,40 @@ public final class AuthProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\022auth/v1/auth.proto\022\007auth.v1\032\033buf/valid" +
-      "ate/validate.proto\"U\n\024GenerateTokenReque" +
-      "st\022 \n\007user_id\030\001 \001(\tB\007\272H\004r\002\020\001R\006userId\022\033\n\004" +
-      "role\030\002 \001(\tB\007\272H\004r\002\020\001R\004role\"_\n\025GenerateTok" +
-      "enResponse\022!\n\014access_token\030\001 \001(\tR\013access" +
-      "Token\022#\n\rrefresh_token\030\002 \001(\tR\014refreshTok" +
-      "en\"B\n\024ValidateTokenRequest\022*\n\014access_tok" +
-      "en\030\001 \001(\tB\007\272H\004r\002\020\nR\013accessToken\"_\n\025Valida" +
-      "teTokenResponse\022\027\n\007user_id\030\001 \001(\tR\006userId" +
-      "\022\022\n\004role\030\002 \001(\tR\004role\022\031\n\010is_valid\030\003 \001(\010R\007" +
-      "isValid\"C\n\023RefreshTokenRequest\022,\n\rrefres" +
-      "h_token\030\001 \001(\tB\007\272H\004r\002\020\nR\014refreshToken\"9\n\024" +
-      "RefreshTokenResponse\022!\n\014access_token\030\001 \001" +
-      "(\tR\013accessToken\"A\n\016SendOtpRequest\022/\n\016ema" +
-      "il_or_phone\030\001 \001(\tB\t\272H\006r\004\020\005\030dR\014emailOrPho" +
-      "ne\"T\n\020VerifyOtpRequest\022$\n\016email_or_phone" +
-      "\030\001 \001(\tR\014emailOrPhone\022\032\n\003otp\030\002 \001(\tB\010\272H\005r\003" +
-      "\230\001\006R\003otpB\244\001\n\031com.samarthasthan.auth.v1B\t" +
-      "AuthProtoP\001Z?github.com/samarthasthan/se" +
-      "rvices-commons/gen/go/auth/v1;authv1\242\002\003A" +
-      "XX\252\002\007Auth.V1\312\002\007Auth\\V1\342\002\023Auth\\V1\\GPBMeta" +
-      "data\352\002\010Auth::V1b\006proto3"
+      "ate/validate.proto\"8\n\024GenerateTokenReque" +
+      "st\022 \n\007user_id\030\001 \001(\tB\007\272H\004r\002\020\001R\006userId\"_\n\025" +
+      "GenerateTokenResponse\022!\n\014access_token\030\001 " +
+      "\001(\tR\013accessToken\022#\n\rrefresh_token\030\002 \001(\tR" +
+      "\014refreshToken\"B\n\024ValidateTokenRequest\022*\n" +
+      "\014access_token\030\001 \001(\tB\007\272H\004r\002\020\nR\013accessToke" +
+      "n\"K\n\025ValidateTokenResponse\022\027\n\007user_id\030\001 " +
+      "\001(\tR\006userId\022\031\n\010is_valid\030\003 \001(\010R\007isValid\"C" +
+      "\n\023RefreshTokenRequest\022,\n\rrefresh_token\030\001" +
+      " \001(\tB\007\272H\004r\002\020\nR\014refreshToken\"9\n\024RefreshTo" +
+      "kenResponse\022!\n\014access_token\030\001 \001(\tR\013acces" +
+      "sToken2\372\001\n\013AuthService\022N\n\rGenerateToken\022" +
+      "\035.auth.v1.GenerateTokenRequest\032\036.auth.v1" +
+      ".GenerateTokenResponse\022N\n\rValidateToken\022" +
+      "\035.auth.v1.ValidateTokenRequest\032\036.auth.v1" +
+      ".ValidateTokenResponse\022K\n\014RefreshToken\022\034" +
+      ".auth.v1.RefreshTokenRequest\032\035.auth.v1.R" +
+      "efreshTokenResponseB\244\001\n\031com.samarthastha" +
+      "n.auth.v1B\tAuthProtoP\001Z?github.com/samar" +
+      "thasthan/services-commons/gen/go/auth/v1" +
+      ";authv1\242\002\003AXX\252\002\007Auth.V1\312\002\007Auth\\V1\342\002\023Auth" +
+      "\\V1\\GPBMetadata\352\002\010Auth::V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.samarthasthan.buf.validate.ValidateProto.getDescriptor(),
+          build.buf.validate.ValidateProto.getDescriptor(),
         });
     internal_static_auth_v1_GenerateTokenRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_auth_v1_GenerateTokenRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_auth_v1_GenerateTokenRequest_descriptor,
-        new java.lang.String[] { "UserId", "Role", });
+        new java.lang.String[] { "UserId", });
     internal_static_auth_v1_GenerateTokenResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_auth_v1_GenerateTokenResponse_fieldAccessorTable = new
@@ -125,7 +116,7 @@ public final class AuthProto {
     internal_static_auth_v1_ValidateTokenResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_auth_v1_ValidateTokenResponse_descriptor,
-        new java.lang.String[] { "UserId", "Role", "IsValid", });
+        new java.lang.String[] { "UserId", "IsValid", });
     internal_static_auth_v1_RefreshTokenRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_auth_v1_RefreshTokenRequest_fieldAccessorTable = new
@@ -138,23 +129,11 @@ public final class AuthProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_auth_v1_RefreshTokenResponse_descriptor,
         new java.lang.String[] { "AccessToken", });
-    internal_static_auth_v1_SendOtpRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
-    internal_static_auth_v1_SendOtpRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_auth_v1_SendOtpRequest_descriptor,
-        new java.lang.String[] { "EmailOrPhone", });
-    internal_static_auth_v1_VerifyOtpRequest_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_auth_v1_VerifyOtpRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_auth_v1_VerifyOtpRequest_descriptor,
-        new java.lang.String[] { "EmailOrPhone", "Otp", });
     descriptor.resolveAllFeaturesImmutable();
-    com.samarthasthan.buf.validate.ValidateProto.getDescriptor();
+    build.buf.validate.ValidateProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.samarthasthan.buf.validate.ValidateProto.field);
+    registry.add(build.buf.validate.ValidateProto.field);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
   }

@@ -30,7 +30,6 @@ private static final long serialVersionUID = 0L;
     email_ = "";
     password_ = "";
     fullName_ = "";
-    role_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -163,24 +162,6 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int ROLE_FIELD_NUMBER = 4;
-  private int role_ = 0;
-  /**
-   * <code>.user.v1.UserRole role = 4 [json_name = "role", (.buf.validate.field) = { ... }</code>
-   * @return The enum numeric value on the wire for role.
-   */
-  @java.lang.Override public int getRoleValue() {
-    return role_;
-  }
-  /**
-   * <code>.user.v1.UserRole role = 4 [json_name = "role", (.buf.validate.field) = { ... }</code>
-   * @return The role.
-   */
-  @java.lang.Override public com.samarthasthan.user.v1.UserRole getRole() {
-    com.samarthasthan.user.v1.UserRole result = com.samarthasthan.user.v1.UserRole.forNumber(role_);
-    return result == null ? com.samarthasthan.user.v1.UserRole.UNRECOGNIZED : result;
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -204,9 +185,6 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(fullName_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, fullName_);
     }
-    if (role_ != com.samarthasthan.user.v1.UserRole.USER_ROLE_UNSPECIFIED.getNumber()) {
-      output.writeEnum(4, role_);
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -224,10 +202,6 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(fullName_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, fullName_);
-    }
-    if (role_ != com.samarthasthan.user.v1.UserRole.USER_ROLE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(4, role_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -250,7 +224,6 @@ private static final long serialVersionUID = 0L;
         .equals(other.getPassword())) return false;
     if (!getFullName()
         .equals(other.getFullName())) return false;
-    if (role_ != other.role_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -268,8 +241,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPassword().hashCode();
     hash = (37 * hash) + FULL_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getFullName().hashCode();
-    hash = (37 * hash) + ROLE_FIELD_NUMBER;
-    hash = (53 * hash) + role_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -404,7 +375,6 @@ private static final long serialVersionUID = 0L;
       email_ = "";
       password_ = "";
       fullName_ = "";
-      role_ = 0;
       return this;
     }
 
@@ -447,9 +417,6 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.fullName_ = fullName_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.role_ = role_;
-      }
     }
 
     @java.lang.Override
@@ -478,9 +445,6 @@ private static final long serialVersionUID = 0L;
         fullName_ = other.fullName_;
         bitField0_ |= 0x00000004;
         onChanged();
-      }
-      if (other.role_ != 0) {
-        setRoleValue(other.getRoleValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -523,11 +487,6 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000004;
               break;
             } // case 26
-            case 32: {
-              role_ = input.readEnum();
-              bitField0_ |= 0x00000008;
-              break;
-            } // case 32
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -757,59 +716,6 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       fullName_ = value;
       bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-
-    private int role_ = 0;
-    /**
-     * <code>.user.v1.UserRole role = 4 [json_name = "role", (.buf.validate.field) = { ... }</code>
-     * @return The enum numeric value on the wire for role.
-     */
-    @java.lang.Override public int getRoleValue() {
-      return role_;
-    }
-    /**
-     * <code>.user.v1.UserRole role = 4 [json_name = "role", (.buf.validate.field) = { ... }</code>
-     * @param value The enum numeric value on the wire for role to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRoleValue(int value) {
-      role_ = value;
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.user.v1.UserRole role = 4 [json_name = "role", (.buf.validate.field) = { ... }</code>
-     * @return The role.
-     */
-    @java.lang.Override
-    public com.samarthasthan.user.v1.UserRole getRole() {
-      com.samarthasthan.user.v1.UserRole result = com.samarthasthan.user.v1.UserRole.forNumber(role_);
-      return result == null ? com.samarthasthan.user.v1.UserRole.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.user.v1.UserRole role = 4 [json_name = "role", (.buf.validate.field) = { ... }</code>
-     * @param value The role to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRole(com.samarthasthan.user.v1.UserRole value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000008;
-      role_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.user.v1.UserRole role = 4 [json_name = "role", (.buf.validate.field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearRole() {
-      bitField0_ = (bitField0_ & ~0x00000008);
-      role_ = 0;
       onChanged();
       return this;
     }

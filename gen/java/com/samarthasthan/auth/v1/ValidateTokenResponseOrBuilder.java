@@ -22,18 +22,6 @@ public interface ValidateTokenResponseOrBuilder extends
       getUserIdBytes();
 
   /**
-   * <code>string role = 2 [json_name = "role"];</code>
-   * @return The role.
-   */
-  java.lang.String getRole();
-  /**
-   * <code>string role = 2 [json_name = "role"];</code>
-   * @return The bytes for role.
-   */
-  com.google.protobuf.ByteString
-      getRoleBytes();
-
-  /**
    * <code>bool is_valid = 3 [json_name = "isValid"];</code>
    * @return The isValid.
    */

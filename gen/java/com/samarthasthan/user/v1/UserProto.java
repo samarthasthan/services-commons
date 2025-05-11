@@ -45,41 +45,6 @@ public final class UserProto {
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_user_v1_SignInResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_user_v1_UpdateProfileRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_user_v1_UpdateProfileRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_user_v1_UpdateProfileResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_user_v1_UpdateProfileResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_user_v1_ForgotPasswordRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_user_v1_ForgotPasswordRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_user_v1_ResetPasswordRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_user_v1_ResetPasswordRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_user_v1_DeleteUserRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_user_v1_DeleteUserRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_user_v1_GetUserProfileRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_user_v1_GetUserProfileRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_user_v1_GetUserProfileResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_user_v1_GetUserProfileResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -90,53 +55,36 @@ public final class UserProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\022user/v1/user.proto\022\007user.v1\032\033buf/valid" +
-      "ate/validate.proto\"\256\001\n\rSignUpRequest\022\035\n\005" +
-      "email\030\001 \001(\tB\007\272H\004r\002`\001R\005email\022%\n\010password\030" +
-      "\002 \001(\tB\t\272H\006r\004\020\010\030 R\010password\022&\n\tfull_name\030" +
-      "\003 \001(\tB\t\272H\006r\004\020\001\030dR\010fullName\022/\n\004role\030\004 \001(\016" +
-      "2\021.user.v1.UserRoleB\010\272H\005\202\001\002\020\001R\004role\")\n\016S" +
-      "ignUpResponse\022\027\n\007user_id\030\001 \001(\tR\006userId\"S" +
-      "\n\rSignInRequest\022\035\n\005email\030\001 \001(\tB\007\272H\004r\002`\001R" +
-      "\005email\022#\n\010password\030\002 \001(\tB\007\272H\004r\002\020\010R\010passw" +
-      "ord\"q\n\016SignInResponse\022\027\n\007user_id\030\001 \001(\tR\006" +
-      "userId\022!\n\014access_token\030\002 \001(\tR\013accessToke" +
-      "n\022#\n\rrefresh_token\030\003 \001(\tR\014refreshToken\"}" +
-      "\n\024UpdateProfileRequest\022 \n\007user_id\030\001 \001(\tB" +
-      "\007\272H\004r\002\020\001R\006userId\022\032\n\003bio\030\002 \001(\tB\010\272H\005r\003\030\254\002R" +
-      "\003bio\022\'\n\navatar_url\030\003 \001(\tB\010\272H\005r\003\210\001\001R\tavat" +
-      "arUrl\"\027\n\025UpdateProfileResponse\"6\n\025Forgot" +
-      "PasswordRequest\022\035\n\005email\030\001 \001(\tB\007\272H\004r\002`\001R" +
-      "\005email\"\177\n\024ResetPasswordRequest\022\035\n\005email\030" +
-      "\001 \001(\tB\007\272H\004r\002`\001R\005email\022\032\n\003otp\030\002 \001(\tB\010\272H\005r" +
-      "\003\230\001\006R\003otp\022,\n\014new_password\030\003 \001(\tB\t\272H\006r\004\020\010" +
-      "\030 R\013newPassword\"5\n\021DeleteUserRequest\022 \n\007" +
-      "user_id\030\001 \001(\tB\007\272H\004r\002\020\001R\006userId\"9\n\025GetUse" +
-      "rProfileRequest\022 \n\007user_id\030\001 \001(\tB\007\272H\004r\002\020" +
-      "\001R\006userId\"\274\001\n\026GetUserProfileResponse\022\027\n\007" +
-      "user_id\030\001 \001(\tR\006userId\022\024\n\005email\030\002 \001(\tR\005em" +
-      "ail\022\033\n\tfull_name\030\003 \001(\tR\010fullName\022\020\n\003bio\030" +
-      "\004 \001(\tR\003bio\022\035\n\navatar_url\030\005 \001(\tR\tavatarUr" +
-      "l\022%\n\004role\030\006 \001(\0162\021.user.v1.UserRoleR\004role" +
-      "*|\n\010UserRole\022\031\n\025USER_ROLE_UNSPECIFIED\020\000\022" +
-      "\024\n\020USER_ROLE_PUBLIC\020\001\022\025\n\021USER_ROLE_PARTN" +
-      "ER\020\002\022\023\n\017USER_ROLE_STAFF\020\003\022\023\n\017USER_ROLE_A" +
-      "DMIN\020\004B\244\001\n\031com.samarthasthan.user.v1B\tUs" +
-      "erProtoP\001Z?github.com/samarthasthan/serv" +
-      "ices-commons/gen/go/user/v1;userv1\242\002\003UXX" +
-      "\252\002\007User.V1\312\002\007User\\V1\342\002\023User\\V1\\GPBMetada" +
-      "ta\352\002\010User::V1b\006proto3"
+      "ate/validate.proto\"}\n\rSignUpRequest\022\035\n\005e" +
+      "mail\030\001 \001(\tB\007\272H\004r\002`\001R\005email\022%\n\010password\030\002" +
+      " \001(\tB\t\272H\006r\004\020\010\030 R\010password\022&\n\tfull_name\030\003" +
+      " \001(\tB\t\272H\006r\004\020\001\030dR\010fullName\")\n\016SignUpRespo" +
+      "nse\022\027\n\007user_id\030\001 \001(\tR\006userId\"S\n\rSignInRe" +
+      "quest\022\035\n\005email\030\001 \001(\tB\007\272H\004r\002`\001R\005email\022#\n\010" +
+      "password\030\002 \001(\tB\007\272H\004r\002\020\010R\010password\"q\n\016Sig" +
+      "nInResponse\022\027\n\007user_id\030\001 \001(\tR\006userId\022!\n\014" +
+      "access_token\030\002 \001(\tR\013accessToken\022#\n\rrefre" +
+      "sh_token\030\003 \001(\tR\014refreshToken2\203\001\n\013UserSer" +
+      "vice\0229\n\006SignUp\022\026.user.v1.SignUpRequest\032\027" +
+      ".user.v1.SignUpResponse\0229\n\006SignIn\022\026.user" +
+      ".v1.SignInRequest\032\027.user.v1.SignInRespon" +
+      "seB\244\001\n\031com.samarthasthan.user.v1B\tUserPr" +
+      "otoP\001Z?github.com/samarthasthan/services" +
+      "-commons/gen/go/user/v1;userv1\242\002\003UXX\252\002\007U" +
+      "ser.V1\312\002\007User\\V1\342\002\023User\\V1\\GPBMetadata\352\002" +
+      "\010User::V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.samarthasthan.buf.validate.ValidateProto.getDescriptor(),
+          build.buf.validate.ValidateProto.getDescriptor(),
         });
     internal_static_user_v1_SignUpRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_user_v1_SignUpRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_user_v1_SignUpRequest_descriptor,
-        new java.lang.String[] { "Email", "Password", "FullName", "Role", });
+        new java.lang.String[] { "Email", "Password", "FullName", });
     internal_static_user_v1_SignUpResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_user_v1_SignUpResponse_fieldAccessorTable = new
@@ -155,53 +103,11 @@ public final class UserProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_user_v1_SignInResponse_descriptor,
         new java.lang.String[] { "UserId", "AccessToken", "RefreshToken", });
-    internal_static_user_v1_UpdateProfileRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
-    internal_static_user_v1_UpdateProfileRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_user_v1_UpdateProfileRequest_descriptor,
-        new java.lang.String[] { "UserId", "Bio", "AvatarUrl", });
-    internal_static_user_v1_UpdateProfileResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
-    internal_static_user_v1_UpdateProfileResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_user_v1_UpdateProfileResponse_descriptor,
-        new java.lang.String[] { });
-    internal_static_user_v1_ForgotPasswordRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
-    internal_static_user_v1_ForgotPasswordRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_user_v1_ForgotPasswordRequest_descriptor,
-        new java.lang.String[] { "Email", });
-    internal_static_user_v1_ResetPasswordRequest_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_user_v1_ResetPasswordRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_user_v1_ResetPasswordRequest_descriptor,
-        new java.lang.String[] { "Email", "Otp", "NewPassword", });
-    internal_static_user_v1_DeleteUserRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
-    internal_static_user_v1_DeleteUserRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_user_v1_DeleteUserRequest_descriptor,
-        new java.lang.String[] { "UserId", });
-    internal_static_user_v1_GetUserProfileRequest_descriptor =
-      getDescriptor().getMessageTypes().get(9);
-    internal_static_user_v1_GetUserProfileRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_user_v1_GetUserProfileRequest_descriptor,
-        new java.lang.String[] { "UserId", });
-    internal_static_user_v1_GetUserProfileResponse_descriptor =
-      getDescriptor().getMessageTypes().get(10);
-    internal_static_user_v1_GetUserProfileResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_user_v1_GetUserProfileResponse_descriptor,
-        new java.lang.String[] { "UserId", "Email", "FullName", "Bio", "AvatarUrl", "Role", });
     descriptor.resolveAllFeaturesImmutable();
-    com.samarthasthan.buf.validate.ValidateProto.getDescriptor();
+    build.buf.validate.ValidateProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.samarthasthan.buf.validate.ValidateProto.field);
+    registry.add(build.buf.validate.ValidateProto.field);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
   }

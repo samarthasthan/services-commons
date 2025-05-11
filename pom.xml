@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.samarthasthan</groupId>
     <artifactId>services-commons</artifactId>
-    <version>0.1.7</version>
+    <version>0.1.11</version>
     <packaging>jar</packaging>
     <name>services-commons</name>
 
@@ -20,6 +20,12 @@
     </properties>
 
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/build.buf/protovalidate -->
+        <dependency>
+            <groupId>build.buf</groupId>
+            <artifactId>protovalidate</artifactId>
+            <version>0.7.0</version>
+        </dependency>
         <!-- gRPC -->
         <dependency>
             <groupId>io.grpc</groupId>

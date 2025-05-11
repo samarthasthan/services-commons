@@ -44,15 +44,4 @@ public interface SignUpRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getFullNameBytes();
-
-  /**
-   * <code>.user.v1.UserRole role = 4 [json_name = "role", (.buf.validate.field) = { ... }</code>
-   * @return The enum numeric value on the wire for role.
-   */
-  int getRoleValue();
-  /**
-   * <code>.user.v1.UserRole role = 4 [json_name = "role", (.buf.validate.field) = { ... }</code>
-   * @return The role.
-   */
-  com.samarthasthan.user.v1.UserRole getRole();
 }

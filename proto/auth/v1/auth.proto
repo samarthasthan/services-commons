@@ -8,7 +8,6 @@ option go_package = "github.com/samarthasthan/services-commons/gen/go/auth/v1;au
 
 message GenerateTokenRequest {
   string user_id = 1 [(buf.validate.field).string.min_len = 1];
-  string role = 2 [(buf.validate.field).string.min_len = 1];
 }
 
 message GenerateTokenResponse {
@@ -22,7 +21,6 @@ message ValidateTokenRequest {
 
 message ValidateTokenResponse {
   string user_id = 1;
-  string role = 2;
   bool is_valid = 3;
 }
 
@@ -34,11 +32,8 @@ message RefreshTokenResponse {
   string access_token = 1;
 }
 
-message SendOtpRequest {
-  string email_or_phone = 1 [(buf.validate.field).string = {min_len: 5, max_len: 100}];
-}
-
-message VerifyOtpRequest {
-  string email_or_phone = 1;
-  string otp = 2 [(buf.validate.field).string.len = 6];
+service AuthService {
+  rpc GenerateToken(GenerateTokenRequest) returns (GenerateTokenResponse);
+  rpc ValidateToken(ValidateTokenRequest) returns (ValidateTokenResponse);
+  rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse);
 }
