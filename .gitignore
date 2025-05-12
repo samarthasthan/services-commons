@@ -1,1 +1,126 @@
-vendor/
+# Go binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Go object files
+*.a
+*.o
+
+# Dependency directories
+/vendor/
+
+# Go workspace file
+go.work
+
+# Test binary, built with `go test -c`
+*.test
+
+# Coverage output
+*.out
+
+# IDE specific files
+.idea/
+.vscode/
+*.iml
+
+# Logs
+*.log
+
+# Temporary files
+*.swp
+*.swo
+
+
+
+
+# Java-specific
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven-specific
+target/
+!.mvn/wrapper/maven-wrapper.jar
+.idea/
+*.iml
+*.log
+
+# Gradle-specific
+.gradle/
+build/
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+.gradle-wrapper/
+.gradle/
+
+# IntelliJ IDEA-specific
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Eclipse-specific
+.settings/
+*.classpath
+*.project
+*.factorypath
+
+# VSCode-specific
+.vscode/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.swp
+*.swo
+*.bak
+
+# Log files
+*.log
+
+# Eclipse/NetBeans/IntelliJ project files
+*.launch
+
+
+# Node.js and TypeScript
+node_modules/
+package-lock.json
+yarn.lock
+
+# Logs and temp files
+*.log
+*.tmp
+*.cache
+*.seed
+*.lock
+*.pid
+
+# Editor and IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# Compiled output
+dist/
+build/
+out/
+
+# Environment files
+.env
+.env.*
+*.local
+
+# Optional npm debug log
+npm-debug.log*
+
+# System files
+.DS_Store

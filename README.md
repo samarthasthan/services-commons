@@ -13,3 +13,7 @@
 ### To clean all generated files
 
     make clean
+
+### build java
+
+    mvn clean install

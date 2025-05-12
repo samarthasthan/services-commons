@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package profile.v1;
+
+import "buf/validate/validate.proto";
+
+option go_package = "github.com/samarthasthan/services-commons/gen/go/profile/v1;profilev1";
+
+message CreateProfileRequest {
+  string user_id = 1 [(buf.validate.field).string.min_len = 1];
+  string full_name = 2 [(buf.validate.field).string.min_len = 1];
+  string email = 3 [(buf.validate.field).string.min_len = 1];
+}
+
+message CreateProfileResponse {
+  string profile_id = 1;
+  string user_id = 2;
+}
+
+message GetProfileRequest {
+  string user_id = 1 [(buf.validate.field).string.min_len = 1];
+}
+
+message GetProfileResponse {
+  string profile_id = 1;
+  string user_id = 2;
+  string full_name = 3;
+  string email = 4;
+  string created_at = 5;
+  string updated_at = 6;
+  string deleted_at = 7;
+}
+
+service ProfileService {
+  rpc CreateProfile(CreateProfileRequest) returns (CreateProfileResponse);
+  rpc GetProfile(GetProfileRequest) returns (GetProfileResponse);
+}
