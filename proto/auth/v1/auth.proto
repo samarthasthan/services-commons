@@ -15,26 +15,20 @@ message GenerateTokenResponse {
   string refresh_token = 2;
 }
 
-message ValidateTokenRequest {
-  string access_token = 1 [(buf.validate.field).string.min_len = 10];
-}
+message ValidateTokenRequest {}
 
 message ValidateTokenResponse {
   string user_id = 1;
   bool is_valid = 3;
 }
 
-message RefreshTokenRequest {
-  string refresh_token = 1 [(buf.validate.field).string.min_len = 10];
-}
+message RefreshTokenRequest {}
 
 message RefreshTokenResponse {
   string access_token = 1;
 }
 
-message DeleteTokensRequest {
-  string access_token = 1;
-}
+message DeleteTokensRequest {}
 
 message DeleteTokensResponse {}
 
