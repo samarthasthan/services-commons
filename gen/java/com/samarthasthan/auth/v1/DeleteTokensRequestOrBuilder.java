@@ -10,14 +10,14 @@ public interface DeleteTokensRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string user_id = 1 [json_name = "userId"];</code>
-   * @return The userId.
+   * <code>string access_token = 1 [json_name = "accessToken"];</code>
+   * @return The accessToken.
    */
-  java.lang.String getUserId();
+  java.lang.String getAccessToken();
   /**
-   * <code>string user_id = 1 [json_name = "userId"];</code>
-   * @return The bytes for userId.
+   * <code>string access_token = 1 [json_name = "accessToken"];</code>
+   * @return The bytes for accessToken.
    */
   com.google.protobuf.ByteString
-      getUserIdBytes();
+      getAccessTokenBytes();
 }

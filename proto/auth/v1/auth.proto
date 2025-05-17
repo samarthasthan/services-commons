@@ -33,7 +33,7 @@ message RefreshTokenResponse {
 }
 
 message DeleteTokensRequest {
-  string user_id = 1;
+  string access_token = 1;
 }
 
 message DeleteTokensResponse {}

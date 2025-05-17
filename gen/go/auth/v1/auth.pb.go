@@ -304,7 +304,7 @@ func (x *RefreshTokenResponse) GetAccessToken() string {
 
 type DeleteTokensRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	AccessToken   string                 `protobuf:"bytes,1,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -339,9 +339,9 @@ func (*DeleteTokensRequest) Descriptor() ([]byte, []int) {
 	return file_auth_v1_auth_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *DeleteTokensRequest) GetUserId() string {
+func (x *DeleteTokensRequest) GetAccessToken() string {
 	if x != nil {
-		return x.UserId
+		return x.AccessToken
 	}
 	return ""
 }
@@ -402,9 +402,9 @@ const file_auth_v1_auth_proto_rawDesc = "" +
 	"\rrefresh_token\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\n" +
 	"R\frefreshToken\"9\n" +
 	"\x14RefreshTokenResponse\x12!\n" +
-	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\".\n" +
-	"\x13DeleteTokensRequest\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\tR\x06userId\"\x16\n" +
+	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\"8\n" +
+	"\x13DeleteTokensRequest\x12!\n" +
+	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\"\x16\n" +
 	"\x14DeleteTokensResponse2\xc7\x02\n" +
 	"\vAuthService\x12N\n" +
 	"\rGenerateToken\x12\x1d.auth.v1.GenerateTokenRequest\x1a\x1e.auth.v1.GenerateTokenResponse\x12N\n" +

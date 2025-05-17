@@ -121,9 +121,9 @@ export declare const RefreshTokenResponseSchema: GenMessage<RefreshTokenResponse
  */
 export declare type DeleteTokensRequest = Message<"auth.v1.DeleteTokensRequest"> & {
   /**
-   * @generated from field: string user_id = 1;
+   * @generated from field: string access_token = 1;
    */
-  userId: string;
+  accessToken: string;
 };
 
 /**
