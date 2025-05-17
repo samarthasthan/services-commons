@@ -238,6 +238,94 @@ func (x *SignInResponse) GetRefreshToken() string {
 	return ""
 }
 
+type DeleteUserReuqest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	AccessToken   string                 `protobuf:"bytes,1,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteUserReuqest) Reset() {
+	*x = DeleteUserReuqest{}
+	mi := &file_user_v1_user_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteUserReuqest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteUserReuqest) ProtoMessage() {}
+
+func (x *DeleteUserReuqest) ProtoReflect() protoreflect.Message {
+	mi := &file_user_v1_user_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteUserReuqest.ProtoReflect.Descriptor instead.
+func (*DeleteUserReuqest) Descriptor() ([]byte, []int) {
+	return file_user_v1_user_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *DeleteUserReuqest) GetAccessToken() string {
+	if x != nil {
+		return x.AccessToken
+	}
+	return ""
+}
+
+type DeleteUserResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	IsDone        bool                   `protobuf:"varint,1,opt,name=is_done,json=isDone,proto3" json:"is_done,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteUserResponse) Reset() {
+	*x = DeleteUserResponse{}
+	mi := &file_user_v1_user_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteUserResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteUserResponse) ProtoMessage() {}
+
+func (x *DeleteUserResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_user_v1_user_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteUserResponse.ProtoReflect.Descriptor instead.
+func (*DeleteUserResponse) Descriptor() ([]byte, []int) {
+	return file_user_v1_user_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *DeleteUserResponse) GetIsDone() bool {
+	if x != nil {
+		return x.IsDone
+	}
+	return false
+}
+
 var File_user_v1_user_proto protoreflect.FileDescriptor
 
 const file_user_v1_user_proto_rawDesc = "" +
@@ -255,10 +343,16 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\x0eSignInResponse\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12!\n" +
 	"\faccess_token\x18\x02 \x01(\tR\vaccessToken\x12#\n" +
-	"\rrefresh_token\x18\x03 \x01(\tR\frefreshToken2\x83\x01\n" +
+	"\rrefresh_token\x18\x03 \x01(\tR\frefreshToken\"6\n" +
+	"\x11DeleteUserReuqest\x12!\n" +
+	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\"-\n" +
+	"\x12DeleteUserResponse\x12\x17\n" +
+	"\ais_done\x18\x01 \x01(\bR\x06isDone2\xca\x01\n" +
 	"\vUserService\x129\n" +
 	"\x06SignUp\x12\x16.user.v1.SignUpRequest\x1a\x17.user.v1.SignUpResponse\x129\n" +
-	"\x06SignIn\x12\x16.user.v1.SignInRequest\x1a\x17.user.v1.SignInResponseB\xa4\x01\n" +
+	"\x06SignIn\x12\x16.user.v1.SignInRequest\x1a\x17.user.v1.SignInResponse\x12E\n" +
+	"\n" +
+	"DeleteUser\x12\x1a.user.v1.DeleteUserReuqest\x1a\x1b.user.v1.DeleteUserResponseB\xa4\x01\n" +
 	"\x19com.samarthasthan.user.v1B\tUserProtoP\x01Z?github.com/samarthasthan/services-commons/gen/go/user/v1;userv1\xa2\x02\x03UXX\xaa\x02\aUser.V1\xca\x02\aUser\\V1\xe2\x02\x13User\\V1\\GPBMetadata\xea\x02\bUser::V1b\x06proto3"
 
 var (
@@ -273,20 +367,24 @@ func file_user_v1_user_proto_rawDescGZIP() []byte {
 	return file_user_v1_user_proto_rawDescData
 }
 
-var file_user_v1_user_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_user_v1_user_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_user_v1_user_proto_goTypes = []any{
-	(*SignUpRequest)(nil),  // 0: user.v1.SignUpRequest
-	(*SignUpResponse)(nil), // 1: user.v1.SignUpResponse
-	(*SignInRequest)(nil),  // 2: user.v1.SignInRequest
-	(*SignInResponse)(nil), // 3: user.v1.SignInResponse
+	(*SignUpRequest)(nil),      // 0: user.v1.SignUpRequest
+	(*SignUpResponse)(nil),     // 1: user.v1.SignUpResponse
+	(*SignInRequest)(nil),      // 2: user.v1.SignInRequest
+	(*SignInResponse)(nil),     // 3: user.v1.SignInResponse
+	(*DeleteUserReuqest)(nil),  // 4: user.v1.DeleteUserReuqest
+	(*DeleteUserResponse)(nil), // 5: user.v1.DeleteUserResponse
 }
 var file_user_v1_user_proto_depIdxs = []int32{
 	0, // 0: user.v1.UserService.SignUp:input_type -> user.v1.SignUpRequest
 	2, // 1: user.v1.UserService.SignIn:input_type -> user.v1.SignInRequest
-	1, // 2: user.v1.UserService.SignUp:output_type -> user.v1.SignUpResponse
-	3, // 3: user.v1.UserService.SignIn:output_type -> user.v1.SignInResponse
-	2, // [2:4] is the sub-list for method output_type
-	0, // [0:2] is the sub-list for method input_type
+	4, // 2: user.v1.UserService.DeleteUser:input_type -> user.v1.DeleteUserReuqest
+	1, // 3: user.v1.UserService.SignUp:output_type -> user.v1.SignUpResponse
+	3, // 4: user.v1.UserService.SignIn:output_type -> user.v1.SignInResponse
+	5, // 5: user.v1.UserService.DeleteUser:output_type -> user.v1.DeleteUserResponse
+	3, // [3:6] is the sub-list for method output_type
+	0, // [0:3] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -303,7 +401,7 @@ func file_user_v1_user_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_user_v1_user_proto_rawDesc), len(file_user_v1_user_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

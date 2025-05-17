@@ -32,8 +32,15 @@ message RefreshTokenResponse {
   string access_token = 1;
 }
 
+message DeleteTokensRequest {
+  string user_id = 1;
+}
+
+message DeleteTokensResponse {}
+
 service AuthService {
   rpc GenerateToken(GenerateTokenRequest) returns (GenerateTokenResponse);
   rpc ValidateToken(ValidateTokenRequest) returns (ValidateTokenResponse);
   rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse);
+  rpc DeleteTokens(DeleteTokensRequest) returns (DeleteTokensResponse);
 }

@@ -117,6 +117,34 @@ export declare type RefreshTokenResponse = Message<"auth.v1.RefreshTokenResponse
 export declare const RefreshTokenResponseSchema: GenMessage<RefreshTokenResponse>;
 
 /**
+ * @generated from message auth.v1.DeleteTokensRequest
+ */
+export declare type DeleteTokensRequest = Message<"auth.v1.DeleteTokensRequest"> & {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId: string;
+};
+
+/**
+ * Describes the message auth.v1.DeleteTokensRequest.
+ * Use `create(DeleteTokensRequestSchema)` to create a new message.
+ */
+export declare const DeleteTokensRequestSchema: GenMessage<DeleteTokensRequest>;
+
+/**
+ * @generated from message auth.v1.DeleteTokensResponse
+ */
+export declare type DeleteTokensResponse = Message<"auth.v1.DeleteTokensResponse"> & {
+};
+
+/**
+ * Describes the message auth.v1.DeleteTokensResponse.
+ * Use `create(DeleteTokensResponseSchema)` to create a new message.
+ */
+export declare const DeleteTokensResponseSchema: GenMessage<DeleteTokensResponse>;
+
+/**
  * @generated from service auth.v1.AuthService
  */
 export declare const AuthService: GenService<{
@@ -143,6 +171,14 @@ export declare const AuthService: GenService<{
     methodKind: "unary";
     input: typeof RefreshTokenRequestSchema;
     output: typeof RefreshTokenResponseSchema;
+  },
+  /**
+   * @generated from rpc auth.v1.AuthService.DeleteTokens
+   */
+  deleteTokens: {
+    methodKind: "unary";
+    input: typeof DeleteTokensRequestSchema;
+    output: typeof DeleteTokensResponseSchema;
   },
 }>;
 

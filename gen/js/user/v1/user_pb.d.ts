@@ -100,6 +100,38 @@ export declare type SignInResponse = Message<"user.v1.SignInResponse"> & {
 export declare const SignInResponseSchema: GenMessage<SignInResponse>;
 
 /**
+ * @generated from message user.v1.DeleteUserReuqest
+ */
+export declare type DeleteUserReuqest = Message<"user.v1.DeleteUserReuqest"> & {
+  /**
+   * @generated from field: string access_token = 1;
+   */
+  accessToken: string;
+};
+
+/**
+ * Describes the message user.v1.DeleteUserReuqest.
+ * Use `create(DeleteUserReuqestSchema)` to create a new message.
+ */
+export declare const DeleteUserReuqestSchema: GenMessage<DeleteUserReuqest>;
+
+/**
+ * @generated from message user.v1.DeleteUserResponse
+ */
+export declare type DeleteUserResponse = Message<"user.v1.DeleteUserResponse"> & {
+  /**
+   * @generated from field: bool is_done = 1;
+   */
+  isDone: boolean;
+};
+
+/**
+ * Describes the message user.v1.DeleteUserResponse.
+ * Use `create(DeleteUserResponseSchema)` to create a new message.
+ */
+export declare const DeleteUserResponseSchema: GenMessage<DeleteUserResponse>;
+
+/**
  * @generated from service user.v1.UserService
  */
 export declare const UserService: GenService<{
@@ -118,6 +150,14 @@ export declare const UserService: GenService<{
     methodKind: "unary";
     input: typeof SignInRequestSchema;
     output: typeof SignInResponseSchema;
+  },
+  /**
+   * @generated from rpc user.v1.UserService.DeleteUser
+   */
+  deleteUser: {
+    methodKind: "unary";
+    input: typeof DeleteUserReuqestSchema;
+    output: typeof DeleteUserResponseSchema;
   },
 }>;
 

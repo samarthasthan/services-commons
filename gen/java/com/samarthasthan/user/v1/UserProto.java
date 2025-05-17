@@ -45,6 +45,16 @@ public final class UserProto {
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_user_v1_SignInResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_user_v1_DeleteUserReuqest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_user_v1_DeleteUserReuqest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_user_v1_DeleteUserResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_user_v1_DeleteUserResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -64,15 +74,19 @@ public final class UserProto {
       "password\030\002 \001(\tB\007\272H\004r\002\020\010R\010password\"q\n\016Sig" +
       "nInResponse\022\027\n\007user_id\030\001 \001(\tR\006userId\022!\n\014" +
       "access_token\030\002 \001(\tR\013accessToken\022#\n\rrefre" +
-      "sh_token\030\003 \001(\tR\014refreshToken2\203\001\n\013UserSer" +
-      "vice\0229\n\006SignUp\022\026.user.v1.SignUpRequest\032\027" +
-      ".user.v1.SignUpResponse\0229\n\006SignIn\022\026.user" +
-      ".v1.SignInRequest\032\027.user.v1.SignInRespon" +
-      "seB\244\001\n\031com.samarthasthan.user.v1B\tUserPr" +
-      "otoP\001Z?github.com/samarthasthan/services" +
-      "-commons/gen/go/user/v1;userv1\242\002\003UXX\252\002\007U" +
-      "ser.V1\312\002\007User\\V1\342\002\023User\\V1\\GPBMetadata\352\002" +
-      "\010User::V1b\006proto3"
+      "sh_token\030\003 \001(\tR\014refreshToken\"6\n\021DeleteUs" +
+      "erReuqest\022!\n\014access_token\030\001 \001(\tR\013accessT" +
+      "oken\"-\n\022DeleteUserResponse\022\027\n\007is_done\030\001 " +
+      "\001(\010R\006isDone2\312\001\n\013UserService\0229\n\006SignUp\022\026." +
+      "user.v1.SignUpRequest\032\027.user.v1.SignUpRe" +
+      "sponse\0229\n\006SignIn\022\026.user.v1.SignInRequest" +
+      "\032\027.user.v1.SignInResponse\022E\n\nDeleteUser\022" +
+      "\032.user.v1.DeleteUserReuqest\032\033.user.v1.De" +
+      "leteUserResponseB\244\001\n\031com.samarthasthan.u" +
+      "ser.v1B\tUserProtoP\001Z?github.com/samartha" +
+      "sthan/services-commons/gen/go/user/v1;us" +
+      "erv1\242\002\003UXX\252\002\007User.V1\312\002\007User\\V1\342\002\023User\\V1" +
+      "\\GPBMetadata\352\002\010User::V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -103,6 +117,18 @@ public final class UserProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_user_v1_SignInResponse_descriptor,
         new java.lang.String[] { "UserId", "AccessToken", "RefreshToken", });
+    internal_static_user_v1_DeleteUserReuqest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_user_v1_DeleteUserReuqest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_user_v1_DeleteUserReuqest_descriptor,
+        new java.lang.String[] { "AccessToken", });
+    internal_static_user_v1_DeleteUserResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_user_v1_DeleteUserResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_user_v1_DeleteUserResponse_descriptor,
+        new java.lang.String[] { "IsDone", });
     descriptor.resolveAllFeaturesImmutable();
     build.buf.validate.ValidateProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =

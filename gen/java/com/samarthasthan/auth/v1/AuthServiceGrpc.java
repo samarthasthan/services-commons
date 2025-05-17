@@ -108,6 +108,37 @@ public final class AuthServiceGrpc {
     return getRefreshTokenMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.samarthasthan.auth.v1.DeleteTokensRequest,
+      com.samarthasthan.auth.v1.DeleteTokensResponse> getDeleteTokensMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteTokens",
+      requestType = com.samarthasthan.auth.v1.DeleteTokensRequest.class,
+      responseType = com.samarthasthan.auth.v1.DeleteTokensResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.samarthasthan.auth.v1.DeleteTokensRequest,
+      com.samarthasthan.auth.v1.DeleteTokensResponse> getDeleteTokensMethod() {
+    io.grpc.MethodDescriptor<com.samarthasthan.auth.v1.DeleteTokensRequest, com.samarthasthan.auth.v1.DeleteTokensResponse> getDeleteTokensMethod;
+    if ((getDeleteTokensMethod = AuthServiceGrpc.getDeleteTokensMethod) == null) {
+      synchronized (AuthServiceGrpc.class) {
+        if ((getDeleteTokensMethod = AuthServiceGrpc.getDeleteTokensMethod) == null) {
+          AuthServiceGrpc.getDeleteTokensMethod = getDeleteTokensMethod =
+              io.grpc.MethodDescriptor.<com.samarthasthan.auth.v1.DeleteTokensRequest, com.samarthasthan.auth.v1.DeleteTokensResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteTokens"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.samarthasthan.auth.v1.DeleteTokensRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.samarthasthan.auth.v1.DeleteTokensResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("DeleteTokens"))
+              .build();
+        }
+      }
+    }
+    return getDeleteTokensMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -191,6 +222,13 @@ public final class AuthServiceGrpc {
         io.grpc.stub.StreamObserver<com.samarthasthan.auth.v1.RefreshTokenResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRefreshTokenMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void deleteTokens(com.samarthasthan.auth.v1.DeleteTokensRequest request,
+        io.grpc.stub.StreamObserver<com.samarthasthan.auth.v1.DeleteTokensResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteTokensMethod(), responseObserver);
+    }
   }
 
   /**
@@ -243,6 +281,14 @@ public final class AuthServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRefreshTokenMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void deleteTokens(com.samarthasthan.auth.v1.DeleteTokensRequest request,
+        io.grpc.stub.StreamObserver<com.samarthasthan.auth.v1.DeleteTokensResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteTokensMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -281,6 +327,13 @@ public final class AuthServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRefreshTokenMethod(), getCallOptions(), request);
     }
+
+    /**
+     */
+    public com.samarthasthan.auth.v1.DeleteTokensResponse deleteTokens(com.samarthasthan.auth.v1.DeleteTokensRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTokensMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -318,6 +371,13 @@ public final class AuthServiceGrpc {
     public com.samarthasthan.auth.v1.RefreshTokenResponse refreshToken(com.samarthasthan.auth.v1.RefreshTokenRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRefreshTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.samarthasthan.auth.v1.DeleteTokensResponse deleteTokens(com.samarthasthan.auth.v1.DeleteTokensRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTokensMethod(), getCallOptions(), request);
     }
   }
 
@@ -360,11 +420,20 @@ public final class AuthServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRefreshTokenMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.samarthasthan.auth.v1.DeleteTokensResponse> deleteTokens(
+        com.samarthasthan.auth.v1.DeleteTokensRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteTokensMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GENERATE_TOKEN = 0;
   private static final int METHODID_VALIDATE_TOKEN = 1;
   private static final int METHODID_REFRESH_TOKEN = 2;
+  private static final int METHODID_DELETE_TOKENS = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -394,6 +463,10 @@ public final class AuthServiceGrpc {
         case METHODID_REFRESH_TOKEN:
           serviceImpl.refreshToken((com.samarthasthan.auth.v1.RefreshTokenRequest) request,
               (io.grpc.stub.StreamObserver<com.samarthasthan.auth.v1.RefreshTokenResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_TOKENS:
+          serviceImpl.deleteTokens((com.samarthasthan.auth.v1.DeleteTokensRequest) request,
+              (io.grpc.stub.StreamObserver<com.samarthasthan.auth.v1.DeleteTokensResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -434,6 +507,13 @@ public final class AuthServiceGrpc {
               com.samarthasthan.auth.v1.RefreshTokenRequest,
               com.samarthasthan.auth.v1.RefreshTokenResponse>(
                 service, METHODID_REFRESH_TOKEN)))
+        .addMethod(
+          getDeleteTokensMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.samarthasthan.auth.v1.DeleteTokensRequest,
+              com.samarthasthan.auth.v1.DeleteTokensResponse>(
+                service, METHODID_DELETE_TOKENS)))
         .build();
   }
 
@@ -485,6 +565,7 @@ public final class AuthServiceGrpc {
               .addMethod(getGenerateTokenMethod())
               .addMethod(getValidateTokenMethod())
               .addMethod(getRefreshTokenMethod())
+              .addMethod(getDeleteTokensMethod())
               .build();
         }
       }

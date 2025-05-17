@@ -9,7 +9,7 @@ import { file_buf_validate_validate } from "../../buf/validate/validate_pb";
  * Describes the file user/v1/user.proto.
  */
 export const file_user_v1_user = /*@__PURE__*/
-  fileDesc("ChJ1c2VyL3YxL3VzZXIucHJvdG8SB3VzZXIudjEiYgoNU2lnblVwUmVxdWVzdBIWCgVlbWFpbBgBIAEoCUIHukgEcgJgARIbCghwYXNzd29yZBgCIAEoCUIJukgGcgQQCBggEhwKCWZ1bGxfbmFtZRgDIAEoCUIJukgGcgQQARhkIiEKDlNpZ25VcFJlc3BvbnNlEg8KB3VzZXJfaWQYASABKAkiQgoNU2lnbkluUmVxdWVzdBIWCgVlbWFpbBgBIAEoCUIHukgEcgJgARIZCghwYXNzd29yZBgCIAEoCUIHukgEcgIQCCJOCg5TaWduSW5SZXNwb25zZRIPCgd1c2VyX2lkGAEgASgJEhQKDGFjY2Vzc190b2tlbhgCIAEoCRIVCg1yZWZyZXNoX3Rva2VuGAMgASgJMoMBCgtVc2VyU2VydmljZRI5CgZTaWduVXASFi51c2VyLnYxLlNpZ25VcFJlcXVlc3QaFy51c2VyLnYxLlNpZ25VcFJlc3BvbnNlEjkKBlNpZ25JbhIWLnVzZXIudjEuU2lnbkluUmVxdWVzdBoXLnVzZXIudjEuU2lnbkluUmVzcG9uc2VCpAEKGWNvbS5zYW1hcnRoYXN0aGFuLnVzZXIudjFCCVVzZXJQcm90b1ABWj9naXRodWIuY29tL3NhbWFydGhhc3RoYW4vc2VydmljZXMtY29tbW9ucy9nZW4vZ28vdXNlci92MTt1c2VydjGiAgNVWFiqAgdVc2VyLlYxygIHVXNlclxWMeICE1VzZXJcVjFcR1BCTWV0YWRhdGHqAghVc2VyOjpWMWIGcHJvdG8z", [file_buf_validate_validate]);
+  fileDesc("ChJ1c2VyL3YxL3VzZXIucHJvdG8SB3VzZXIudjEiYgoNU2lnblVwUmVxdWVzdBIWCgVlbWFpbBgBIAEoCUIHukgEcgJgARIbCghwYXNzd29yZBgCIAEoCUIJukgGcgQQCBggEhwKCWZ1bGxfbmFtZRgDIAEoCUIJukgGcgQQARhkIiEKDlNpZ25VcFJlc3BvbnNlEg8KB3VzZXJfaWQYASABKAkiQgoNU2lnbkluUmVxdWVzdBIWCgVlbWFpbBgBIAEoCUIHukgEcgJgARIZCghwYXNzd29yZBgCIAEoCUIHukgEcgIQCCJOCg5TaWduSW5SZXNwb25zZRIPCgd1c2VyX2lkGAEgASgJEhQKDGFjY2Vzc190b2tlbhgCIAEoCRIVCg1yZWZyZXNoX3Rva2VuGAMgASgJIikKEURlbGV0ZVVzZXJSZXVxZXN0EhQKDGFjY2Vzc190b2tlbhgBIAEoCSIlChJEZWxldGVVc2VyUmVzcG9uc2USDwoHaXNfZG9uZRgBIAEoCDLKAQoLVXNlclNlcnZpY2USOQoGU2lnblVwEhYudXNlci52MS5TaWduVXBSZXF1ZXN0GhcudXNlci52MS5TaWduVXBSZXNwb25zZRI5CgZTaWduSW4SFi51c2VyLnYxLlNpZ25JblJlcXVlc3QaFy51c2VyLnYxLlNpZ25JblJlc3BvbnNlEkUKCkRlbGV0ZVVzZXISGi51c2VyLnYxLkRlbGV0ZVVzZXJSZXVxZXN0GhsudXNlci52MS5EZWxldGVVc2VyUmVzcG9uc2VCpAEKGWNvbS5zYW1hcnRoYXN0aGFuLnVzZXIudjFCCVVzZXJQcm90b1ABWj9naXRodWIuY29tL3NhbWFydGhhc3RoYW4vc2VydmljZXMtY29tbW9ucy9nZW4vZ28vdXNlci92MTt1c2VydjGiAgNVWFiqAgdVc2VyLlYxygIHVXNlclxWMeICE1VzZXJcVjFcR1BCTWV0YWRhdGHqAghVc2VyOjpWMWIGcHJvdG8z", [file_buf_validate_validate]);
 
 /**
  * Describes the message user.v1.SignUpRequest.
@@ -38,6 +38,20 @@ export const SignInRequestSchema = /*@__PURE__*/
  */
 export const SignInResponseSchema = /*@__PURE__*/
   messageDesc(file_user_v1_user, 3);
+
+/**
+ * Describes the message user.v1.DeleteUserReuqest.
+ * Use `create(DeleteUserReuqestSchema)` to create a new message.
+ */
+export const DeleteUserReuqestSchema = /*@__PURE__*/
+  messageDesc(file_user_v1_user, 4);
+
+/**
+ * Describes the message user.v1.DeleteUserResponse.
+ * Use `create(DeleteUserResponseSchema)` to create a new message.
+ */
+export const DeleteUserResponseSchema = /*@__PURE__*/
+  messageDesc(file_user_v1_user, 5);
 
 /**
  * @generated from service user.v1.UserService

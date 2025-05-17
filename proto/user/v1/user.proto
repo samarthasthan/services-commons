@@ -6,12 +6,16 @@ import "buf/validate/validate.proto";
 
 option go_package = "github.com/samarthasthan/services-commons/gen/go/user/v1;userv1";
 
-
-
 message SignUpRequest {
   string email = 1 [(buf.validate.field).string.email = true];
-  string password = 2 [(buf.validate.field).string = {min_len: 8, max_len: 32}];
-  string full_name = 3 [(buf.validate.field).string = {min_len: 1, max_len: 100}];
+  string password = 2 [(buf.validate.field).string = {
+    min_len: 8
+    max_len: 32
+  }];
+  string full_name = 3 [(buf.validate.field).string = {
+    min_len: 1
+    max_len: 100
+  }];
 }
 
 message SignUpResponse {
@@ -29,7 +33,16 @@ message SignInResponse {
   string refresh_token = 3;
 }
 
+message DeleteUserReuqest {
+  string access_token = 1;
+}
+
+message DeleteUserResponse {
+  bool is_done = 1;
+}
+
 service UserService {
   rpc SignUp(SignUpRequest) returns (SignUpResponse);
   rpc SignIn(SignInRequest) returns (SignInResponse);
+  rpc DeleteUser(DeleteUserReuqest) returns (DeleteUserResponse);
 }

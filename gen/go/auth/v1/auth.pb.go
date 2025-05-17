@@ -302,6 +302,86 @@ func (x *RefreshTokenResponse) GetAccessToken() string {
 	return ""
 }
 
+type DeleteTokensRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteTokensRequest) Reset() {
+	*x = DeleteTokensRequest{}
+	mi := &file_auth_v1_auth_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteTokensRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteTokensRequest) ProtoMessage() {}
+
+func (x *DeleteTokensRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_auth_v1_auth_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteTokensRequest.ProtoReflect.Descriptor instead.
+func (*DeleteTokensRequest) Descriptor() ([]byte, []int) {
+	return file_auth_v1_auth_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *DeleteTokensRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+type DeleteTokensResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteTokensResponse) Reset() {
+	*x = DeleteTokensResponse{}
+	mi := &file_auth_v1_auth_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteTokensResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteTokensResponse) ProtoMessage() {}
+
+func (x *DeleteTokensResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_auth_v1_auth_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteTokensResponse.ProtoReflect.Descriptor instead.
+func (*DeleteTokensResponse) Descriptor() ([]byte, []int) {
+	return file_auth_v1_auth_proto_rawDescGZIP(), []int{7}
+}
+
 var File_auth_v1_auth_proto protoreflect.FileDescriptor
 
 const file_auth_v1_auth_proto_rawDesc = "" +
@@ -322,11 +402,15 @@ const file_auth_v1_auth_proto_rawDesc = "" +
 	"\rrefresh_token\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\n" +
 	"R\frefreshToken\"9\n" +
 	"\x14RefreshTokenResponse\x12!\n" +
-	"\faccess_token\x18\x01 \x01(\tR\vaccessToken2\xfa\x01\n" +
+	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\".\n" +
+	"\x13DeleteTokensRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\"\x16\n" +
+	"\x14DeleteTokensResponse2\xc7\x02\n" +
 	"\vAuthService\x12N\n" +
 	"\rGenerateToken\x12\x1d.auth.v1.GenerateTokenRequest\x1a\x1e.auth.v1.GenerateTokenResponse\x12N\n" +
 	"\rValidateToken\x12\x1d.auth.v1.ValidateTokenRequest\x1a\x1e.auth.v1.ValidateTokenResponse\x12K\n" +
-	"\fRefreshToken\x12\x1c.auth.v1.RefreshTokenRequest\x1a\x1d.auth.v1.RefreshTokenResponseB\xa4\x01\n" +
+	"\fRefreshToken\x12\x1c.auth.v1.RefreshTokenRequest\x1a\x1d.auth.v1.RefreshTokenResponse\x12K\n" +
+	"\fDeleteTokens\x12\x1c.auth.v1.DeleteTokensRequest\x1a\x1d.auth.v1.DeleteTokensResponseB\xa4\x01\n" +
 	"\x19com.samarthasthan.auth.v1B\tAuthProtoP\x01Z?github.com/samarthasthan/services-commons/gen/go/auth/v1;authv1\xa2\x02\x03AXX\xaa\x02\aAuth.V1\xca\x02\aAuth\\V1\xe2\x02\x13Auth\\V1\\GPBMetadata\xea\x02\bAuth::V1b\x06proto3"
 
 var (
@@ -341,7 +425,7 @@ func file_auth_v1_auth_proto_rawDescGZIP() []byte {
 	return file_auth_v1_auth_proto_rawDescData
 }
 
-var file_auth_v1_auth_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_auth_v1_auth_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_auth_v1_auth_proto_goTypes = []any{
 	(*GenerateTokenRequest)(nil),  // 0: auth.v1.GenerateTokenRequest
 	(*GenerateTokenResponse)(nil), // 1: auth.v1.GenerateTokenResponse
@@ -349,16 +433,20 @@ var file_auth_v1_auth_proto_goTypes = []any{
 	(*ValidateTokenResponse)(nil), // 3: auth.v1.ValidateTokenResponse
 	(*RefreshTokenRequest)(nil),   // 4: auth.v1.RefreshTokenRequest
 	(*RefreshTokenResponse)(nil),  // 5: auth.v1.RefreshTokenResponse
+	(*DeleteTokensRequest)(nil),   // 6: auth.v1.DeleteTokensRequest
+	(*DeleteTokensResponse)(nil),  // 7: auth.v1.DeleteTokensResponse
 }
 var file_auth_v1_auth_proto_depIdxs = []int32{
 	0, // 0: auth.v1.AuthService.GenerateToken:input_type -> auth.v1.GenerateTokenRequest
 	2, // 1: auth.v1.AuthService.ValidateToken:input_type -> auth.v1.ValidateTokenRequest
 	4, // 2: auth.v1.AuthService.RefreshToken:input_type -> auth.v1.RefreshTokenRequest
-	1, // 3: auth.v1.AuthService.GenerateToken:output_type -> auth.v1.GenerateTokenResponse
-	3, // 4: auth.v1.AuthService.ValidateToken:output_type -> auth.v1.ValidateTokenResponse
-	5, // 5: auth.v1.AuthService.RefreshToken:output_type -> auth.v1.RefreshTokenResponse
-	3, // [3:6] is the sub-list for method output_type
-	0, // [0:3] is the sub-list for method input_type
+	6, // 3: auth.v1.AuthService.DeleteTokens:input_type -> auth.v1.DeleteTokensRequest
+	1, // 4: auth.v1.AuthService.GenerateToken:output_type -> auth.v1.GenerateTokenResponse
+	3, // 5: auth.v1.AuthService.ValidateToken:output_type -> auth.v1.ValidateTokenResponse
+	5, // 6: auth.v1.AuthService.RefreshToken:output_type -> auth.v1.RefreshTokenResponse
+	7, // 7: auth.v1.AuthService.DeleteTokens:output_type -> auth.v1.DeleteTokensResponse
+	4, // [4:8] is the sub-list for method output_type
+	0, // [0:4] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -375,7 +463,7 @@ func file_auth_v1_auth_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_auth_v1_auth_proto_rawDesc), len(file_auth_v1_auth_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   6,
+			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
