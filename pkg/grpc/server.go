@@ -11,14 +11,14 @@ type Server struct {
 	*grpc.Server
 }
 
-func NewServer(addr string) (*Server, error) {
+func NewServer(addr string, opts ...grpc.ServerOption) (*Server, error) {
 	listener, err := net.Listen("tcp", addr)
 	if err != nil {
 		return nil, err
 	}
 	return &Server{
 		Listener: listener,
-		Server:   grpc.NewServer(),
+		Server:   grpc.NewServer(opts...),
 	}, nil
 }
 
