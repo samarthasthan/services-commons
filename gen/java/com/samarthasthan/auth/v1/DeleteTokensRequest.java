@@ -27,7 +27,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private DeleteTokensRequest() {
-    accessToken_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -41,45 +40,6 @@ private static final long serialVersionUID = 0L;
     return com.samarthasthan.auth.v1.AuthProto.internal_static_auth_v1_DeleteTokensRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.samarthasthan.auth.v1.DeleteTokensRequest.class, com.samarthasthan.auth.v1.DeleteTokensRequest.Builder.class);
-  }
-
-  public static final int ACCESS_TOKEN_FIELD_NUMBER = 1;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object accessToken_ = "";
-  /**
-   * <code>string access_token = 1 [json_name = "accessToken"];</code>
-   * @return The accessToken.
-   */
-  @java.lang.Override
-  public java.lang.String getAccessToken() {
-    java.lang.Object ref = accessToken_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      accessToken_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string access_token = 1 [json_name = "accessToken"];</code>
-   * @return The bytes for accessToken.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getAccessTokenBytes() {
-    java.lang.Object ref = accessToken_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      accessToken_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -96,9 +56,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(accessToken_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 1, accessToken_);
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -108,9 +65,6 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(accessToken_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, accessToken_);
-    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -126,8 +80,6 @@ private static final long serialVersionUID = 0L;
     }
     com.samarthasthan.auth.v1.DeleteTokensRequest other = (com.samarthasthan.auth.v1.DeleteTokensRequest) obj;
 
-    if (!getAccessToken()
-        .equals(other.getAccessToken())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -139,8 +91,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ACCESS_TOKEN_FIELD_NUMBER;
-    hash = (53 * hash) + getAccessToken().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -271,8 +221,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      bitField0_ = 0;
-      accessToken_ = "";
       return this;
     }
 
@@ -299,16 +247,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.samarthasthan.auth.v1.DeleteTokensRequest buildPartial() {
       com.samarthasthan.auth.v1.DeleteTokensRequest result = new com.samarthasthan.auth.v1.DeleteTokensRequest(this);
-      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
-    }
-
-    private void buildPartial0(com.samarthasthan.auth.v1.DeleteTokensRequest result) {
-      int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.accessToken_ = accessToken_;
-      }
     }
 
     @java.lang.Override
@@ -323,11 +263,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.samarthasthan.auth.v1.DeleteTokensRequest other) {
       if (other == com.samarthasthan.auth.v1.DeleteTokensRequest.getDefaultInstance()) return this;
-      if (!other.getAccessToken().isEmpty()) {
-        accessToken_ = other.accessToken_;
-        bitField0_ |= 0x00000001;
-        onChanged();
-      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -354,11 +289,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              accessToken_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              break;
-            } // case 10
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -372,79 +302,6 @@ private static final long serialVersionUID = 0L;
       } finally {
         onChanged();
       } // finally
-      return this;
-    }
-    private int bitField0_;
-
-    private java.lang.Object accessToken_ = "";
-    /**
-     * <code>string access_token = 1 [json_name = "accessToken"];</code>
-     * @return The accessToken.
-     */
-    public java.lang.String getAccessToken() {
-      java.lang.Object ref = accessToken_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        accessToken_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string access_token = 1 [json_name = "accessToken"];</code>
-     * @return The bytes for accessToken.
-     */
-    public com.google.protobuf.ByteString
-        getAccessTokenBytes() {
-      java.lang.Object ref = accessToken_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        accessToken_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string access_token = 1 [json_name = "accessToken"];</code>
-     * @param value The accessToken to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAccessToken(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      accessToken_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string access_token = 1 [json_name = "accessToken"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearAccessToken() {
-      accessToken_ = getDefaultInstance().getAccessToken();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string access_token = 1 [json_name = "accessToken"];</code>
-     * @param value The bytes for accessToken to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAccessTokenBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      accessToken_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
       return this;
     }
 

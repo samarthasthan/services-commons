@@ -103,10 +103,6 @@ export declare const SignInResponseSchema: GenMessage<SignInResponse>;
  * @generated from message user.v1.DeleteUserReuqest
  */
 export declare type DeleteUserReuqest = Message<"user.v1.DeleteUserReuqest"> & {
-  /**
-   * @generated from field: string access_token = 1;
-   */
-  accessToken: string;
 };
 
 /**

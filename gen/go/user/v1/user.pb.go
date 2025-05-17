@@ -240,7 +240,6 @@ func (x *SignInResponse) GetRefreshToken() string {
 
 type DeleteUserReuqest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	AccessToken   string                 `protobuf:"bytes,1,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -273,13 +272,6 @@ func (x *DeleteUserReuqest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use DeleteUserReuqest.ProtoReflect.Descriptor instead.
 func (*DeleteUserReuqest) Descriptor() ([]byte, []int) {
 	return file_user_v1_user_proto_rawDescGZIP(), []int{4}
-}
-
-func (x *DeleteUserReuqest) GetAccessToken() string {
-	if x != nil {
-		return x.AccessToken
-	}
-	return ""
 }
 
 type DeleteUserResponse struct {
@@ -343,9 +335,8 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\x0eSignInResponse\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12!\n" +
 	"\faccess_token\x18\x02 \x01(\tR\vaccessToken\x12#\n" +
-	"\rrefresh_token\x18\x03 \x01(\tR\frefreshToken\"6\n" +
-	"\x11DeleteUserReuqest\x12!\n" +
-	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\"-\n" +
+	"\rrefresh_token\x18\x03 \x01(\tR\frefreshToken\"\x13\n" +
+	"\x11DeleteUserReuqest\"-\n" +
 	"\x12DeleteUserResponse\x12\x17\n" +
 	"\ais_done\x18\x01 \x01(\bR\x06isDone2\xca\x01\n" +
 	"\vUserService\x129\n" +

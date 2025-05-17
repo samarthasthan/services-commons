@@ -33,9 +33,7 @@ message SignInResponse {
   string refresh_token = 3;
 }
 
-message DeleteUserReuqest {
-  string access_token = 1;
-}
+message DeleteUserReuqest {}
 
 message DeleteUserResponse {
   bool is_done = 1;

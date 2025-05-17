@@ -8,16 +8,4 @@ package com.samarthasthan.auth.v1;
 public interface RefreshTokenRequestOrBuilder extends
     // @@protoc_insertion_point(interface_extends:auth.v1.RefreshTokenRequest)
     com.google.protobuf.MessageOrBuilder {
-
-  /**
-   * <code>string refresh_token = 1 [json_name = "refreshToken", (.buf.validate.field) = { ... }</code>
-   * @return The refreshToken.
-   */
-  java.lang.String getRefreshToken();
-  /**
-   * <code>string refresh_token = 1 [json_name = "refreshToken", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for refreshToken.
-   */
-  com.google.protobuf.ByteString
-      getRefreshTokenBytes();
 }

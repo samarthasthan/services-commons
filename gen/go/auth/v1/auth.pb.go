@@ -120,7 +120,6 @@ func (x *GenerateTokenResponse) GetRefreshToken() string {
 
 type ValidateTokenRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	AccessToken   string                 `protobuf:"bytes,1,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -153,13 +152,6 @@ func (x *ValidateTokenRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use ValidateTokenRequest.ProtoReflect.Descriptor instead.
 func (*ValidateTokenRequest) Descriptor() ([]byte, []int) {
 	return file_auth_v1_auth_proto_rawDescGZIP(), []int{2}
-}
-
-func (x *ValidateTokenRequest) GetAccessToken() string {
-	if x != nil {
-		return x.AccessToken
-	}
-	return ""
 }
 
 type ValidateTokenResponse struct {
@@ -216,7 +208,6 @@ func (x *ValidateTokenResponse) GetIsValid() bool {
 
 type RefreshTokenRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	RefreshToken  string                 `protobuf:"bytes,1,opt,name=refresh_token,json=refreshToken,proto3" json:"refresh_token,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -249,13 +240,6 @@ func (x *RefreshTokenRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use RefreshTokenRequest.ProtoReflect.Descriptor instead.
 func (*RefreshTokenRequest) Descriptor() ([]byte, []int) {
 	return file_auth_v1_auth_proto_rawDescGZIP(), []int{4}
-}
-
-func (x *RefreshTokenRequest) GetRefreshToken() string {
-	if x != nil {
-		return x.RefreshToken
-	}
-	return ""
 }
 
 type RefreshTokenResponse struct {
@@ -304,7 +288,6 @@ func (x *RefreshTokenResponse) GetAccessToken() string {
 
 type DeleteTokensRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	AccessToken   string                 `protobuf:"bytes,1,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -337,13 +320,6 @@ func (x *DeleteTokensRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use DeleteTokensRequest.ProtoReflect.Descriptor instead.
 func (*DeleteTokensRequest) Descriptor() ([]byte, []int) {
 	return file_auth_v1_auth_proto_rawDescGZIP(), []int{6}
-}
-
-func (x *DeleteTokensRequest) GetAccessToken() string {
-	if x != nil {
-		return x.AccessToken
-	}
-	return ""
 }
 
 type DeleteTokensResponse struct {
@@ -391,20 +367,15 @@ const file_auth_v1_auth_proto_rawDesc = "" +
 	"\auser_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x06userId\"_\n" +
 	"\x15GenerateTokenResponse\x12!\n" +
 	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\x12#\n" +
-	"\rrefresh_token\x18\x02 \x01(\tR\frefreshToken\"B\n" +
-	"\x14ValidateTokenRequest\x12*\n" +
-	"\faccess_token\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\n" +
-	"R\vaccessToken\"K\n" +
+	"\rrefresh_token\x18\x02 \x01(\tR\frefreshToken\"\x16\n" +
+	"\x14ValidateTokenRequest\"K\n" +
 	"\x15ValidateTokenResponse\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x19\n" +
-	"\bis_valid\x18\x03 \x01(\bR\aisValid\"C\n" +
-	"\x13RefreshTokenRequest\x12,\n" +
-	"\rrefresh_token\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\n" +
-	"R\frefreshToken\"9\n" +
+	"\bis_valid\x18\x03 \x01(\bR\aisValid\"\x15\n" +
+	"\x13RefreshTokenRequest\"9\n" +
 	"\x14RefreshTokenResponse\x12!\n" +
-	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\"8\n" +
-	"\x13DeleteTokensRequest\x12!\n" +
-	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\"\x16\n" +
+	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\"\x15\n" +
+	"\x13DeleteTokensRequest\"\x16\n" +
 	"\x14DeleteTokensResponse2\xc7\x02\n" +
 	"\vAuthService\x12N\n" +
 	"\rGenerateToken\x12\x1d.auth.v1.GenerateTokenRequest\x1a\x1e.auth.v1.GenerateTokenResponse\x12N\n" +

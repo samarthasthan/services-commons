@@ -51,10 +51,6 @@ export declare const GenerateTokenResponseSchema: GenMessage<GenerateTokenRespon
  * @generated from message auth.v1.ValidateTokenRequest
  */
 export declare type ValidateTokenRequest = Message<"auth.v1.ValidateTokenRequest"> & {
-  /**
-   * @generated from field: string access_token = 1;
-   */
-  accessToken: string;
 };
 
 /**
@@ -88,10 +84,6 @@ export declare const ValidateTokenResponseSchema: GenMessage<ValidateTokenRespon
  * @generated from message auth.v1.RefreshTokenRequest
  */
 export declare type RefreshTokenRequest = Message<"auth.v1.RefreshTokenRequest"> & {
-  /**
-   * @generated from field: string refresh_token = 1;
-   */
-  refreshToken: string;
 };
 
 /**
@@ -120,10 +112,6 @@ export declare const RefreshTokenResponseSchema: GenMessage<RefreshTokenResponse
  * @generated from message auth.v1.DeleteTokensRequest
  */
 export declare type DeleteTokensRequest = Message<"auth.v1.DeleteTokensRequest"> & {
-  /**
-   * @generated from field: string access_token = 1;
-   */
-  accessToken: string;
 };
 
 /**

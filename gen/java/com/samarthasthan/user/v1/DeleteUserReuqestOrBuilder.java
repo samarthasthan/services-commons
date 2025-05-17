@@ -8,16 +8,4 @@ package com.samarthasthan.user.v1;
 public interface DeleteUserReuqestOrBuilder extends
     // @@protoc_insertion_point(interface_extends:user.v1.DeleteUserReuqest)
     com.google.protobuf.MessageOrBuilder {
-
-  /**
-   * <code>string access_token = 1 [json_name = "accessToken"];</code>
-   * @return The accessToken.
-   */
-  java.lang.String getAccessToken();
-  /**
-   * <code>string access_token = 1 [json_name = "accessToken"];</code>
-   * @return The bytes for accessToken.
-   */
-  com.google.protobuf.ByteString
-      getAccessTokenBytes();
 }

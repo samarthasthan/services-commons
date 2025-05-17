@@ -8,16 +8,4 @@ package com.samarthasthan.auth.v1;
 public interface DeleteTokensRequestOrBuilder extends
     // @@protoc_insertion_point(interface_extends:auth.v1.DeleteTokensRequest)
     com.google.protobuf.MessageOrBuilder {
-
-  /**
-   * <code>string access_token = 1 [json_name = "accessToken"];</code>
-   * @return The accessToken.
-   */
-  java.lang.String getAccessToken();
-  /**
-   * <code>string access_token = 1 [json_name = "accessToken"];</code>
-   * @return The bytes for accessToken.
-   */
-  com.google.protobuf.ByteString
-      getAccessTokenBytes();
 }

@@ -27,7 +27,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private RefreshTokenRequest() {
-    refreshToken_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -41,45 +40,6 @@ private static final long serialVersionUID = 0L;
     return com.samarthasthan.auth.v1.AuthProto.internal_static_auth_v1_RefreshTokenRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.samarthasthan.auth.v1.RefreshTokenRequest.class, com.samarthasthan.auth.v1.RefreshTokenRequest.Builder.class);
-  }
-
-  public static final int REFRESH_TOKEN_FIELD_NUMBER = 1;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object refreshToken_ = "";
-  /**
-   * <code>string refresh_token = 1 [json_name = "refreshToken", (.buf.validate.field) = { ... }</code>
-   * @return The refreshToken.
-   */
-  @java.lang.Override
-  public java.lang.String getRefreshToken() {
-    java.lang.Object ref = refreshToken_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      refreshToken_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string refresh_token = 1 [json_name = "refreshToken", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for refreshToken.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getRefreshTokenBytes() {
-    java.lang.Object ref = refreshToken_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      refreshToken_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -96,9 +56,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(refreshToken_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 1, refreshToken_);
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -108,9 +65,6 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(refreshToken_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, refreshToken_);
-    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -126,8 +80,6 @@ private static final long serialVersionUID = 0L;
     }
     com.samarthasthan.auth.v1.RefreshTokenRequest other = (com.samarthasthan.auth.v1.RefreshTokenRequest) obj;
 
-    if (!getRefreshToken()
-        .equals(other.getRefreshToken())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -139,8 +91,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + REFRESH_TOKEN_FIELD_NUMBER;
-    hash = (53 * hash) + getRefreshToken().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -271,8 +221,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      bitField0_ = 0;
-      refreshToken_ = "";
       return this;
     }
 
@@ -299,16 +247,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.samarthasthan.auth.v1.RefreshTokenRequest buildPartial() {
       com.samarthasthan.auth.v1.RefreshTokenRequest result = new com.samarthasthan.auth.v1.RefreshTokenRequest(this);
-      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
-    }
-
-    private void buildPartial0(com.samarthasthan.auth.v1.RefreshTokenRequest result) {
-      int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.refreshToken_ = refreshToken_;
-      }
     }
 
     @java.lang.Override
@@ -323,11 +263,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.samarthasthan.auth.v1.RefreshTokenRequest other) {
       if (other == com.samarthasthan.auth.v1.RefreshTokenRequest.getDefaultInstance()) return this;
-      if (!other.getRefreshToken().isEmpty()) {
-        refreshToken_ = other.refreshToken_;
-        bitField0_ |= 0x00000001;
-        onChanged();
-      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -354,11 +289,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              refreshToken_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              break;
-            } // case 10
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -372,79 +302,6 @@ private static final long serialVersionUID = 0L;
       } finally {
         onChanged();
       } // finally
-      return this;
-    }
-    private int bitField0_;
-
-    private java.lang.Object refreshToken_ = "";
-    /**
-     * <code>string refresh_token = 1 [json_name = "refreshToken", (.buf.validate.field) = { ... }</code>
-     * @return The refreshToken.
-     */
-    public java.lang.String getRefreshToken() {
-      java.lang.Object ref = refreshToken_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        refreshToken_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string refresh_token = 1 [json_name = "refreshToken", (.buf.validate.field) = { ... }</code>
-     * @return The bytes for refreshToken.
-     */
-    public com.google.protobuf.ByteString
-        getRefreshTokenBytes() {
-      java.lang.Object ref = refreshToken_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        refreshToken_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string refresh_token = 1 [json_name = "refreshToken", (.buf.validate.field) = { ... }</code>
-     * @param value The refreshToken to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRefreshToken(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      refreshToken_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string refresh_token = 1 [json_name = "refreshToken", (.buf.validate.field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearRefreshToken() {
-      refreshToken_ = getDefaultInstance().getRefreshToken();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string refresh_token = 1 [json_name = "refreshToken", (.buf.validate.field) = { ... }</code>
-     * @param value The bytes for refreshToken to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRefreshTokenBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      refreshToken_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
       return this;
     }
 
