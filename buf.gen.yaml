@@ -22,9 +22,5 @@ plugins:
     opt: paths=source_relative
   - remote: buf.build/protocolbuffers/java:v29.3
     out: gen/java
-  - remote: buf.build/grpc/java:v1.70.0
-    out: gen/java
-  - remote: buf.build/bufbuild/es:v2.3.0
-    out: gen/js
 inputs:
   - directory: proto
