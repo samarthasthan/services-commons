@@ -100,6 +100,11 @@ export declare type RefreshTokenResponse = Message<"auth.v1.RefreshTokenResponse
    * @generated from field: string access_token = 1;
    */
   accessToken: string;
+
+  /**
+   * @generated from field: string refresh_token = 2;
+   */
+  refreshToken: string;
 };
 
 /**

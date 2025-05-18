@@ -245,6 +245,7 @@ func (*RefreshTokenRequest) Descriptor() ([]byte, []int) {
 type RefreshTokenResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	AccessToken   string                 `protobuf:"bytes,1,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
+	RefreshToken  string                 `protobuf:"bytes,2,opt,name=refresh_token,json=refreshToken,proto3" json:"refresh_token,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -282,6 +283,13 @@ func (*RefreshTokenResponse) Descriptor() ([]byte, []int) {
 func (x *RefreshTokenResponse) GetAccessToken() string {
 	if x != nil {
 		return x.AccessToken
+	}
+	return ""
+}
+
+func (x *RefreshTokenResponse) GetRefreshToken() string {
+	if x != nil {
+		return x.RefreshToken
 	}
 	return ""
 }
@@ -372,9 +380,10 @@ const file_auth_v1_auth_proto_rawDesc = "" +
 	"\x15ValidateTokenResponse\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x19\n" +
 	"\bis_valid\x18\x03 \x01(\bR\aisValid\"\x15\n" +
-	"\x13RefreshTokenRequest\"9\n" +
+	"\x13RefreshTokenRequest\"^\n" +
 	"\x14RefreshTokenResponse\x12!\n" +
-	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\"\x15\n" +
+	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\x12#\n" +
+	"\rrefresh_token\x18\x02 \x01(\tR\frefreshToken\"\x15\n" +
 	"\x13DeleteTokensRequest\"\x16\n" +
 	"\x14DeleteTokensResponse2\xc7\x02\n" +
 	"\vAuthService\x12N\n" +

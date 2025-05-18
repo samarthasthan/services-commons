@@ -33,7 +33,7 @@ message SignInResponse {
   string refresh_token = 3;
 }
 
-message DeleteUserReuqest {}
+message DeleteUserRequest {}
 
 message DeleteUserResponse {
   bool is_done = 1;
@@ -42,5 +42,5 @@ message DeleteUserResponse {
 service UserService {
   rpc SignUp(SignUpRequest) returns (SignUpResponse);
   rpc SignIn(SignInRequest) returns (SignInResponse);
-  rpc DeleteUser(DeleteUserReuqest) returns (DeleteUserResponse);
+  rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse);
 }

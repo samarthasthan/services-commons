@@ -238,26 +238,26 @@ func (x *SignInResponse) GetRefreshToken() string {
 	return ""
 }
 
-type DeleteUserReuqest struct {
+type DeleteUserRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *DeleteUserReuqest) Reset() {
-	*x = DeleteUserReuqest{}
+func (x *DeleteUserRequest) Reset() {
+	*x = DeleteUserRequest{}
 	mi := &file_user_v1_user_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *DeleteUserReuqest) String() string {
+func (x *DeleteUserRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DeleteUserReuqest) ProtoMessage() {}
+func (*DeleteUserRequest) ProtoMessage() {}
 
-func (x *DeleteUserReuqest) ProtoReflect() protoreflect.Message {
+func (x *DeleteUserRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_user_v1_user_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -269,8 +269,8 @@ func (x *DeleteUserReuqest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DeleteUserReuqest.ProtoReflect.Descriptor instead.
-func (*DeleteUserReuqest) Descriptor() ([]byte, []int) {
+// Deprecated: Use DeleteUserRequest.ProtoReflect.Descriptor instead.
+func (*DeleteUserRequest) Descriptor() ([]byte, []int) {
 	return file_user_v1_user_proto_rawDescGZIP(), []int{4}
 }
 
@@ -336,14 +336,14 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12!\n" +
 	"\faccess_token\x18\x02 \x01(\tR\vaccessToken\x12#\n" +
 	"\rrefresh_token\x18\x03 \x01(\tR\frefreshToken\"\x13\n" +
-	"\x11DeleteUserReuqest\"-\n" +
+	"\x11DeleteUserRequest\"-\n" +
 	"\x12DeleteUserResponse\x12\x17\n" +
 	"\ais_done\x18\x01 \x01(\bR\x06isDone2\xca\x01\n" +
 	"\vUserService\x129\n" +
 	"\x06SignUp\x12\x16.user.v1.SignUpRequest\x1a\x17.user.v1.SignUpResponse\x129\n" +
 	"\x06SignIn\x12\x16.user.v1.SignInRequest\x1a\x17.user.v1.SignInResponse\x12E\n" +
 	"\n" +
-	"DeleteUser\x12\x1a.user.v1.DeleteUserReuqest\x1a\x1b.user.v1.DeleteUserResponseB\xa4\x01\n" +
+	"DeleteUser\x12\x1a.user.v1.DeleteUserRequest\x1a\x1b.user.v1.DeleteUserResponseB\xa4\x01\n" +
 	"\x19com.samarthasthan.user.v1B\tUserProtoP\x01Z?github.com/samarthasthan/services-commons/gen/go/user/v1;userv1\xa2\x02\x03UXX\xaa\x02\aUser.V1\xca\x02\aUser\\V1\xe2\x02\x13User\\V1\\GPBMetadata\xea\x02\bUser::V1b\x06proto3"
 
 var (
@@ -364,13 +364,13 @@ var file_user_v1_user_proto_goTypes = []any{
 	(*SignUpResponse)(nil),     // 1: user.v1.SignUpResponse
 	(*SignInRequest)(nil),      // 2: user.v1.SignInRequest
 	(*SignInResponse)(nil),     // 3: user.v1.SignInResponse
-	(*DeleteUserReuqest)(nil),  // 4: user.v1.DeleteUserReuqest
+	(*DeleteUserRequest)(nil),  // 4: user.v1.DeleteUserRequest
 	(*DeleteUserResponse)(nil), // 5: user.v1.DeleteUserResponse
 }
 var file_user_v1_user_proto_depIdxs = []int32{
 	0, // 0: user.v1.UserService.SignUp:input_type -> user.v1.SignUpRequest
 	2, // 1: user.v1.UserService.SignIn:input_type -> user.v1.SignInRequest
-	4, // 2: user.v1.UserService.DeleteUser:input_type -> user.v1.DeleteUserReuqest
+	4, // 2: user.v1.UserService.DeleteUser:input_type -> user.v1.DeleteUserRequest
 	1, // 3: user.v1.UserService.SignUp:output_type -> user.v1.SignUpResponse
 	3, // 4: user.v1.UserService.SignIn:output_type -> user.v1.SignInResponse
 	5, // 5: user.v1.UserService.DeleteUser:output_type -> user.v1.DeleteUserResponse

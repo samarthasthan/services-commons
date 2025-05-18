@@ -26,6 +26,7 @@ message RefreshTokenRequest {}
 
 message RefreshTokenResponse {
   string access_token = 1;
+  string refresh_token = 2;
 }
 
 message DeleteTokensRequest {}

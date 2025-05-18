@@ -82,22 +82,23 @@ public final class AuthProto {
       "\014refreshToken\"\026\n\024ValidateTokenRequest\"K\n" +
       "\025ValidateTokenResponse\022\027\n\007user_id\030\001 \001(\tR" +
       "\006userId\022\031\n\010is_valid\030\003 \001(\010R\007isValid\"\025\n\023Re" +
-      "freshTokenRequest\"9\n\024RefreshTokenRespons" +
-      "e\022!\n\014access_token\030\001 \001(\tR\013accessToken\"\025\n\023" +
-      "DeleteTokensRequest\"\026\n\024DeleteTokensRespo" +
-      "nse2\307\002\n\013AuthService\022N\n\rGenerateToken\022\035.a" +
-      "uth.v1.GenerateTokenRequest\032\036.auth.v1.Ge" +
-      "nerateTokenResponse\022N\n\rValidateToken\022\035.a" +
-      "uth.v1.ValidateTokenRequest\032\036.auth.v1.Va" +
-      "lidateTokenResponse\022K\n\014RefreshToken\022\034.au" +
-      "th.v1.RefreshTokenRequest\032\035.auth.v1.Refr" +
-      "eshTokenResponse\022K\n\014DeleteTokens\022\034.auth." +
-      "v1.DeleteTokensRequest\032\035.auth.v1.DeleteT" +
-      "okensResponseB\244\001\n\031com.samarthasthan.auth" +
-      ".v1B\tAuthProtoP\001Z?github.com/samarthasth" +
-      "an/services-commons/gen/go/auth/v1;authv" +
-      "1\242\002\003AXX\252\002\007Auth.V1\312\002\007Auth\\V1\342\002\023Auth\\V1\\GP" +
-      "BMetadata\352\002\010Auth::V1b\006proto3"
+      "freshTokenRequest\"^\n\024RefreshTokenRespons" +
+      "e\022!\n\014access_token\030\001 \001(\tR\013accessToken\022#\n\r" +
+      "refresh_token\030\002 \001(\tR\014refreshToken\"\025\n\023Del" +
+      "eteTokensRequest\"\026\n\024DeleteTokensResponse" +
+      "2\307\002\n\013AuthService\022N\n\rGenerateToken\022\035.auth" +
+      ".v1.GenerateTokenRequest\032\036.auth.v1.Gener" +
+      "ateTokenResponse\022N\n\rValidateToken\022\035.auth" +
+      ".v1.ValidateTokenRequest\032\036.auth.v1.Valid" +
+      "ateTokenResponse\022K\n\014RefreshToken\022\034.auth." +
+      "v1.RefreshTokenRequest\032\035.auth.v1.Refresh" +
+      "TokenResponse\022K\n\014DeleteTokens\022\034.auth.v1." +
+      "DeleteTokensRequest\032\035.auth.v1.DeleteToke" +
+      "nsResponseB\244\001\n\031com.samarthasthan.auth.v1" +
+      "B\tAuthProtoP\001Z?github.com/samarthasthan/" +
+      "services-commons/gen/go/auth/v1;authv1\242\002" +
+      "\003AXX\252\002\007Auth.V1\312\002\007Auth\\V1\342\002\023Auth\\V1\\GPBMe" +
+      "tadata\352\002\010Auth::V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -139,7 +140,7 @@ public final class AuthProto {
     internal_static_auth_v1_RefreshTokenResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_auth_v1_RefreshTokenResponse_descriptor,
-        new java.lang.String[] { "AccessToken", });
+        new java.lang.String[] { "AccessToken", "RefreshToken", });
     internal_static_auth_v1_DeleteTokensRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_auth_v1_DeleteTokensRequest_fieldAccessorTable = new

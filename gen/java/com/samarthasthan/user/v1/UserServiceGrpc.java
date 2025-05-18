@@ -77,27 +77,27 @@ public final class UserServiceGrpc {
     return getSignInMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.samarthasthan.user.v1.DeleteUserReuqest,
+  private static volatile io.grpc.MethodDescriptor<com.samarthasthan.user.v1.DeleteUserRequest,
       com.samarthasthan.user.v1.DeleteUserResponse> getDeleteUserMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "DeleteUser",
-      requestType = com.samarthasthan.user.v1.DeleteUserReuqest.class,
+      requestType = com.samarthasthan.user.v1.DeleteUserRequest.class,
       responseType = com.samarthasthan.user.v1.DeleteUserResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.samarthasthan.user.v1.DeleteUserReuqest,
+  public static io.grpc.MethodDescriptor<com.samarthasthan.user.v1.DeleteUserRequest,
       com.samarthasthan.user.v1.DeleteUserResponse> getDeleteUserMethod() {
-    io.grpc.MethodDescriptor<com.samarthasthan.user.v1.DeleteUserReuqest, com.samarthasthan.user.v1.DeleteUserResponse> getDeleteUserMethod;
+    io.grpc.MethodDescriptor<com.samarthasthan.user.v1.DeleteUserRequest, com.samarthasthan.user.v1.DeleteUserResponse> getDeleteUserMethod;
     if ((getDeleteUserMethod = UserServiceGrpc.getDeleteUserMethod) == null) {
       synchronized (UserServiceGrpc.class) {
         if ((getDeleteUserMethod = UserServiceGrpc.getDeleteUserMethod) == null) {
           UserServiceGrpc.getDeleteUserMethod = getDeleteUserMethod =
-              io.grpc.MethodDescriptor.<com.samarthasthan.user.v1.DeleteUserReuqest, com.samarthasthan.user.v1.DeleteUserResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.samarthasthan.user.v1.DeleteUserRequest, com.samarthasthan.user.v1.DeleteUserResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteUser"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.samarthasthan.user.v1.DeleteUserReuqest.getDefaultInstance()))
+                  com.samarthasthan.user.v1.DeleteUserRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.samarthasthan.user.v1.DeleteUserResponse.getDefaultInstance()))
               .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("DeleteUser"))
@@ -187,7 +187,7 @@ public final class UserServiceGrpc {
 
     /**
      */
-    default void deleteUser(com.samarthasthan.user.v1.DeleteUserReuqest request,
+    default void deleteUser(com.samarthasthan.user.v1.DeleteUserRequest request,
         io.grpc.stub.StreamObserver<com.samarthasthan.user.v1.DeleteUserResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteUserMethod(), responseObserver);
     }
@@ -238,7 +238,7 @@ public final class UserServiceGrpc {
 
     /**
      */
-    public void deleteUser(com.samarthasthan.user.v1.DeleteUserReuqest request,
+    public void deleteUser(com.samarthasthan.user.v1.DeleteUserRequest request,
         io.grpc.stub.StreamObserver<com.samarthasthan.user.v1.DeleteUserResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteUserMethod(), getCallOptions()), request, responseObserver);
@@ -277,7 +277,7 @@ public final class UserServiceGrpc {
 
     /**
      */
-    public com.samarthasthan.user.v1.DeleteUserResponse deleteUser(com.samarthasthan.user.v1.DeleteUserReuqest request) {
+    public com.samarthasthan.user.v1.DeleteUserResponse deleteUser(com.samarthasthan.user.v1.DeleteUserRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteUserMethod(), getCallOptions(), request);
     }
@@ -315,7 +315,7 @@ public final class UserServiceGrpc {
 
     /**
      */
-    public com.samarthasthan.user.v1.DeleteUserResponse deleteUser(com.samarthasthan.user.v1.DeleteUserReuqest request) {
+    public com.samarthasthan.user.v1.DeleteUserResponse deleteUser(com.samarthasthan.user.v1.DeleteUserRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteUserMethod(), getCallOptions(), request);
     }
@@ -356,7 +356,7 @@ public final class UserServiceGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.samarthasthan.user.v1.DeleteUserResponse> deleteUser(
-        com.samarthasthan.user.v1.DeleteUserReuqest request) {
+        com.samarthasthan.user.v1.DeleteUserRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteUserMethod(), getCallOptions()), request);
     }
@@ -392,7 +392,7 @@ public final class UserServiceGrpc {
               (io.grpc.stub.StreamObserver<com.samarthasthan.user.v1.SignInResponse>) responseObserver);
           break;
         case METHODID_DELETE_USER:
-          serviceImpl.deleteUser((com.samarthasthan.user.v1.DeleteUserReuqest) request,
+          serviceImpl.deleteUser((com.samarthasthan.user.v1.DeleteUserRequest) request,
               (io.grpc.stub.StreamObserver<com.samarthasthan.user.v1.DeleteUserResponse>) responseObserver);
           break;
         default:
@@ -431,7 +431,7 @@ public final class UserServiceGrpc {
           getDeleteUserMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.samarthasthan.user.v1.DeleteUserReuqest,
+              com.samarthasthan.user.v1.DeleteUserRequest,
               com.samarthasthan.user.v1.DeleteUserResponse>(
                 service, METHODID_DELETE_USER)))
         .build();

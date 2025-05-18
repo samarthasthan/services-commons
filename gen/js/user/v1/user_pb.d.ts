@@ -100,16 +100,16 @@ export declare type SignInResponse = Message<"user.v1.SignInResponse"> & {
 export declare const SignInResponseSchema: GenMessage<SignInResponse>;
 
 /**
- * @generated from message user.v1.DeleteUserReuqest
+ * @generated from message user.v1.DeleteUserRequest
  */
-export declare type DeleteUserReuqest = Message<"user.v1.DeleteUserReuqest"> & {
+export declare type DeleteUserRequest = Message<"user.v1.DeleteUserRequest"> & {
 };
 
 /**
- * Describes the message user.v1.DeleteUserReuqest.
- * Use `create(DeleteUserReuqestSchema)` to create a new message.
+ * Describes the message user.v1.DeleteUserRequest.
+ * Use `create(DeleteUserRequestSchema)` to create a new message.
  */
-export declare const DeleteUserReuqestSchema: GenMessage<DeleteUserReuqest>;
+export declare const DeleteUserRequestSchema: GenMessage<DeleteUserRequest>;
 
 /**
  * @generated from message user.v1.DeleteUserResponse
@@ -152,7 +152,7 @@ export declare const UserService: GenService<{
    */
   deleteUser: {
     methodKind: "unary";
-    input: typeof DeleteUserReuqestSchema;
+    input: typeof DeleteUserRequestSchema;
     output: typeof DeleteUserResponseSchema;
   },
 }>;

@@ -46,10 +46,10 @@ public final class UserProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_user_v1_SignInResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_user_v1_DeleteUserReuqest_descriptor;
+    internal_static_user_v1_DeleteUserRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_user_v1_DeleteUserReuqest_fieldAccessorTable;
+      internal_static_user_v1_DeleteUserRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_user_v1_DeleteUserResponse_descriptor;
   static final 
@@ -75,12 +75,12 @@ public final class UserProto {
       "nInResponse\022\027\n\007user_id\030\001 \001(\tR\006userId\022!\n\014" +
       "access_token\030\002 \001(\tR\013accessToken\022#\n\rrefre" +
       "sh_token\030\003 \001(\tR\014refreshToken\"\023\n\021DeleteUs" +
-      "erReuqest\"-\n\022DeleteUserResponse\022\027\n\007is_do" +
+      "erRequest\"-\n\022DeleteUserResponse\022\027\n\007is_do" +
       "ne\030\001 \001(\010R\006isDone2\312\001\n\013UserService\0229\n\006Sign" +
       "Up\022\026.user.v1.SignUpRequest\032\027.user.v1.Sig" +
       "nUpResponse\0229\n\006SignIn\022\026.user.v1.SignInRe" +
       "quest\032\027.user.v1.SignInResponse\022E\n\nDelete" +
-      "User\022\032.user.v1.DeleteUserReuqest\032\033.user." +
+      "User\022\032.user.v1.DeleteUserRequest\032\033.user." +
       "v1.DeleteUserResponseB\244\001\n\031com.samarthast" +
       "han.user.v1B\tUserProtoP\001Z?github.com/sam" +
       "arthasthan/services-commons/gen/go/user/" +
@@ -116,11 +116,11 @@ public final class UserProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_user_v1_SignInResponse_descriptor,
         new java.lang.String[] { "UserId", "AccessToken", "RefreshToken", });
-    internal_static_user_v1_DeleteUserReuqest_descriptor =
+    internal_static_user_v1_DeleteUserRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_user_v1_DeleteUserReuqest_fieldAccessorTable = new
+    internal_static_user_v1_DeleteUserRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_user_v1_DeleteUserReuqest_descriptor,
+        internal_static_user_v1_DeleteUserRequest_descriptor,
         new java.lang.String[] { });
     internal_static_user_v1_DeleteUserResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);

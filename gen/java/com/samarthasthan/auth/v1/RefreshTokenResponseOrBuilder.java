@@ -20,4 +20,16 @@ public interface RefreshTokenResponseOrBuilder extends
    */
   com.google.protobuf.ByteString
       getAccessTokenBytes();
+
+  /**
+   * <code>string refresh_token = 2 [json_name = "refreshToken"];</code>
+   * @return The refreshToken.
+   */
+  java.lang.String getRefreshToken();
+  /**
+   * <code>string refresh_token = 2 [json_name = "refreshToken"];</code>
+   * @return The bytes for refreshToken.
+   */
+  com.google.protobuf.ByteString
+      getRefreshTokenBytes();
 }

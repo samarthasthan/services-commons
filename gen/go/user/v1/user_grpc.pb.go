@@ -30,7 +30,7 @@ const (
 type UserServiceClient interface {
 	SignUp(ctx context.Context, in *SignUpRequest, opts ...grpc.CallOption) (*SignUpResponse, error)
 	SignIn(ctx context.Context, in *SignInRequest, opts ...grpc.CallOption) (*SignInResponse, error)
-	DeleteUser(ctx context.Context, in *DeleteUserReuqest, opts ...grpc.CallOption) (*DeleteUserResponse, error)
+	DeleteUser(ctx context.Context, in *DeleteUserRequest, opts ...grpc.CallOption) (*DeleteUserResponse, error)
 }
 
 type userServiceClient struct {
@@ -61,7 +61,7 @@ func (c *userServiceClient) SignIn(ctx context.Context, in *SignInRequest, opts 
 	return out, nil
 }
 
-func (c *userServiceClient) DeleteUser(ctx context.Context, in *DeleteUserReuqest, opts ...grpc.CallOption) (*DeleteUserResponse, error) {
+func (c *userServiceClient) DeleteUser(ctx context.Context, in *DeleteUserRequest, opts ...grpc.CallOption) (*DeleteUserResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(DeleteUserResponse)
 	err := c.cc.Invoke(ctx, UserService_DeleteUser_FullMethodName, in, out, cOpts...)
@@ -77,7 +77,7 @@ func (c *userServiceClient) DeleteUser(ctx context.Context, in *DeleteUserReuqes
 type UserServiceServer interface {
 	SignUp(context.Context, *SignUpRequest) (*SignUpResponse, error)
 	SignIn(context.Context, *SignInRequest) (*SignInResponse, error)
-	DeleteUser(context.Context, *DeleteUserReuqest) (*DeleteUserResponse, error)
+	DeleteUser(context.Context, *DeleteUserRequest) (*DeleteUserResponse, error)
 	mustEmbedUnimplementedUserServiceServer()
 }
 
@@ -94,7 +94,7 @@ func (UnimplementedUserServiceServer) SignUp(context.Context, *SignUpRequest) (*
 func (UnimplementedUserServiceServer) SignIn(context.Context, *SignInRequest) (*SignInResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SignIn not implemented")
 }
-func (UnimplementedUserServiceServer) DeleteUser(context.Context, *DeleteUserReuqest) (*DeleteUserResponse, error) {
+func (UnimplementedUserServiceServer) DeleteUser(context.Context, *DeleteUserRequest) (*DeleteUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteUser not implemented")
 }
 func (UnimplementedUserServiceServer) mustEmbedUnimplementedUserServiceServer() {}
@@ -155,7 +155,7 @@ func _UserService_SignIn_Handler(srv interface{}, ctx context.Context, dec func(
 }
 
 func _UserService_DeleteUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteUserReuqest)
+	in := new(DeleteUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -167,7 +167,7 @@ func _UserService_DeleteUser_Handler(srv interface{}, ctx context.Context, dec f
 		FullMethod: UserService_DeleteUser_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).DeleteUser(ctx, req.(*DeleteUserReuqest))
+		return srv.(UserServiceServer).DeleteUser(ctx, req.(*DeleteUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
