@@ -3,32 +3,35 @@ syntax = "proto3";
 package profile.v1;
 
 import "buf/validate/validate.proto";
+import "google/protobuf/timestamp.proto";
 
 option go_package = "github.com/samarthasthan/services-commons/gen/go/profile/v1;profilev1";
 
 message CreateProfileRequest {
-  string user_id = 1 [(buf.validate.field).string.min_len = 1];
+  string user_id = 1 [(buf.validate.field).string.uuid = true];
   string full_name = 2 [(buf.validate.field).string.min_len = 1];
-  string email = 3 [(buf.validate.field).string.min_len = 1];
+  string email = 3 [(buf.validate.field).string.email = true];
 }
 
 message CreateProfileResponse {
-  string profile_id = 1;
-  string user_id = 2;
+  string profile_id = 1; 
+  string user_id = 2;   
 }
 
 message GetProfileRequest {
-  string user_id = 1 [(buf.validate.field).string.min_len = 1];
+  string user_id = 1 [(buf.validate.field).string.uuid = true];
 }
 
 message GetProfileResponse {
-  string profile_id = 1;
-  string user_id = 2;
+  string profile_id = 1; 
+  string user_id = 2;   
   string full_name = 3;
   string email = 4;
-  string created_at = 5;
-  string updated_at = 6;
-  string deleted_at = 7;
+  string bio = 5;
+  string avatar = 6;
+  google.protobuf.Timestamp created_at = 7;
+  google.protobuf.Timestamp updated_at = 8;
+  google.protobuf.Timestamp deleted_at = 9;
 }
 
 service ProfileService {

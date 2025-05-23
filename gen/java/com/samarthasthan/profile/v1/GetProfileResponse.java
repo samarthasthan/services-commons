@@ -31,9 +31,8 @@ private static final long serialVersionUID = 0L;
     userId_ = "";
     fullName_ = "";
     email_ = "";
-    createdAt_ = "";
-    updatedAt_ = "";
-    deletedAt_ = "";
+    bio_ = "";
+    avatar_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -49,6 +48,7 @@ private static final long serialVersionUID = 0L;
             com.samarthasthan.profile.v1.GetProfileResponse.class, com.samarthasthan.profile.v1.GetProfileResponse.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PROFILE_ID_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object profileId_ = "";
@@ -205,121 +205,160 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CREATED_AT_FIELD_NUMBER = 5;
+  public static final int BIO_FIELD_NUMBER = 5;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object createdAt_ = "";
+  private volatile java.lang.Object bio_ = "";
   /**
-   * <code>string created_at = 5 [json_name = "createdAt"];</code>
+   * <code>string bio = 5 [json_name = "bio"];</code>
+   * @return The bio.
+   */
+  @java.lang.Override
+  public java.lang.String getBio() {
+    java.lang.Object ref = bio_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      bio_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string bio = 5 [json_name = "bio"];</code>
+   * @return The bytes for bio.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getBioBytes() {
+    java.lang.Object ref = bio_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      bio_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int AVATAR_FIELD_NUMBER = 6;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object avatar_ = "";
+  /**
+   * <code>string avatar = 6 [json_name = "avatar"];</code>
+   * @return The avatar.
+   */
+  @java.lang.Override
+  public java.lang.String getAvatar() {
+    java.lang.Object ref = avatar_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      avatar_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string avatar = 6 [json_name = "avatar"];</code>
+   * @return The bytes for avatar.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getAvatarBytes() {
+    java.lang.Object ref = avatar_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      avatar_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CREATED_AT_FIELD_NUMBER = 7;
+  private com.google.protobuf.Timestamp createdAt_;
+  /**
+   * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
+   * @return Whether the createdAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreatedAt() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
    * @return The createdAt.
    */
   @java.lang.Override
-  public java.lang.String getCreatedAt() {
-    java.lang.Object ref = createdAt_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      createdAt_ = s;
-      return s;
-    }
+  public com.google.protobuf.Timestamp getCreatedAt() {
+    return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
   }
   /**
-   * <code>string created_at = 5 [json_name = "createdAt"];</code>
-   * @return The bytes for createdAt.
+   * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getCreatedAtBytes() {
-    java.lang.Object ref = createdAt_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      createdAt_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
+    return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
   }
 
-  public static final int UPDATED_AT_FIELD_NUMBER = 6;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object updatedAt_ = "";
+  public static final int UPDATED_AT_FIELD_NUMBER = 8;
+  private com.google.protobuf.Timestamp updatedAt_;
   /**
-   * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
+   * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
+   * @return Whether the updatedAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdatedAt() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
    * @return The updatedAt.
    */
   @java.lang.Override
-  public java.lang.String getUpdatedAt() {
-    java.lang.Object ref = updatedAt_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      updatedAt_ = s;
-      return s;
-    }
+  public com.google.protobuf.Timestamp getUpdatedAt() {
+    return updatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
   }
   /**
-   * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
-   * @return The bytes for updatedAt.
+   * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getUpdatedAtBytes() {
-    java.lang.Object ref = updatedAt_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      updatedAt_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder() {
+    return updatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
   }
 
-  public static final int DELETED_AT_FIELD_NUMBER = 7;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object deletedAt_ = "";
+  public static final int DELETED_AT_FIELD_NUMBER = 9;
+  private com.google.protobuf.Timestamp deletedAt_;
   /**
-   * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
+   * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
+   * @return Whether the deletedAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeletedAt() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
    * @return The deletedAt.
    */
   @java.lang.Override
-  public java.lang.String getDeletedAt() {
-    java.lang.Object ref = deletedAt_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      deletedAt_ = s;
-      return s;
-    }
+  public com.google.protobuf.Timestamp getDeletedAt() {
+    return deletedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deletedAt_;
   }
   /**
-   * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
-   * @return The bytes for deletedAt.
+   * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getDeletedAtBytes() {
-    java.lang.Object ref = deletedAt_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      deletedAt_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public com.google.protobuf.TimestampOrBuilder getDeletedAtOrBuilder() {
+    return deletedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deletedAt_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -348,14 +387,20 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(email_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 4, email_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createdAt_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 5, createdAt_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(bio_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 5, bio_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(updatedAt_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 6, updatedAt_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(avatar_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 6, avatar_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(deletedAt_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 7, deletedAt_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(7, getCreatedAt());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(8, getUpdatedAt());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(9, getDeletedAt());
     }
     getUnknownFields().writeTo(output);
   }
@@ -378,14 +423,23 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(email_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(4, email_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createdAt_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, createdAt_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(bio_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, bio_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(updatedAt_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(6, updatedAt_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(avatar_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(6, avatar_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(deletedAt_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, deletedAt_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, getCreatedAt());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, getUpdatedAt());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, getDeletedAt());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -410,12 +464,25 @@ private static final long serialVersionUID = 0L;
         .equals(other.getFullName())) return false;
     if (!getEmail()
         .equals(other.getEmail())) return false;
-    if (!getCreatedAt()
-        .equals(other.getCreatedAt())) return false;
-    if (!getUpdatedAt()
-        .equals(other.getUpdatedAt())) return false;
-    if (!getDeletedAt()
-        .equals(other.getDeletedAt())) return false;
+    if (!getBio()
+        .equals(other.getBio())) return false;
+    if (!getAvatar()
+        .equals(other.getAvatar())) return false;
+    if (hasCreatedAt() != other.hasCreatedAt()) return false;
+    if (hasCreatedAt()) {
+      if (!getCreatedAt()
+          .equals(other.getCreatedAt())) return false;
+    }
+    if (hasUpdatedAt() != other.hasUpdatedAt()) return false;
+    if (hasUpdatedAt()) {
+      if (!getUpdatedAt()
+          .equals(other.getUpdatedAt())) return false;
+    }
+    if (hasDeletedAt() != other.hasDeletedAt()) return false;
+    if (hasDeletedAt()) {
+      if (!getDeletedAt()
+          .equals(other.getDeletedAt())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -435,12 +502,22 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getFullName().hashCode();
     hash = (37 * hash) + EMAIL_FIELD_NUMBER;
     hash = (53 * hash) + getEmail().hashCode();
-    hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
-    hash = (53 * hash) + getCreatedAt().hashCode();
-    hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
-    hash = (53 * hash) + getUpdatedAt().hashCode();
-    hash = (37 * hash) + DELETED_AT_FIELD_NUMBER;
-    hash = (53 * hash) + getDeletedAt().hashCode();
+    hash = (37 * hash) + BIO_FIELD_NUMBER;
+    hash = (53 * hash) + getBio().hashCode();
+    hash = (37 * hash) + AVATAR_FIELD_NUMBER;
+    hash = (53 * hash) + getAvatar().hashCode();
+    if (hasCreatedAt()) {
+      hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedAt().hashCode();
+    }
+    if (hasUpdatedAt()) {
+      hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdatedAt().hashCode();
+    }
+    if (hasDeletedAt()) {
+      hash = (37 * hash) + DELETED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getDeletedAt().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -560,13 +637,21 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.samarthasthan.profile.v1.GetProfileResponse.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage
+              .alwaysUseFieldBuilders) {
+        getCreatedAtFieldBuilder();
+        getUpdatedAtFieldBuilder();
+        getDeletedAtFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -576,9 +661,23 @@ private static final long serialVersionUID = 0L;
       userId_ = "";
       fullName_ = "";
       email_ = "";
-      createdAt_ = "";
-      updatedAt_ = "";
-      deletedAt_ = "";
+      bio_ = "";
+      avatar_ = "";
+      createdAt_ = null;
+      if (createdAtBuilder_ != null) {
+        createdAtBuilder_.dispose();
+        createdAtBuilder_ = null;
+      }
+      updatedAt_ = null;
+      if (updatedAtBuilder_ != null) {
+        updatedAtBuilder_.dispose();
+        updatedAtBuilder_ = null;
+      }
+      deletedAt_ = null;
+      if (deletedAtBuilder_ != null) {
+        deletedAtBuilder_.dispose();
+        deletedAtBuilder_ = null;
+      }
       return this;
     }
 
@@ -625,14 +724,31 @@ private static final long serialVersionUID = 0L;
         result.email_ = email_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.createdAt_ = createdAt_;
+        result.bio_ = bio_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.updatedAt_ = updatedAt_;
+        result.avatar_ = avatar_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.deletedAt_ = deletedAt_;
+        result.createdAt_ = createdAtBuilder_ == null
+            ? createdAt_
+            : createdAtBuilder_.build();
+        to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.updatedAt_ = updatedAtBuilder_ == null
+            ? updatedAt_
+            : updatedAtBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.deletedAt_ = deletedAtBuilder_ == null
+            ? deletedAt_
+            : deletedAtBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -667,20 +783,24 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000008;
         onChanged();
       }
-      if (!other.getCreatedAt().isEmpty()) {
-        createdAt_ = other.createdAt_;
+      if (!other.getBio().isEmpty()) {
+        bio_ = other.bio_;
         bitField0_ |= 0x00000010;
         onChanged();
       }
-      if (!other.getUpdatedAt().isEmpty()) {
-        updatedAt_ = other.updatedAt_;
+      if (!other.getAvatar().isEmpty()) {
+        avatar_ = other.avatar_;
         bitField0_ |= 0x00000020;
         onChanged();
       }
-      if (!other.getDeletedAt().isEmpty()) {
-        deletedAt_ = other.deletedAt_;
-        bitField0_ |= 0x00000040;
-        onChanged();
+      if (other.hasCreatedAt()) {
+        mergeCreatedAt(other.getCreatedAt());
+      }
+      if (other.hasUpdatedAt()) {
+        mergeUpdatedAt(other.getUpdatedAt());
+      }
+      if (other.hasDeletedAt()) {
+        mergeDeletedAt(other.getDeletedAt());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -729,20 +849,36 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 34
             case 42: {
-              createdAt_ = input.readStringRequireUtf8();
+              bio_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000010;
               break;
             } // case 42
             case 50: {
-              updatedAt_ = input.readStringRequireUtf8();
+              avatar_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000020;
               break;
             } // case 50
             case 58: {
-              deletedAt_ = input.readStringRequireUtf8();
+              input.readMessage(
+                  getCreatedAtFieldBuilder().getBuilder(),
+                  extensionRegistry);
               bitField0_ |= 0x00000040;
               break;
             } // case 58
+            case 66: {
+              input.readMessage(
+                  getUpdatedAtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 66
+            case 74: {
+              input.readMessage(
+                  getDeletedAtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000100;
+              break;
+            } // case 74
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1048,220 +1184,511 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object createdAt_ = "";
+    private java.lang.Object bio_ = "";
     /**
-     * <code>string created_at = 5 [json_name = "createdAt"];</code>
-     * @return The createdAt.
+     * <code>string bio = 5 [json_name = "bio"];</code>
+     * @return The bio.
      */
-    public java.lang.String getCreatedAt() {
-      java.lang.Object ref = createdAt_;
+    public java.lang.String getBio() {
+      java.lang.Object ref = bio_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        createdAt_ = s;
+        bio_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string created_at = 5 [json_name = "createdAt"];</code>
-     * @return The bytes for createdAt.
+     * <code>string bio = 5 [json_name = "bio"];</code>
+     * @return The bytes for bio.
      */
     public com.google.protobuf.ByteString
-        getCreatedAtBytes() {
-      java.lang.Object ref = createdAt_;
+        getBioBytes() {
+      java.lang.Object ref = bio_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        createdAt_ = b;
+        bio_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string created_at = 5 [json_name = "createdAt"];</code>
-     * @param value The createdAt to set.
+     * <code>string bio = 5 [json_name = "bio"];</code>
+     * @param value The bio to set.
      * @return This builder for chaining.
      */
-    public Builder setCreatedAt(
+    public Builder setBio(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      createdAt_ = value;
+      bio_ = value;
       bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
     /**
-     * <code>string created_at = 5 [json_name = "createdAt"];</code>
+     * <code>string bio = 5 [json_name = "bio"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearCreatedAt() {
-      createdAt_ = getDefaultInstance().getCreatedAt();
+    public Builder clearBio() {
+      bio_ = getDefaultInstance().getBio();
       bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
     /**
-     * <code>string created_at = 5 [json_name = "createdAt"];</code>
-     * @param value The bytes for createdAt to set.
+     * <code>string bio = 5 [json_name = "bio"];</code>
+     * @param value The bytes for bio to set.
      * @return This builder for chaining.
      */
-    public Builder setCreatedAtBytes(
+    public Builder setBioBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      createdAt_ = value;
+      bio_ = value;
       bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
 
-    private java.lang.Object updatedAt_ = "";
+    private java.lang.Object avatar_ = "";
     /**
-     * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
-     * @return The updatedAt.
+     * <code>string avatar = 6 [json_name = "avatar"];</code>
+     * @return The avatar.
      */
-    public java.lang.String getUpdatedAt() {
-      java.lang.Object ref = updatedAt_;
+    public java.lang.String getAvatar() {
+      java.lang.Object ref = avatar_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        updatedAt_ = s;
+        avatar_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
-     * @return The bytes for updatedAt.
+     * <code>string avatar = 6 [json_name = "avatar"];</code>
+     * @return The bytes for avatar.
      */
     public com.google.protobuf.ByteString
-        getUpdatedAtBytes() {
-      java.lang.Object ref = updatedAt_;
+        getAvatarBytes() {
+      java.lang.Object ref = avatar_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        updatedAt_ = b;
+        avatar_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
-     * @param value The updatedAt to set.
+     * <code>string avatar = 6 [json_name = "avatar"];</code>
+     * @param value The avatar to set.
      * @return This builder for chaining.
      */
-    public Builder setUpdatedAt(
+    public Builder setAvatar(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      updatedAt_ = value;
+      avatar_ = value;
       bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
     /**
-     * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
+     * <code>string avatar = 6 [json_name = "avatar"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearUpdatedAt() {
-      updatedAt_ = getDefaultInstance().getUpdatedAt();
+    public Builder clearAvatar() {
+      avatar_ = getDefaultInstance().getAvatar();
       bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
     /**
-     * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
-     * @param value The bytes for updatedAt to set.
+     * <code>string avatar = 6 [json_name = "avatar"];</code>
+     * @param value The bytes for avatar to set.
      * @return This builder for chaining.
      */
-    public Builder setUpdatedAtBytes(
+    public Builder setAvatarBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      updatedAt_ = value;
+      avatar_ = value;
       bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
 
-    private java.lang.Object deletedAt_ = "";
+    private com.google.protobuf.Timestamp createdAt_;
+    private com.google.protobuf.SingleFieldBuilder<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createdAtBuilder_;
     /**
-     * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
+     * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
+     * @return Whether the createdAt field is set.
+     */
+    public boolean hasCreatedAt() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
+     * @return The createdAt.
+     */
+    public com.google.protobuf.Timestamp getCreatedAt() {
+      if (createdAtBuilder_ == null) {
+        return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+      } else {
+        return createdAtBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
+     */
+    public Builder setCreatedAt(com.google.protobuf.Timestamp value) {
+      if (createdAtBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createdAt_ = value;
+      } else {
+        createdAtBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
+     */
+    public Builder setCreatedAt(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createdAtBuilder_ == null) {
+        createdAt_ = builderForValue.build();
+      } else {
+        createdAtBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
+     */
+    public Builder mergeCreatedAt(com.google.protobuf.Timestamp value) {
+      if (createdAtBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0) &&
+          createdAt_ != null &&
+          createdAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreatedAtBuilder().mergeFrom(value);
+        } else {
+          createdAt_ = value;
+        }
+      } else {
+        createdAtBuilder_.mergeFrom(value);
+      }
+      if (createdAt_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
+     */
+    public Builder clearCreatedAt() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      createdAt_ = null;
+      if (createdAtBuilder_ != null) {
+        createdAtBuilder_.dispose();
+        createdAtBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreatedAtBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getCreatedAtFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
+      if (createdAtBuilder_ != null) {
+        return createdAtBuilder_.getMessageOrBuilder();
+      } else {
+        return createdAt_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getCreatedAtFieldBuilder() {
+      if (createdAtBuilder_ == null) {
+        createdAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getCreatedAt(),
+                getParentForChildren(),
+                isClean());
+        createdAt_ = null;
+      }
+      return createdAtBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp updatedAt_;
+    private com.google.protobuf.SingleFieldBuilder<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updatedAtBuilder_;
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
+     * @return Whether the updatedAt field is set.
+     */
+    public boolean hasUpdatedAt() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
+     * @return The updatedAt.
+     */
+    public com.google.protobuf.Timestamp getUpdatedAt() {
+      if (updatedAtBuilder_ == null) {
+        return updatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
+      } else {
+        return updatedAtBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
+     */
+    public Builder setUpdatedAt(com.google.protobuf.Timestamp value) {
+      if (updatedAtBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updatedAt_ = value;
+      } else {
+        updatedAtBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
+     */
+    public Builder setUpdatedAt(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (updatedAtBuilder_ == null) {
+        updatedAt_ = builderForValue.build();
+      } else {
+        updatedAtBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
+     */
+    public Builder mergeUpdatedAt(com.google.protobuf.Timestamp value) {
+      if (updatedAtBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0) &&
+          updatedAt_ != null &&
+          updatedAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdatedAtBuilder().mergeFrom(value);
+        } else {
+          updatedAt_ = value;
+        }
+      } else {
+        updatedAtBuilder_.mergeFrom(value);
+      }
+      if (updatedAt_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
+     */
+    public Builder clearUpdatedAt() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      updatedAt_ = null;
+      if (updatedAtBuilder_ != null) {
+        updatedAtBuilder_.dispose();
+        updatedAtBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getUpdatedAtBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getUpdatedAtFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder() {
+      if (updatedAtBuilder_ != null) {
+        return updatedAtBuilder_.getMessageOrBuilder();
+      } else {
+        return updatedAt_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getUpdatedAtFieldBuilder() {
+      if (updatedAtBuilder_ == null) {
+        updatedAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getUpdatedAt(),
+                getParentForChildren(),
+                isClean());
+        updatedAt_ = null;
+      }
+      return updatedAtBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp deletedAt_;
+    private com.google.protobuf.SingleFieldBuilder<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> deletedAtBuilder_;
+    /**
+     * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
+     * @return Whether the deletedAt field is set.
+     */
+    public boolean hasDeletedAt() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
      * @return The deletedAt.
      */
-    public java.lang.String getDeletedAt() {
-      java.lang.Object ref = deletedAt_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        deletedAt_ = s;
-        return s;
+    public com.google.protobuf.Timestamp getDeletedAt() {
+      if (deletedAtBuilder_ == null) {
+        return deletedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deletedAt_;
       } else {
-        return (java.lang.String) ref;
+        return deletedAtBuilder_.getMessage();
       }
     }
     /**
-     * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
-     * @return The bytes for deletedAt.
+     * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
      */
-    public com.google.protobuf.ByteString
-        getDeletedAtBytes() {
-      java.lang.Object ref = deletedAt_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        deletedAt_ = b;
-        return b;
+    public Builder setDeletedAt(com.google.protobuf.Timestamp value) {
+      if (deletedAtBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        deletedAt_ = value;
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        deletedAtBuilder_.setMessage(value);
       }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
     }
     /**
-     * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
-     * @param value The deletedAt to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
      */
     public Builder setDeletedAt(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      deletedAt_ = value;
-      bitField0_ |= 0x00000040;
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (deletedAtBuilder_ == null) {
+        deletedAt_ = builderForValue.build();
+      } else {
+        deletedAtBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
     /**
-     * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
+     */
+    public Builder mergeDeletedAt(com.google.protobuf.Timestamp value) {
+      if (deletedAtBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0) &&
+          deletedAt_ != null &&
+          deletedAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getDeletedAtBuilder().mergeFrom(value);
+        } else {
+          deletedAt_ = value;
+        }
+      } else {
+        deletedAtBuilder_.mergeFrom(value);
+      }
+      if (deletedAt_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
      */
     public Builder clearDeletedAt() {
-      deletedAt_ = getDefaultInstance().getDeletedAt();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
+      deletedAt_ = null;
+      if (deletedAtBuilder_ != null) {
+        deletedAtBuilder_.dispose();
+        deletedAtBuilder_ = null;
+      }
       onChanged();
       return this;
     }
     /**
-     * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
-     * @param value The bytes for deletedAt to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
      */
-    public Builder setDeletedAtBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      deletedAt_ = value;
-      bitField0_ |= 0x00000040;
+    public com.google.protobuf.Timestamp.Builder getDeletedAtBuilder() {
+      bitField0_ |= 0x00000100;
       onChanged();
-      return this;
+      return getDeletedAtFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getDeletedAtOrBuilder() {
+      if (deletedAtBuilder_ != null) {
+        return deletedAtBuilder_.getMessageOrBuilder();
+      } else {
+        return deletedAt_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : deletedAt_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getDeletedAtFieldBuilder() {
+      if (deletedAtBuilder_ == null) {
+        deletedAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getDeletedAt(),
+                getParentForChildren(),
+                isClean());
+        deletedAt_ = null;
+      }
+      return deletedAtBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:profile.v1.GetProfileResponse)

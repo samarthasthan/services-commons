@@ -58,38 +58,71 @@ public interface GetProfileResponseOrBuilder extends
       getEmailBytes();
 
   /**
-   * <code>string created_at = 5 [json_name = "createdAt"];</code>
+   * <code>string bio = 5 [json_name = "bio"];</code>
+   * @return The bio.
+   */
+  java.lang.String getBio();
+  /**
+   * <code>string bio = 5 [json_name = "bio"];</code>
+   * @return The bytes for bio.
+   */
+  com.google.protobuf.ByteString
+      getBioBytes();
+
+  /**
+   * <code>string avatar = 6 [json_name = "avatar"];</code>
+   * @return The avatar.
+   */
+  java.lang.String getAvatar();
+  /**
+   * <code>string avatar = 6 [json_name = "avatar"];</code>
+   * @return The bytes for avatar.
+   */
+  com.google.protobuf.ByteString
+      getAvatarBytes();
+
+  /**
+   * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
+   * @return Whether the createdAt field is set.
+   */
+  boolean hasCreatedAt();
+  /**
+   * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
    * @return The createdAt.
    */
-  java.lang.String getCreatedAt();
+  com.google.protobuf.Timestamp getCreatedAt();
   /**
-   * <code>string created_at = 5 [json_name = "createdAt"];</code>
-   * @return The bytes for createdAt.
+   * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
    */
-  com.google.protobuf.ByteString
-      getCreatedAtBytes();
+  com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder();
 
   /**
-   * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
+   * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
+   * @return Whether the updatedAt field is set.
+   */
+  boolean hasUpdatedAt();
+  /**
+   * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
    * @return The updatedAt.
    */
-  java.lang.String getUpdatedAt();
+  com.google.protobuf.Timestamp getUpdatedAt();
   /**
-   * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
-   * @return The bytes for updatedAt.
+   * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
    */
-  com.google.protobuf.ByteString
-      getUpdatedAtBytes();
+  com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder();
 
   /**
-   * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
+   * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
+   * @return Whether the deletedAt field is set.
+   */
+  boolean hasDeletedAt();
+  /**
+   * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
    * @return The deletedAt.
    */
-  java.lang.String getDeletedAt();
+  com.google.protobuf.Timestamp getDeletedAt();
   /**
-   * <code>string deleted_at = 7 [json_name = "deletedAt"];</code>
-   * @return The bytes for deletedAt.
+   * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
    */
-  com.google.protobuf.ByteString
-      getDeletedAtBytes();
+  com.google.protobuf.TimestampOrBuilder getDeletedAtOrBuilder();
 }

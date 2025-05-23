@@ -10,6 +10,7 @@ import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
@@ -184,9 +185,11 @@ type GetProfileResponse struct {
 	UserId        string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	FullName      string                 `protobuf:"bytes,3,opt,name=full_name,json=fullName,proto3" json:"full_name,omitempty"`
 	Email         string                 `protobuf:"bytes,4,opt,name=email,proto3" json:"email,omitempty"`
-	CreatedAt     string                 `protobuf:"bytes,5,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
-	UpdatedAt     string                 `protobuf:"bytes,6,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
-	DeletedAt     string                 `protobuf:"bytes,7,opt,name=deleted_at,json=deletedAt,proto3" json:"deleted_at,omitempty"`
+	Bio           string                 `protobuf:"bytes,5,opt,name=bio,proto3" json:"bio,omitempty"`
+	Avatar        string                 `protobuf:"bytes,6,opt,name=avatar,proto3" json:"avatar,omitempty"`
+	CreatedAt     *timestamppb.Timestamp `protobuf:"bytes,7,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	UpdatedAt     *timestamppb.Timestamp `protobuf:"bytes,8,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	DeletedAt     *timestamppb.Timestamp `protobuf:"bytes,9,opt,name=deleted_at,json=deletedAt,proto3" json:"deleted_at,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -249,25 +252,39 @@ func (x *GetProfileResponse) GetEmail() string {
 	return ""
 }
 
-func (x *GetProfileResponse) GetCreatedAt() string {
+func (x *GetProfileResponse) GetBio() string {
+	if x != nil {
+		return x.Bio
+	}
+	return ""
+}
+
+func (x *GetProfileResponse) GetAvatar() string {
+	if x != nil {
+		return x.Avatar
+	}
+	return ""
+}
+
+func (x *GetProfileResponse) GetCreatedAt() *timestamppb.Timestamp {
 	if x != nil {
 		return x.CreatedAt
 	}
-	return ""
+	return nil
 }
 
-func (x *GetProfileResponse) GetUpdatedAt() string {
+func (x *GetProfileResponse) GetUpdatedAt() *timestamppb.Timestamp {
 	if x != nil {
 		return x.UpdatedAt
 	}
-	return ""
+	return nil
 }
 
-func (x *GetProfileResponse) GetDeletedAt() string {
+func (x *GetProfileResponse) GetDeletedAt() *timestamppb.Timestamp {
 	if x != nil {
 		return x.DeletedAt
 	}
-	return ""
+	return nil
 }
 
 var File_profile_v1_profile_proto protoreflect.FileDescriptor
@@ -275,29 +292,31 @@ var File_profile_v1_profile_proto protoreflect.FileDescriptor
 const file_profile_v1_profile_proto_rawDesc = "" +
 	"\n" +
 	"\x18profile/v1/profile.proto\x12\n" +
-	"profile.v1\x1a\x1bbuf/validate/validate.proto\"}\n" +
-	"\x14CreateProfileRequest\x12 \n" +
-	"\auser_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x06userId\x12$\n" +
+	"profile.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"~\n" +
+	"\x14CreateProfileRequest\x12!\n" +
+	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\x12$\n" +
 	"\tfull_name\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\bfullName\x12\x1d\n" +
-	"\x05email\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x05email\"O\n" +
+	"\x05email\x18\x03 \x01(\tB\a\xbaH\x04r\x02`\x01R\x05email\"O\n" +
 	"\x15CreateProfileResponse\x12\x1d\n" +
 	"\n" +
 	"profile_id\x18\x01 \x01(\tR\tprofileId\x12\x17\n" +
-	"\auser_id\x18\x02 \x01(\tR\x06userId\"5\n" +
-	"\x11GetProfileRequest\x12 \n" +
-	"\auser_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x06userId\"\xdc\x01\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\"6\n" +
+	"\x11GetProfileRequest\x12!\n" +
+	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\"\xda\x02\n" +
 	"\x12GetProfileResponse\x12\x1d\n" +
 	"\n" +
 	"profile_id\x18\x01 \x01(\tR\tprofileId\x12\x17\n" +
 	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1b\n" +
 	"\tfull_name\x18\x03 \x01(\tR\bfullName\x12\x14\n" +
-	"\x05email\x18\x04 \x01(\tR\x05email\x12\x1d\n" +
+	"\x05email\x18\x04 \x01(\tR\x05email\x12\x10\n" +
+	"\x03bio\x18\x05 \x01(\tR\x03bio\x12\x16\n" +
+	"\x06avatar\x18\x06 \x01(\tR\x06avatar\x129\n" +
 	"\n" +
-	"created_at\x18\x05 \x01(\tR\tcreatedAt\x12\x1d\n" +
+	"created_at\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
 	"\n" +
-	"updated_at\x18\x06 \x01(\tR\tupdatedAt\x12\x1d\n" +
+	"updated_at\x18\b \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\x129\n" +
 	"\n" +
-	"deleted_at\x18\a \x01(\tR\tdeletedAt2\xb3\x01\n" +
+	"deleted_at\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\tdeletedAt2\xb3\x01\n" +
 	"\x0eProfileService\x12T\n" +
 	"\rCreateProfile\x12 .profile.v1.CreateProfileRequest\x1a!.profile.v1.CreateProfileResponse\x12K\n" +
 	"\n" +
@@ -324,17 +343,21 @@ var file_profile_v1_profile_proto_goTypes = []any{
 	(*CreateProfileResponse)(nil), // 1: profile.v1.CreateProfileResponse
 	(*GetProfileRequest)(nil),     // 2: profile.v1.GetProfileRequest
 	(*GetProfileResponse)(nil),    // 3: profile.v1.GetProfileResponse
+	(*timestamppb.Timestamp)(nil), // 4: google.protobuf.Timestamp
 }
 var file_profile_v1_profile_proto_depIdxs = []int32{
-	0, // 0: profile.v1.ProfileService.CreateProfile:input_type -> profile.v1.CreateProfileRequest
-	2, // 1: profile.v1.ProfileService.GetProfile:input_type -> profile.v1.GetProfileRequest
-	1, // 2: profile.v1.ProfileService.CreateProfile:output_type -> profile.v1.CreateProfileResponse
-	3, // 3: profile.v1.ProfileService.GetProfile:output_type -> profile.v1.GetProfileResponse
-	2, // [2:4] is the sub-list for method output_type
-	0, // [0:2] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	4, // 0: profile.v1.GetProfileResponse.created_at:type_name -> google.protobuf.Timestamp
+	4, // 1: profile.v1.GetProfileResponse.updated_at:type_name -> google.protobuf.Timestamp
+	4, // 2: profile.v1.GetProfileResponse.deleted_at:type_name -> google.protobuf.Timestamp
+	0, // 3: profile.v1.ProfileService.CreateProfile:input_type -> profile.v1.CreateProfileRequest
+	2, // 4: profile.v1.ProfileService.GetProfile:input_type -> profile.v1.GetProfileRequest
+	1, // 5: profile.v1.ProfileService.CreateProfile:output_type -> profile.v1.CreateProfileResponse
+	3, // 6: profile.v1.ProfileService.GetProfile:output_type -> profile.v1.GetProfileResponse
+	5, // [5:7] is the sub-list for method output_type
+	3, // [3:5] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_profile_v1_profile_proto_init() }

@@ -55,34 +55,39 @@ public final class ProfileProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\030profile/v1/profile.proto\022\nprofile.v1\032\033" +
-      "buf/validate/validate.proto\"}\n\024CreatePro" +
-      "fileRequest\022 \n\007user_id\030\001 \001(\tB\007\272H\004r\002\020\001R\006u" +
-      "serId\022$\n\tfull_name\030\002 \001(\tB\007\272H\004r\002\020\001R\010fullN" +
-      "ame\022\035\n\005email\030\003 \001(\tB\007\272H\004r\002\020\001R\005email\"O\n\025Cr" +
-      "eateProfileResponse\022\035\n\nprofile_id\030\001 \001(\tR" +
-      "\tprofileId\022\027\n\007user_id\030\002 \001(\tR\006userId\"5\n\021G" +
-      "etProfileRequest\022 \n\007user_id\030\001 \001(\tB\007\272H\004r\002" +
-      "\020\001R\006userId\"\334\001\n\022GetProfileResponse\022\035\n\npro" +
-      "file_id\030\001 \001(\tR\tprofileId\022\027\n\007user_id\030\002 \001(" +
-      "\tR\006userId\022\033\n\tfull_name\030\003 \001(\tR\010fullName\022\024" +
-      "\n\005email\030\004 \001(\tR\005email\022\035\n\ncreated_at\030\005 \001(\t" +
-      "R\tcreatedAt\022\035\n\nupdated_at\030\006 \001(\tR\tupdated" +
-      "At\022\035\n\ndeleted_at\030\007 \001(\tR\tdeletedAt2\263\001\n\016Pr" +
-      "ofileService\022T\n\rCreateProfile\022 .profile." +
-      "v1.CreateProfileRequest\032!.profile.v1.Cre" +
-      "ateProfileResponse\022K\n\nGetProfile\022\035.profi" +
-      "le.v1.GetProfileRequest\032\036.profile.v1.Get" +
-      "ProfileResponseB\274\001\n\034com.samarthasthan.pr" +
-      "ofile.v1B\014ProfileProtoP\001ZEgithub.com/sam" +
-      "arthasthan/services-commons/gen/go/profi" +
-      "le/v1;profilev1\242\002\003PXX\252\002\nProfile.V1\312\002\nPro" +
-      "file\\V1\342\002\026Profile\\V1\\GPBMetadata\352\002\013Profi" +
-      "le::V1b\006proto3"
+      "buf/validate/validate.proto\032\037google/prot" +
+      "obuf/timestamp.proto\"~\n\024CreateProfileReq" +
+      "uest\022!\n\007user_id\030\001 \001(\tB\010\272H\005r\003\260\001\001R\006userId\022" +
+      "$\n\tfull_name\030\002 \001(\tB\007\272H\004r\002\020\001R\010fullName\022\035\n" +
+      "\005email\030\003 \001(\tB\007\272H\004r\002`\001R\005email\"O\n\025CreatePr" +
+      "ofileResponse\022\035\n\nprofile_id\030\001 \001(\tR\tprofi" +
+      "leId\022\027\n\007user_id\030\002 \001(\tR\006userId\"6\n\021GetProf" +
+      "ileRequest\022!\n\007user_id\030\001 \001(\tB\010\272H\005r\003\260\001\001R\006u" +
+      "serId\"\332\002\n\022GetProfileResponse\022\035\n\nprofile_" +
+      "id\030\001 \001(\tR\tprofileId\022\027\n\007user_id\030\002 \001(\tR\006us" +
+      "erId\022\033\n\tfull_name\030\003 \001(\tR\010fullName\022\024\n\005ema" +
+      "il\030\004 \001(\tR\005email\022\020\n\003bio\030\005 \001(\tR\003bio\022\026\n\006ava" +
+      "tar\030\006 \001(\tR\006avatar\0229\n\ncreated_at\030\007 \001(\0132\032." +
+      "google.protobuf.TimestampR\tcreatedAt\0229\n\n" +
+      "updated_at\030\010 \001(\0132\032.google.protobuf.Times" +
+      "tampR\tupdatedAt\0229\n\ndeleted_at\030\t \001(\0132\032.go" +
+      "ogle.protobuf.TimestampR\tdeletedAt2\263\001\n\016P" +
+      "rofileService\022T\n\rCreateProfile\022 .profile" +
+      ".v1.CreateProfileRequest\032!.profile.v1.Cr" +
+      "eateProfileResponse\022K\n\nGetProfile\022\035.prof" +
+      "ile.v1.GetProfileRequest\032\036.profile.v1.Ge" +
+      "tProfileResponseB\274\001\n\034com.samarthasthan.p" +
+      "rofile.v1B\014ProfileProtoP\001ZEgithub.com/sa" +
+      "marthasthan/services-commons/gen/go/prof" +
+      "ile/v1;profilev1\242\002\003PXX\252\002\nProfile.V1\312\002\nPr" +
+      "ofile\\V1\342\002\026Profile\\V1\\GPBMetadata\352\002\013Prof" +
+      "ile::V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           build.buf.validate.ValidateProto.getDescriptor(),
+          com.google.protobuf.TimestampProto.getDescriptor(),
         });
     internal_static_profile_v1_CreateProfileRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -107,9 +112,10 @@ public final class ProfileProto {
     internal_static_profile_v1_GetProfileResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_profile_v1_GetProfileResponse_descriptor,
-        new java.lang.String[] { "ProfileId", "UserId", "FullName", "Email", "CreatedAt", "UpdatedAt", "DeletedAt", });
+        new java.lang.String[] { "ProfileId", "UserId", "FullName", "Email", "Bio", "Avatar", "CreatedAt", "UpdatedAt", "DeletedAt", });
     descriptor.resolveAllFeaturesImmutable();
     build.buf.validate.ValidateProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(build.buf.validate.ValidateProto.field);
