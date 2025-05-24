@@ -41,16 +41,26 @@ message DeleteUserResponse {
 
 message VerifyUserRequest {
   string email  = 1 [(buf.validate.field).string.email = true];
+  string otp = 2 [(buf.validate.field).string.min_len = 6];
 }
 
 message VerifyUserResponse {
   bool is_done = 1;
 }
 
+message ResendVerifyUserRequest {
+  string email = 1 [(buf.validate.field).string.email = true];
+}
+
+message ResendVerifyUserResponse {
+  bool is_done = 1;
+}
 
 
 service UserService {
   rpc SignUp(SignUpRequest) returns (SignUpResponse);
   rpc SignIn(SignInRequest) returns (SignInResponse);
   rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse);
+  rpc VerifyUser(VerifyUserRequest) returns (VerifyUserResponse);
+  rpc ResendVerifyUser(ResendVerifyUserRequest) returns (ResendVerifyUserResponse);
 }
