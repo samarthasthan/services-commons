@@ -10,12 +10,11 @@ type Consumer struct {
 	*kafka.Consumer
 }
 
-func NewKafkaConsumer(host string, port string) *Consumer {
+func NewKafkaConsumer(host string, port string, group string) *Consumer {
 	c, err := kafka.NewConsumer(&kafka.ConfigMap{
 		"bootstrap.servers": fmt.Sprintf("%s:%s", host, port),
-		"group.id":          "storage-group",
+		"group.id":          group,
 		"auto.offset.reset": "earliest",
-		"fetch.min.bytes":   1,
 	})
 
 	if err != nil {
