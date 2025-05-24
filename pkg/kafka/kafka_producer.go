@@ -14,11 +14,7 @@ type KafkaProducer struct {
 }
 
 func NewKafkaProducer(host string, port string) *KafkaProducer {
-	p, err := kafka.NewProducer(&kafka.ConfigMap{"bootstrap.servers": fmt.Sprintf("%s:%s", host, port),
-		"linger.ms":        0,
-		"compression.type": "none",
-		"acks":             1,
-	})
+	p, err := kafka.NewProducer(&kafka.ConfigMap{"bootstrap.servers": fmt.Sprintf("%s:%s", host, port)})
 	if err != nil {
 		panic(err)
 	}
