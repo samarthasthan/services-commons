@@ -29,6 +29,7 @@ private static final long serialVersionUID = 0L;
   private GetProfileResponse() {
     profileId_ = "";
     userId_ = "";
+    username_ = "";
     fullName_ = "";
     email_ = "";
     bio_ = "";
@@ -127,11 +128,50 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int FULL_NAME_FIELD_NUMBER = 3;
+  public static final int USERNAME_FIELD_NUMBER = 3;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object username_ = "";
+  /**
+   * <code>string username = 3 [json_name = "username"];</code>
+   * @return The username.
+   */
+  @java.lang.Override
+  public java.lang.String getUsername() {
+    java.lang.Object ref = username_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      username_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string username = 3 [json_name = "username"];</code>
+   * @return The bytes for username.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getUsernameBytes() {
+    java.lang.Object ref = username_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      username_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int FULL_NAME_FIELD_NUMBER = 4;
   @SuppressWarnings("serial")
   private volatile java.lang.Object fullName_ = "";
   /**
-   * <code>string full_name = 3 [json_name = "fullName"];</code>
+   * <code>string full_name = 4 [json_name = "fullName"];</code>
    * @return The fullName.
    */
   @java.lang.Override
@@ -148,7 +188,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string full_name = 3 [json_name = "fullName"];</code>
+   * <code>string full_name = 4 [json_name = "fullName"];</code>
    * @return The bytes for fullName.
    */
   @java.lang.Override
@@ -166,11 +206,11 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int EMAIL_FIELD_NUMBER = 4;
+  public static final int EMAIL_FIELD_NUMBER = 5;
   @SuppressWarnings("serial")
   private volatile java.lang.Object email_ = "";
   /**
-   * <code>string email = 4 [json_name = "email"];</code>
+   * <code>string email = 5 [json_name = "email"];</code>
    * @return The email.
    */
   @java.lang.Override
@@ -187,7 +227,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string email = 4 [json_name = "email"];</code>
+   * <code>string email = 5 [json_name = "email"];</code>
    * @return The bytes for email.
    */
   @java.lang.Override
@@ -205,11 +245,11 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int BIO_FIELD_NUMBER = 5;
+  public static final int BIO_FIELD_NUMBER = 6;
   @SuppressWarnings("serial")
   private volatile java.lang.Object bio_ = "";
   /**
-   * <code>string bio = 5 [json_name = "bio"];</code>
+   * <code>string bio = 6 [json_name = "bio"];</code>
    * @return The bio.
    */
   @java.lang.Override
@@ -226,7 +266,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string bio = 5 [json_name = "bio"];</code>
+   * <code>string bio = 6 [json_name = "bio"];</code>
    * @return The bytes for bio.
    */
   @java.lang.Override
@@ -244,11 +284,11 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int AVATAR_FIELD_NUMBER = 6;
+  public static final int AVATAR_FIELD_NUMBER = 7;
   @SuppressWarnings("serial")
   private volatile java.lang.Object avatar_ = "";
   /**
-   * <code>string avatar = 6 [json_name = "avatar"];</code>
+   * <code>string avatar = 7 [json_name = "avatar"];</code>
    * @return The avatar.
    */
   @java.lang.Override
@@ -265,7 +305,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string avatar = 6 [json_name = "avatar"];</code>
+   * <code>string avatar = 7 [json_name = "avatar"];</code>
    * @return The bytes for avatar.
    */
   @java.lang.Override
@@ -283,10 +323,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CREATED_AT_FIELD_NUMBER = 7;
+  public static final int CREATED_AT_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp createdAt_;
   /**
-   * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
+   * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt"];</code>
    * @return Whether the createdAt field is set.
    */
   @java.lang.Override
@@ -294,7 +334,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
+   * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt"];</code>
    * @return The createdAt.
    */
   @java.lang.Override
@@ -302,17 +342,17 @@ private static final long serialVersionUID = 0L;
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
   }
   /**
-   * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
+   * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt"];</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
   }
 
-  public static final int UPDATED_AT_FIELD_NUMBER = 8;
+  public static final int UPDATED_AT_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp updatedAt_;
   /**
-   * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
+   * <code>.google.protobuf.Timestamp updated_at = 9 [json_name = "updatedAt"];</code>
    * @return Whether the updatedAt field is set.
    */
   @java.lang.Override
@@ -320,7 +360,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
+   * <code>.google.protobuf.Timestamp updated_at = 9 [json_name = "updatedAt"];</code>
    * @return The updatedAt.
    */
   @java.lang.Override
@@ -328,17 +368,17 @@ private static final long serialVersionUID = 0L;
     return updatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
   }
   /**
-   * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
+   * <code>.google.protobuf.Timestamp updated_at = 9 [json_name = "updatedAt"];</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder() {
     return updatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
   }
 
-  public static final int DELETED_AT_FIELD_NUMBER = 9;
+  public static final int DELETED_AT_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp deletedAt_;
   /**
-   * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
+   * <code>.google.protobuf.Timestamp deleted_at = 10 [json_name = "deletedAt"];</code>
    * @return Whether the deletedAt field is set.
    */
   @java.lang.Override
@@ -346,7 +386,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000004) != 0);
   }
   /**
-   * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
+   * <code>.google.protobuf.Timestamp deleted_at = 10 [json_name = "deletedAt"];</code>
    * @return The deletedAt.
    */
   @java.lang.Override
@@ -354,7 +394,7 @@ private static final long serialVersionUID = 0L;
     return deletedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deletedAt_;
   }
   /**
-   * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
+   * <code>.google.protobuf.Timestamp deleted_at = 10 [json_name = "deletedAt"];</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDeletedAtOrBuilder() {
@@ -381,26 +421,29 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(userId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 2, userId_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(username_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, username_);
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(fullName_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 3, fullName_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, fullName_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(email_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 4, email_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 5, email_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(bio_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 5, bio_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 6, bio_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(avatar_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 6, avatar_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 7, avatar_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(7, getCreatedAt());
+      output.writeMessage(8, getCreatedAt());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(8, getUpdatedAt());
+      output.writeMessage(9, getUpdatedAt());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeMessage(9, getDeletedAt());
+      output.writeMessage(10, getDeletedAt());
     }
     getUnknownFields().writeTo(output);
   }
@@ -417,29 +460,32 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(userId_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, userId_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(username_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, username_);
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(fullName_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, fullName_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, fullName_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(email_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, email_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, email_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(bio_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, bio_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(6, bio_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(avatar_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(6, avatar_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, avatar_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, getCreatedAt());
+        .computeMessageSize(8, getCreatedAt());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, getUpdatedAt());
+        .computeMessageSize(9, getUpdatedAt());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, getDeletedAt());
+        .computeMessageSize(10, getDeletedAt());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -460,6 +506,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getProfileId())) return false;
     if (!getUserId()
         .equals(other.getUserId())) return false;
+    if (!getUsername()
+        .equals(other.getUsername())) return false;
     if (!getFullName()
         .equals(other.getFullName())) return false;
     if (!getEmail()
@@ -498,6 +546,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getProfileId().hashCode();
     hash = (37 * hash) + USER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getUserId().hashCode();
+    hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getUsername().hashCode();
     hash = (37 * hash) + FULL_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getFullName().hashCode();
     hash = (37 * hash) + EMAIL_FIELD_NUMBER;
@@ -659,6 +709,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = 0;
       profileId_ = "";
       userId_ = "";
+      username_ = "";
       fullName_ = "";
       email_ = "";
       bio_ = "";
@@ -718,31 +769,34 @@ private static final long serialVersionUID = 0L;
         result.userId_ = userId_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.fullName_ = fullName_;
+        result.username_ = username_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.email_ = email_;
+        result.fullName_ = fullName_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.bio_ = bio_;
+        result.email_ = email_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.bio_ = bio_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.avatar_ = avatar_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.createdAt_ = createdAtBuilder_ == null
             ? createdAt_
             : createdAtBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.updatedAt_ = updatedAtBuilder_ == null
             ? updatedAt_
             : updatedAtBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.deletedAt_ = deletedAtBuilder_ == null
             ? deletedAt_
             : deletedAtBuilder_.build();
@@ -773,24 +827,29 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (!other.getUsername().isEmpty()) {
+        username_ = other.username_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       if (!other.getFullName().isEmpty()) {
         fullName_ = other.fullName_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getEmail().isEmpty()) {
         email_ = other.email_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getBio().isEmpty()) {
         bio_ = other.bio_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getAvatar().isEmpty()) {
         avatar_ = other.avatar_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasCreatedAt()) {
@@ -839,46 +898,51 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 18
             case 26: {
-              fullName_ = input.readStringRequireUtf8();
+              username_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
               break;
             } // case 26
             case 34: {
-              email_ = input.readStringRequireUtf8();
+              fullName_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
               break;
             } // case 34
             case 42: {
-              bio_ = input.readStringRequireUtf8();
+              email_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000010;
               break;
             } // case 42
             case 50: {
-              avatar_ = input.readStringRequireUtf8();
+              bio_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000020;
               break;
             } // case 50
             case 58: {
-              input.readMessage(
-                  getCreatedAtFieldBuilder().getBuilder(),
-                  extensionRegistry);
+              avatar_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000040;
               break;
             } // case 58
             case 66: {
               input.readMessage(
-                  getUpdatedAtFieldBuilder().getBuilder(),
+                  getCreatedAtFieldBuilder().getBuilder(),
                   extensionRegistry);
               bitField0_ |= 0x00000080;
               break;
             } // case 66
             case 74: {
               input.readMessage(
-                  getDeletedAtFieldBuilder().getBuilder(),
+                  getUpdatedAtFieldBuilder().getBuilder(),
                   extensionRegistry);
               bitField0_ |= 0x00000100;
               break;
             } // case 74
+            case 82: {
+              input.readMessage(
+                  getDeletedAtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000200;
+              break;
+            } // case 82
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1040,9 +1104,81 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object username_ = "";
+    /**
+     * <code>string username = 3 [json_name = "username"];</code>
+     * @return The username.
+     */
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        username_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string username = 3 [json_name = "username"];</code>
+     * @return The bytes for username.
+     */
+    public com.google.protobuf.ByteString
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        username_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string username = 3 [json_name = "username"];</code>
+     * @param value The username to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUsername(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      username_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string username = 3 [json_name = "username"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUsername() {
+      username_ = getDefaultInstance().getUsername();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string username = 3 [json_name = "username"];</code>
+     * @param value The bytes for username to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUsernameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      username_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object fullName_ = "";
     /**
-     * <code>string full_name = 3 [json_name = "fullName"];</code>
+     * <code>string full_name = 4 [json_name = "fullName"];</code>
      * @return The fullName.
      */
     public java.lang.String getFullName() {
@@ -1058,7 +1194,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string full_name = 3 [json_name = "fullName"];</code>
+     * <code>string full_name = 4 [json_name = "fullName"];</code>
      * @return The bytes for fullName.
      */
     public com.google.protobuf.ByteString
@@ -1075,7 +1211,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string full_name = 3 [json_name = "fullName"];</code>
+     * <code>string full_name = 4 [json_name = "fullName"];</code>
      * @param value The fullName to set.
      * @return This builder for chaining.
      */
@@ -1083,22 +1219,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       fullName_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>string full_name = 3 [json_name = "fullName"];</code>
+     * <code>string full_name = 4 [json_name = "fullName"];</code>
      * @return This builder for chaining.
      */
     public Builder clearFullName() {
       fullName_ = getDefaultInstance().getFullName();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
     /**
-     * <code>string full_name = 3 [json_name = "fullName"];</code>
+     * <code>string full_name = 4 [json_name = "fullName"];</code>
      * @param value The bytes for fullName to set.
      * @return This builder for chaining.
      */
@@ -1107,14 +1243,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       fullName_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
 
     private java.lang.Object email_ = "";
     /**
-     * <code>string email = 4 [json_name = "email"];</code>
+     * <code>string email = 5 [json_name = "email"];</code>
      * @return The email.
      */
     public java.lang.String getEmail() {
@@ -1130,7 +1266,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string email = 4 [json_name = "email"];</code>
+     * <code>string email = 5 [json_name = "email"];</code>
      * @return The bytes for email.
      */
     public com.google.protobuf.ByteString
@@ -1147,7 +1283,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string email = 4 [json_name = "email"];</code>
+     * <code>string email = 5 [json_name = "email"];</code>
      * @param value The email to set.
      * @return This builder for chaining.
      */
@@ -1155,22 +1291,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       email_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
     /**
-     * <code>string email = 4 [json_name = "email"];</code>
+     * <code>string email = 5 [json_name = "email"];</code>
      * @return This builder for chaining.
      */
     public Builder clearEmail() {
       email_ = getDefaultInstance().getEmail();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
     /**
-     * <code>string email = 4 [json_name = "email"];</code>
+     * <code>string email = 5 [json_name = "email"];</code>
      * @param value The bytes for email to set.
      * @return This builder for chaining.
      */
@@ -1179,14 +1315,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       email_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
 
     private java.lang.Object bio_ = "";
     /**
-     * <code>string bio = 5 [json_name = "bio"];</code>
+     * <code>string bio = 6 [json_name = "bio"];</code>
      * @return The bio.
      */
     public java.lang.String getBio() {
@@ -1202,7 +1338,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string bio = 5 [json_name = "bio"];</code>
+     * <code>string bio = 6 [json_name = "bio"];</code>
      * @return The bytes for bio.
      */
     public com.google.protobuf.ByteString
@@ -1219,7 +1355,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string bio = 5 [json_name = "bio"];</code>
+     * <code>string bio = 6 [json_name = "bio"];</code>
      * @param value The bio to set.
      * @return This builder for chaining.
      */
@@ -1227,22 +1363,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       bio_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
     /**
-     * <code>string bio = 5 [json_name = "bio"];</code>
+     * <code>string bio = 6 [json_name = "bio"];</code>
      * @return This builder for chaining.
      */
     public Builder clearBio() {
       bio_ = getDefaultInstance().getBio();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
     /**
-     * <code>string bio = 5 [json_name = "bio"];</code>
+     * <code>string bio = 6 [json_name = "bio"];</code>
      * @param value The bytes for bio to set.
      * @return This builder for chaining.
      */
@@ -1251,14 +1387,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       bio_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
 
     private java.lang.Object avatar_ = "";
     /**
-     * <code>string avatar = 6 [json_name = "avatar"];</code>
+     * <code>string avatar = 7 [json_name = "avatar"];</code>
      * @return The avatar.
      */
     public java.lang.String getAvatar() {
@@ -1274,7 +1410,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string avatar = 6 [json_name = "avatar"];</code>
+     * <code>string avatar = 7 [json_name = "avatar"];</code>
      * @return The bytes for avatar.
      */
     public com.google.protobuf.ByteString
@@ -1291,7 +1427,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string avatar = 6 [json_name = "avatar"];</code>
+     * <code>string avatar = 7 [json_name = "avatar"];</code>
      * @param value The avatar to set.
      * @return This builder for chaining.
      */
@@ -1299,22 +1435,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       avatar_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
     /**
-     * <code>string avatar = 6 [json_name = "avatar"];</code>
+     * <code>string avatar = 7 [json_name = "avatar"];</code>
      * @return This builder for chaining.
      */
     public Builder clearAvatar() {
       avatar_ = getDefaultInstance().getAvatar();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
     /**
-     * <code>string avatar = 6 [json_name = "avatar"];</code>
+     * <code>string avatar = 7 [json_name = "avatar"];</code>
      * @param value The bytes for avatar to set.
      * @return This builder for chaining.
      */
@@ -1323,7 +1459,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       avatar_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1332,14 +1468,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilder<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createdAtBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
+     * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt"];</code>
      * @return Whether the createdAt field is set.
      */
     public boolean hasCreatedAt() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
+     * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
     public com.google.protobuf.Timestamp getCreatedAt() {
@@ -1350,7 +1486,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
+     * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt"];</code>
      */
     public Builder setCreatedAt(com.google.protobuf.Timestamp value) {
       if (createdAtBuilder_ == null) {
@@ -1361,12 +1497,12 @@ private static final long serialVersionUID = 0L;
       } else {
         createdAtBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
+     * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt"];</code>
      */
     public Builder setCreatedAt(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1375,16 +1511,16 @@ private static final long serialVersionUID = 0L;
       } else {
         createdAtBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
+     * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt"];</code>
      */
     public Builder mergeCreatedAt(com.google.protobuf.Timestamp value) {
       if (createdAtBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0) &&
+        if (((bitField0_ & 0x00000080) != 0) &&
           createdAt_ != null &&
           createdAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreatedAtBuilder().mergeFrom(value);
@@ -1395,16 +1531,16 @@ private static final long serialVersionUID = 0L;
         createdAtBuilder_.mergeFrom(value);
       }
       if (createdAt_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
+     * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt"];</code>
      */
     public Builder clearCreatedAt() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       createdAt_ = null;
       if (createdAtBuilder_ != null) {
         createdAtBuilder_.dispose();
@@ -1414,15 +1550,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
+     * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt"];</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreatedAtBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getCreatedAtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
+     * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt"];</code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
       if (createdAtBuilder_ != null) {
@@ -1433,7 +1569,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
+     * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt"];</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1453,14 +1589,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilder<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updatedAtBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
+     * <code>.google.protobuf.Timestamp updated_at = 9 [json_name = "updatedAt"];</code>
      * @return Whether the updatedAt field is set.
      */
     public boolean hasUpdatedAt() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
+     * <code>.google.protobuf.Timestamp updated_at = 9 [json_name = "updatedAt"];</code>
      * @return The updatedAt.
      */
     public com.google.protobuf.Timestamp getUpdatedAt() {
@@ -1471,7 +1607,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
+     * <code>.google.protobuf.Timestamp updated_at = 9 [json_name = "updatedAt"];</code>
      */
     public Builder setUpdatedAt(com.google.protobuf.Timestamp value) {
       if (updatedAtBuilder_ == null) {
@@ -1482,12 +1618,12 @@ private static final long serialVersionUID = 0L;
       } else {
         updatedAtBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
+     * <code>.google.protobuf.Timestamp updated_at = 9 [json_name = "updatedAt"];</code>
      */
     public Builder setUpdatedAt(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1496,16 +1632,16 @@ private static final long serialVersionUID = 0L;
       } else {
         updatedAtBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
+     * <code>.google.protobuf.Timestamp updated_at = 9 [json_name = "updatedAt"];</code>
      */
     public Builder mergeUpdatedAt(com.google.protobuf.Timestamp value) {
       if (updatedAtBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0) &&
+        if (((bitField0_ & 0x00000100) != 0) &&
           updatedAt_ != null &&
           updatedAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdatedAtBuilder().mergeFrom(value);
@@ -1516,16 +1652,16 @@ private static final long serialVersionUID = 0L;
         updatedAtBuilder_.mergeFrom(value);
       }
       if (updatedAt_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
+     * <code>.google.protobuf.Timestamp updated_at = 9 [json_name = "updatedAt"];</code>
      */
     public Builder clearUpdatedAt() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       updatedAt_ = null;
       if (updatedAtBuilder_ != null) {
         updatedAtBuilder_.dispose();
@@ -1535,15 +1671,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
+     * <code>.google.protobuf.Timestamp updated_at = 9 [json_name = "updatedAt"];</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdatedAtBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getUpdatedAtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
+     * <code>.google.protobuf.Timestamp updated_at = 9 [json_name = "updatedAt"];</code>
      */
     public com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder() {
       if (updatedAtBuilder_ != null) {
@@ -1554,7 +1690,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
+     * <code>.google.protobuf.Timestamp updated_at = 9 [json_name = "updatedAt"];</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1574,14 +1710,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilder<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> deletedAtBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
+     * <code>.google.protobuf.Timestamp deleted_at = 10 [json_name = "deletedAt"];</code>
      * @return Whether the deletedAt field is set.
      */
     public boolean hasDeletedAt() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
+     * <code>.google.protobuf.Timestamp deleted_at = 10 [json_name = "deletedAt"];</code>
      * @return The deletedAt.
      */
     public com.google.protobuf.Timestamp getDeletedAt() {
@@ -1592,7 +1728,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
+     * <code>.google.protobuf.Timestamp deleted_at = 10 [json_name = "deletedAt"];</code>
      */
     public Builder setDeletedAt(com.google.protobuf.Timestamp value) {
       if (deletedAtBuilder_ == null) {
@@ -1603,12 +1739,12 @@ private static final long serialVersionUID = 0L;
       } else {
         deletedAtBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
+     * <code>.google.protobuf.Timestamp deleted_at = 10 [json_name = "deletedAt"];</code>
      */
     public Builder setDeletedAt(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1617,16 +1753,16 @@ private static final long serialVersionUID = 0L;
       } else {
         deletedAtBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
+     * <code>.google.protobuf.Timestamp deleted_at = 10 [json_name = "deletedAt"];</code>
      */
     public Builder mergeDeletedAt(com.google.protobuf.Timestamp value) {
       if (deletedAtBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0) &&
+        if (((bitField0_ & 0x00000200) != 0) &&
           deletedAt_ != null &&
           deletedAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getDeletedAtBuilder().mergeFrom(value);
@@ -1637,16 +1773,16 @@ private static final long serialVersionUID = 0L;
         deletedAtBuilder_.mergeFrom(value);
       }
       if (deletedAt_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
+     * <code>.google.protobuf.Timestamp deleted_at = 10 [json_name = "deletedAt"];</code>
      */
     public Builder clearDeletedAt() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       deletedAt_ = null;
       if (deletedAtBuilder_ != null) {
         deletedAtBuilder_.dispose();
@@ -1656,15 +1792,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
+     * <code>.google.protobuf.Timestamp deleted_at = 10 [json_name = "deletedAt"];</code>
      */
     public com.google.protobuf.Timestamp.Builder getDeletedAtBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getDeletedAtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
+     * <code>.google.protobuf.Timestamp deleted_at = 10 [json_name = "deletedAt"];</code>
      */
     public com.google.protobuf.TimestampOrBuilder getDeletedAtOrBuilder() {
       if (deletedAtBuilder_ != null) {
@@ -1675,7 +1811,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
+     * <code>.google.protobuf.Timestamp deleted_at = 10 [json_name = "deletedAt"];</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 

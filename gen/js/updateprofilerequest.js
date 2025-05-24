@@ -74,7 +74,8 @@ userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
 fullName: jspb.Message.getFieldWithDefault(msg, 2, ""),
 email: jspb.Message.getFieldWithDefault(msg, 3, ""),
 bio: jspb.Message.getFieldWithDefault(msg, 4, ""),
-avatar: jspb.Message.getFieldWithDefault(msg, 5, "")
+avatar: jspb.Message.getFieldWithDefault(msg, 5, ""),
+username: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -130,6 +131,10 @@ proto.profile.v1.UpdateProfileRequest.deserializeBinaryFromReader = function(msg
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setAvatar(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUsername(value);
       break;
     default:
       reader.skipField();
@@ -192,6 +197,13 @@ proto.profile.v1.UpdateProfileRequest.serializeBinaryToWriter = function(message
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getUsername();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -285,6 +297,24 @@ proto.profile.v1.UpdateProfileRequest.prototype.getAvatar = function() {
  */
 proto.profile.v1.UpdateProfileRequest.prototype.setAvatar = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string username = 6;
+ * @return {string}
+ */
+proto.profile.v1.UpdateProfileRequest.prototype.getUsername = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.profile.v1.UpdateProfileRequest} returns this
+ */
+proto.profile.v1.UpdateProfileRequest.prototype.setUsername = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 

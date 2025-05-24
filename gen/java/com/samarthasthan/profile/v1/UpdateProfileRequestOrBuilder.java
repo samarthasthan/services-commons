@@ -22,24 +22,24 @@ public interface UpdateProfileRequestOrBuilder extends
       getUserIdBytes();
 
   /**
-   * <code>string full_name = 2 [json_name = "fullName", (.buf.validate.field) = { ... }</code>
+   * <code>string full_name = 2 [json_name = "fullName"];</code>
    * @return The fullName.
    */
   java.lang.String getFullName();
   /**
-   * <code>string full_name = 2 [json_name = "fullName", (.buf.validate.field) = { ... }</code>
+   * <code>string full_name = 2 [json_name = "fullName"];</code>
    * @return The bytes for fullName.
    */
   com.google.protobuf.ByteString
       getFullNameBytes();
 
   /**
-   * <code>string email = 3 [json_name = "email", (.buf.validate.field) = { ... }</code>
+   * <code>string email = 3 [json_name = "email"];</code>
    * @return The email.
    */
   java.lang.String getEmail();
   /**
-   * <code>string email = 3 [json_name = "email", (.buf.validate.field) = { ... }</code>
+   * <code>string email = 3 [json_name = "email"];</code>
    * @return The bytes for email.
    */
   com.google.protobuf.ByteString
@@ -68,4 +68,16 @@ public interface UpdateProfileRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getAvatarBytes();
+
+  /**
+   * <code>string username = 6 [json_name = "username"];</code>
+   * @return The username.
+   */
+  java.lang.String getUsername();
+  /**
+   * <code>string username = 6 [json_name = "username"];</code>
+   * @return The bytes for username.
+   */
+  com.google.protobuf.ByteString
+      getUsernameBytes();
 }

@@ -83,38 +83,39 @@ public final class ProfileProto {
       "ofileResponse\022\035\n\nprofile_id\030\001 \001(\tR\tprofi" +
       "leId\022\027\n\007user_id\030\002 \001(\tR\006userId\"6\n\021GetProf" +
       "ileRequest\022!\n\007user_id\030\001 \001(\tB\010\272H\005r\003\260\001\001R\006u" +
-      "serId\"\332\002\n\022GetProfileResponse\022\035\n\nprofile_" +
+      "serId\"\366\002\n\022GetProfileResponse\022\035\n\nprofile_" +
       "id\030\001 \001(\tR\tprofileId\022\027\n\007user_id\030\002 \001(\tR\006us" +
-      "erId\022\033\n\tfull_name\030\003 \001(\tR\010fullName\022\024\n\005ema" +
-      "il\030\004 \001(\tR\005email\022\020\n\003bio\030\005 \001(\tR\003bio\022\026\n\006ava" +
-      "tar\030\006 \001(\tR\006avatar\0229\n\ncreated_at\030\007 \001(\0132\032." +
-      "google.protobuf.TimestampR\tcreatedAt\0229\n\n" +
-      "updated_at\030\010 \001(\0132\032.google.protobuf.Times" +
-      "tampR\tupdatedAt\0229\n\ndeleted_at\030\t \001(\0132\032.go" +
-      "ogle.protobuf.TimestampR\tdeletedAt\"\250\001\n\024U" +
-      "pdateProfileRequest\022!\n\007user_id\030\001 \001(\tB\010\272H" +
-      "\005r\003\260\001\001R\006userId\022$\n\tfull_name\030\002 \001(\tB\007\272H\004r\002" +
-      "\020\001R\010fullName\022\035\n\005email\030\003 \001(\tB\007\272H\004r\002`\001R\005em" +
-      "ail\022\020\n\003bio\030\004 \001(\tR\003bio\022\026\n\006avatar\030\005 \001(\tR\006a" +
-      "vatar\"O\n\025UpdateProfileResponse\022\035\n\nprofil" +
-      "e_id\030\001 \001(\tR\tprofileId\022\027\n\007user_id\030\002 \001(\tR\006" +
-      "userId\"9\n\024DeleteProfileRequest\022!\n\007user_i" +
-      "d\030\001 \001(\tB\010\272H\005r\003\260\001\001R\006userId\"0\n\025DeleteProfi" +
-      "leResponse\022\027\n\007is_done\030\001 \001(\010R\006isDone2\337\002\n\016" +
-      "ProfileService\022T\n\rCreateProfile\022 .profil" +
-      "e.v1.CreateProfileRequest\032!.profile.v1.C" +
-      "reateProfileResponse\022K\n\nGetProfile\022\035.pro" +
-      "file.v1.GetProfileRequest\032\036.profile.v1.G" +
-      "etProfileResponse\022T\n\rUpdateProfile\022 .pro" +
-      "file.v1.UpdateProfileRequest\032!.profile.v" +
-      "1.UpdateProfileResponse\022T\n\rDeleteProfile" +
-      "\022 .profile.v1.DeleteProfileRequest\032!.pro" +
-      "file.v1.DeleteProfileResponseB\274\001\n\034com.sa" +
-      "marthasthan.profile.v1B\014ProfileProtoP\001ZE" +
-      "github.com/samarthasthan/services-common" +
-      "s/gen/go/profile/v1;profilev1\242\002\003PXX\252\002\nPr" +
-      "ofile.V1\312\002\nProfile\\V1\342\002\026Profile\\V1\\GPBMe" +
-      "tadata\352\002\013Profile::V1b\006proto3"
+      "erId\022\032\n\010username\030\003 \001(\tR\010username\022\033\n\tfull" +
+      "_name\030\004 \001(\tR\010fullName\022\024\n\005email\030\005 \001(\tR\005em" +
+      "ail\022\020\n\003bio\030\006 \001(\tR\003bio\022\026\n\006avatar\030\007 \001(\tR\006a" +
+      "vatar\0229\n\ncreated_at\030\010 \001(\0132\032.google.proto" +
+      "buf.TimestampR\tcreatedAt\0229\n\nupdated_at\030\t" +
+      " \001(\0132\032.google.protobuf.TimestampR\tupdate" +
+      "dAt\0229\n\ndeleted_at\030\n \001(\0132\032.google.protobu" +
+      "f.TimestampR\tdeletedAt\"\262\001\n\024UpdateProfile" +
+      "Request\022!\n\007user_id\030\001 \001(\tB\010\272H\005r\003\260\001\001R\006user" +
+      "Id\022\033\n\tfull_name\030\002 \001(\tR\010fullName\022\024\n\005email" +
+      "\030\003 \001(\tR\005email\022\020\n\003bio\030\004 \001(\tR\003bio\022\026\n\006avata" +
+      "r\030\005 \001(\tR\006avatar\022\032\n\010username\030\006 \001(\tR\010usern" +
+      "ame\"O\n\025UpdateProfileResponse\022\035\n\nprofile_" +
+      "id\030\001 \001(\tR\tprofileId\022\027\n\007user_id\030\002 \001(\tR\006us" +
+      "erId\"9\n\024DeleteProfileRequest\022!\n\007user_id\030" +
+      "\001 \001(\tB\010\272H\005r\003\260\001\001R\006userId\"0\n\025DeleteProfile" +
+      "Response\022\027\n\007is_done\030\001 \001(\010R\006isDone2\337\002\n\016Pr" +
+      "ofileService\022T\n\rCreateProfile\022 .profile." +
+      "v1.CreateProfileRequest\032!.profile.v1.Cre" +
+      "ateProfileResponse\022K\n\nGetProfile\022\035.profi" +
+      "le.v1.GetProfileRequest\032\036.profile.v1.Get" +
+      "ProfileResponse\022T\n\rUpdateProfile\022 .profi" +
+      "le.v1.UpdateProfileRequest\032!.profile.v1." +
+      "UpdateProfileResponse\022T\n\rDeleteProfile\022 " +
+      ".profile.v1.DeleteProfileRequest\032!.profi" +
+      "le.v1.DeleteProfileResponseB\274\001\n\034com.sama" +
+      "rthasthan.profile.v1B\014ProfileProtoP\001ZEgi" +
+      "thub.com/samarthasthan/services-commons/" +
+      "gen/go/profile/v1;profilev1\242\002\003PXX\252\002\nProf" +
+      "ile.V1\312\002\nProfile\\V1\342\002\026Profile\\V1\\GPBMeta" +
+      "data\352\002\013Profile::V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -145,13 +146,13 @@ public final class ProfileProto {
     internal_static_profile_v1_GetProfileResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_profile_v1_GetProfileResponse_descriptor,
-        new java.lang.String[] { "ProfileId", "UserId", "FullName", "Email", "Bio", "Avatar", "CreatedAt", "UpdatedAt", "DeletedAt", });
+        new java.lang.String[] { "ProfileId", "UserId", "Username", "FullName", "Email", "Bio", "Avatar", "CreatedAt", "UpdatedAt", "DeletedAt", });
     internal_static_profile_v1_UpdateProfileRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_profile_v1_UpdateProfileRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_profile_v1_UpdateProfileRequest_descriptor,
-        new java.lang.String[] { "UserId", "FullName", "Email", "Bio", "Avatar", });
+        new java.lang.String[] { "UserId", "FullName", "Email", "Bio", "Avatar", "Username", });
     internal_static_profile_v1_UpdateProfileResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_profile_v1_UpdateProfileResponse_fieldAccessorTable = new

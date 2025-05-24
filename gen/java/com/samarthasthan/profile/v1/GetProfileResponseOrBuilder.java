@@ -34,95 +34,107 @@ public interface GetProfileResponseOrBuilder extends
       getUserIdBytes();
 
   /**
-   * <code>string full_name = 3 [json_name = "fullName"];</code>
+   * <code>string username = 3 [json_name = "username"];</code>
+   * @return The username.
+   */
+  java.lang.String getUsername();
+  /**
+   * <code>string username = 3 [json_name = "username"];</code>
+   * @return The bytes for username.
+   */
+  com.google.protobuf.ByteString
+      getUsernameBytes();
+
+  /**
+   * <code>string full_name = 4 [json_name = "fullName"];</code>
    * @return The fullName.
    */
   java.lang.String getFullName();
   /**
-   * <code>string full_name = 3 [json_name = "fullName"];</code>
+   * <code>string full_name = 4 [json_name = "fullName"];</code>
    * @return The bytes for fullName.
    */
   com.google.protobuf.ByteString
       getFullNameBytes();
 
   /**
-   * <code>string email = 4 [json_name = "email"];</code>
+   * <code>string email = 5 [json_name = "email"];</code>
    * @return The email.
    */
   java.lang.String getEmail();
   /**
-   * <code>string email = 4 [json_name = "email"];</code>
+   * <code>string email = 5 [json_name = "email"];</code>
    * @return The bytes for email.
    */
   com.google.protobuf.ByteString
       getEmailBytes();
 
   /**
-   * <code>string bio = 5 [json_name = "bio"];</code>
+   * <code>string bio = 6 [json_name = "bio"];</code>
    * @return The bio.
    */
   java.lang.String getBio();
   /**
-   * <code>string bio = 5 [json_name = "bio"];</code>
+   * <code>string bio = 6 [json_name = "bio"];</code>
    * @return The bytes for bio.
    */
   com.google.protobuf.ByteString
       getBioBytes();
 
   /**
-   * <code>string avatar = 6 [json_name = "avatar"];</code>
+   * <code>string avatar = 7 [json_name = "avatar"];</code>
    * @return The avatar.
    */
   java.lang.String getAvatar();
   /**
-   * <code>string avatar = 6 [json_name = "avatar"];</code>
+   * <code>string avatar = 7 [json_name = "avatar"];</code>
    * @return The bytes for avatar.
    */
   com.google.protobuf.ByteString
       getAvatarBytes();
 
   /**
-   * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
+   * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt"];</code>
    * @return Whether the createdAt field is set.
    */
   boolean hasCreatedAt();
   /**
-   * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
+   * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt"];</code>
    * @return The createdAt.
    */
   com.google.protobuf.Timestamp getCreatedAt();
   /**
-   * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt"];</code>
+   * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt"];</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder();
 
   /**
-   * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
+   * <code>.google.protobuf.Timestamp updated_at = 9 [json_name = "updatedAt"];</code>
    * @return Whether the updatedAt field is set.
    */
   boolean hasUpdatedAt();
   /**
-   * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
+   * <code>.google.protobuf.Timestamp updated_at = 9 [json_name = "updatedAt"];</code>
    * @return The updatedAt.
    */
   com.google.protobuf.Timestamp getUpdatedAt();
   /**
-   * <code>.google.protobuf.Timestamp updated_at = 8 [json_name = "updatedAt"];</code>
+   * <code>.google.protobuf.Timestamp updated_at = 9 [json_name = "updatedAt"];</code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder();
 
   /**
-   * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
+   * <code>.google.protobuf.Timestamp deleted_at = 10 [json_name = "deletedAt"];</code>
    * @return Whether the deletedAt field is set.
    */
   boolean hasDeletedAt();
   /**
-   * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
+   * <code>.google.protobuf.Timestamp deleted_at = 10 [json_name = "deletedAt"];</code>
    * @return The deletedAt.
    */
   com.google.protobuf.Timestamp getDeletedAt();
   /**
-   * <code>.google.protobuf.Timestamp deleted_at = 9 [json_name = "deletedAt"];</code>
+   * <code>.google.protobuf.Timestamp deleted_at = 10 [json_name = "deletedAt"];</code>
    */
   com.google.protobuf.TimestampOrBuilder getDeletedAtOrBuilder();
 }

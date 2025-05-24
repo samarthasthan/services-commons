@@ -73,10 +73,11 @@ proto.profile.v1.GetProfileResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 profileId: jspb.Message.getFieldWithDefault(msg, 1, ""),
 userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-fullName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-email: jspb.Message.getFieldWithDefault(msg, 4, ""),
-bio: jspb.Message.getFieldWithDefault(msg, 5, ""),
-avatar: jspb.Message.getFieldWithDefault(msg, 6, ""),
+username: jspb.Message.getFieldWithDefault(msg, 3, ""),
+fullName: jspb.Message.getFieldWithDefault(msg, 4, ""),
+email: jspb.Message.getFieldWithDefault(msg, 5, ""),
+bio: jspb.Message.getFieldWithDefault(msg, 6, ""),
+avatar: jspb.Message.getFieldWithDefault(msg, 7, ""),
 createdAt: (f = msg.getCreatedAt()) && proto.google.protobuf.Timestamp.toObject(includeInstance, f),
 updatedAt: (f = msg.getUpdatedAt()) && proto.google.protobuf.Timestamp.toObject(includeInstance, f),
 deletedAt: (f = msg.getDeletedAt()) && proto.google.protobuf.Timestamp.toObject(includeInstance, f)
@@ -126,31 +127,35 @@ proto.profile.v1.GetProfileResponse.deserializeBinaryFromReader = function(msg, 
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setFullName(value);
+      msg.setUsername(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setEmail(value);
+      msg.setFullName(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setBio(value);
+      msg.setEmail(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setAvatar(value);
+      msg.setBio(value);
       break;
     case 7:
-      var value = new proto.google.protobuf.Timestamp;
-      reader.readMessage(value,proto.google.protobuf.Timestamp.deserializeBinaryFromReader);
-      msg.setCreatedAt(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAvatar(value);
       break;
     case 8:
       var value = new proto.google.protobuf.Timestamp;
       reader.readMessage(value,proto.google.protobuf.Timestamp.deserializeBinaryFromReader);
-      msg.setUpdatedAt(value);
+      msg.setCreatedAt(value);
       break;
     case 9:
+      var value = new proto.google.protobuf.Timestamp;
+      reader.readMessage(value,proto.google.protobuf.Timestamp.deserializeBinaryFromReader);
+      msg.setUpdatedAt(value);
+      break;
+    case 10:
       var value = new proto.google.protobuf.Timestamp;
       reader.readMessage(value,proto.google.protobuf.Timestamp.deserializeBinaryFromReader);
       msg.setDeletedAt(value);
@@ -198,43 +203,42 @@ proto.profile.v1.GetProfileResponse.serializeBinaryToWriter = function(message, 
       f
     );
   }
-  f = message.getFullName();
+  f = message.getUsername();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getEmail();
+  f = message.getFullName();
   if (f.length > 0) {
     writer.writeString(
       4,
       f
     );
   }
-  f = message.getBio();
+  f = message.getEmail();
   if (f.length > 0) {
     writer.writeString(
       5,
       f
     );
   }
-  f = message.getAvatar();
+  f = message.getBio();
   if (f.length > 0) {
     writer.writeString(
       6,
       f
     );
   }
-  f = message.getCreatedAt();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getAvatar();
+  if (f.length > 0) {
+    writer.writeString(
       7,
-      f,
-      proto.google.protobuf.Timestamp.serializeBinaryToWriter
+      f
     );
   }
-  f = message.getUpdatedAt();
+  f = message.getCreatedAt();
   if (f != null) {
     writer.writeMessage(
       8,
@@ -242,10 +246,18 @@ proto.profile.v1.GetProfileResponse.serializeBinaryToWriter = function(message, 
       proto.google.protobuf.Timestamp.serializeBinaryToWriter
     );
   }
-  f = message.getDeletedAt();
+  f = message.getUpdatedAt();
   if (f != null) {
     writer.writeMessage(
       9,
+      f,
+      proto.google.protobuf.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getDeletedAt();
+  if (f != null) {
+    writer.writeMessage(
+      10,
       f,
       proto.google.protobuf.Timestamp.serializeBinaryToWriter
     );
@@ -290,10 +302,10 @@ proto.profile.v1.GetProfileResponse.prototype.setUserId = function(value) {
 
 
 /**
- * optional string full_name = 3;
+ * optional string username = 3;
  * @return {string}
  */
-proto.profile.v1.GetProfileResponse.prototype.getFullName = function() {
+proto.profile.v1.GetProfileResponse.prototype.getUsername = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -302,16 +314,16 @@ proto.profile.v1.GetProfileResponse.prototype.getFullName = function() {
  * @param {string} value
  * @return {!proto.profile.v1.GetProfileResponse} returns this
  */
-proto.profile.v1.GetProfileResponse.prototype.setFullName = function(value) {
+proto.profile.v1.GetProfileResponse.prototype.setUsername = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string email = 4;
+ * optional string full_name = 4;
  * @return {string}
  */
-proto.profile.v1.GetProfileResponse.prototype.getEmail = function() {
+proto.profile.v1.GetProfileResponse.prototype.getFullName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -320,16 +332,16 @@ proto.profile.v1.GetProfileResponse.prototype.getEmail = function() {
  * @param {string} value
  * @return {!proto.profile.v1.GetProfileResponse} returns this
  */
-proto.profile.v1.GetProfileResponse.prototype.setEmail = function(value) {
+proto.profile.v1.GetProfileResponse.prototype.setFullName = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional string bio = 5;
+ * optional string email = 5;
  * @return {string}
  */
-proto.profile.v1.GetProfileResponse.prototype.getBio = function() {
+proto.profile.v1.GetProfileResponse.prototype.getEmail = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -338,16 +350,16 @@ proto.profile.v1.GetProfileResponse.prototype.getBio = function() {
  * @param {string} value
  * @return {!proto.profile.v1.GetProfileResponse} returns this
  */
-proto.profile.v1.GetProfileResponse.prototype.setBio = function(value) {
+proto.profile.v1.GetProfileResponse.prototype.setEmail = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional string avatar = 6;
+ * optional string bio = 6;
  * @return {string}
  */
-proto.profile.v1.GetProfileResponse.prototype.getAvatar = function() {
+proto.profile.v1.GetProfileResponse.prototype.getBio = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -356,18 +368,36 @@ proto.profile.v1.GetProfileResponse.prototype.getAvatar = function() {
  * @param {string} value
  * @return {!proto.profile.v1.GetProfileResponse} returns this
  */
-proto.profile.v1.GetProfileResponse.prototype.setAvatar = function(value) {
+proto.profile.v1.GetProfileResponse.prototype.setBio = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
 /**
- * optional google.protobuf.Timestamp created_at = 7;
+ * optional string avatar = 7;
+ * @return {string}
+ */
+proto.profile.v1.GetProfileResponse.prototype.getAvatar = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.profile.v1.GetProfileResponse} returns this
+ */
+proto.profile.v1.GetProfileResponse.prototype.setAvatar = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp created_at = 8;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.profile.v1.GetProfileResponse.prototype.getCreatedAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, proto.google.protobuf.Timestamp, 7));
+    jspb.Message.getWrapperField(this, proto.google.protobuf.Timestamp, 8));
 };
 
 
@@ -376,7 +406,7 @@ proto.profile.v1.GetProfileResponse.prototype.getCreatedAt = function() {
  * @return {!proto.profile.v1.GetProfileResponse} returns this
 */
 proto.profile.v1.GetProfileResponse.prototype.setCreatedAt = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -394,17 +424,17 @@ proto.profile.v1.GetProfileResponse.prototype.clearCreatedAt = function() {
  * @return {boolean}
  */
 proto.profile.v1.GetProfileResponse.prototype.hasCreatedAt = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp updated_at = 8;
+ * optional google.protobuf.Timestamp updated_at = 9;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.profile.v1.GetProfileResponse.prototype.getUpdatedAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, proto.google.protobuf.Timestamp, 8));
+    jspb.Message.getWrapperField(this, proto.google.protobuf.Timestamp, 9));
 };
 
 
@@ -413,7 +443,7 @@ proto.profile.v1.GetProfileResponse.prototype.getUpdatedAt = function() {
  * @return {!proto.profile.v1.GetProfileResponse} returns this
 */
 proto.profile.v1.GetProfileResponse.prototype.setUpdatedAt = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -431,17 +461,17 @@ proto.profile.v1.GetProfileResponse.prototype.clearUpdatedAt = function() {
  * @return {boolean}
  */
 proto.profile.v1.GetProfileResponse.prototype.hasUpdatedAt = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp deleted_at = 9;
+ * optional google.protobuf.Timestamp deleted_at = 10;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.profile.v1.GetProfileResponse.prototype.getDeletedAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, proto.google.protobuf.Timestamp, 9));
+    jspb.Message.getWrapperField(this, proto.google.protobuf.Timestamp, 10));
 };
 
 
@@ -450,7 +480,7 @@ proto.profile.v1.GetProfileResponse.prototype.getDeletedAt = function() {
  * @return {!proto.profile.v1.GetProfileResponse} returns this
 */
 proto.profile.v1.GetProfileResponse.prototype.setDeletedAt = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
+  return jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -468,7 +498,7 @@ proto.profile.v1.GetProfileResponse.prototype.clearDeletedAt = function() {
  * @return {boolean}
  */
 proto.profile.v1.GetProfileResponse.prototype.hasDeletedAt = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 

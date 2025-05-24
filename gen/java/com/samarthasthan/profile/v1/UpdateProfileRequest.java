@@ -32,6 +32,7 @@ private static final long serialVersionUID = 0L;
     email_ = "";
     bio_ = "";
     avatar_ = "";
+    username_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -90,7 +91,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object fullName_ = "";
   /**
-   * <code>string full_name = 2 [json_name = "fullName", (.buf.validate.field) = { ... }</code>
+   * <code>string full_name = 2 [json_name = "fullName"];</code>
    * @return The fullName.
    */
   @java.lang.Override
@@ -107,7 +108,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string full_name = 2 [json_name = "fullName", (.buf.validate.field) = { ... }</code>
+   * <code>string full_name = 2 [json_name = "fullName"];</code>
    * @return The bytes for fullName.
    */
   @java.lang.Override
@@ -129,7 +130,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object email_ = "";
   /**
-   * <code>string email = 3 [json_name = "email", (.buf.validate.field) = { ... }</code>
+   * <code>string email = 3 [json_name = "email"];</code>
    * @return The email.
    */
   @java.lang.Override
@@ -146,7 +147,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string email = 3 [json_name = "email", (.buf.validate.field) = { ... }</code>
+   * <code>string email = 3 [json_name = "email"];</code>
    * @return The bytes for email.
    */
   @java.lang.Override
@@ -242,6 +243,45 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int USERNAME_FIELD_NUMBER = 6;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object username_ = "";
+  /**
+   * <code>string username = 6 [json_name = "username"];</code>
+   * @return The username.
+   */
+  @java.lang.Override
+  public java.lang.String getUsername() {
+    java.lang.Object ref = username_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      username_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string username = 6 [json_name = "username"];</code>
+   * @return The bytes for username.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getUsernameBytes() {
+    java.lang.Object ref = username_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      username_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -271,6 +311,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(avatar_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 5, avatar_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(username_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 6, username_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -294,6 +337,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(avatar_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(5, avatar_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(username_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(6, username_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -320,6 +366,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getBio())) return false;
     if (!getAvatar()
         .equals(other.getAvatar())) return false;
+    if (!getUsername()
+        .equals(other.getUsername())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -341,6 +389,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getBio().hashCode();
     hash = (37 * hash) + AVATAR_FIELD_NUMBER;
     hash = (53 * hash) + getAvatar().hashCode();
+    hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getUsername().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -477,6 +527,7 @@ private static final long serialVersionUID = 0L;
       email_ = "";
       bio_ = "";
       avatar_ = "";
+      username_ = "";
       return this;
     }
 
@@ -525,6 +576,9 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.avatar_ = avatar_;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.username_ = username_;
+      }
     }
 
     @java.lang.Override
@@ -562,6 +616,11 @@ private static final long serialVersionUID = 0L;
       if (!other.getAvatar().isEmpty()) {
         avatar_ = other.avatar_;
         bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      if (!other.getUsername().isEmpty()) {
+        username_ = other.username_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -615,6 +674,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000010;
               break;
             } // case 42
+            case 50: {
+              username_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000020;
+              break;
+            } // case 50
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -706,7 +770,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object fullName_ = "";
     /**
-     * <code>string full_name = 2 [json_name = "fullName", (.buf.validate.field) = { ... }</code>
+     * <code>string full_name = 2 [json_name = "fullName"];</code>
      * @return The fullName.
      */
     public java.lang.String getFullName() {
@@ -722,7 +786,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string full_name = 2 [json_name = "fullName", (.buf.validate.field) = { ... }</code>
+     * <code>string full_name = 2 [json_name = "fullName"];</code>
      * @return The bytes for fullName.
      */
     public com.google.protobuf.ByteString
@@ -739,7 +803,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string full_name = 2 [json_name = "fullName", (.buf.validate.field) = { ... }</code>
+     * <code>string full_name = 2 [json_name = "fullName"];</code>
      * @param value The fullName to set.
      * @return This builder for chaining.
      */
@@ -752,7 +816,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string full_name = 2 [json_name = "fullName", (.buf.validate.field) = { ... }</code>
+     * <code>string full_name = 2 [json_name = "fullName"];</code>
      * @return This builder for chaining.
      */
     public Builder clearFullName() {
@@ -762,7 +826,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string full_name = 2 [json_name = "fullName", (.buf.validate.field) = { ... }</code>
+     * <code>string full_name = 2 [json_name = "fullName"];</code>
      * @param value The bytes for fullName to set.
      * @return This builder for chaining.
      */
@@ -778,7 +842,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object email_ = "";
     /**
-     * <code>string email = 3 [json_name = "email", (.buf.validate.field) = { ... }</code>
+     * <code>string email = 3 [json_name = "email"];</code>
      * @return The email.
      */
     public java.lang.String getEmail() {
@@ -794,7 +858,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string email = 3 [json_name = "email", (.buf.validate.field) = { ... }</code>
+     * <code>string email = 3 [json_name = "email"];</code>
      * @return The bytes for email.
      */
     public com.google.protobuf.ByteString
@@ -811,7 +875,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string email = 3 [json_name = "email", (.buf.validate.field) = { ... }</code>
+     * <code>string email = 3 [json_name = "email"];</code>
      * @param value The email to set.
      * @return This builder for chaining.
      */
@@ -824,7 +888,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string email = 3 [json_name = "email", (.buf.validate.field) = { ... }</code>
+     * <code>string email = 3 [json_name = "email"];</code>
      * @return This builder for chaining.
      */
     public Builder clearEmail() {
@@ -834,7 +898,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string email = 3 [json_name = "email", (.buf.validate.field) = { ... }</code>
+     * <code>string email = 3 [json_name = "email"];</code>
      * @param value The bytes for email to set.
      * @return This builder for chaining.
      */
@@ -988,6 +1052,78 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       avatar_ = value;
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object username_ = "";
+    /**
+     * <code>string username = 6 [json_name = "username"];</code>
+     * @return The username.
+     */
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        username_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string username = 6 [json_name = "username"];</code>
+     * @return The bytes for username.
+     */
+    public com.google.protobuf.ByteString
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        username_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string username = 6 [json_name = "username"];</code>
+     * @param value The username to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUsername(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      username_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string username = 6 [json_name = "username"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUsername() {
+      username_ = getDefaultInstance().getUsername();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string username = 6 [json_name = "username"];</code>
+     * @param value The bytes for username to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUsernameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      username_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
