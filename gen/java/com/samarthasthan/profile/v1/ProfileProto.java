@@ -45,6 +45,26 @@ public final class ProfileProto {
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_profile_v1_GetProfileResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_profile_v1_UpdateProfileRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_profile_v1_UpdateProfileRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_profile_v1_UpdateProfileResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_profile_v1_UpdateProfileResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_profile_v1_DeleteProfileRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_profile_v1_DeleteProfileRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_profile_v1_DeleteProfileResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_profile_v1_DeleteProfileResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -71,17 +91,30 @@ public final class ProfileProto {
       "google.protobuf.TimestampR\tcreatedAt\0229\n\n" +
       "updated_at\030\010 \001(\0132\032.google.protobuf.Times" +
       "tampR\tupdatedAt\0229\n\ndeleted_at\030\t \001(\0132\032.go" +
-      "ogle.protobuf.TimestampR\tdeletedAt2\263\001\n\016P" +
-      "rofileService\022T\n\rCreateProfile\022 .profile" +
-      ".v1.CreateProfileRequest\032!.profile.v1.Cr" +
-      "eateProfileResponse\022K\n\nGetProfile\022\035.prof" +
-      "ile.v1.GetProfileRequest\032\036.profile.v1.Ge" +
-      "tProfileResponseB\274\001\n\034com.samarthasthan.p" +
-      "rofile.v1B\014ProfileProtoP\001ZEgithub.com/sa" +
-      "marthasthan/services-commons/gen/go/prof" +
-      "ile/v1;profilev1\242\002\003PXX\252\002\nProfile.V1\312\002\nPr" +
-      "ofile\\V1\342\002\026Profile\\V1\\GPBMetadata\352\002\013Prof" +
-      "ile::V1b\006proto3"
+      "ogle.protobuf.TimestampR\tdeletedAt\"\250\001\n\024U" +
+      "pdateProfileRequest\022!\n\007user_id\030\001 \001(\tB\010\272H" +
+      "\005r\003\260\001\001R\006userId\022$\n\tfull_name\030\002 \001(\tB\007\272H\004r\002" +
+      "\020\001R\010fullName\022\035\n\005email\030\003 \001(\tB\007\272H\004r\002`\001R\005em" +
+      "ail\022\020\n\003bio\030\004 \001(\tR\003bio\022\026\n\006avatar\030\005 \001(\tR\006a" +
+      "vatar\"O\n\025UpdateProfileResponse\022\035\n\nprofil" +
+      "e_id\030\001 \001(\tR\tprofileId\022\027\n\007user_id\030\002 \001(\tR\006" +
+      "userId\"9\n\024DeleteProfileRequest\022!\n\007user_i" +
+      "d\030\001 \001(\tB\010\272H\005r\003\260\001\001R\006userId\"0\n\025DeleteProfi" +
+      "leResponse\022\027\n\007is_done\030\001 \001(\010R\006isDone2\337\002\n\016" +
+      "ProfileService\022T\n\rCreateProfile\022 .profil" +
+      "e.v1.CreateProfileRequest\032!.profile.v1.C" +
+      "reateProfileResponse\022K\n\nGetProfile\022\035.pro" +
+      "file.v1.GetProfileRequest\032\036.profile.v1.G" +
+      "etProfileResponse\022T\n\rUpdateProfile\022 .pro" +
+      "file.v1.UpdateProfileRequest\032!.profile.v" +
+      "1.UpdateProfileResponse\022T\n\rDeleteProfile" +
+      "\022 .profile.v1.DeleteProfileRequest\032!.pro" +
+      "file.v1.DeleteProfileResponseB\274\001\n\034com.sa" +
+      "marthasthan.profile.v1B\014ProfileProtoP\001ZE" +
+      "github.com/samarthasthan/services-common" +
+      "s/gen/go/profile/v1;profilev1\242\002\003PXX\252\002\nPr" +
+      "ofile.V1\312\002\nProfile\\V1\342\002\026Profile\\V1\\GPBMe" +
+      "tadata\352\002\013Profile::V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -113,6 +146,30 @@ public final class ProfileProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_profile_v1_GetProfileResponse_descriptor,
         new java.lang.String[] { "ProfileId", "UserId", "FullName", "Email", "Bio", "Avatar", "CreatedAt", "UpdatedAt", "DeletedAt", });
+    internal_static_profile_v1_UpdateProfileRequest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_profile_v1_UpdateProfileRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_profile_v1_UpdateProfileRequest_descriptor,
+        new java.lang.String[] { "UserId", "FullName", "Email", "Bio", "Avatar", });
+    internal_static_profile_v1_UpdateProfileResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_profile_v1_UpdateProfileResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_profile_v1_UpdateProfileResponse_descriptor,
+        new java.lang.String[] { "ProfileId", "UserId", });
+    internal_static_profile_v1_DeleteProfileRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_profile_v1_DeleteProfileRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_profile_v1_DeleteProfileRequest_descriptor,
+        new java.lang.String[] { "UserId", });
+    internal_static_profile_v1_DeleteProfileResponse_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_profile_v1_DeleteProfileResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_profile_v1_DeleteProfileResponse_descriptor,
+        new java.lang.String[] { "IsDone", });
     descriptor.resolveAllFeaturesImmutable();
     build.buf.validate.ValidateProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
