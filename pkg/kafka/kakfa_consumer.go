@@ -6,23 +6,28 @@ import (
 	"github.com/confluentinc/confluent-kafka-go/v2/kafka"
 )
 
-type KafkaConsumer struct {
+type Consumer struct {
 	*kafka.Consumer
 }
 
-func NewKafkaConsumer(host string, port string, group string) *KafkaConsumer {
+func NewKafkaConsumer(host string, port string) *Consumer {
 	c, err := kafka.NewConsumer(&kafka.ConfigMap{
 		"bootstrap.servers": fmt.Sprintf("%s:%s", host, port),
-		"group.id":          group,
+		"group.id":          "storage-group",
 		"auto.offset.reset": "earliest",
+		"fetch.min.bytes":   1,
 	})
 
 	if err != nil {
 		panic(err)
 	}
-	return &KafkaConsumer{Consumer: c}
+	return &Consumer{Consumer: c}
 }
 
-func (kc *KafkaConsumer) Subscribe(topics []string) error {
+func (kc *Consumer) Subscribe(topics []string) error {
 	return kc.Consumer.SubscribeTopics(topics, nil)
+}
+
+func (kc *Consumer) Close() {
+	kc.Consumer.Close()
 }
