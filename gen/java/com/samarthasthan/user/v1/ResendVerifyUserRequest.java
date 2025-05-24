@@ -6,12 +6,12 @@
 package com.samarthasthan.user.v1;
 
 /**
- * Protobuf type {@code user.v1.VerifyUserRequest}
+ * Protobuf type {@code user.v1.ResendVerifyUserRequest}
  */
-public final class VerifyUserRequest extends
+public final class ResendVerifyUserRequest extends
     com.google.protobuf.GeneratedMessage implements
-    // @@protoc_insertion_point(message_implements:user.v1.VerifyUserRequest)
-    VerifyUserRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:user.v1.ResendVerifyUserRequest)
+    ResendVerifyUserRequestOrBuilder {
 private static final long serialVersionUID = 0L;
   static {
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -20,28 +20,27 @@ private static final long serialVersionUID = 0L;
       /* minor= */ 29,
       /* patch= */ 3,
       /* suffix= */ "",
-      VerifyUserRequest.class.getName());
+      ResendVerifyUserRequest.class.getName());
   }
-  // Use VerifyUserRequest.newBuilder() to construct.
-  private VerifyUserRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  // Use ResendVerifyUserRequest.newBuilder() to construct.
+  private ResendVerifyUserRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
-  private VerifyUserRequest() {
+  private ResendVerifyUserRequest() {
     email_ = "";
-    otp_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.samarthasthan.user.v1.UserProto.internal_static_user_v1_VerifyUserRequest_descriptor;
+    return com.samarthasthan.user.v1.UserProto.internal_static_user_v1_ResendVerifyUserRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.samarthasthan.user.v1.UserProto.internal_static_user_v1_VerifyUserRequest_fieldAccessorTable
+    return com.samarthasthan.user.v1.UserProto.internal_static_user_v1_ResendVerifyUserRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.samarthasthan.user.v1.VerifyUserRequest.class, com.samarthasthan.user.v1.VerifyUserRequest.Builder.class);
+            com.samarthasthan.user.v1.ResendVerifyUserRequest.class, com.samarthasthan.user.v1.ResendVerifyUserRequest.Builder.class);
   }
 
   public static final int EMAIL_FIELD_NUMBER = 1;
@@ -83,45 +82,6 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int OTP_FIELD_NUMBER = 2;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object otp_ = "";
-  /**
-   * <code>string otp = 2 [json_name = "otp", (.buf.validate.field) = { ... }</code>
-   * @return The otp.
-   */
-  @java.lang.Override
-  public java.lang.String getOtp() {
-    java.lang.Object ref = otp_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      otp_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string otp = 2 [json_name = "otp", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for otp.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getOtpBytes() {
-    java.lang.Object ref = otp_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      otp_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -139,9 +99,6 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(email_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, email_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(otp_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 2, otp_);
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -154,9 +111,6 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(email_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, email_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(otp_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, otp_);
-    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -167,15 +121,13 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.samarthasthan.user.v1.VerifyUserRequest)) {
+    if (!(obj instanceof com.samarthasthan.user.v1.ResendVerifyUserRequest)) {
       return super.equals(obj);
     }
-    com.samarthasthan.user.v1.VerifyUserRequest other = (com.samarthasthan.user.v1.VerifyUserRequest) obj;
+    com.samarthasthan.user.v1.ResendVerifyUserRequest other = (com.samarthasthan.user.v1.ResendVerifyUserRequest) obj;
 
     if (!getEmail()
         .equals(other.getEmail())) return false;
-    if (!getOtp()
-        .equals(other.getOtp())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -189,51 +141,49 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + EMAIL_FIELD_NUMBER;
     hash = (53 * hash) + getEmail().hashCode();
-    hash = (37 * hash) + OTP_FIELD_NUMBER;
-    hash = (53 * hash) + getOtp().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.samarthasthan.user.v1.VerifyUserRequest parseFrom(
+  public static com.samarthasthan.user.v1.ResendVerifyUserRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.samarthasthan.user.v1.VerifyUserRequest parseFrom(
+  public static com.samarthasthan.user.v1.ResendVerifyUserRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.samarthasthan.user.v1.VerifyUserRequest parseFrom(
+  public static com.samarthasthan.user.v1.ResendVerifyUserRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.samarthasthan.user.v1.VerifyUserRequest parseFrom(
+  public static com.samarthasthan.user.v1.ResendVerifyUserRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.samarthasthan.user.v1.VerifyUserRequest parseFrom(byte[] data)
+  public static com.samarthasthan.user.v1.ResendVerifyUserRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.samarthasthan.user.v1.VerifyUserRequest parseFrom(
+  public static com.samarthasthan.user.v1.ResendVerifyUserRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.samarthasthan.user.v1.VerifyUserRequest parseFrom(java.io.InputStream input)
+  public static com.samarthasthan.user.v1.ResendVerifyUserRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.samarthasthan.user.v1.VerifyUserRequest parseFrom(
+  public static com.samarthasthan.user.v1.ResendVerifyUserRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -241,26 +191,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static com.samarthasthan.user.v1.VerifyUserRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.samarthasthan.user.v1.ResendVerifyUserRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.samarthasthan.user.v1.VerifyUserRequest parseDelimitedFrom(
+  public static com.samarthasthan.user.v1.ResendVerifyUserRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.samarthasthan.user.v1.VerifyUserRequest parseFrom(
+  public static com.samarthasthan.user.v1.ResendVerifyUserRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.samarthasthan.user.v1.VerifyUserRequest parseFrom(
+  public static com.samarthasthan.user.v1.ResendVerifyUserRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -273,7 +223,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.samarthasthan.user.v1.VerifyUserRequest prototype) {
+  public static Builder newBuilder(com.samarthasthan.user.v1.ResendVerifyUserRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -289,26 +239,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code user.v1.VerifyUserRequest}
+   * Protobuf type {@code user.v1.ResendVerifyUserRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:user.v1.VerifyUserRequest)
-      com.samarthasthan.user.v1.VerifyUserRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:user.v1.ResendVerifyUserRequest)
+      com.samarthasthan.user.v1.ResendVerifyUserRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.samarthasthan.user.v1.UserProto.internal_static_user_v1_VerifyUserRequest_descriptor;
+      return com.samarthasthan.user.v1.UserProto.internal_static_user_v1_ResendVerifyUserRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.samarthasthan.user.v1.UserProto.internal_static_user_v1_VerifyUserRequest_fieldAccessorTable
+      return com.samarthasthan.user.v1.UserProto.internal_static_user_v1_ResendVerifyUserRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.samarthasthan.user.v1.VerifyUserRequest.class, com.samarthasthan.user.v1.VerifyUserRequest.Builder.class);
+              com.samarthasthan.user.v1.ResendVerifyUserRequest.class, com.samarthasthan.user.v1.ResendVerifyUserRequest.Builder.class);
     }
 
-    // Construct using com.samarthasthan.user.v1.VerifyUserRequest.newBuilder()
+    // Construct using com.samarthasthan.user.v1.ResendVerifyUserRequest.newBuilder()
     private Builder() {
 
     }
@@ -323,24 +273,23 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       email_ = "";
-      otp_ = "";
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.samarthasthan.user.v1.UserProto.internal_static_user_v1_VerifyUserRequest_descriptor;
+      return com.samarthasthan.user.v1.UserProto.internal_static_user_v1_ResendVerifyUserRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.samarthasthan.user.v1.VerifyUserRequest getDefaultInstanceForType() {
-      return com.samarthasthan.user.v1.VerifyUserRequest.getDefaultInstance();
+    public com.samarthasthan.user.v1.ResendVerifyUserRequest getDefaultInstanceForType() {
+      return com.samarthasthan.user.v1.ResendVerifyUserRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.samarthasthan.user.v1.VerifyUserRequest build() {
-      com.samarthasthan.user.v1.VerifyUserRequest result = buildPartial();
+    public com.samarthasthan.user.v1.ResendVerifyUserRequest build() {
+      com.samarthasthan.user.v1.ResendVerifyUserRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -348,43 +297,35 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.samarthasthan.user.v1.VerifyUserRequest buildPartial() {
-      com.samarthasthan.user.v1.VerifyUserRequest result = new com.samarthasthan.user.v1.VerifyUserRequest(this);
+    public com.samarthasthan.user.v1.ResendVerifyUserRequest buildPartial() {
+      com.samarthasthan.user.v1.ResendVerifyUserRequest result = new com.samarthasthan.user.v1.ResendVerifyUserRequest(this);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(com.samarthasthan.user.v1.VerifyUserRequest result) {
+    private void buildPartial0(com.samarthasthan.user.v1.ResendVerifyUserRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.email_ = email_;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.otp_ = otp_;
       }
     }
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.samarthasthan.user.v1.VerifyUserRequest) {
-        return mergeFrom((com.samarthasthan.user.v1.VerifyUserRequest)other);
+      if (other instanceof com.samarthasthan.user.v1.ResendVerifyUserRequest) {
+        return mergeFrom((com.samarthasthan.user.v1.ResendVerifyUserRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.samarthasthan.user.v1.VerifyUserRequest other) {
-      if (other == com.samarthasthan.user.v1.VerifyUserRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.samarthasthan.user.v1.ResendVerifyUserRequest other) {
+      if (other == com.samarthasthan.user.v1.ResendVerifyUserRequest.getDefaultInstance()) return this;
       if (!other.getEmail().isEmpty()) {
         email_ = other.email_;
         bitField0_ |= 0x00000001;
-        onChanged();
-      }
-      if (!other.getOtp().isEmpty()) {
-        otp_ = other.otp_;
-        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -418,11 +359,6 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 10
-            case 18: {
-              otp_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
-              break;
-            } // case 18
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -512,95 +448,23 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object otp_ = "";
-    /**
-     * <code>string otp = 2 [json_name = "otp", (.buf.validate.field) = { ... }</code>
-     * @return The otp.
-     */
-    public java.lang.String getOtp() {
-      java.lang.Object ref = otp_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        otp_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string otp = 2 [json_name = "otp", (.buf.validate.field) = { ... }</code>
-     * @return The bytes for otp.
-     */
-    public com.google.protobuf.ByteString
-        getOtpBytes() {
-      java.lang.Object ref = otp_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        otp_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string otp = 2 [json_name = "otp", (.buf.validate.field) = { ... }</code>
-     * @param value The otp to set.
-     * @return This builder for chaining.
-     */
-    public Builder setOtp(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      otp_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string otp = 2 [json_name = "otp", (.buf.validate.field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearOtp() {
-      otp_ = getDefaultInstance().getOtp();
-      bitField0_ = (bitField0_ & ~0x00000002);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string otp = 2 [json_name = "otp", (.buf.validate.field) = { ... }</code>
-     * @param value The bytes for otp to set.
-     * @return This builder for chaining.
-     */
-    public Builder setOtpBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      otp_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-
-    // @@protoc_insertion_point(builder_scope:user.v1.VerifyUserRequest)
+    // @@protoc_insertion_point(builder_scope:user.v1.ResendVerifyUserRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:user.v1.VerifyUserRequest)
-  private static final com.samarthasthan.user.v1.VerifyUserRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:user.v1.ResendVerifyUserRequest)
+  private static final com.samarthasthan.user.v1.ResendVerifyUserRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.samarthasthan.user.v1.VerifyUserRequest();
+    DEFAULT_INSTANCE = new com.samarthasthan.user.v1.ResendVerifyUserRequest();
   }
 
-  public static com.samarthasthan.user.v1.VerifyUserRequest getDefaultInstance() {
+  public static com.samarthasthan.user.v1.ResendVerifyUserRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<VerifyUserRequest>
-      PARSER = new com.google.protobuf.AbstractParser<VerifyUserRequest>() {
+  private static final com.google.protobuf.Parser<ResendVerifyUserRequest>
+      PARSER = new com.google.protobuf.AbstractParser<ResendVerifyUserRequest>() {
     @java.lang.Override
-    public VerifyUserRequest parsePartialFrom(
+    public ResendVerifyUserRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -619,17 +483,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<VerifyUserRequest> parser() {
+  public static com.google.protobuf.Parser<ResendVerifyUserRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<VerifyUserRequest> getParserForType() {
+  public com.google.protobuf.Parser<ResendVerifyUserRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.samarthasthan.user.v1.VerifyUserRequest getDefaultInstanceForType() {
+  public com.samarthasthan.user.v1.ResendVerifyUserRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

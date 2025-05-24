@@ -11,7 +11,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-goog.provide('proto.user.v1.VerifyUserRequest');
+goog.provide('proto.user.v1.ResendVerifyUserResponse');
 
 goog.require('jspb.BinaryReader');
 goog.require('jspb.BinaryWriter');
@@ -27,16 +27,16 @@ goog.require('jspb.Message');
  * @extends {jspb.Message}
  * @constructor
  */
-proto.user.v1.VerifyUserRequest = function(opt_data) {
+proto.user.v1.ResendVerifyUserResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.user.v1.VerifyUserRequest, jspb.Message);
+goog.inherits(proto.user.v1.ResendVerifyUserResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.user.v1.VerifyUserRequest.displayName = 'proto.user.v1.VerifyUserRequest';
+  proto.user.v1.ResendVerifyUserResponse.displayName = 'proto.user.v1.ResendVerifyUserResponse';
 }
 
 
@@ -54,8 +54,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.user.v1.VerifyUserRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.user.v1.VerifyUserRequest.toObject(opt_includeInstance, this);
+proto.user.v1.ResendVerifyUserResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.user.v1.ResendVerifyUserResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -64,14 +64,13 @@ proto.user.v1.VerifyUserRequest.prototype.toObject = function(opt_includeInstanc
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.user.v1.VerifyUserRequest} msg The msg instance to transform.
+ * @param {!proto.user.v1.ResendVerifyUserResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.user.v1.VerifyUserRequest.toObject = function(includeInstance, msg) {
+proto.user.v1.ResendVerifyUserResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-email: jspb.Message.getFieldWithDefault(msg, 1, ""),
-otp: jspb.Message.getFieldWithDefault(msg, 2, "")
+isDone: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
   };
 
   if (includeInstance) {
@@ -85,23 +84,23 @@ otp: jspb.Message.getFieldWithDefault(msg, 2, "")
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.user.v1.VerifyUserRequest}
+ * @return {!proto.user.v1.ResendVerifyUserResponse}
  */
-proto.user.v1.VerifyUserRequest.deserializeBinary = function(bytes) {
+proto.user.v1.ResendVerifyUserResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.user.v1.VerifyUserRequest;
-  return proto.user.v1.VerifyUserRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.user.v1.ResendVerifyUserResponse;
+  return proto.user.v1.ResendVerifyUserResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.user.v1.VerifyUserRequest} msg The message object to deserialize into.
+ * @param {!proto.user.v1.ResendVerifyUserResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.user.v1.VerifyUserRequest}
+ * @return {!proto.user.v1.ResendVerifyUserResponse}
  */
-proto.user.v1.VerifyUserRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.user.v1.ResendVerifyUserResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -109,12 +108,8 @@ proto.user.v1.VerifyUserRequest.deserializeBinaryFromReader = function(msg, read
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setEmail(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setOtp(value);
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsDone(value);
       break;
     default:
       reader.skipField();
@@ -129,9 +124,9 @@ proto.user.v1.VerifyUserRequest.deserializeBinaryFromReader = function(msg, read
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.user.v1.VerifyUserRequest.prototype.serializeBinary = function() {
+proto.user.v1.ResendVerifyUserResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.user.v1.VerifyUserRequest.serializeBinaryToWriter(this, writer);
+  proto.user.v1.ResendVerifyUserResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -139,62 +134,37 @@ proto.user.v1.VerifyUserRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.user.v1.VerifyUserRequest} message
+ * @param {!proto.user.v1.ResendVerifyUserResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.user.v1.VerifyUserRequest.serializeBinaryToWriter = function(message, writer) {
+proto.user.v1.ResendVerifyUserResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getEmail();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getIsDone();
+  if (f) {
+    writer.writeBool(
       1,
       f
     );
   }
-  f = message.getOtp();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
 };
 
 
 /**
- * optional string email = 1;
- * @return {string}
+ * optional bool is_done = 1;
+ * @return {boolean}
  */
-proto.user.v1.VerifyUserRequest.prototype.getEmail = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.user.v1.ResendVerifyUserResponse.prototype.getIsDone = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
 };
 
 
 /**
- * @param {string} value
- * @return {!proto.user.v1.VerifyUserRequest} returns this
+ * @param {boolean} value
+ * @return {!proto.user.v1.ResendVerifyUserResponse} returns this
  */
-proto.user.v1.VerifyUserRequest.prototype.setEmail = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string otp = 2;
- * @return {string}
- */
-proto.user.v1.VerifyUserRequest.prototype.getOtp = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.user.v1.VerifyUserRequest} returns this
- */
-proto.user.v1.VerifyUserRequest.prototype.setOtp = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+proto.user.v1.ResendVerifyUserResponse.prototype.setIsDone = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
 

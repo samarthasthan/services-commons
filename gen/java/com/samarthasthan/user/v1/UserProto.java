@@ -65,6 +65,16 @@ public final class UserProto {
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_user_v1_VerifyUserResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_user_v1_ResendVerifyUserRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_user_v1_ResendVerifyUserRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_user_v1_ResendVerifyUserResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_user_v1_ResendVerifyUserResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -86,19 +96,26 @@ public final class UserProto {
       "access_token\030\002 \001(\tR\013accessToken\022#\n\rrefre" +
       "sh_token\030\003 \001(\tR\014refreshToken\"\023\n\021DeleteUs" +
       "erRequest\"-\n\022DeleteUserResponse\022\027\n\007is_do" +
-      "ne\030\001 \001(\010R\006isDone\"2\n\021VerifyUserRequest\022\035\n" +
-      "\005email\030\001 \001(\tB\007\272H\004r\002`\001R\005email\"-\n\022VerifyUs" +
-      "erResponse\022\027\n\007is_done\030\001 \001(\010R\006isDone2\312\001\n\013" +
-      "UserService\0229\n\006SignUp\022\026.user.v1.SignUpRe" +
-      "quest\032\027.user.v1.SignUpResponse\0229\n\006SignIn" +
-      "\022\026.user.v1.SignInRequest\032\027.user.v1.SignI" +
-      "nResponse\022E\n\nDeleteUser\022\032.user.v1.Delete" +
-      "UserRequest\032\033.user.v1.DeleteUserResponse" +
-      "B\244\001\n\031com.samarthasthan.user.v1B\tUserProt" +
-      "oP\001Z?github.com/samarthasthan/services-c" +
-      "ommons/gen/go/user/v1;userv1\242\002\003UXX\252\002\007Use" +
-      "r.V1\312\002\007User\\V1\342\002\023User\\V1\\GPBMetadata\352\002\010U" +
-      "ser::V1b\006proto3"
+      "ne\030\001 \001(\010R\006isDone\"M\n\021VerifyUserRequest\022\035\n" +
+      "\005email\030\001 \001(\tB\007\272H\004r\002`\001R\005email\022\031\n\003otp\030\002 \001(" +
+      "\tB\007\272H\004r\002\020\006R\003otp\"-\n\022VerifyUserResponse\022\027\n" +
+      "\007is_done\030\001 \001(\010R\006isDone\"8\n\027ResendVerifyUs" +
+      "erRequest\022\035\n\005email\030\001 \001(\tB\007\272H\004r\002`\001R\005email" +
+      "\"3\n\030ResendVerifyUserResponse\022\027\n\007is_done\030" +
+      "\001 \001(\010R\006isDone2\352\002\n\013UserService\0229\n\006SignUp\022" +
+      "\026.user.v1.SignUpRequest\032\027.user.v1.SignUp" +
+      "Response\0229\n\006SignIn\022\026.user.v1.SignInReque" +
+      "st\032\027.user.v1.SignInResponse\022E\n\nDeleteUse" +
+      "r\022\032.user.v1.DeleteUserRequest\032\033.user.v1." +
+      "DeleteUserResponse\022E\n\nVerifyUser\022\032.user." +
+      "v1.VerifyUserRequest\032\033.user.v1.VerifyUse" +
+      "rResponse\022W\n\020ResendVerifyUser\022 .user.v1." +
+      "ResendVerifyUserRequest\032!.user.v1.Resend" +
+      "VerifyUserResponseB\244\001\n\031com.samarthasthan" +
+      ".user.v1B\tUserProtoP\001Z?github.com/samart" +
+      "hasthan/services-commons/gen/go/user/v1;" +
+      "userv1\242\002\003UXX\252\002\007User.V1\312\002\007User\\V1\342\002\023User\\" +
+      "V1\\GPBMetadata\352\002\010User::V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -146,12 +163,24 @@ public final class UserProto {
     internal_static_user_v1_VerifyUserRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_user_v1_VerifyUserRequest_descriptor,
-        new java.lang.String[] { "Email", });
+        new java.lang.String[] { "Email", "Otp", });
     internal_static_user_v1_VerifyUserResponse_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_user_v1_VerifyUserResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_user_v1_VerifyUserResponse_descriptor,
+        new java.lang.String[] { "IsDone", });
+    internal_static_user_v1_ResendVerifyUserRequest_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_user_v1_ResendVerifyUserRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_user_v1_ResendVerifyUserRequest_descriptor,
+        new java.lang.String[] { "Email", });
+    internal_static_user_v1_ResendVerifyUserResponse_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_user_v1_ResendVerifyUserResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_user_v1_ResendVerifyUserResponse_descriptor,
         new java.lang.String[] { "IsDone", });
     descriptor.resolveAllFeaturesImmutable();
     build.buf.validate.ValidateProto.getDescriptor();

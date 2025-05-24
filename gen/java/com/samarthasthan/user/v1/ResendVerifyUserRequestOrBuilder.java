@@ -5,8 +5,8 @@
 
 package com.samarthasthan.user.v1;
 
-public interface VerifyUserRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:user.v1.VerifyUserRequest)
+public interface ResendVerifyUserRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:user.v1.ResendVerifyUserRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -20,16 +20,4 @@ public interface VerifyUserRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getEmailBytes();
-
-  /**
-   * <code>string otp = 2 [json_name = "otp", (.buf.validate.field) = { ... }</code>
-   * @return The otp.
-   */
-  java.lang.String getOtp();
-  /**
-   * <code>string otp = 2 [json_name = "otp", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for otp.
-   */
-  com.google.protobuf.ByteString
-      getOtpBytes();
 }
