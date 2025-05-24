@@ -65,6 +65,16 @@ public final class ProfileProto {
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_profile_v1_DeleteProfileResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_profile_v1_UnDeleteeProfileRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_profile_v1_UnDeleteeProfileRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_profile_v1_UnDeleteeProfileResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_profile_v1_UnDeleteeProfileResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -101,21 +111,26 @@ public final class ProfileProto {
       "id\030\001 \001(\tR\tprofileId\022\027\n\007user_id\030\002 \001(\tR\006us" +
       "erId\"9\n\024DeleteProfileRequest\022!\n\007user_id\030" +
       "\001 \001(\tB\010\272H\005r\003\260\001\001R\006userId\"0\n\025DeleteProfile" +
-      "Response\022\027\n\007is_done\030\001 \001(\010R\006isDone2\337\002\n\016Pr" +
-      "ofileService\022T\n\rCreateProfile\022 .profile." +
-      "v1.CreateProfileRequest\032!.profile.v1.Cre" +
-      "ateProfileResponse\022K\n\nGetProfile\022\035.profi" +
-      "le.v1.GetProfileRequest\032\036.profile.v1.Get" +
-      "ProfileResponse\022T\n\rUpdateProfile\022 .profi" +
-      "le.v1.UpdateProfileRequest\032!.profile.v1." +
-      "UpdateProfileResponse\022T\n\rDeleteProfile\022 " +
-      ".profile.v1.DeleteProfileRequest\032!.profi" +
-      "le.v1.DeleteProfileResponseB\274\001\n\034com.sama" +
-      "rthasthan.profile.v1B\014ProfileProtoP\001ZEgi" +
-      "thub.com/samarthasthan/services-commons/" +
-      "gen/go/profile/v1;profilev1\242\002\003PXX\252\002\nProf" +
-      "ile.V1\312\002\nProfile\\V1\342\002\026Profile\\V1\\GPBMeta" +
-      "data\352\002\013Profile::V1b\006proto3"
+      "Response\022\027\n\007is_done\030\001 \001(\010R\006isDone\"<\n\027UnD" +
+      "eleteeProfileRequest\022!\n\007user_id\030\001 \001(\tB\010\272" +
+      "H\005r\003\260\001\001R\006userId\"3\n\030UnDeleteeProfileRespo" +
+      "nse\022\027\n\007is_done\030\001 \001(\010R\006isDone2\275\003\n\016Profile" +
+      "Service\022T\n\rCreateProfile\022 .profile.v1.Cr" +
+      "eateProfileRequest\032!.profile.v1.CreatePr" +
+      "ofileResponse\022K\n\nGetProfile\022\035.profile.v1" +
+      ".GetProfileRequest\032\036.profile.v1.GetProfi" +
+      "leResponse\022T\n\rUpdateProfile\022 .profile.v1" +
+      ".UpdateProfileRequest\032!.profile.v1.Updat" +
+      "eProfileResponse\022T\n\rDeleteProfile\022 .prof" +
+      "ile.v1.DeleteProfileRequest\032!.profile.v1" +
+      ".DeleteProfileResponse\022\\\n\017UnDeleteProfil" +
+      "e\022#.profile.v1.UnDeleteeProfileRequest\032$" +
+      ".profile.v1.UnDeleteeProfileResponseB\274\001\n" +
+      "\034com.samarthasthan.profile.v1B\014ProfilePr" +
+      "otoP\001ZEgithub.com/samarthasthan/services" +
+      "-commons/gen/go/profile/v1;profilev1\242\002\003P" +
+      "XX\252\002\nProfile.V1\312\002\nProfile\\V1\342\002\026Profile\\V" +
+      "1\\GPBMetadata\352\002\013Profile::V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -170,6 +185,18 @@ public final class ProfileProto {
     internal_static_profile_v1_DeleteProfileResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_profile_v1_DeleteProfileResponse_descriptor,
+        new java.lang.String[] { "IsDone", });
+    internal_static_profile_v1_UnDeleteeProfileRequest_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_profile_v1_UnDeleteeProfileRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_profile_v1_UnDeleteeProfileRequest_descriptor,
+        new java.lang.String[] { "UserId", });
+    internal_static_profile_v1_UnDeleteeProfileResponse_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_profile_v1_UnDeleteeProfileResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_profile_v1_UnDeleteeProfileResponse_descriptor,
         new java.lang.String[] { "IsDone", });
     descriptor.resolveAllFeaturesImmutable();
     build.buf.validate.ValidateProto.getDescriptor();
