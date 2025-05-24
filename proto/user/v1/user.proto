@@ -39,6 +39,16 @@ message DeleteUserResponse {
   bool is_done = 1;
 }
 
+message VerifyUserRequest {
+  string email  = 1 [(buf.validate.field).string.email = true];
+}
+
+message VerifyUserResponse {
+  bool is_done = 1;
+}
+
+
+
 service UserService {
   rpc SignUp(SignUpRequest) returns (SignUpResponse);
   rpc SignIn(SignInRequest) returns (SignInResponse);

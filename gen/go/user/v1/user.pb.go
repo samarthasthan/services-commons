@@ -318,6 +318,94 @@ func (x *DeleteUserResponse) GetIsDone() bool {
 	return false
 }
 
+type VerifyUserRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Email         string                 `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VerifyUserRequest) Reset() {
+	*x = VerifyUserRequest{}
+	mi := &file_user_v1_user_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyUserRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyUserRequest) ProtoMessage() {}
+
+func (x *VerifyUserRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_user_v1_user_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyUserRequest.ProtoReflect.Descriptor instead.
+func (*VerifyUserRequest) Descriptor() ([]byte, []int) {
+	return file_user_v1_user_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *VerifyUserRequest) GetEmail() string {
+	if x != nil {
+		return x.Email
+	}
+	return ""
+}
+
+type VerifyUserResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	IsDone        bool                   `protobuf:"varint,1,opt,name=is_done,json=isDone,proto3" json:"is_done,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VerifyUserResponse) Reset() {
+	*x = VerifyUserResponse{}
+	mi := &file_user_v1_user_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyUserResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyUserResponse) ProtoMessage() {}
+
+func (x *VerifyUserResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_user_v1_user_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyUserResponse.ProtoReflect.Descriptor instead.
+func (*VerifyUserResponse) Descriptor() ([]byte, []int) {
+	return file_user_v1_user_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *VerifyUserResponse) GetIsDone() bool {
+	if x != nil {
+		return x.IsDone
+	}
+	return false
+}
+
 var File_user_v1_user_proto protoreflect.FileDescriptor
 
 const file_user_v1_user_proto_rawDesc = "" +
@@ -338,6 +426,10 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\rrefresh_token\x18\x03 \x01(\tR\frefreshToken\"\x13\n" +
 	"\x11DeleteUserRequest\"-\n" +
 	"\x12DeleteUserResponse\x12\x17\n" +
+	"\ais_done\x18\x01 \x01(\bR\x06isDone\"2\n" +
+	"\x11VerifyUserRequest\x12\x1d\n" +
+	"\x05email\x18\x01 \x01(\tB\a\xbaH\x04r\x02`\x01R\x05email\"-\n" +
+	"\x12VerifyUserResponse\x12\x17\n" +
 	"\ais_done\x18\x01 \x01(\bR\x06isDone2\xca\x01\n" +
 	"\vUserService\x129\n" +
 	"\x06SignUp\x12\x16.user.v1.SignUpRequest\x1a\x17.user.v1.SignUpResponse\x129\n" +
@@ -358,7 +450,7 @@ func file_user_v1_user_proto_rawDescGZIP() []byte {
 	return file_user_v1_user_proto_rawDescData
 }
 
-var file_user_v1_user_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_user_v1_user_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_user_v1_user_proto_goTypes = []any{
 	(*SignUpRequest)(nil),      // 0: user.v1.SignUpRequest
 	(*SignUpResponse)(nil),     // 1: user.v1.SignUpResponse
@@ -366,6 +458,8 @@ var file_user_v1_user_proto_goTypes = []any{
 	(*SignInResponse)(nil),     // 3: user.v1.SignInResponse
 	(*DeleteUserRequest)(nil),  // 4: user.v1.DeleteUserRequest
 	(*DeleteUserResponse)(nil), // 5: user.v1.DeleteUserResponse
+	(*VerifyUserRequest)(nil),  // 6: user.v1.VerifyUserRequest
+	(*VerifyUserResponse)(nil), // 7: user.v1.VerifyUserResponse
 }
 var file_user_v1_user_proto_depIdxs = []int32{
 	0, // 0: user.v1.UserService.SignUp:input_type -> user.v1.SignUpRequest
@@ -392,7 +486,7 @@ func file_user_v1_user_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_user_v1_user_proto_rawDesc), len(file_user_v1_user_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   6,
+			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
