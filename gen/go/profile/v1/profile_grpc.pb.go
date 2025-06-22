@@ -34,7 +34,7 @@ type ProfileServiceClient interface {
 	GetProfile(ctx context.Context, in *GetProfileRequest, opts ...grpc.CallOption) (*GetProfileResponse, error)
 	UpdateProfile(ctx context.Context, in *UpdateProfileRequest, opts ...grpc.CallOption) (*UpdateProfileResponse, error)
 	DeleteProfile(ctx context.Context, in *DeleteProfileRequest, opts ...grpc.CallOption) (*DeleteProfileResponse, error)
-	UnDeleteProfile(ctx context.Context, in *UnDeleteeProfileRequest, opts ...grpc.CallOption) (*UnDeleteeProfileResponse, error)
+	UnDeleteProfile(ctx context.Context, in *UnDeleteProfileRequest, opts ...grpc.CallOption) (*UnDeleteProfileResponse, error)
 }
 
 type profileServiceClient struct {
@@ -85,9 +85,9 @@ func (c *profileServiceClient) DeleteProfile(ctx context.Context, in *DeleteProf
 	return out, nil
 }
 
-func (c *profileServiceClient) UnDeleteProfile(ctx context.Context, in *UnDeleteeProfileRequest, opts ...grpc.CallOption) (*UnDeleteeProfileResponse, error) {
+func (c *profileServiceClient) UnDeleteProfile(ctx context.Context, in *UnDeleteProfileRequest, opts ...grpc.CallOption) (*UnDeleteProfileResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(UnDeleteeProfileResponse)
+	out := new(UnDeleteProfileResponse)
 	err := c.cc.Invoke(ctx, ProfileService_UnDeleteProfile_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -103,7 +103,7 @@ type ProfileServiceServer interface {
 	GetProfile(context.Context, *GetProfileRequest) (*GetProfileResponse, error)
 	UpdateProfile(context.Context, *UpdateProfileRequest) (*UpdateProfileResponse, error)
 	DeleteProfile(context.Context, *DeleteProfileRequest) (*DeleteProfileResponse, error)
-	UnDeleteProfile(context.Context, *UnDeleteeProfileRequest) (*UnDeleteeProfileResponse, error)
+	UnDeleteProfile(context.Context, *UnDeleteProfileRequest) (*UnDeleteProfileResponse, error)
 	mustEmbedUnimplementedProfileServiceServer()
 }
 
@@ -126,7 +126,7 @@ func (UnimplementedProfileServiceServer) UpdateProfile(context.Context, *UpdateP
 func (UnimplementedProfileServiceServer) DeleteProfile(context.Context, *DeleteProfileRequest) (*DeleteProfileResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteProfile not implemented")
 }
-func (UnimplementedProfileServiceServer) UnDeleteProfile(context.Context, *UnDeleteeProfileRequest) (*UnDeleteeProfileResponse, error) {
+func (UnimplementedProfileServiceServer) UnDeleteProfile(context.Context, *UnDeleteProfileRequest) (*UnDeleteProfileResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UnDeleteProfile not implemented")
 }
 func (UnimplementedProfileServiceServer) mustEmbedUnimplementedProfileServiceServer() {}
@@ -223,7 +223,7 @@ func _ProfileService_DeleteProfile_Handler(srv interface{}, ctx context.Context,
 }
 
 func _ProfileService_UnDeleteProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UnDeleteeProfileRequest)
+	in := new(UnDeleteProfileRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -235,7 +235,7 @@ func _ProfileService_UnDeleteProfile_Handler(srv interface{}, ctx context.Contex
 		FullMethod: ProfileService_UnDeleteProfile_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ProfileServiceServer).UnDeleteProfile(ctx, req.(*UnDeleteeProfileRequest))
+		return srv.(ProfileServiceServer).UnDeleteProfile(ctx, req.(*UnDeleteProfileRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }

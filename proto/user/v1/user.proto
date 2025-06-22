@@ -26,11 +26,11 @@ message CreateUserResponse {
 }
 
 
-message DeleteUserByIdRequest {
+message RemoveUserByIdRequest {
   string user_id = 1 [(buf.validate.field).string.uuid = true];
 }
 
-message DeleteUserByIdResponse {
+message RemoveUserByIdResponse {
   bool success = 1;
 }
 
@@ -98,7 +98,7 @@ message ResendVerifyUserResponse {
 
 service UserService {
   rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
-  rpc DeleteUserById(DeleteUserByIdRequest) returns (DeleteUserByIdResponse);
+  rpc RemoveUserById(RemoveUserByIdRequest) returns (RemoveUserByIdResponse);
   rpc SendVerificationEmail(SendVerificationEmailRequest) returns (SendVerificationEmailResponse);
   rpc SignUp(SignUpRequest) returns (SignUpResponse);
   rpc SignIn(SignInRequest) returns (SignInResponse);

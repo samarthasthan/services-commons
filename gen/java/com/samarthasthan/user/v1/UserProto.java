@@ -36,15 +36,15 @@ public final class UserProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_user_v1_CreateUserResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_user_v1_DeleteUserByIdRequest_descriptor;
+    internal_static_user_v1_RemoveUserByIdRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_user_v1_DeleteUserByIdRequest_fieldAccessorTable;
+      internal_static_user_v1_RemoveUserByIdRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_user_v1_DeleteUserByIdResponse_descriptor;
+    internal_static_user_v1_RemoveUserByIdResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_user_v1_DeleteUserByIdResponse_fieldAccessorTable;
+      internal_static_user_v1_RemoveUserByIdResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_user_v1_SendVerificationEmailRequest_descriptor;
   static final 
@@ -120,8 +120,8 @@ public final class UserProto {
       "ord\030\002 \001(\tB\t\272H\006r\004\020\010\030 R\010password\022&\n\tfull_n" +
       "ame\030\003 \001(\tB\t\272H\006r\004\020\001\030dR\010fullName\"-\n\022Create" +
       "UserResponse\022\027\n\007user_id\030\001 \001(\tR\006userId\":\n" +
-      "\025DeleteUserByIdRequest\022!\n\007user_id\030\001 \001(\tB" +
-      "\010\272H\005r\003\260\001\001R\006userId\"2\n\026DeleteUserByIdRespo" +
+      "\025RemoveUserByIdRequest\022!\n\007user_id\030\001 \001(\tB" +
+      "\010\272H\005r\003\260\001\001R\006userId\"2\n\026RemoveUserByIdRespo" +
       "nse\022\030\n\007success\030\001 \001(\010R\007success\"=\n\034SendVer" +
       "ificationEmailRequest\022\035\n\005email\030\001 \001(\tB\007\272H" +
       "\004r\002`\001R\005email\"9\n\035SendVerificationEmailRes" +
@@ -144,9 +144,9 @@ public final class UserProto {
       "H\004r\002`\001R\005email\"3\n\030ResendVerifyUserRespons" +
       "e\022\027\n\007is_done\030\001 \001(\010R\006isDone2\354\004\n\013UserServi" +
       "ce\022E\n\nCreateUser\022\032.user.v1.CreateUserReq" +
-      "uest\032\033.user.v1.CreateUserResponse\022Q\n\016Del" +
-      "eteUserById\022\036.user.v1.DeleteUserByIdRequ" +
-      "est\032\037.user.v1.DeleteUserByIdResponse\022f\n\025" +
+      "uest\032\033.user.v1.CreateUserResponse\022Q\n\016Rem" +
+      "oveUserById\022\036.user.v1.RemoveUserByIdRequ" +
+      "est\032\037.user.v1.RemoveUserByIdResponse\022f\n\025" +
       "SendVerificationEmail\022%.user.v1.SendVeri" +
       "ficationEmailRequest\032&.user.v1.SendVerif" +
       "icationEmailResponse\0229\n\006SignUp\022\026.user.v1" +
@@ -181,17 +181,17 @@ public final class UserProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_user_v1_CreateUserResponse_descriptor,
         new java.lang.String[] { "UserId", });
-    internal_static_user_v1_DeleteUserByIdRequest_descriptor =
+    internal_static_user_v1_RemoveUserByIdRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_user_v1_DeleteUserByIdRequest_fieldAccessorTable = new
+    internal_static_user_v1_RemoveUserByIdRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_user_v1_DeleteUserByIdRequest_descriptor,
+        internal_static_user_v1_RemoveUserByIdRequest_descriptor,
         new java.lang.String[] { "UserId", });
-    internal_static_user_v1_DeleteUserByIdResponse_descriptor =
+    internal_static_user_v1_RemoveUserByIdResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_user_v1_DeleteUserByIdResponse_fieldAccessorTable = new
+    internal_static_user_v1_RemoveUserByIdResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_user_v1_DeleteUserByIdResponse_descriptor,
+        internal_static_user_v1_RemoveUserByIdResponse_descriptor,
         new java.lang.String[] { "Success", });
     internal_static_user_v1_SendVerificationEmailRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);

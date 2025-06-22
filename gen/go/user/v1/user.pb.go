@@ -126,27 +126,27 @@ func (x *CreateUserResponse) GetUserId() string {
 	return ""
 }
 
-type DeleteUserByIdRequest struct {
+type RemoveUserByIdRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *DeleteUserByIdRequest) Reset() {
-	*x = DeleteUserByIdRequest{}
+func (x *RemoveUserByIdRequest) Reset() {
+	*x = RemoveUserByIdRequest{}
 	mi := &file_user_v1_user_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *DeleteUserByIdRequest) String() string {
+func (x *RemoveUserByIdRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DeleteUserByIdRequest) ProtoMessage() {}
+func (*RemoveUserByIdRequest) ProtoMessage() {}
 
-func (x *DeleteUserByIdRequest) ProtoReflect() protoreflect.Message {
+func (x *RemoveUserByIdRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_user_v1_user_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -158,39 +158,39 @@ func (x *DeleteUserByIdRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DeleteUserByIdRequest.ProtoReflect.Descriptor instead.
-func (*DeleteUserByIdRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use RemoveUserByIdRequest.ProtoReflect.Descriptor instead.
+func (*RemoveUserByIdRequest) Descriptor() ([]byte, []int) {
 	return file_user_v1_user_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *DeleteUserByIdRequest) GetUserId() string {
+func (x *RemoveUserByIdRequest) GetUserId() string {
 	if x != nil {
 		return x.UserId
 	}
 	return ""
 }
 
-type DeleteUserByIdResponse struct {
+type RemoveUserByIdResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Success       bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *DeleteUserByIdResponse) Reset() {
-	*x = DeleteUserByIdResponse{}
+func (x *RemoveUserByIdResponse) Reset() {
+	*x = RemoveUserByIdResponse{}
 	mi := &file_user_v1_user_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *DeleteUserByIdResponse) String() string {
+func (x *RemoveUserByIdResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DeleteUserByIdResponse) ProtoMessage() {}
+func (*RemoveUserByIdResponse) ProtoMessage() {}
 
-func (x *DeleteUserByIdResponse) ProtoReflect() protoreflect.Message {
+func (x *RemoveUserByIdResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_user_v1_user_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -202,12 +202,12 @@ func (x *DeleteUserByIdResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DeleteUserByIdResponse.ProtoReflect.Descriptor instead.
-func (*DeleteUserByIdResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use RemoveUserByIdResponse.ProtoReflect.Descriptor instead.
+func (*RemoveUserByIdResponse) Descriptor() ([]byte, []int) {
 	return file_user_v1_user_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *DeleteUserByIdResponse) GetSuccess() bool {
+func (x *RemoveUserByIdResponse) GetSuccess() bool {
 	if x != nil {
 		return x.Success
 	}
@@ -793,9 +793,9 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\tfull_name\x18\x03 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\bfullName\"-\n" +
 	"\x12CreateUserResponse\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\":\n" +
-	"\x15DeleteUserByIdRequest\x12!\n" +
+	"\x15RemoveUserByIdRequest\x12!\n" +
 	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\"2\n" +
-	"\x16DeleteUserByIdResponse\x12\x18\n" +
+	"\x16RemoveUserByIdResponse\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\"=\n" +
 	"\x1cSendVerificationEmailRequest\x12\x1d\n" +
 	"\x05email\x18\x01 \x01(\tB\a\xbaH\x04r\x02`\x01R\x05email\"9\n" +
@@ -829,7 +829,7 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\vUserService\x12E\n" +
 	"\n" +
 	"CreateUser\x12\x1a.user.v1.CreateUserRequest\x1a\x1b.user.v1.CreateUserResponse\x12Q\n" +
-	"\x0eDeleteUserById\x12\x1e.user.v1.DeleteUserByIdRequest\x1a\x1f.user.v1.DeleteUserByIdResponse\x12f\n" +
+	"\x0eRemoveUserById\x12\x1e.user.v1.RemoveUserByIdRequest\x1a\x1f.user.v1.RemoveUserByIdResponse\x12f\n" +
 	"\x15SendVerificationEmail\x12%.user.v1.SendVerificationEmailRequest\x1a&.user.v1.SendVerificationEmailResponse\x129\n" +
 	"\x06SignUp\x12\x16.user.v1.SignUpRequest\x1a\x17.user.v1.SignUpResponse\x129\n" +
 	"\x06SignIn\x12\x16.user.v1.SignInRequest\x1a\x17.user.v1.SignInResponse\x12E\n" +
@@ -856,8 +856,8 @@ var file_user_v1_user_proto_msgTypes = make([]protoimpl.MessageInfo, 16)
 var file_user_v1_user_proto_goTypes = []any{
 	(*CreateUserRequest)(nil),             // 0: user.v1.CreateUserRequest
 	(*CreateUserResponse)(nil),            // 1: user.v1.CreateUserResponse
-	(*DeleteUserByIdRequest)(nil),         // 2: user.v1.DeleteUserByIdRequest
-	(*DeleteUserByIdResponse)(nil),        // 3: user.v1.DeleteUserByIdResponse
+	(*RemoveUserByIdRequest)(nil),         // 2: user.v1.RemoveUserByIdRequest
+	(*RemoveUserByIdResponse)(nil),        // 3: user.v1.RemoveUserByIdResponse
 	(*SendVerificationEmailRequest)(nil),  // 4: user.v1.SendVerificationEmailRequest
 	(*SendVerificationEmailResponse)(nil), // 5: user.v1.SendVerificationEmailResponse
 	(*SignUpRequest)(nil),                 // 6: user.v1.SignUpRequest
@@ -873,7 +873,7 @@ var file_user_v1_user_proto_goTypes = []any{
 }
 var file_user_v1_user_proto_depIdxs = []int32{
 	0,  // 0: user.v1.UserService.CreateUser:input_type -> user.v1.CreateUserRequest
-	2,  // 1: user.v1.UserService.DeleteUserById:input_type -> user.v1.DeleteUserByIdRequest
+	2,  // 1: user.v1.UserService.RemoveUserById:input_type -> user.v1.RemoveUserByIdRequest
 	4,  // 2: user.v1.UserService.SendVerificationEmail:input_type -> user.v1.SendVerificationEmailRequest
 	6,  // 3: user.v1.UserService.SignUp:input_type -> user.v1.SignUpRequest
 	8,  // 4: user.v1.UserService.SignIn:input_type -> user.v1.SignInRequest
@@ -881,7 +881,7 @@ var file_user_v1_user_proto_depIdxs = []int32{
 	12, // 6: user.v1.UserService.VerifyUser:input_type -> user.v1.VerifyUserRequest
 	14, // 7: user.v1.UserService.ResendVerifyUser:input_type -> user.v1.ResendVerifyUserRequest
 	1,  // 8: user.v1.UserService.CreateUser:output_type -> user.v1.CreateUserResponse
-	3,  // 9: user.v1.UserService.DeleteUserById:output_type -> user.v1.DeleteUserByIdResponse
+	3,  // 9: user.v1.UserService.RemoveUserById:output_type -> user.v1.RemoveUserByIdResponse
 	5,  // 10: user.v1.UserService.SendVerificationEmail:output_type -> user.v1.SendVerificationEmailResponse
 	7,  // 11: user.v1.UserService.SignUp:output_type -> user.v1.SignUpResponse
 	9,  // 12: user.v1.UserService.SignIn:output_type -> user.v1.SignInResponse
