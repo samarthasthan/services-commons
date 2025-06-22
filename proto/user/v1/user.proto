@@ -97,6 +97,9 @@ message ResendVerifyUserResponse {
 
 
 service UserService {
+  rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
+  rpc DeleteUserById(DeleteUserByIdRequest) returns (DeleteUserByIdResponse);
+  rpc SendVerificationEmail(SendVerificationEmailRequest) returns (SendVerificationEmailResponse);
   rpc SignUp(SignUpRequest) returns (SignUpResponse);
   rpc SignIn(SignInRequest) returns (SignInResponse);
   rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse);

@@ -825,8 +825,12 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\x17ResendVerifyUserRequest\x12\x1d\n" +
 	"\x05email\x18\x01 \x01(\tB\a\xbaH\x04r\x02`\x01R\x05email\"3\n" +
 	"\x18ResendVerifyUserResponse\x12\x17\n" +
-	"\ais_done\x18\x01 \x01(\bR\x06isDone2\xea\x02\n" +
-	"\vUserService\x129\n" +
+	"\ais_done\x18\x01 \x01(\bR\x06isDone2\xec\x04\n" +
+	"\vUserService\x12E\n" +
+	"\n" +
+	"CreateUser\x12\x1a.user.v1.CreateUserRequest\x1a\x1b.user.v1.CreateUserResponse\x12Q\n" +
+	"\x0eDeleteUserById\x12\x1e.user.v1.DeleteUserByIdRequest\x1a\x1f.user.v1.DeleteUserByIdResponse\x12f\n" +
+	"\x15SendVerificationEmail\x12%.user.v1.SendVerificationEmailRequest\x1a&.user.v1.SendVerificationEmailResponse\x129\n" +
 	"\x06SignUp\x12\x16.user.v1.SignUpRequest\x1a\x17.user.v1.SignUpResponse\x129\n" +
 	"\x06SignIn\x12\x16.user.v1.SignInRequest\x1a\x17.user.v1.SignInResponse\x12E\n" +
 	"\n" +
@@ -868,18 +872,24 @@ var file_user_v1_user_proto_goTypes = []any{
 	(*ResendVerifyUserResponse)(nil),      // 15: user.v1.ResendVerifyUserResponse
 }
 var file_user_v1_user_proto_depIdxs = []int32{
-	6,  // 0: user.v1.UserService.SignUp:input_type -> user.v1.SignUpRequest
-	8,  // 1: user.v1.UserService.SignIn:input_type -> user.v1.SignInRequest
-	10, // 2: user.v1.UserService.DeleteUser:input_type -> user.v1.DeleteUserRequest
-	12, // 3: user.v1.UserService.VerifyUser:input_type -> user.v1.VerifyUserRequest
-	14, // 4: user.v1.UserService.ResendVerifyUser:input_type -> user.v1.ResendVerifyUserRequest
-	7,  // 5: user.v1.UserService.SignUp:output_type -> user.v1.SignUpResponse
-	9,  // 6: user.v1.UserService.SignIn:output_type -> user.v1.SignInResponse
-	11, // 7: user.v1.UserService.DeleteUser:output_type -> user.v1.DeleteUserResponse
-	13, // 8: user.v1.UserService.VerifyUser:output_type -> user.v1.VerifyUserResponse
-	15, // 9: user.v1.UserService.ResendVerifyUser:output_type -> user.v1.ResendVerifyUserResponse
-	5,  // [5:10] is the sub-list for method output_type
-	0,  // [0:5] is the sub-list for method input_type
+	0,  // 0: user.v1.UserService.CreateUser:input_type -> user.v1.CreateUserRequest
+	2,  // 1: user.v1.UserService.DeleteUserById:input_type -> user.v1.DeleteUserByIdRequest
+	4,  // 2: user.v1.UserService.SendVerificationEmail:input_type -> user.v1.SendVerificationEmailRequest
+	6,  // 3: user.v1.UserService.SignUp:input_type -> user.v1.SignUpRequest
+	8,  // 4: user.v1.UserService.SignIn:input_type -> user.v1.SignInRequest
+	10, // 5: user.v1.UserService.DeleteUser:input_type -> user.v1.DeleteUserRequest
+	12, // 6: user.v1.UserService.VerifyUser:input_type -> user.v1.VerifyUserRequest
+	14, // 7: user.v1.UserService.ResendVerifyUser:input_type -> user.v1.ResendVerifyUserRequest
+	1,  // 8: user.v1.UserService.CreateUser:output_type -> user.v1.CreateUserResponse
+	3,  // 9: user.v1.UserService.DeleteUserById:output_type -> user.v1.DeleteUserByIdResponse
+	5,  // 10: user.v1.UserService.SendVerificationEmail:output_type -> user.v1.SendVerificationEmailResponse
+	7,  // 11: user.v1.UserService.SignUp:output_type -> user.v1.SignUpResponse
+	9,  // 12: user.v1.UserService.SignIn:output_type -> user.v1.SignInResponse
+	11, // 13: user.v1.UserService.DeleteUser:output_type -> user.v1.DeleteUserResponse
+	13, // 14: user.v1.UserService.VerifyUser:output_type -> user.v1.VerifyUserResponse
+	15, // 15: user.v1.UserService.ResendVerifyUser:output_type -> user.v1.ResendVerifyUserResponse
+	8,  // [8:16] is the sub-list for method output_type
+	0,  // [0:8] is the sub-list for method input_type
 	0,  // [0:0] is the sub-list for extension type_name
 	0,  // [0:0] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name

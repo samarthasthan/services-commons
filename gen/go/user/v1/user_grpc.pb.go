@@ -19,17 +19,23 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	UserService_SignUp_FullMethodName           = "/user.v1.UserService/SignUp"
-	UserService_SignIn_FullMethodName           = "/user.v1.UserService/SignIn"
-	UserService_DeleteUser_FullMethodName       = "/user.v1.UserService/DeleteUser"
-	UserService_VerifyUser_FullMethodName       = "/user.v1.UserService/VerifyUser"
-	UserService_ResendVerifyUser_FullMethodName = "/user.v1.UserService/ResendVerifyUser"
+	UserService_CreateUser_FullMethodName            = "/user.v1.UserService/CreateUser"
+	UserService_DeleteUserById_FullMethodName        = "/user.v1.UserService/DeleteUserById"
+	UserService_SendVerificationEmail_FullMethodName = "/user.v1.UserService/SendVerificationEmail"
+	UserService_SignUp_FullMethodName                = "/user.v1.UserService/SignUp"
+	UserService_SignIn_FullMethodName                = "/user.v1.UserService/SignIn"
+	UserService_DeleteUser_FullMethodName            = "/user.v1.UserService/DeleteUser"
+	UserService_VerifyUser_FullMethodName            = "/user.v1.UserService/VerifyUser"
+	UserService_ResendVerifyUser_FullMethodName      = "/user.v1.UserService/ResendVerifyUser"
 )
 
 // UserServiceClient is the client API for UserService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type UserServiceClient interface {
+	CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CreateUserResponse, error)
+	DeleteUserById(ctx context.Context, in *DeleteUserByIdRequest, opts ...grpc.CallOption) (*DeleteUserByIdResponse, error)
+	SendVerificationEmail(ctx context.Context, in *SendVerificationEmailRequest, opts ...grpc.CallOption) (*SendVerificationEmailResponse, error)
 	SignUp(ctx context.Context, in *SignUpRequest, opts ...grpc.CallOption) (*SignUpResponse, error)
 	SignIn(ctx context.Context, in *SignInRequest, opts ...grpc.CallOption) (*SignInResponse, error)
 	DeleteUser(ctx context.Context, in *DeleteUserRequest, opts ...grpc.CallOption) (*DeleteUserResponse, error)
@@ -43,6 +49,36 @@ type userServiceClient struct {
 
 func NewUserServiceClient(cc grpc.ClientConnInterface) UserServiceClient {
 	return &userServiceClient{cc}
+}
+
+func (c *userServiceClient) CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CreateUserResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateUserResponse)
+	err := c.cc.Invoke(ctx, UserService_CreateUser_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userServiceClient) DeleteUserById(ctx context.Context, in *DeleteUserByIdRequest, opts ...grpc.CallOption) (*DeleteUserByIdResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteUserByIdResponse)
+	err := c.cc.Invoke(ctx, UserService_DeleteUserById_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userServiceClient) SendVerificationEmail(ctx context.Context, in *SendVerificationEmailRequest, opts ...grpc.CallOption) (*SendVerificationEmailResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SendVerificationEmailResponse)
+	err := c.cc.Invoke(ctx, UserService_SendVerificationEmail_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *userServiceClient) SignUp(ctx context.Context, in *SignUpRequest, opts ...grpc.CallOption) (*SignUpResponse, error) {
@@ -99,6 +135,9 @@ func (c *userServiceClient) ResendVerifyUser(ctx context.Context, in *ResendVeri
 // All implementations must embed UnimplementedUserServiceServer
 // for forward compatibility.
 type UserServiceServer interface {
+	CreateUser(context.Context, *CreateUserRequest) (*CreateUserResponse, error)
+	DeleteUserById(context.Context, *DeleteUserByIdRequest) (*DeleteUserByIdResponse, error)
+	SendVerificationEmail(context.Context, *SendVerificationEmailRequest) (*SendVerificationEmailResponse, error)
 	SignUp(context.Context, *SignUpRequest) (*SignUpResponse, error)
 	SignIn(context.Context, *SignInRequest) (*SignInResponse, error)
 	DeleteUser(context.Context, *DeleteUserRequest) (*DeleteUserResponse, error)
@@ -114,6 +153,15 @@ type UserServiceServer interface {
 // pointer dereference when methods are called.
 type UnimplementedUserServiceServer struct{}
 
+func (UnimplementedUserServiceServer) CreateUser(context.Context, *CreateUserRequest) (*CreateUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateUser not implemented")
+}
+func (UnimplementedUserServiceServer) DeleteUserById(context.Context, *DeleteUserByIdRequest) (*DeleteUserByIdResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteUserById not implemented")
+}
+func (UnimplementedUserServiceServer) SendVerificationEmail(context.Context, *SendVerificationEmailRequest) (*SendVerificationEmailResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SendVerificationEmail not implemented")
+}
 func (UnimplementedUserServiceServer) SignUp(context.Context, *SignUpRequest) (*SignUpResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SignUp not implemented")
 }
@@ -148,6 +196,60 @@ func RegisterUserServiceServer(s grpc.ServiceRegistrar, srv UserServiceServer) {
 		t.testEmbeddedByValue()
 	}
 	s.RegisterService(&UserService_ServiceDesc, srv)
+}
+
+func _UserService_CreateUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).CreateUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: UserService_CreateUser_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).CreateUser(ctx, req.(*CreateUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UserService_DeleteUserById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteUserByIdRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).DeleteUserById(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: UserService_DeleteUserById_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).DeleteUserById(ctx, req.(*DeleteUserByIdRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UserService_SendVerificationEmail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SendVerificationEmailRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).SendVerificationEmail(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: UserService_SendVerificationEmail_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).SendVerificationEmail(ctx, req.(*SendVerificationEmailRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _UserService_SignUp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -247,6 +349,18 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "user.v1.UserService",
 	HandlerType: (*UserServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "CreateUser",
+			Handler:    _UserService_CreateUser_Handler,
+		},
+		{
+			MethodName: "DeleteUserById",
+			Handler:    _UserService_DeleteUserById_Handler,
+		},
+		{
+			MethodName: "SendVerificationEmail",
+			Handler:    _UserService_SendVerificationEmail_Handler,
+		},
 		{
 			MethodName: "SignUp",
 			Handler:    _UserService_SignUp_Handler,

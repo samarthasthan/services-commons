@@ -142,21 +142,27 @@ public final class UserProto {
       "erResponse\022\027\n\007is_done\030\001 \001(\010R\006isDone\"8\n\027R" +
       "esendVerifyUserRequest\022\035\n\005email\030\001 \001(\tB\007\272" +
       "H\004r\002`\001R\005email\"3\n\030ResendVerifyUserRespons" +
-      "e\022\027\n\007is_done\030\001 \001(\010R\006isDone2\352\002\n\013UserServi" +
-      "ce\0229\n\006SignUp\022\026.user.v1.SignUpRequest\032\027.u" +
-      "ser.v1.SignUpResponse\0229\n\006SignIn\022\026.user.v" +
-      "1.SignInRequest\032\027.user.v1.SignInResponse" +
-      "\022E\n\nDeleteUser\022\032.user.v1.DeleteUserReque" +
-      "st\032\033.user.v1.DeleteUserResponse\022E\n\nVerif" +
-      "yUser\022\032.user.v1.VerifyUserRequest\032\033.user" +
-      ".v1.VerifyUserResponse\022W\n\020ResendVerifyUs" +
-      "er\022 .user.v1.ResendVerifyUserRequest\032!.u" +
-      "ser.v1.ResendVerifyUserResponseB\244\001\n\031com." +
-      "samarthasthan.user.v1B\tUserProtoP\001Z?gith" +
-      "ub.com/samarthasthan/services-commons/ge" +
-      "n/go/user/v1;userv1\242\002\003UXX\252\002\007User.V1\312\002\007Us" +
-      "er\\V1\342\002\023User\\V1\\GPBMetadata\352\002\010User::V1b\006" +
-      "proto3"
+      "e\022\027\n\007is_done\030\001 \001(\010R\006isDone2\354\004\n\013UserServi" +
+      "ce\022E\n\nCreateUser\022\032.user.v1.CreateUserReq" +
+      "uest\032\033.user.v1.CreateUserResponse\022Q\n\016Del" +
+      "eteUserById\022\036.user.v1.DeleteUserByIdRequ" +
+      "est\032\037.user.v1.DeleteUserByIdResponse\022f\n\025" +
+      "SendVerificationEmail\022%.user.v1.SendVeri" +
+      "ficationEmailRequest\032&.user.v1.SendVerif" +
+      "icationEmailResponse\0229\n\006SignUp\022\026.user.v1" +
+      ".SignUpRequest\032\027.user.v1.SignUpResponse\022" +
+      "9\n\006SignIn\022\026.user.v1.SignInRequest\032\027.user" +
+      ".v1.SignInResponse\022E\n\nDeleteUser\022\032.user." +
+      "v1.DeleteUserRequest\032\033.user.v1.DeleteUse" +
+      "rResponse\022E\n\nVerifyUser\022\032.user.v1.Verify" +
+      "UserRequest\032\033.user.v1.VerifyUserResponse" +
+      "\022W\n\020ResendVerifyUser\022 .user.v1.ResendVer" +
+      "ifyUserRequest\032!.user.v1.ResendVerifyUse" +
+      "rResponseB\244\001\n\031com.samarthasthan.user.v1B" +
+      "\tUserProtoP\001Z?github.com/samarthasthan/s" +
+      "ervices-commons/gen/go/user/v1;userv1\242\002\003" +
+      "UXX\252\002\007User.V1\312\002\007User\\V1\342\002\023User\\V1\\GPBMet" +
+      "adata\352\002\010User::V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
