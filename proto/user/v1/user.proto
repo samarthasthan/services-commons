@@ -6,6 +6,45 @@ import "buf/validate/validate.proto";
 
 option go_package = "github.com/samarthasthan/services-commons/gen/go/user/v1;userv1";
 
+
+// SignUp workflow
+
+message CreateUserRequest {
+  string email = 1 [(buf.validate.field).string.email = true];
+  string password = 2 [(buf.validate.field).string = {
+    min_len: 8
+    max_len: 32
+  }];
+  string full_name = 3 [(buf.validate.field).string = {
+    min_len: 1
+    max_len: 100
+  }];
+}
+
+message CreateUserResponse {
+  string user_id = 1;
+}
+
+
+message DeleteUserByIdRequest {
+  string user_id = 1 [(buf.validate.field).string.uuid = true];
+}
+
+message DeleteUserByIdResponse {
+  bool success = 1;
+}
+
+message SendVerificationEmailRequest {
+  string email = 1 [(buf.validate.field).string.email = true];
+}
+
+message SendVerificationEmailResponse {
+  bool success = 1;
+}
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 message SignUpRequest {
   string email = 1 [(buf.validate.field).string.email = true];
   string password = 2 [(buf.validate.field).string = {
