@@ -11,7 +11,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-goog.provide('proto.user.v1.DeleteUserByIdRequest');
+goog.provide('proto.user.v1.UnDeleteUserByIdResponse');
 
 goog.require('jspb.BinaryReader');
 goog.require('jspb.BinaryWriter');
@@ -27,16 +27,16 @@ goog.require('jspb.Message');
  * @extends {jspb.Message}
  * @constructor
  */
-proto.user.v1.DeleteUserByIdRequest = function(opt_data) {
+proto.user.v1.UnDeleteUserByIdResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.user.v1.DeleteUserByIdRequest, jspb.Message);
+goog.inherits(proto.user.v1.UnDeleteUserByIdResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.user.v1.DeleteUserByIdRequest.displayName = 'proto.user.v1.DeleteUserByIdRequest';
+  proto.user.v1.UnDeleteUserByIdResponse.displayName = 'proto.user.v1.UnDeleteUserByIdResponse';
 }
 
 
@@ -54,8 +54,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.user.v1.DeleteUserByIdRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.user.v1.DeleteUserByIdRequest.toObject(opt_includeInstance, this);
+proto.user.v1.UnDeleteUserByIdResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.user.v1.UnDeleteUserByIdResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -64,13 +64,13 @@ proto.user.v1.DeleteUserByIdRequest.prototype.toObject = function(opt_includeIns
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.user.v1.DeleteUserByIdRequest} msg The msg instance to transform.
+ * @param {!proto.user.v1.UnDeleteUserByIdResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.user.v1.DeleteUserByIdRequest.toObject = function(includeInstance, msg) {
+proto.user.v1.UnDeleteUserByIdResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+isDone: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
   };
 
   if (includeInstance) {
@@ -84,29 +84,33 @@ proto.user.v1.DeleteUserByIdRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.user.v1.DeleteUserByIdRequest}
+ * @return {!proto.user.v1.UnDeleteUserByIdResponse}
  */
-proto.user.v1.DeleteUserByIdRequest.deserializeBinary = function(bytes) {
+proto.user.v1.UnDeleteUserByIdResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.user.v1.DeleteUserByIdRequest;
-  return proto.user.v1.DeleteUserByIdRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.user.v1.UnDeleteUserByIdResponse;
+  return proto.user.v1.UnDeleteUserByIdResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.user.v1.DeleteUserByIdRequest} msg The message object to deserialize into.
+ * @param {!proto.user.v1.UnDeleteUserByIdResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.user.v1.DeleteUserByIdRequest}
+ * @return {!proto.user.v1.UnDeleteUserByIdResponse}
  */
-proto.user.v1.DeleteUserByIdRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.user.v1.UnDeleteUserByIdResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsDone(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -120,9 +124,9 @@ proto.user.v1.DeleteUserByIdRequest.deserializeBinaryFromReader = function(msg, 
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.user.v1.DeleteUserByIdRequest.prototype.serializeBinary = function() {
+proto.user.v1.UnDeleteUserByIdResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.user.v1.DeleteUserByIdRequest.serializeBinaryToWriter(this, writer);
+  proto.user.v1.UnDeleteUserByIdResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -130,12 +134,37 @@ proto.user.v1.DeleteUserByIdRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.user.v1.DeleteUserByIdRequest} message
+ * @param {!proto.user.v1.UnDeleteUserByIdResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.user.v1.DeleteUserByIdRequest.serializeBinaryToWriter = function(message, writer) {
+proto.user.v1.UnDeleteUserByIdResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getIsDone();
+  if (f) {
+    writer.writeBool(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional bool is_done = 1;
+ * @return {boolean}
+ */
+proto.user.v1.UnDeleteUserByIdResponse.prototype.getIsDone = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.user.v1.UnDeleteUserByIdResponse} returns this
+ */
+proto.user.v1.UnDeleteUserByIdResponse.prototype.setIsDone = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
 

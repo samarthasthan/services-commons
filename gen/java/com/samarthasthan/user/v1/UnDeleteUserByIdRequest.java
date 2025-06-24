@@ -6,12 +6,12 @@
 package com.samarthasthan.user.v1;
 
 /**
- * Protobuf type {@code user.v1.DeleteUserByIdResponse}
+ * Protobuf type {@code user.v1.UnDeleteUserByIdRequest}
  */
-public final class DeleteUserByIdResponse extends
+public final class UnDeleteUserByIdRequest extends
     com.google.protobuf.GeneratedMessage implements
-    // @@protoc_insertion_point(message_implements:user.v1.DeleteUserByIdResponse)
-    DeleteUserByIdResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:user.v1.UnDeleteUserByIdRequest)
+    UnDeleteUserByIdRequestOrBuilder {
 private static final long serialVersionUID = 0L;
   static {
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -20,37 +20,26 @@ private static final long serialVersionUID = 0L;
       /* minor= */ 29,
       /* patch= */ 3,
       /* suffix= */ "",
-      DeleteUserByIdResponse.class.getName());
+      UnDeleteUserByIdRequest.class.getName());
   }
-  // Use DeleteUserByIdResponse.newBuilder() to construct.
-  private DeleteUserByIdResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  // Use UnDeleteUserByIdRequest.newBuilder() to construct.
+  private UnDeleteUserByIdRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
-  private DeleteUserByIdResponse() {
+  private UnDeleteUserByIdRequest() {
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.samarthasthan.user.v1.UserProto.internal_static_user_v1_DeleteUserByIdResponse_descriptor;
+    return com.samarthasthan.user.v1.UserProto.internal_static_user_v1_UnDeleteUserByIdRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.samarthasthan.user.v1.UserProto.internal_static_user_v1_DeleteUserByIdResponse_fieldAccessorTable
+    return com.samarthasthan.user.v1.UserProto.internal_static_user_v1_UnDeleteUserByIdRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.samarthasthan.user.v1.DeleteUserByIdResponse.class, com.samarthasthan.user.v1.DeleteUserByIdResponse.Builder.class);
-  }
-
-  public static final int IS_DONE_FIELD_NUMBER = 1;
-  private boolean isDone_ = false;
-  /**
-   * <code>bool is_done = 1 [json_name = "isDone"];</code>
-   * @return The isDone.
-   */
-  @java.lang.Override
-  public boolean getIsDone() {
-    return isDone_;
+            com.samarthasthan.user.v1.UnDeleteUserByIdRequest.class, com.samarthasthan.user.v1.UnDeleteUserByIdRequest.Builder.class);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -67,9 +56,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (isDone_ != false) {
-      output.writeBool(1, isDone_);
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -79,10 +65,6 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (isDone_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(1, isDone_);
-    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -93,13 +75,11 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.samarthasthan.user.v1.DeleteUserByIdResponse)) {
+    if (!(obj instanceof com.samarthasthan.user.v1.UnDeleteUserByIdRequest)) {
       return super.equals(obj);
     }
-    com.samarthasthan.user.v1.DeleteUserByIdResponse other = (com.samarthasthan.user.v1.DeleteUserByIdResponse) obj;
+    com.samarthasthan.user.v1.UnDeleteUserByIdRequest other = (com.samarthasthan.user.v1.UnDeleteUserByIdRequest) obj;
 
-    if (getIsDone()
-        != other.getIsDone()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -111,52 +91,49 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + IS_DONE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getIsDone());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.samarthasthan.user.v1.DeleteUserByIdResponse parseFrom(
+  public static com.samarthasthan.user.v1.UnDeleteUserByIdRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.samarthasthan.user.v1.DeleteUserByIdResponse parseFrom(
+  public static com.samarthasthan.user.v1.UnDeleteUserByIdRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.samarthasthan.user.v1.DeleteUserByIdResponse parseFrom(
+  public static com.samarthasthan.user.v1.UnDeleteUserByIdRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.samarthasthan.user.v1.DeleteUserByIdResponse parseFrom(
+  public static com.samarthasthan.user.v1.UnDeleteUserByIdRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.samarthasthan.user.v1.DeleteUserByIdResponse parseFrom(byte[] data)
+  public static com.samarthasthan.user.v1.UnDeleteUserByIdRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.samarthasthan.user.v1.DeleteUserByIdResponse parseFrom(
+  public static com.samarthasthan.user.v1.UnDeleteUserByIdRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.samarthasthan.user.v1.DeleteUserByIdResponse parseFrom(java.io.InputStream input)
+  public static com.samarthasthan.user.v1.UnDeleteUserByIdRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.samarthasthan.user.v1.DeleteUserByIdResponse parseFrom(
+  public static com.samarthasthan.user.v1.UnDeleteUserByIdRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -164,26 +141,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static com.samarthasthan.user.v1.DeleteUserByIdResponse parseDelimitedFrom(java.io.InputStream input)
+  public static com.samarthasthan.user.v1.UnDeleteUserByIdRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.samarthasthan.user.v1.DeleteUserByIdResponse parseDelimitedFrom(
+  public static com.samarthasthan.user.v1.UnDeleteUserByIdRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.samarthasthan.user.v1.DeleteUserByIdResponse parseFrom(
+  public static com.samarthasthan.user.v1.UnDeleteUserByIdRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.samarthasthan.user.v1.DeleteUserByIdResponse parseFrom(
+  public static com.samarthasthan.user.v1.UnDeleteUserByIdRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -196,7 +173,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.samarthasthan.user.v1.DeleteUserByIdResponse prototype) {
+  public static Builder newBuilder(com.samarthasthan.user.v1.UnDeleteUserByIdRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -212,26 +189,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code user.v1.DeleteUserByIdResponse}
+   * Protobuf type {@code user.v1.UnDeleteUserByIdRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:user.v1.DeleteUserByIdResponse)
-      com.samarthasthan.user.v1.DeleteUserByIdResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:user.v1.UnDeleteUserByIdRequest)
+      com.samarthasthan.user.v1.UnDeleteUserByIdRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.samarthasthan.user.v1.UserProto.internal_static_user_v1_DeleteUserByIdResponse_descriptor;
+      return com.samarthasthan.user.v1.UserProto.internal_static_user_v1_UnDeleteUserByIdRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.samarthasthan.user.v1.UserProto.internal_static_user_v1_DeleteUserByIdResponse_fieldAccessorTable
+      return com.samarthasthan.user.v1.UserProto.internal_static_user_v1_UnDeleteUserByIdRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.samarthasthan.user.v1.DeleteUserByIdResponse.class, com.samarthasthan.user.v1.DeleteUserByIdResponse.Builder.class);
+              com.samarthasthan.user.v1.UnDeleteUserByIdRequest.class, com.samarthasthan.user.v1.UnDeleteUserByIdRequest.Builder.class);
     }
 
-    // Construct using com.samarthasthan.user.v1.DeleteUserByIdResponse.newBuilder()
+    // Construct using com.samarthasthan.user.v1.UnDeleteUserByIdRequest.newBuilder()
     private Builder() {
 
     }
@@ -244,25 +221,23 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      bitField0_ = 0;
-      isDone_ = false;
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.samarthasthan.user.v1.UserProto.internal_static_user_v1_DeleteUserByIdResponse_descriptor;
+      return com.samarthasthan.user.v1.UserProto.internal_static_user_v1_UnDeleteUserByIdRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.samarthasthan.user.v1.DeleteUserByIdResponse getDefaultInstanceForType() {
-      return com.samarthasthan.user.v1.DeleteUserByIdResponse.getDefaultInstance();
+    public com.samarthasthan.user.v1.UnDeleteUserByIdRequest getDefaultInstanceForType() {
+      return com.samarthasthan.user.v1.UnDeleteUserByIdRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.samarthasthan.user.v1.DeleteUserByIdResponse build() {
-      com.samarthasthan.user.v1.DeleteUserByIdResponse result = buildPartial();
+    public com.samarthasthan.user.v1.UnDeleteUserByIdRequest build() {
+      com.samarthasthan.user.v1.UnDeleteUserByIdRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -270,35 +245,24 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.samarthasthan.user.v1.DeleteUserByIdResponse buildPartial() {
-      com.samarthasthan.user.v1.DeleteUserByIdResponse result = new com.samarthasthan.user.v1.DeleteUserByIdResponse(this);
-      if (bitField0_ != 0) { buildPartial0(result); }
+    public com.samarthasthan.user.v1.UnDeleteUserByIdRequest buildPartial() {
+      com.samarthasthan.user.v1.UnDeleteUserByIdRequest result = new com.samarthasthan.user.v1.UnDeleteUserByIdRequest(this);
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(com.samarthasthan.user.v1.DeleteUserByIdResponse result) {
-      int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.isDone_ = isDone_;
-      }
-    }
-
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.samarthasthan.user.v1.DeleteUserByIdResponse) {
-        return mergeFrom((com.samarthasthan.user.v1.DeleteUserByIdResponse)other);
+      if (other instanceof com.samarthasthan.user.v1.UnDeleteUserByIdRequest) {
+        return mergeFrom((com.samarthasthan.user.v1.UnDeleteUserByIdRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.samarthasthan.user.v1.DeleteUserByIdResponse other) {
-      if (other == com.samarthasthan.user.v1.DeleteUserByIdResponse.getDefaultInstance()) return this;
-      if (other.getIsDone() != false) {
-        setIsDone(other.getIsDone());
-      }
+    public Builder mergeFrom(com.samarthasthan.user.v1.UnDeleteUserByIdRequest other) {
+      if (other == com.samarthasthan.user.v1.UnDeleteUserByIdRequest.getDefaultInstance()) return this;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -325,11 +289,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 8: {
-              isDone_ = input.readBool();
-              bitField0_ |= 0x00000001;
-              break;
-            } // case 8
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -345,57 +304,24 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
-    private int bitField0_;
 
-    private boolean isDone_ ;
-    /**
-     * <code>bool is_done = 1 [json_name = "isDone"];</code>
-     * @return The isDone.
-     */
-    @java.lang.Override
-    public boolean getIsDone() {
-      return isDone_;
-    }
-    /**
-     * <code>bool is_done = 1 [json_name = "isDone"];</code>
-     * @param value The isDone to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIsDone(boolean value) {
-
-      isDone_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>bool is_done = 1 [json_name = "isDone"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearIsDone() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      isDone_ = false;
-      onChanged();
-      return this;
-    }
-
-    // @@protoc_insertion_point(builder_scope:user.v1.DeleteUserByIdResponse)
+    // @@protoc_insertion_point(builder_scope:user.v1.UnDeleteUserByIdRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:user.v1.DeleteUserByIdResponse)
-  private static final com.samarthasthan.user.v1.DeleteUserByIdResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:user.v1.UnDeleteUserByIdRequest)
+  private static final com.samarthasthan.user.v1.UnDeleteUserByIdRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.samarthasthan.user.v1.DeleteUserByIdResponse();
+    DEFAULT_INSTANCE = new com.samarthasthan.user.v1.UnDeleteUserByIdRequest();
   }
 
-  public static com.samarthasthan.user.v1.DeleteUserByIdResponse getDefaultInstance() {
+  public static com.samarthasthan.user.v1.UnDeleteUserByIdRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DeleteUserByIdResponse>
-      PARSER = new com.google.protobuf.AbstractParser<DeleteUserByIdResponse>() {
+  private static final com.google.protobuf.Parser<UnDeleteUserByIdRequest>
+      PARSER = new com.google.protobuf.AbstractParser<UnDeleteUserByIdRequest>() {
     @java.lang.Override
-    public DeleteUserByIdResponse parsePartialFrom(
+    public UnDeleteUserByIdRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -414,17 +340,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<DeleteUserByIdResponse> parser() {
+  public static com.google.protobuf.Parser<UnDeleteUserByIdRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<DeleteUserByIdResponse> getParserForType() {
+  public com.google.protobuf.Parser<UnDeleteUserByIdRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.samarthasthan.user.v1.DeleteUserByIdResponse getDefaultInstanceForType() {
+  public com.samarthasthan.user.v1.UnDeleteUserByIdRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

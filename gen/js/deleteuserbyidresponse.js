@@ -70,7 +70,7 @@ proto.user.v1.DeleteUserByIdResponse.prototype.toObject = function(opt_includeIn
  */
 proto.user.v1.DeleteUserByIdResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-success: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
+isDone: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
   };
 
   if (includeInstance) {
@@ -109,7 +109,7 @@ proto.user.v1.DeleteUserByIdResponse.deserializeBinaryFromReader = function(msg,
     switch (field) {
     case 1:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setSuccess(value);
+      msg.setIsDone(value);
       break;
     default:
       reader.skipField();
@@ -140,7 +140,7 @@ proto.user.v1.DeleteUserByIdResponse.prototype.serializeBinary = function() {
  */
 proto.user.v1.DeleteUserByIdResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSuccess();
+  f = message.getIsDone();
   if (f) {
     writer.writeBool(
       1,
@@ -151,10 +151,10 @@ proto.user.v1.DeleteUserByIdResponse.serializeBinaryToWriter = function(message,
 
 
 /**
- * optional bool success = 1;
+ * optional bool is_done = 1;
  * @return {boolean}
  */
-proto.user.v1.DeleteUserByIdResponse.prototype.getSuccess = function() {
+proto.user.v1.DeleteUserByIdResponse.prototype.getIsDone = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
 };
 
@@ -163,7 +163,7 @@ proto.user.v1.DeleteUserByIdResponse.prototype.getSuccess = function() {
  * @param {boolean} value
  * @return {!proto.user.v1.DeleteUserByIdResponse} returns this
  */
-proto.user.v1.DeleteUserByIdResponse.prototype.setSuccess = function(value) {
+proto.user.v1.DeleteUserByIdResponse.prototype.setIsDone = function(value) {
   return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 

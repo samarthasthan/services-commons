@@ -45,22 +45,6 @@ message SendVerificationEmailResponse {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-message SignUpRequest {
-  string email = 1 [(buf.validate.field).string.email = true];
-  string password = 2 [(buf.validate.field).string = {
-    min_len: 8
-    max_len: 32
-  }];
-  string full_name = 3 [(buf.validate.field).string = {
-    min_len: 1
-    max_len: 100
-  }];
-}
-
-message SignUpResponse {
-  string user_id = 1;
-}
-
 message SignInRequest {
   string email = 1 [(buf.validate.field).string.email = true];
   string password = 2 [(buf.validate.field).string.min_len = 8];
@@ -72,9 +56,15 @@ message SignInResponse {
   string refresh_token = 3;
 }
 
-message DeleteUserRequest {}
+message DeleteUserByIdRequest {}
 
-message DeleteUserResponse {
+message DeleteUserByIdResponse {
+  bool is_done = 1;
+}
+
+message UnDeleteUserByIdRequest {}
+
+message UnDeleteUserByIdResponse {
   bool is_done = 1;
 }
 
@@ -100,9 +90,9 @@ service UserService {
   rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
   rpc RemoveUserById(RemoveUserByIdRequest) returns (RemoveUserByIdResponse);
   rpc SendVerificationEmail(SendVerificationEmailRequest) returns (SendVerificationEmailResponse);
-  rpc SignUp(SignUpRequest) returns (SignUpResponse);
   rpc SignIn(SignInRequest) returns (SignInResponse);
-  rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse);
+  rpc DeleteUserById(DeleteUserByIdRequest) returns (DeleteUserByIdResponse);
+  rpc UnDeleteUserById(UnDeleteUserByIdRequest) returns (UnDeleteUserByIdResponse);
   rpc VerifyUser(VerifyUserRequest) returns (VerifyUserResponse);
   rpc ResendVerifyUser(ResendVerifyUserRequest) returns (ResendVerifyUserResponse);
 }

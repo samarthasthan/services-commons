@@ -5,7 +5,7 @@
 
 package com.samarthasthan.user.v1;
 
-public interface DeleteUserByIdRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:user.v1.DeleteUserByIdRequest)
+public interface UnDeleteUserByIdRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:user.v1.UnDeleteUserByIdRequest)
     com.google.protobuf.MessageOrBuilder {
 }
