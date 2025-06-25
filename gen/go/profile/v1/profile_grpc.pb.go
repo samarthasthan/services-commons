@@ -19,11 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	ProfileService_CreateProfile_FullMethodName   = "/profile.v1.ProfileService/CreateProfile"
-	ProfileService_GetProfile_FullMethodName      = "/profile.v1.ProfileService/GetProfile"
-	ProfileService_UpdateProfile_FullMethodName   = "/profile.v1.ProfileService/UpdateProfile"
-	ProfileService_DeleteProfile_FullMethodName   = "/profile.v1.ProfileService/DeleteProfile"
-	ProfileService_UnDeleteProfile_FullMethodName = "/profile.v1.ProfileService/UnDeleteProfile"
+	ProfileService_CreateProfile_FullMethodName        = "/profile.v1.ProfileService/CreateProfile"
+	ProfileService_GetProfile_FullMethodName           = "/profile.v1.ProfileService/GetProfile"
+	ProfileService_UpdateProfile_FullMethodName        = "/profile.v1.ProfileService/UpdateProfile"
+	ProfileService_DeleteProfile_FullMethodName        = "/profile.v1.ProfileService/DeleteProfile"
+	ProfileService_DeleteProfileByEmail_FullMethodName = "/profile.v1.ProfileService/DeleteProfileByEmail"
+	ProfileService_UnDeleteProfile_FullMethodName      = "/profile.v1.ProfileService/UnDeleteProfile"
 )
 
 // ProfileServiceClient is the client API for ProfileService service.
@@ -34,6 +35,7 @@ type ProfileServiceClient interface {
 	GetProfile(ctx context.Context, in *GetProfileRequest, opts ...grpc.CallOption) (*GetProfileResponse, error)
 	UpdateProfile(ctx context.Context, in *UpdateProfileRequest, opts ...grpc.CallOption) (*UpdateProfileResponse, error)
 	DeleteProfile(ctx context.Context, in *DeleteProfileRequest, opts ...grpc.CallOption) (*DeleteProfileResponse, error)
+	DeleteProfileByEmail(ctx context.Context, in *DeleteProfileByEmailRequest, opts ...grpc.CallOption) (*DeleteProfileByEmailResponse, error)
 	UnDeleteProfile(ctx context.Context, in *UnDeleteProfileRequest, opts ...grpc.CallOption) (*UnDeleteProfileResponse, error)
 }
 
@@ -85,6 +87,16 @@ func (c *profileServiceClient) DeleteProfile(ctx context.Context, in *DeleteProf
 	return out, nil
 }
 
+func (c *profileServiceClient) DeleteProfileByEmail(ctx context.Context, in *DeleteProfileByEmailRequest, opts ...grpc.CallOption) (*DeleteProfileByEmailResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteProfileByEmailResponse)
+	err := c.cc.Invoke(ctx, ProfileService_DeleteProfileByEmail_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *profileServiceClient) UnDeleteProfile(ctx context.Context, in *UnDeleteProfileRequest, opts ...grpc.CallOption) (*UnDeleteProfileResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(UnDeleteProfileResponse)
@@ -103,6 +115,7 @@ type ProfileServiceServer interface {
 	GetProfile(context.Context, *GetProfileRequest) (*GetProfileResponse, error)
 	UpdateProfile(context.Context, *UpdateProfileRequest) (*UpdateProfileResponse, error)
 	DeleteProfile(context.Context, *DeleteProfileRequest) (*DeleteProfileResponse, error)
+	DeleteProfileByEmail(context.Context, *DeleteProfileByEmailRequest) (*DeleteProfileByEmailResponse, error)
 	UnDeleteProfile(context.Context, *UnDeleteProfileRequest) (*UnDeleteProfileResponse, error)
 	mustEmbedUnimplementedProfileServiceServer()
 }
@@ -125,6 +138,9 @@ func (UnimplementedProfileServiceServer) UpdateProfile(context.Context, *UpdateP
 }
 func (UnimplementedProfileServiceServer) DeleteProfile(context.Context, *DeleteProfileRequest) (*DeleteProfileResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteProfile not implemented")
+}
+func (UnimplementedProfileServiceServer) DeleteProfileByEmail(context.Context, *DeleteProfileByEmailRequest) (*DeleteProfileByEmailResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteProfileByEmail not implemented")
 }
 func (UnimplementedProfileServiceServer) UnDeleteProfile(context.Context, *UnDeleteProfileRequest) (*UnDeleteProfileResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UnDeleteProfile not implemented")
@@ -222,6 +238,24 @@ func _ProfileService_DeleteProfile_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ProfileService_DeleteProfileByEmail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteProfileByEmailRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProfileServiceServer).DeleteProfileByEmail(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ProfileService_DeleteProfileByEmail_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProfileServiceServer).DeleteProfileByEmail(ctx, req.(*DeleteProfileByEmailRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _ProfileService_UnDeleteProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UnDeleteProfileRequest)
 	if err := dec(in); err != nil {
@@ -262,6 +296,10 @@ var ProfileService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteProfile",
 			Handler:    _ProfileService_DeleteProfile_Handler,
+		},
+		{
+			MethodName: "DeleteProfileByEmail",
+			Handler:    _ProfileService_DeleteProfileByEmail_Handler,
 		},
 		{
 			MethodName: "UnDeleteProfile",

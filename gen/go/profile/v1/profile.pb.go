@@ -749,13 +749,14 @@ const file_profile_v1_profile_proto_rawDesc = "" +
 	"\x16UnDeleteProfileRequest\x12!\n" +
 	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\"2\n" +
 	"\x17UnDeleteProfileResponse\x12\x17\n" +
-	"\ais_done\x18\x01 \x01(\bR\x06isDone2\xbb\x03\n" +
+	"\ais_done\x18\x01 \x01(\bR\x06isDone2\xa6\x04\n" +
 	"\x0eProfileService\x12T\n" +
 	"\rCreateProfile\x12 .profile.v1.CreateProfileRequest\x1a!.profile.v1.CreateProfileResponse\x12K\n" +
 	"\n" +
 	"GetProfile\x12\x1d.profile.v1.GetProfileRequest\x1a\x1e.profile.v1.GetProfileResponse\x12T\n" +
 	"\rUpdateProfile\x12 .profile.v1.UpdateProfileRequest\x1a!.profile.v1.UpdateProfileResponse\x12T\n" +
-	"\rDeleteProfile\x12 .profile.v1.DeleteProfileRequest\x1a!.profile.v1.DeleteProfileResponse\x12Z\n" +
+	"\rDeleteProfile\x12 .profile.v1.DeleteProfileRequest\x1a!.profile.v1.DeleteProfileResponse\x12i\n" +
+	"\x14DeleteProfileByEmail\x12'.profile.v1.DeleteProfileByEmailRequest\x1a(.profile.v1.DeleteProfileByEmailResponse\x12Z\n" +
 	"\x0fUnDeleteProfile\x12\".profile.v1.UnDeleteProfileRequest\x1a#.profile.v1.UnDeleteProfileResponseB\xbc\x01\n" +
 	"\x1ccom.samarthasthan.profile.v1B\fProfileProtoP\x01ZEgithub.com/samarthasthan/services-commons/gen/go/profile/v1;profilev1\xa2\x02\x03PXX\xaa\x02\n" +
 	"Profile.V1\xca\x02\n" +
@@ -797,14 +798,16 @@ var file_profile_v1_profile_proto_depIdxs = []int32{
 	2,  // 4: profile.v1.ProfileService.GetProfile:input_type -> profile.v1.GetProfileRequest
 	4,  // 5: profile.v1.ProfileService.UpdateProfile:input_type -> profile.v1.UpdateProfileRequest
 	6,  // 6: profile.v1.ProfileService.DeleteProfile:input_type -> profile.v1.DeleteProfileRequest
-	10, // 7: profile.v1.ProfileService.UnDeleteProfile:input_type -> profile.v1.UnDeleteProfileRequest
-	1,  // 8: profile.v1.ProfileService.CreateProfile:output_type -> profile.v1.CreateProfileResponse
-	3,  // 9: profile.v1.ProfileService.GetProfile:output_type -> profile.v1.GetProfileResponse
-	5,  // 10: profile.v1.ProfileService.UpdateProfile:output_type -> profile.v1.UpdateProfileResponse
-	7,  // 11: profile.v1.ProfileService.DeleteProfile:output_type -> profile.v1.DeleteProfileResponse
-	11, // 12: profile.v1.ProfileService.UnDeleteProfile:output_type -> profile.v1.UnDeleteProfileResponse
-	8,  // [8:13] is the sub-list for method output_type
-	3,  // [3:8] is the sub-list for method input_type
+	8,  // 7: profile.v1.ProfileService.DeleteProfileByEmail:input_type -> profile.v1.DeleteProfileByEmailRequest
+	10, // 8: profile.v1.ProfileService.UnDeleteProfile:input_type -> profile.v1.UnDeleteProfileRequest
+	1,  // 9: profile.v1.ProfileService.CreateProfile:output_type -> profile.v1.CreateProfileResponse
+	3,  // 10: profile.v1.ProfileService.GetProfile:output_type -> profile.v1.GetProfileResponse
+	5,  // 11: profile.v1.ProfileService.UpdateProfile:output_type -> profile.v1.UpdateProfileResponse
+	7,  // 12: profile.v1.ProfileService.DeleteProfile:output_type -> profile.v1.DeleteProfileResponse
+	9,  // 13: profile.v1.ProfileService.DeleteProfileByEmail:output_type -> profile.v1.DeleteProfileByEmailResponse
+	11, // 14: profile.v1.ProfileService.UnDeleteProfile:output_type -> profile.v1.UnDeleteProfileResponse
+	9,  // [9:15] is the sub-list for method output_type
+	3,  // [3:9] is the sub-list for method input_type
 	3,  // [3:3] is the sub-list for extension type_name
 	3,  // [3:3] is the sub-list for extension extendee
 	0,  // [0:3] is the sub-list for field type_name
