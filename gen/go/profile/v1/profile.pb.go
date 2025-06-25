@@ -519,6 +519,94 @@ func (x *DeleteProfileResponse) GetIsDone() bool {
 	return false
 }
 
+type DeleteProfileByEmailRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Email         string                 `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteProfileByEmailRequest) Reset() {
+	*x = DeleteProfileByEmailRequest{}
+	mi := &file_profile_v1_profile_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteProfileByEmailRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteProfileByEmailRequest) ProtoMessage() {}
+
+func (x *DeleteProfileByEmailRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_profile_v1_profile_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteProfileByEmailRequest.ProtoReflect.Descriptor instead.
+func (*DeleteProfileByEmailRequest) Descriptor() ([]byte, []int) {
+	return file_profile_v1_profile_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *DeleteProfileByEmailRequest) GetEmail() string {
+	if x != nil {
+		return x.Email
+	}
+	return ""
+}
+
+type DeleteProfileByEmailResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	IsDone        bool                   `protobuf:"varint,1,opt,name=is_done,json=isDone,proto3" json:"is_done,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteProfileByEmailResponse) Reset() {
+	*x = DeleteProfileByEmailResponse{}
+	mi := &file_profile_v1_profile_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteProfileByEmailResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteProfileByEmailResponse) ProtoMessage() {}
+
+func (x *DeleteProfileByEmailResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_profile_v1_profile_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteProfileByEmailResponse.ProtoReflect.Descriptor instead.
+func (*DeleteProfileByEmailResponse) Descriptor() ([]byte, []int) {
+	return file_profile_v1_profile_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *DeleteProfileByEmailResponse) GetIsDone() bool {
+	if x != nil {
+		return x.IsDone
+	}
+	return false
+}
+
 type UnDeleteProfileRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
@@ -528,7 +616,7 @@ type UnDeleteProfileRequest struct {
 
 func (x *UnDeleteProfileRequest) Reset() {
 	*x = UnDeleteProfileRequest{}
-	mi := &file_profile_v1_profile_proto_msgTypes[8]
+	mi := &file_profile_v1_profile_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -540,7 +628,7 @@ func (x *UnDeleteProfileRequest) String() string {
 func (*UnDeleteProfileRequest) ProtoMessage() {}
 
 func (x *UnDeleteProfileRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_profile_v1_profile_proto_msgTypes[8]
+	mi := &file_profile_v1_profile_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -553,7 +641,7 @@ func (x *UnDeleteProfileRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UnDeleteProfileRequest.ProtoReflect.Descriptor instead.
 func (*UnDeleteProfileRequest) Descriptor() ([]byte, []int) {
-	return file_profile_v1_profile_proto_rawDescGZIP(), []int{8}
+	return file_profile_v1_profile_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *UnDeleteProfileRequest) GetUserId() string {
@@ -572,7 +660,7 @@ type UnDeleteProfileResponse struct {
 
 func (x *UnDeleteProfileResponse) Reset() {
 	*x = UnDeleteProfileResponse{}
-	mi := &file_profile_v1_profile_proto_msgTypes[9]
+	mi := &file_profile_v1_profile_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -584,7 +672,7 @@ func (x *UnDeleteProfileResponse) String() string {
 func (*UnDeleteProfileResponse) ProtoMessage() {}
 
 func (x *UnDeleteProfileResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_profile_v1_profile_proto_msgTypes[9]
+	mi := &file_profile_v1_profile_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -597,7 +685,7 @@ func (x *UnDeleteProfileResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UnDeleteProfileResponse.ProtoReflect.Descriptor instead.
 func (*UnDeleteProfileResponse) Descriptor() ([]byte, []int) {
-	return file_profile_v1_profile_proto_rawDescGZIP(), []int{9}
+	return file_profile_v1_profile_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *UnDeleteProfileResponse) GetIsDone() bool {
@@ -653,6 +741,10 @@ const file_profile_v1_profile_proto_rawDesc = "" +
 	"\x14DeleteProfileRequest\x12!\n" +
 	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\"0\n" +
 	"\x15DeleteProfileResponse\x12\x17\n" +
+	"\ais_done\x18\x01 \x01(\bR\x06isDone\"<\n" +
+	"\x1bDeleteProfileByEmailRequest\x12\x1d\n" +
+	"\x05email\x18\x01 \x01(\tB\a\xbaH\x04r\x02`\x01R\x05email\"7\n" +
+	"\x1cDeleteProfileByEmailResponse\x12\x17\n" +
 	"\ais_done\x18\x01 \x01(\bR\x06isDone\";\n" +
 	"\x16UnDeleteProfileRequest\x12!\n" +
 	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\"2\n" +
@@ -681,34 +773,36 @@ func file_profile_v1_profile_proto_rawDescGZIP() []byte {
 	return file_profile_v1_profile_proto_rawDescData
 }
 
-var file_profile_v1_profile_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
+var file_profile_v1_profile_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
 var file_profile_v1_profile_proto_goTypes = []any{
-	(*CreateProfileRequest)(nil),    // 0: profile.v1.CreateProfileRequest
-	(*CreateProfileResponse)(nil),   // 1: profile.v1.CreateProfileResponse
-	(*GetProfileRequest)(nil),       // 2: profile.v1.GetProfileRequest
-	(*GetProfileResponse)(nil),      // 3: profile.v1.GetProfileResponse
-	(*UpdateProfileRequest)(nil),    // 4: profile.v1.UpdateProfileRequest
-	(*UpdateProfileResponse)(nil),   // 5: profile.v1.UpdateProfileResponse
-	(*DeleteProfileRequest)(nil),    // 6: profile.v1.DeleteProfileRequest
-	(*DeleteProfileResponse)(nil),   // 7: profile.v1.DeleteProfileResponse
-	(*UnDeleteProfileRequest)(nil),  // 8: profile.v1.UnDeleteProfileRequest
-	(*UnDeleteProfileResponse)(nil), // 9: profile.v1.UnDeleteProfileResponse
-	(*timestamppb.Timestamp)(nil),   // 10: google.protobuf.Timestamp
+	(*CreateProfileRequest)(nil),         // 0: profile.v1.CreateProfileRequest
+	(*CreateProfileResponse)(nil),        // 1: profile.v1.CreateProfileResponse
+	(*GetProfileRequest)(nil),            // 2: profile.v1.GetProfileRequest
+	(*GetProfileResponse)(nil),           // 3: profile.v1.GetProfileResponse
+	(*UpdateProfileRequest)(nil),         // 4: profile.v1.UpdateProfileRequest
+	(*UpdateProfileResponse)(nil),        // 5: profile.v1.UpdateProfileResponse
+	(*DeleteProfileRequest)(nil),         // 6: profile.v1.DeleteProfileRequest
+	(*DeleteProfileResponse)(nil),        // 7: profile.v1.DeleteProfileResponse
+	(*DeleteProfileByEmailRequest)(nil),  // 8: profile.v1.DeleteProfileByEmailRequest
+	(*DeleteProfileByEmailResponse)(nil), // 9: profile.v1.DeleteProfileByEmailResponse
+	(*UnDeleteProfileRequest)(nil),       // 10: profile.v1.UnDeleteProfileRequest
+	(*UnDeleteProfileResponse)(nil),      // 11: profile.v1.UnDeleteProfileResponse
+	(*timestamppb.Timestamp)(nil),        // 12: google.protobuf.Timestamp
 }
 var file_profile_v1_profile_proto_depIdxs = []int32{
-	10, // 0: profile.v1.GetProfileResponse.created_at:type_name -> google.protobuf.Timestamp
-	10, // 1: profile.v1.GetProfileResponse.updated_at:type_name -> google.protobuf.Timestamp
-	10, // 2: profile.v1.GetProfileResponse.deleted_at:type_name -> google.protobuf.Timestamp
+	12, // 0: profile.v1.GetProfileResponse.created_at:type_name -> google.protobuf.Timestamp
+	12, // 1: profile.v1.GetProfileResponse.updated_at:type_name -> google.protobuf.Timestamp
+	12, // 2: profile.v1.GetProfileResponse.deleted_at:type_name -> google.protobuf.Timestamp
 	0,  // 3: profile.v1.ProfileService.CreateProfile:input_type -> profile.v1.CreateProfileRequest
 	2,  // 4: profile.v1.ProfileService.GetProfile:input_type -> profile.v1.GetProfileRequest
 	4,  // 5: profile.v1.ProfileService.UpdateProfile:input_type -> profile.v1.UpdateProfileRequest
 	6,  // 6: profile.v1.ProfileService.DeleteProfile:input_type -> profile.v1.DeleteProfileRequest
-	8,  // 7: profile.v1.ProfileService.UnDeleteProfile:input_type -> profile.v1.UnDeleteProfileRequest
+	10, // 7: profile.v1.ProfileService.UnDeleteProfile:input_type -> profile.v1.UnDeleteProfileRequest
 	1,  // 8: profile.v1.ProfileService.CreateProfile:output_type -> profile.v1.CreateProfileResponse
 	3,  // 9: profile.v1.ProfileService.GetProfile:output_type -> profile.v1.GetProfileResponse
 	5,  // 10: profile.v1.ProfileService.UpdateProfile:output_type -> profile.v1.UpdateProfileResponse
 	7,  // 11: profile.v1.ProfileService.DeleteProfile:output_type -> profile.v1.DeleteProfileResponse
-	9,  // 12: profile.v1.ProfileService.UnDeleteProfile:output_type -> profile.v1.UnDeleteProfileResponse
+	11, // 12: profile.v1.ProfileService.UnDeleteProfile:output_type -> profile.v1.UnDeleteProfileResponse
 	8,  // [8:13] is the sub-list for method output_type
 	3,  // [3:8] is the sub-list for method input_type
 	3,  // [3:3] is the sub-list for extension type_name
@@ -727,7 +821,7 @@ func file_profile_v1_profile_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_profile_v1_profile_proto_rawDesc), len(file_profile_v1_profile_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   10,
+			NumMessages:   12,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

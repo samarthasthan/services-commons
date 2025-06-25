@@ -57,6 +57,14 @@ message DeleteProfileResponse {
   bool is_done = 1;
 }
 
+message DeleteProfileByEmailRequest {
+  string email = 1 [(buf.validate.field).string.email = true];
+}
+
+message DeleteProfileByEmailResponse {
+  bool is_done = 1;
+}
+
 message UnDeleteProfileRequest {
   string user_id = 1 [(buf.validate.field).string.uuid = true];
 }
