@@ -33,9 +33,14 @@ message DeleteTokensRequest {}
 
 message DeleteTokensResponse {}
 
+message RevokeTokenRequest {}
+
+message RevokeTokenResponse {}
+
 service AuthService {
   rpc GenerateToken(GenerateTokenRequest) returns (GenerateTokenResponse);
   rpc ValidateToken(ValidateTokenRequest) returns (ValidateTokenResponse);
   rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse);
   rpc DeleteTokens(DeleteTokensRequest) returns (DeleteTokensResponse);
+  rpc RevokeToken(RevokeTokenRequest) returns (RevokeTokenResponse);
 }

@@ -23,6 +23,7 @@ const (
 	AuthService_ValidateToken_FullMethodName = "/auth.v1.AuthService/ValidateToken"
 	AuthService_RefreshToken_FullMethodName  = "/auth.v1.AuthService/RefreshToken"
 	AuthService_DeleteTokens_FullMethodName  = "/auth.v1.AuthService/DeleteTokens"
+	AuthService_RevokeToken_FullMethodName   = "/auth.v1.AuthService/RevokeToken"
 )
 
 // AuthServiceClient is the client API for AuthService service.
@@ -33,6 +34,7 @@ type AuthServiceClient interface {
 	ValidateToken(ctx context.Context, in *ValidateTokenRequest, opts ...grpc.CallOption) (*ValidateTokenResponse, error)
 	RefreshToken(ctx context.Context, in *RefreshTokenRequest, opts ...grpc.CallOption) (*RefreshTokenResponse, error)
 	DeleteTokens(ctx context.Context, in *DeleteTokensRequest, opts ...grpc.CallOption) (*DeleteTokensResponse, error)
+	RevokeToken(ctx context.Context, in *RevokeTokenRequest, opts ...grpc.CallOption) (*RevokeTokenResponse, error)
 }
 
 type authServiceClient struct {
@@ -83,6 +85,16 @@ func (c *authServiceClient) DeleteTokens(ctx context.Context, in *DeleteTokensRe
 	return out, nil
 }
 
+func (c *authServiceClient) RevokeToken(ctx context.Context, in *RevokeTokenRequest, opts ...grpc.CallOption) (*RevokeTokenResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RevokeTokenResponse)
+	err := c.cc.Invoke(ctx, AuthService_RevokeToken_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AuthServiceServer is the server API for AuthService service.
 // All implementations must embed UnimplementedAuthServiceServer
 // for forward compatibility.
@@ -91,6 +103,7 @@ type AuthServiceServer interface {
 	ValidateToken(context.Context, *ValidateTokenRequest) (*ValidateTokenResponse, error)
 	RefreshToken(context.Context, *RefreshTokenRequest) (*RefreshTokenResponse, error)
 	DeleteTokens(context.Context, *DeleteTokensRequest) (*DeleteTokensResponse, error)
+	RevokeToken(context.Context, *RevokeTokenRequest) (*RevokeTokenResponse, error)
 	mustEmbedUnimplementedAuthServiceServer()
 }
 
@@ -112,6 +125,9 @@ func (UnimplementedAuthServiceServer) RefreshToken(context.Context, *RefreshToke
 }
 func (UnimplementedAuthServiceServer) DeleteTokens(context.Context, *DeleteTokensRequest) (*DeleteTokensResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteTokens not implemented")
+}
+func (UnimplementedAuthServiceServer) RevokeToken(context.Context, *RevokeTokenRequest) (*RevokeTokenResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RevokeToken not implemented")
 }
 func (UnimplementedAuthServiceServer) mustEmbedUnimplementedAuthServiceServer() {}
 func (UnimplementedAuthServiceServer) testEmbeddedByValue()                     {}
@@ -206,6 +222,24 @@ func _AuthService_DeleteTokens_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AuthService_RevokeToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RevokeTokenRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthServiceServer).RevokeToken(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AuthService_RevokeToken_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthServiceServer).RevokeToken(ctx, req.(*RevokeTokenRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // AuthService_ServiceDesc is the grpc.ServiceDesc for AuthService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -228,6 +262,10 @@ var AuthService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteTokens",
 			Handler:    _AuthService_DeleteTokens_Handler,
+		},
+		{
+			MethodName: "RevokeToken",
+			Handler:    _AuthService_RevokeToken_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
