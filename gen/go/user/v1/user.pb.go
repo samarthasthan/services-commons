@@ -846,7 +846,7 @@ func (x *ForgotPasswordResponse) GetIsDone() bool {
 	return false
 }
 
-type VerifyForrgotPasswordRequest struct {
+type VerifyForgotPasswordRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Email         string                 `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
 	Otp           string                 `protobuf:"bytes,2,opt,name=otp,proto3" json:"otp,omitempty"`
@@ -854,20 +854,20 @@ type VerifyForrgotPasswordRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *VerifyForrgotPasswordRequest) Reset() {
-	*x = VerifyForrgotPasswordRequest{}
+func (x *VerifyForgotPasswordRequest) Reset() {
+	*x = VerifyForgotPasswordRequest{}
 	mi := &file_user_v1_user_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *VerifyForrgotPasswordRequest) String() string {
+func (x *VerifyForgotPasswordRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*VerifyForrgotPasswordRequest) ProtoMessage() {}
+func (*VerifyForgotPasswordRequest) ProtoMessage() {}
 
-func (x *VerifyForrgotPasswordRequest) ProtoReflect() protoreflect.Message {
+func (x *VerifyForgotPasswordRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_user_v1_user_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -879,26 +879,26 @@ func (x *VerifyForrgotPasswordRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use VerifyForrgotPasswordRequest.ProtoReflect.Descriptor instead.
-func (*VerifyForrgotPasswordRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use VerifyForgotPasswordRequest.ProtoReflect.Descriptor instead.
+func (*VerifyForgotPasswordRequest) Descriptor() ([]byte, []int) {
 	return file_user_v1_user_proto_rawDescGZIP(), []int{18}
 }
 
-func (x *VerifyForrgotPasswordRequest) GetEmail() string {
+func (x *VerifyForgotPasswordRequest) GetEmail() string {
 	if x != nil {
 		return x.Email
 	}
 	return ""
 }
 
-func (x *VerifyForrgotPasswordRequest) GetOtp() string {
+func (x *VerifyForgotPasswordRequest) GetOtp() string {
 	if x != nil {
 		return x.Otp
 	}
 	return ""
 }
 
-type VerifyForrgotPasswordResponse struct {
+type VerifyForgotPasswordResponse struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
 	IsDone           bool                   `protobuf:"varint,1,opt,name=is_done,json=isDone,proto3" json:"is_done,omitempty"`
 	TempraryPassword string                 `protobuf:"bytes,2,opt,name=temprary_password,json=tempraryPassword,proto3" json:"temprary_password,omitempty"`
@@ -906,20 +906,20 @@ type VerifyForrgotPasswordResponse struct {
 	sizeCache        protoimpl.SizeCache
 }
 
-func (x *VerifyForrgotPasswordResponse) Reset() {
-	*x = VerifyForrgotPasswordResponse{}
+func (x *VerifyForgotPasswordResponse) Reset() {
+	*x = VerifyForgotPasswordResponse{}
 	mi := &file_user_v1_user_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *VerifyForrgotPasswordResponse) String() string {
+func (x *VerifyForgotPasswordResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*VerifyForrgotPasswordResponse) ProtoMessage() {}
+func (*VerifyForgotPasswordResponse) ProtoMessage() {}
 
-func (x *VerifyForrgotPasswordResponse) ProtoReflect() protoreflect.Message {
+func (x *VerifyForgotPasswordResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_user_v1_user_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -931,19 +931,19 @@ func (x *VerifyForrgotPasswordResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use VerifyForrgotPasswordResponse.ProtoReflect.Descriptor instead.
-func (*VerifyForrgotPasswordResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use VerifyForgotPasswordResponse.ProtoReflect.Descriptor instead.
+func (*VerifyForgotPasswordResponse) Descriptor() ([]byte, []int) {
 	return file_user_v1_user_proto_rawDescGZIP(), []int{19}
 }
 
-func (x *VerifyForrgotPasswordResponse) GetIsDone() bool {
+func (x *VerifyForgotPasswordResponse) GetIsDone() bool {
 	if x != nil {
 		return x.IsDone
 	}
 	return false
 }
 
-func (x *VerifyForrgotPasswordResponse) GetTempraryPassword() string {
+func (x *VerifyForgotPasswordResponse) GetTempraryPassword() string {
 	if x != nil {
 		return x.TempraryPassword
 	}
@@ -1098,11 +1098,11 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\x15ForgotPasswordRequest\x12\x1d\n" +
 	"\x05email\x18\x01 \x01(\tB\a\xbaH\x04r\x02`\x01R\x05email\"1\n" +
 	"\x16ForgotPasswordResponse\x12\x17\n" +
-	"\ais_done\x18\x01 \x01(\bR\x06isDone\"X\n" +
-	"\x1cVerifyForrgotPasswordRequest\x12\x1d\n" +
+	"\ais_done\x18\x01 \x01(\bR\x06isDone\"W\n" +
+	"\x1bVerifyForgotPasswordRequest\x12\x1d\n" +
 	"\x05email\x18\x01 \x01(\tB\a\xbaH\x04r\x02`\x01R\x05email\x12\x19\n" +
-	"\x03otp\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x10\x06R\x03otp\"e\n" +
-	"\x1dVerifyForrgotPasswordResponse\x12\x17\n" +
+	"\x03otp\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x10\x06R\x03otp\"d\n" +
+	"\x1cVerifyForgotPasswordResponse\x12\x17\n" +
 	"\ais_done\x18\x01 \x01(\bR\x06isDone\x12+\n" +
 	"\x11temprary_password\x18\x02 \x01(\tR\x10tempraryPassword\"\x97\x01\n" +
 	"\x14ResetPasswordRequest\x12*\n" +
@@ -1110,7 +1110,7 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\x05email\x18\x02 \x01(\tB\a\xbaH\x04r\x02`\x01R\x05email\x124\n" +
 	"\x11temprary_password\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x10\bR\x10tempraryPassword\"0\n" +
 	"\x15ResetPasswordResponse\x12\x17\n" +
-	"\ais_done\x18\x01 \x01(\bR\x06isDone2\xa1\a\n" +
+	"\ais_done\x18\x01 \x01(\bR\x06isDone2\x9e\a\n" +
 	"\vUserService\x12E\n" +
 	"\n" +
 	"CreateUser\x12\x1a.user.v1.CreateUserRequest\x1a\x1b.user.v1.CreateUserResponse\x12Q\n" +
@@ -1122,8 +1122,8 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\n" +
 	"VerifyUser\x12\x1a.user.v1.VerifyUserRequest\x1a\x1b.user.v1.VerifyUserResponse\x12W\n" +
 	"\x10ResendVerifyUser\x12 .user.v1.ResendVerifyUserRequest\x1a!.user.v1.ResendVerifyUserResponse\x12Q\n" +
-	"\x0eForgotPassword\x12\x1e.user.v1.ForgotPasswordRequest\x1a\x1f.user.v1.ForgotPasswordResponse\x12f\n" +
-	"\x15VerifyForrgotPassword\x12%.user.v1.VerifyForrgotPasswordRequest\x1a&.user.v1.VerifyForrgotPasswordResponse\x12N\n" +
+	"\x0eForgotPassword\x12\x1e.user.v1.ForgotPasswordRequest\x1a\x1f.user.v1.ForgotPasswordResponse\x12c\n" +
+	"\x14VerifyForgotPassword\x12$.user.v1.VerifyForgotPasswordRequest\x1a%.user.v1.VerifyForgotPasswordResponse\x12N\n" +
 	"\rResetPassword\x12\x1d.user.v1.ResetPasswordRequest\x1a\x1e.user.v1.ResetPasswordResponseB\xa4\x01\n" +
 	"\x19com.samarthasthan.user.v1B\tUserProtoP\x01Z?github.com/samarthasthan/services-commons/gen/go/user/v1;userv1\xa2\x02\x03UXX\xaa\x02\aUser.V1\xca\x02\aUser\\V1\xe2\x02\x13User\\V1\\GPBMetadata\xea\x02\bUser::V1b\x06proto3"
 
@@ -1159,8 +1159,8 @@ var file_user_v1_user_proto_goTypes = []any{
 	(*ResendVerifyUserResponse)(nil),      // 15: user.v1.ResendVerifyUserResponse
 	(*ForgotPasswordRequest)(nil),         // 16: user.v1.ForgotPasswordRequest
 	(*ForgotPasswordResponse)(nil),        // 17: user.v1.ForgotPasswordResponse
-	(*VerifyForrgotPasswordRequest)(nil),  // 18: user.v1.VerifyForrgotPasswordRequest
-	(*VerifyForrgotPasswordResponse)(nil), // 19: user.v1.VerifyForrgotPasswordResponse
+	(*VerifyForgotPasswordRequest)(nil),   // 18: user.v1.VerifyForgotPasswordRequest
+	(*VerifyForgotPasswordResponse)(nil),  // 19: user.v1.VerifyForgotPasswordResponse
 	(*ResetPasswordRequest)(nil),          // 20: user.v1.ResetPasswordRequest
 	(*ResetPasswordResponse)(nil),         // 21: user.v1.ResetPasswordResponse
 }
@@ -1174,7 +1174,7 @@ var file_user_v1_user_proto_depIdxs = []int32{
 	12, // 6: user.v1.UserService.VerifyUser:input_type -> user.v1.VerifyUserRequest
 	14, // 7: user.v1.UserService.ResendVerifyUser:input_type -> user.v1.ResendVerifyUserRequest
 	16, // 8: user.v1.UserService.ForgotPassword:input_type -> user.v1.ForgotPasswordRequest
-	18, // 9: user.v1.UserService.VerifyForrgotPassword:input_type -> user.v1.VerifyForrgotPasswordRequest
+	18, // 9: user.v1.UserService.VerifyForgotPassword:input_type -> user.v1.VerifyForgotPasswordRequest
 	20, // 10: user.v1.UserService.ResetPassword:input_type -> user.v1.ResetPasswordRequest
 	1,  // 11: user.v1.UserService.CreateUser:output_type -> user.v1.CreateUserResponse
 	3,  // 12: user.v1.UserService.RemoveUserById:output_type -> user.v1.RemoveUserByIdResponse
@@ -1185,7 +1185,7 @@ var file_user_v1_user_proto_depIdxs = []int32{
 	13, // 17: user.v1.UserService.VerifyUser:output_type -> user.v1.VerifyUserResponse
 	15, // 18: user.v1.UserService.ResendVerifyUser:output_type -> user.v1.ResendVerifyUserResponse
 	17, // 19: user.v1.UserService.ForgotPassword:output_type -> user.v1.ForgotPasswordResponse
-	19, // 20: user.v1.UserService.VerifyForrgotPassword:output_type -> user.v1.VerifyForrgotPasswordResponse
+	19, // 20: user.v1.UserService.VerifyForgotPassword:output_type -> user.v1.VerifyForgotPasswordResponse
 	21, // 21: user.v1.UserService.ResetPassword:output_type -> user.v1.ResetPasswordResponse
 	11, // [11:22] is the sub-list for method output_type
 	0,  // [0:11] is the sub-list for method input_type

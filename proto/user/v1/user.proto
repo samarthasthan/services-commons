@@ -93,12 +93,12 @@ message ForgotPasswordResponse {
   bool is_done = 1;
 }
 
-message VerifyForrgotPasswordRequest {
+message VerifyForgotPasswordRequest {
   string email = 1 [(buf.validate.field).string.email = true];
   string otp = 2 [(buf.validate.field).string.min_len = 6];
 }
 
-message VerifyForrgotPasswordResponse {
+message VerifyForgotPasswordResponse {
   bool is_done = 1;
   string temprary_password = 2;
 }
@@ -125,6 +125,6 @@ service UserService {
   rpc VerifyUser(VerifyUserRequest) returns (VerifyUserResponse);
   rpc ResendVerifyUser(ResendVerifyUserRequest) returns (ResendVerifyUserResponse);
   rpc ForgotPassword(ForgotPasswordRequest) returns (ForgotPasswordResponse);
-  rpc VerifyForrgotPassword(VerifyForrgotPasswordRequest) returns (VerifyForrgotPasswordResponse);
+  rpc VerifyForgotPassword(VerifyForgotPasswordRequest) returns (VerifyForgotPasswordResponse);
   rpc ResetPassword(ResetPasswordRequest) returns (ResetPasswordResponse);
 }
