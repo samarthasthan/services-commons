@@ -105,6 +105,36 @@ public final class UserProto {
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_user_v1_ResendVerifyUserResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_user_v1_ForgotPasswordRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_user_v1_ForgotPasswordRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_user_v1_ForgotPasswordResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_user_v1_ForgotPasswordResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_user_v1_VerifyForrgotPasswordRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_user_v1_VerifyForrgotPasswordRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_user_v1_VerifyForrgotPasswordResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_user_v1_VerifyForrgotPasswordResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_user_v1_ResetPasswordRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_user_v1_ResetPasswordRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_user_v1_ResetPasswordResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_user_v1_ResetPasswordResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -140,28 +170,47 @@ public final class UserProto {
       "Response\022\027\n\007is_done\030\001 \001(\010R\006isDone\"8\n\027Res" +
       "endVerifyUserRequest\022\035\n\005email\030\001 \001(\tB\007\272H\004" +
       "r\002`\001R\005email\"3\n\030ResendVerifyUserResponse\022" +
-      "\027\n\007is_done\030\001 \001(\010R\006isDone2\226\005\n\013UserService" +
-      "\022E\n\nCreateUser\022\032.user.v1.CreateUserReque" +
-      "st\032\033.user.v1.CreateUserResponse\022Q\n\016Remov" +
-      "eUserById\022\036.user.v1.RemoveUserByIdReques" +
-      "t\032\037.user.v1.RemoveUserByIdResponse\022f\n\025Se" +
-      "ndVerificationEmail\022%.user.v1.SendVerifi" +
-      "cationEmailRequest\032&.user.v1.SendVerific" +
-      "ationEmailResponse\0229\n\006SignIn\022\026.user.v1.S" +
-      "ignInRequest\032\027.user.v1.SignInResponse\022Q\n" +
-      "\016DeleteUserById\022\036.user.v1.DeleteUserById" +
-      "Request\032\037.user.v1.DeleteUserByIdResponse" +
-      "\022W\n\020UnDeleteUserById\022 .user.v1.UnDeleteU" +
-      "serByIdRequest\032!.user.v1.UnDeleteUserByI" +
-      "dResponse\022E\n\nVerifyUser\022\032.user.v1.Verify" +
-      "UserRequest\032\033.user.v1.VerifyUserResponse" +
-      "\022W\n\020ResendVerifyUser\022 .user.v1.ResendVer" +
-      "ifyUserRequest\032!.user.v1.ResendVerifyUse" +
-      "rResponseB\244\001\n\031com.samarthasthan.user.v1B" +
-      "\tUserProtoP\001Z?github.com/samarthasthan/s" +
-      "ervices-commons/gen/go/user/v1;userv1\242\002\003" +
-      "UXX\252\002\007User.V1\312\002\007User\\V1\342\002\023User\\V1\\GPBMet" +
-      "adata\352\002\010User::V1b\006proto3"
+      "\027\n\007is_done\030\001 \001(\010R\006isDone\"6\n\025ForgotPasswo" +
+      "rdRequest\022\035\n\005email\030\001 \001(\tB\007\272H\004r\002`\001R\005email" +
+      "\"1\n\026ForgotPasswordResponse\022\027\n\007is_done\030\001 " +
+      "\001(\010R\006isDone\"X\n\034VerifyForrgotPasswordRequ" +
+      "est\022\035\n\005email\030\001 \001(\tB\007\272H\004r\002`\001R\005email\022\031\n\003ot" +
+      "p\030\002 \001(\tB\007\272H\004r\002\020\006R\003otp\"e\n\035VerifyForrgotPa" +
+      "sswordResponse\022\027\n\007is_done\030\001 \001(\010R\006isDone\022" +
+      "+\n\021temprary_password\030\002 \001(\tR\020tempraryPass" +
+      "word\"\227\001\n\024ResetPasswordRequest\022*\n\014new_pas" +
+      "sword\030\001 \001(\tB\007\272H\004r\002\020\010R\013newPassword\022\035\n\005ema" +
+      "il\030\002 \001(\tB\007\272H\004r\002`\001R\005email\0224\n\021temprary_pas" +
+      "sword\030\003 \001(\tB\007\272H\004r\002\020\010R\020tempraryPassword\"0" +
+      "\n\025ResetPasswordResponse\022\027\n\007is_done\030\001 \001(\010" +
+      "R\006isDone2\241\007\n\013UserService\022E\n\nCreateUser\022\032" +
+      ".user.v1.CreateUserRequest\032\033.user.v1.Cre" +
+      "ateUserResponse\022Q\n\016RemoveUserById\022\036.user" +
+      ".v1.RemoveUserByIdRequest\032\037.user.v1.Remo" +
+      "veUserByIdResponse\022f\n\025SendVerificationEm" +
+      "ail\022%.user.v1.SendVerificationEmailReque" +
+      "st\032&.user.v1.SendVerificationEmailRespon" +
+      "se\0229\n\006SignIn\022\026.user.v1.SignInRequest\032\027.u" +
+      "ser.v1.SignInResponse\022Q\n\016DeleteUserById\022" +
+      "\036.user.v1.DeleteUserByIdRequest\032\037.user.v" +
+      "1.DeleteUserByIdResponse\022W\n\020UnDeleteUser" +
+      "ById\022 .user.v1.UnDeleteUserByIdRequest\032!" +
+      ".user.v1.UnDeleteUserByIdResponse\022E\n\nVer" +
+      "ifyUser\022\032.user.v1.VerifyUserRequest\032\033.us" +
+      "er.v1.VerifyUserResponse\022W\n\020ResendVerify" +
+      "User\022 .user.v1.ResendVerifyUserRequest\032!" +
+      ".user.v1.ResendVerifyUserResponse\022Q\n\016For" +
+      "gotPassword\022\036.user.v1.ForgotPasswordRequ" +
+      "est\032\037.user.v1.ForgotPasswordResponse\022f\n\025" +
+      "VerifyForrgotPassword\022%.user.v1.VerifyFo" +
+      "rrgotPasswordRequest\032&.user.v1.VerifyFor" +
+      "rgotPasswordResponse\022N\n\rResetPassword\022\035." +
+      "user.v1.ResetPasswordRequest\032\036.user.v1.R" +
+      "esetPasswordResponseB\244\001\n\031com.samarthasth" +
+      "an.user.v1B\tUserProtoP\001Z?github.com/sama" +
+      "rthasthan/services-commons/gen/go/user/v" +
+      "1;userv1\242\002\003UXX\252\002\007User.V1\312\002\007User\\V1\342\002\023Use" +
+      "r\\V1\\GPBMetadata\352\002\010User::V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -263,6 +312,42 @@ public final class UserProto {
     internal_static_user_v1_ResendVerifyUserResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_user_v1_ResendVerifyUserResponse_descriptor,
+        new java.lang.String[] { "IsDone", });
+    internal_static_user_v1_ForgotPasswordRequest_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_user_v1_ForgotPasswordRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_user_v1_ForgotPasswordRequest_descriptor,
+        new java.lang.String[] { "Email", });
+    internal_static_user_v1_ForgotPasswordResponse_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_user_v1_ForgotPasswordResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_user_v1_ForgotPasswordResponse_descriptor,
+        new java.lang.String[] { "IsDone", });
+    internal_static_user_v1_VerifyForrgotPasswordRequest_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_user_v1_VerifyForrgotPasswordRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_user_v1_VerifyForrgotPasswordRequest_descriptor,
+        new java.lang.String[] { "Email", "Otp", });
+    internal_static_user_v1_VerifyForrgotPasswordResponse_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_user_v1_VerifyForrgotPasswordResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_user_v1_VerifyForrgotPasswordResponse_descriptor,
+        new java.lang.String[] { "IsDone", "TempraryPassword", });
+    internal_static_user_v1_ResetPasswordRequest_descriptor =
+      getDescriptor().getMessageTypes().get(20);
+    internal_static_user_v1_ResetPasswordRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_user_v1_ResetPasswordRequest_descriptor,
+        new java.lang.String[] { "NewPassword", "Email", "TempraryPassword", });
+    internal_static_user_v1_ResetPasswordResponse_descriptor =
+      getDescriptor().getMessageTypes().get(21);
+    internal_static_user_v1_ResetPasswordResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_user_v1_ResetPasswordResponse_descriptor,
         new java.lang.String[] { "IsDone", });
     descriptor.resolveAllFeaturesImmutable();
     build.buf.validate.ValidateProto.getDescriptor();
