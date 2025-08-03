@@ -34,3 +34,9 @@ gen-ts:
 		-I $(PROTO_DIR) \
 		-I $(PROTO_VALIDATE_DIR) \
 		$(PROTO_FILES) $(PROTO_VALIDATE_FILES)
+
+db-up:
+	docker compose --env-file .env -f ./docker-compose.yml up -d
+
+db-down:
+	docker compose --env-file .env -f build/docker-compose.yaml down
