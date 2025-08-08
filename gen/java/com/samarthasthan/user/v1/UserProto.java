@@ -135,6 +135,16 @@ public final class UserProto {
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_user_v1_ResetPasswordResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_user_v1_CheckIfUserExistsResquest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_user_v1_CheckIfUserExistsResquest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_user_v1_CheckIfUserExistsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_user_v1_CheckIfUserExistsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -183,34 +193,40 @@ public final class UserProto {
       "\030\002 \001(\tB\007\272H\004r\002`\001R\005email\0224\n\021temprary_passw" +
       "ord\030\003 \001(\tB\007\272H\004r\002\020\010R\020tempraryPassword\"0\n\025" +
       "ResetPasswordResponse\022\027\n\007is_done\030\001 \001(\010R\006" +
-      "isDone2\236\007\n\013UserService\022E\n\nCreateUser\022\032.u" +
-      "ser.v1.CreateUserRequest\032\033.user.v1.Creat" +
-      "eUserResponse\022Q\n\016RemoveUserById\022\036.user.v" +
-      "1.RemoveUserByIdRequest\032\037.user.v1.Remove" +
-      "UserByIdResponse\022f\n\025SendVerificationEmai" +
-      "l\022%.user.v1.SendVerificationEmailRequest" +
-      "\032&.user.v1.SendVerificationEmailResponse" +
-      "\0229\n\006SignIn\022\026.user.v1.SignInRequest\032\027.use" +
-      "r.v1.SignInResponse\022Q\n\016DeleteUserById\022\036." +
-      "user.v1.DeleteUserByIdRequest\032\037.user.v1." +
-      "DeleteUserByIdResponse\022W\n\020UnDeleteUserBy" +
-      "Id\022 .user.v1.UnDeleteUserByIdRequest\032!.u" +
-      "ser.v1.UnDeleteUserByIdResponse\022E\n\nVerif" +
-      "yUser\022\032.user.v1.VerifyUserRequest\032\033.user" +
-      ".v1.VerifyUserResponse\022W\n\020ResendVerifyUs" +
-      "er\022 .user.v1.ResendVerifyUserRequest\032!.u" +
-      "ser.v1.ResendVerifyUserResponse\022Q\n\016Forgo" +
-      "tPassword\022\036.user.v1.ForgotPasswordReques" +
-      "t\032\037.user.v1.ForgotPasswordResponse\022c\n\024Ve" +
-      "rifyForgotPassword\022$.user.v1.VerifyForgo" +
-      "tPasswordRequest\032%.user.v1.VerifyForgotP" +
-      "asswordResponse\022N\n\rResetPassword\022\035.user." +
-      "v1.ResetPasswordRequest\032\036.user.v1.ResetP" +
-      "asswordResponseB\244\001\n\031com.samarthasthan.us" +
-      "er.v1B\tUserProtoP\001Z?github.com/samarthas" +
-      "than/services-commons/gen/go/user/v1;use" +
-      "rv1\242\002\003UXX\252\002\007User.V1\312\002\007User\\V1\342\002\023User\\V1\\" +
-      "GPBMetadata\352\002\010User::V1b\006proto3"
+      "isDone\"1\n\031CheckIfUserExistsResquest\022\024\n\005e" +
+      "mail\030\001 \001(\tR\005email\"g\n\031CheckIfUserExistsRe" +
+      "sponse\022\027\n\007user_id\030\001 \001(\tR\006userId\022\033\n\tfull_" +
+      "name\030\002 \001(\tR\010fullName\022\024\n\005email\030\003 \001(\tR\005ema" +
+      "il2\363\007\n\013UserService\022E\n\nCreateUser\022\032.user." +
+      "v1.CreateUserRequest\032\033.user.v1.CreateUse" +
+      "rResponse\022Q\n\016RemoveUserById\022\036.user.v1.Re" +
+      "moveUserByIdRequest\032\037.user.v1.RemoveUser" +
+      "ByIdResponse\022f\n\025SendVerificationEmail\022%." +
+      "user.v1.SendVerificationEmailRequest\032&.u" +
+      "ser.v1.SendVerificationEmailResponse\0229\n\006" +
+      "SignIn\022\026.user.v1.SignInRequest\032\027.user.v1" +
+      ".SignInResponse\022Q\n\016DeleteUserById\022\036.user" +
+      ".v1.DeleteUserByIdRequest\032\037.user.v1.Dele" +
+      "teUserByIdResponse\022W\n\020UnDeleteUserById\022 " +
+      ".user.v1.UnDeleteUserByIdRequest\032!.user." +
+      "v1.UnDeleteUserByIdResponse\022E\n\nVerifyUse" +
+      "r\022\032.user.v1.VerifyUserRequest\032\033.user.v1." +
+      "VerifyUserResponse\022W\n\020ResendVerifyUser\022 " +
+      ".user.v1.ResendVerifyUserRequest\032!.user." +
+      "v1.ResendVerifyUserResponse\022Q\n\016ForgotPas" +
+      "sword\022\036.user.v1.ForgotPasswordRequest\032\037." +
+      "user.v1.ForgotPasswordResponse\022c\n\024Verify" +
+      "ForgotPassword\022$.user.v1.VerifyForgotPas" +
+      "swordRequest\032%.user.v1.VerifyForgotPassw" +
+      "ordResponse\022N\n\rResetPassword\022\035.user.v1.R" +
+      "esetPasswordRequest\032\036.user.v1.ResetPassw" +
+      "ordResponse\022S\n\021CheckIfUserExists\022\032.user." +
+      "v1.CreateUserRequest\032\".user.v1.CheckIfUs" +
+      "erExistsResponseB\244\001\n\031com.samarthasthan.u" +
+      "ser.v1B\tUserProtoP\001Z?github.com/samartha" +
+      "sthan/services-commons/gen/go/user/v1;us" +
+      "erv1\242\002\003UXX\252\002\007User.V1\312\002\007User\\V1\342\002\023User\\V1" +
+      "\\GPBMetadata\352\002\010User::V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -349,6 +365,18 @@ public final class UserProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_user_v1_ResetPasswordResponse_descriptor,
         new java.lang.String[] { "IsDone", });
+    internal_static_user_v1_CheckIfUserExistsResquest_descriptor =
+      getDescriptor().getMessageTypes().get(22);
+    internal_static_user_v1_CheckIfUserExistsResquest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_user_v1_CheckIfUserExistsResquest_descriptor,
+        new java.lang.String[] { "Email", });
+    internal_static_user_v1_CheckIfUserExistsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(23);
+    internal_static_user_v1_CheckIfUserExistsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_user_v1_CheckIfUserExistsResponse_descriptor,
+        new java.lang.String[] { "UserId", "FullName", "Email", });
     descriptor.resolveAllFeaturesImmutable();
     build.buf.validate.ValidateProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =

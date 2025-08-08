@@ -1054,6 +1054,110 @@ func (x *ResetPasswordResponse) GetIsDone() bool {
 	return false
 }
 
+type CheckIfUserExistsResquest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Email         string                 `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CheckIfUserExistsResquest) Reset() {
+	*x = CheckIfUserExistsResquest{}
+	mi := &file_user_v1_user_proto_msgTypes[22]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CheckIfUserExistsResquest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CheckIfUserExistsResquest) ProtoMessage() {}
+
+func (x *CheckIfUserExistsResquest) ProtoReflect() protoreflect.Message {
+	mi := &file_user_v1_user_proto_msgTypes[22]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CheckIfUserExistsResquest.ProtoReflect.Descriptor instead.
+func (*CheckIfUserExistsResquest) Descriptor() ([]byte, []int) {
+	return file_user_v1_user_proto_rawDescGZIP(), []int{22}
+}
+
+func (x *CheckIfUserExistsResquest) GetEmail() string {
+	if x != nil {
+		return x.Email
+	}
+	return ""
+}
+
+type CheckIfUserExistsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	FullName      string                 `protobuf:"bytes,2,opt,name=full_name,json=fullName,proto3" json:"full_name,omitempty"`
+	Email         string                 `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CheckIfUserExistsResponse) Reset() {
+	*x = CheckIfUserExistsResponse{}
+	mi := &file_user_v1_user_proto_msgTypes[23]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CheckIfUserExistsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CheckIfUserExistsResponse) ProtoMessage() {}
+
+func (x *CheckIfUserExistsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_user_v1_user_proto_msgTypes[23]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CheckIfUserExistsResponse.ProtoReflect.Descriptor instead.
+func (*CheckIfUserExistsResponse) Descriptor() ([]byte, []int) {
+	return file_user_v1_user_proto_rawDescGZIP(), []int{23}
+}
+
+func (x *CheckIfUserExistsResponse) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *CheckIfUserExistsResponse) GetFullName() string {
+	if x != nil {
+		return x.FullName
+	}
+	return ""
+}
+
+func (x *CheckIfUserExistsResponse) GetEmail() string {
+	if x != nil {
+		return x.Email
+	}
+	return ""
+}
+
 var File_user_v1_user_proto protoreflect.FileDescriptor
 
 const file_user_v1_user_proto_rawDesc = "" +
@@ -1110,7 +1214,13 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\x05email\x18\x02 \x01(\tB\a\xbaH\x04r\x02`\x01R\x05email\x124\n" +
 	"\x11temprary_password\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x10\bR\x10tempraryPassword\"0\n" +
 	"\x15ResetPasswordResponse\x12\x17\n" +
-	"\ais_done\x18\x01 \x01(\bR\x06isDone2\x9e\a\n" +
+	"\ais_done\x18\x01 \x01(\bR\x06isDone\"1\n" +
+	"\x19CheckIfUserExistsResquest\x12\x14\n" +
+	"\x05email\x18\x01 \x01(\tR\x05email\"g\n" +
+	"\x19CheckIfUserExistsResponse\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x1b\n" +
+	"\tfull_name\x18\x02 \x01(\tR\bfullName\x12\x14\n" +
+	"\x05email\x18\x03 \x01(\tR\x05email2\xf3\a\n" +
 	"\vUserService\x12E\n" +
 	"\n" +
 	"CreateUser\x12\x1a.user.v1.CreateUserRequest\x1a\x1b.user.v1.CreateUserResponse\x12Q\n" +
@@ -1124,7 +1234,8 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\x10ResendVerifyUser\x12 .user.v1.ResendVerifyUserRequest\x1a!.user.v1.ResendVerifyUserResponse\x12Q\n" +
 	"\x0eForgotPassword\x12\x1e.user.v1.ForgotPasswordRequest\x1a\x1f.user.v1.ForgotPasswordResponse\x12c\n" +
 	"\x14VerifyForgotPassword\x12$.user.v1.VerifyForgotPasswordRequest\x1a%.user.v1.VerifyForgotPasswordResponse\x12N\n" +
-	"\rResetPassword\x12\x1d.user.v1.ResetPasswordRequest\x1a\x1e.user.v1.ResetPasswordResponseB\xa4\x01\n" +
+	"\rResetPassword\x12\x1d.user.v1.ResetPasswordRequest\x1a\x1e.user.v1.ResetPasswordResponse\x12S\n" +
+	"\x11CheckIfUserExists\x12\x1a.user.v1.CreateUserRequest\x1a\".user.v1.CheckIfUserExistsResponseB\xa4\x01\n" +
 	"\x19com.samarthasthan.user.v1B\tUserProtoP\x01Z?github.com/samarthasthan/services-commons/gen/go/user/v1;userv1\xa2\x02\x03UXX\xaa\x02\aUser.V1\xca\x02\aUser\\V1\xe2\x02\x13User\\V1\\GPBMetadata\xea\x02\bUser::V1b\x06proto3"
 
 var (
@@ -1139,7 +1250,7 @@ func file_user_v1_user_proto_rawDescGZIP() []byte {
 	return file_user_v1_user_proto_rawDescData
 }
 
-var file_user_v1_user_proto_msgTypes = make([]protoimpl.MessageInfo, 22)
+var file_user_v1_user_proto_msgTypes = make([]protoimpl.MessageInfo, 24)
 var file_user_v1_user_proto_goTypes = []any{
 	(*CreateUserRequest)(nil),             // 0: user.v1.CreateUserRequest
 	(*CreateUserResponse)(nil),            // 1: user.v1.CreateUserResponse
@@ -1163,6 +1274,8 @@ var file_user_v1_user_proto_goTypes = []any{
 	(*VerifyForgotPasswordResponse)(nil),  // 19: user.v1.VerifyForgotPasswordResponse
 	(*ResetPasswordRequest)(nil),          // 20: user.v1.ResetPasswordRequest
 	(*ResetPasswordResponse)(nil),         // 21: user.v1.ResetPasswordResponse
+	(*CheckIfUserExistsResquest)(nil),     // 22: user.v1.CheckIfUserExistsResquest
+	(*CheckIfUserExistsResponse)(nil),     // 23: user.v1.CheckIfUserExistsResponse
 }
 var file_user_v1_user_proto_depIdxs = []int32{
 	0,  // 0: user.v1.UserService.CreateUser:input_type -> user.v1.CreateUserRequest
@@ -1176,19 +1289,21 @@ var file_user_v1_user_proto_depIdxs = []int32{
 	16, // 8: user.v1.UserService.ForgotPassword:input_type -> user.v1.ForgotPasswordRequest
 	18, // 9: user.v1.UserService.VerifyForgotPassword:input_type -> user.v1.VerifyForgotPasswordRequest
 	20, // 10: user.v1.UserService.ResetPassword:input_type -> user.v1.ResetPasswordRequest
-	1,  // 11: user.v1.UserService.CreateUser:output_type -> user.v1.CreateUserResponse
-	3,  // 12: user.v1.UserService.RemoveUserById:output_type -> user.v1.RemoveUserByIdResponse
-	5,  // 13: user.v1.UserService.SendVerificationEmail:output_type -> user.v1.SendVerificationEmailResponse
-	7,  // 14: user.v1.UserService.SignIn:output_type -> user.v1.SignInResponse
-	9,  // 15: user.v1.UserService.DeleteUserById:output_type -> user.v1.DeleteUserByIdResponse
-	11, // 16: user.v1.UserService.UnDeleteUserById:output_type -> user.v1.UnDeleteUserByIdResponse
-	13, // 17: user.v1.UserService.VerifyUser:output_type -> user.v1.VerifyUserResponse
-	15, // 18: user.v1.UserService.ResendVerifyUser:output_type -> user.v1.ResendVerifyUserResponse
-	17, // 19: user.v1.UserService.ForgotPassword:output_type -> user.v1.ForgotPasswordResponse
-	19, // 20: user.v1.UserService.VerifyForgotPassword:output_type -> user.v1.VerifyForgotPasswordResponse
-	21, // 21: user.v1.UserService.ResetPassword:output_type -> user.v1.ResetPasswordResponse
-	11, // [11:22] is the sub-list for method output_type
-	0,  // [0:11] is the sub-list for method input_type
+	0,  // 11: user.v1.UserService.CheckIfUserExists:input_type -> user.v1.CreateUserRequest
+	1,  // 12: user.v1.UserService.CreateUser:output_type -> user.v1.CreateUserResponse
+	3,  // 13: user.v1.UserService.RemoveUserById:output_type -> user.v1.RemoveUserByIdResponse
+	5,  // 14: user.v1.UserService.SendVerificationEmail:output_type -> user.v1.SendVerificationEmailResponse
+	7,  // 15: user.v1.UserService.SignIn:output_type -> user.v1.SignInResponse
+	9,  // 16: user.v1.UserService.DeleteUserById:output_type -> user.v1.DeleteUserByIdResponse
+	11, // 17: user.v1.UserService.UnDeleteUserById:output_type -> user.v1.UnDeleteUserByIdResponse
+	13, // 18: user.v1.UserService.VerifyUser:output_type -> user.v1.VerifyUserResponse
+	15, // 19: user.v1.UserService.ResendVerifyUser:output_type -> user.v1.ResendVerifyUserResponse
+	17, // 20: user.v1.UserService.ForgotPassword:output_type -> user.v1.ForgotPasswordResponse
+	19, // 21: user.v1.UserService.VerifyForgotPassword:output_type -> user.v1.VerifyForgotPasswordResponse
+	21, // 22: user.v1.UserService.ResetPassword:output_type -> user.v1.ResetPasswordResponse
+	23, // 23: user.v1.UserService.CheckIfUserExists:output_type -> user.v1.CheckIfUserExistsResponse
+	12, // [12:24] is the sub-list for method output_type
+	0,  // [0:12] is the sub-list for method input_type
 	0,  // [0:0] is the sub-list for extension type_name
 	0,  // [0:0] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name
@@ -1205,7 +1320,7 @@ func file_user_v1_user_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_user_v1_user_proto_rawDesc), len(file_user_v1_user_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   22,
+			NumMessages:   24,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
