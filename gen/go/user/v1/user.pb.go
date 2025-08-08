@@ -1220,7 +1220,7 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\x19CheckIfUserExistsResponse\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x1b\n" +
 	"\tfull_name\x18\x02 \x01(\tR\bfullName\x12\x14\n" +
-	"\x05email\x18\x03 \x01(\tR\x05email2\xf3\a\n" +
+	"\x05email\x18\x03 \x01(\tR\x05email2\xfb\a\n" +
 	"\vUserService\x12E\n" +
 	"\n" +
 	"CreateUser\x12\x1a.user.v1.CreateUserRequest\x1a\x1b.user.v1.CreateUserResponse\x12Q\n" +
@@ -1234,8 +1234,8 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\x10ResendVerifyUser\x12 .user.v1.ResendVerifyUserRequest\x1a!.user.v1.ResendVerifyUserResponse\x12Q\n" +
 	"\x0eForgotPassword\x12\x1e.user.v1.ForgotPasswordRequest\x1a\x1f.user.v1.ForgotPasswordResponse\x12c\n" +
 	"\x14VerifyForgotPassword\x12$.user.v1.VerifyForgotPasswordRequest\x1a%.user.v1.VerifyForgotPasswordResponse\x12N\n" +
-	"\rResetPassword\x12\x1d.user.v1.ResetPasswordRequest\x1a\x1e.user.v1.ResetPasswordResponse\x12S\n" +
-	"\x11CheckIfUserExists\x12\x1a.user.v1.CreateUserRequest\x1a\".user.v1.CheckIfUserExistsResponseB\xa4\x01\n" +
+	"\rResetPassword\x12\x1d.user.v1.ResetPasswordRequest\x1a\x1e.user.v1.ResetPasswordResponse\x12[\n" +
+	"\x11CheckIfUserExists\x12\".user.v1.CheckIfUserExistsResquest\x1a\".user.v1.CheckIfUserExistsResponseB\xa4\x01\n" +
 	"\x19com.samarthasthan.user.v1B\tUserProtoP\x01Z?github.com/samarthasthan/services-commons/gen/go/user/v1;userv1\xa2\x02\x03UXX\xaa\x02\aUser.V1\xca\x02\aUser\\V1\xe2\x02\x13User\\V1\\GPBMetadata\xea\x02\bUser::V1b\x06proto3"
 
 var (
@@ -1289,7 +1289,7 @@ var file_user_v1_user_proto_depIdxs = []int32{
 	16, // 8: user.v1.UserService.ForgotPassword:input_type -> user.v1.ForgotPasswordRequest
 	18, // 9: user.v1.UserService.VerifyForgotPassword:input_type -> user.v1.VerifyForgotPasswordRequest
 	20, // 10: user.v1.UserService.ResetPassword:input_type -> user.v1.ResetPasswordRequest
-	0,  // 11: user.v1.UserService.CheckIfUserExists:input_type -> user.v1.CreateUserRequest
+	22, // 11: user.v1.UserService.CheckIfUserExists:input_type -> user.v1.CheckIfUserExistsResquest
 	1,  // 12: user.v1.UserService.CreateUser:output_type -> user.v1.CreateUserResponse
 	3,  // 13: user.v1.UserService.RemoveUserById:output_type -> user.v1.RemoveUserByIdResponse
 	5,  // 14: user.v1.UserService.SendVerificationEmail:output_type -> user.v1.SendVerificationEmailResponse

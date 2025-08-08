@@ -136,5 +136,5 @@ service UserService {
   rpc ForgotPassword(ForgotPasswordRequest) returns (ForgotPasswordResponse);
   rpc VerifyForgotPassword(VerifyForgotPasswordRequest) returns (VerifyForgotPasswordResponse);
   rpc ResetPassword(ResetPasswordRequest) returns (ResetPasswordResponse);
-  rpc CheckIfUserExists(CreateUserRequest) returns (CheckIfUserExistsResponse);
+  rpc CheckIfUserExists(CheckIfUserExistsResquest) returns (CheckIfUserExistsResponse);
 }

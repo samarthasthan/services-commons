@@ -197,7 +197,7 @@ public final class UserProto {
       "mail\030\001 \001(\tR\005email\"g\n\031CheckIfUserExistsRe" +
       "sponse\022\027\n\007user_id\030\001 \001(\tR\006userId\022\033\n\tfull_" +
       "name\030\002 \001(\tR\010fullName\022\024\n\005email\030\003 \001(\tR\005ema" +
-      "il2\363\007\n\013UserService\022E\n\nCreateUser\022\032.user." +
+      "il2\373\007\n\013UserService\022E\n\nCreateUser\022\032.user." +
       "v1.CreateUserRequest\032\033.user.v1.CreateUse" +
       "rResponse\022Q\n\016RemoveUserById\022\036.user.v1.Re" +
       "moveUserByIdRequest\032\037.user.v1.RemoveUser" +
@@ -220,13 +220,13 @@ public final class UserProto {
       "swordRequest\032%.user.v1.VerifyForgotPassw" +
       "ordResponse\022N\n\rResetPassword\022\035.user.v1.R" +
       "esetPasswordRequest\032\036.user.v1.ResetPassw" +
-      "ordResponse\022S\n\021CheckIfUserExists\022\032.user." +
-      "v1.CreateUserRequest\032\".user.v1.CheckIfUs" +
-      "erExistsResponseB\244\001\n\031com.samarthasthan.u" +
-      "ser.v1B\tUserProtoP\001Z?github.com/samartha" +
-      "sthan/services-commons/gen/go/user/v1;us" +
-      "erv1\242\002\003UXX\252\002\007User.V1\312\002\007User\\V1\342\002\023User\\V1" +
-      "\\GPBMetadata\352\002\010User::V1b\006proto3"
+      "ordResponse\022[\n\021CheckIfUserExists\022\".user." +
+      "v1.CheckIfUserExistsResquest\032\".user.v1.C" +
+      "heckIfUserExistsResponseB\244\001\n\031com.samarth" +
+      "asthan.user.v1B\tUserProtoP\001Z?github.com/" +
+      "samarthasthan/services-commons/gen/go/us" +
+      "er/v1;userv1\242\002\003UXX\252\002\007User.V1\312\002\007User\\V1\342\002" +
+      "\023User\\V1\\GPBMetadata\352\002\010User::V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

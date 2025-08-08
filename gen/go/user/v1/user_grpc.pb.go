@@ -48,7 +48,7 @@ type UserServiceClient interface {
 	ForgotPassword(ctx context.Context, in *ForgotPasswordRequest, opts ...grpc.CallOption) (*ForgotPasswordResponse, error)
 	VerifyForgotPassword(ctx context.Context, in *VerifyForgotPasswordRequest, opts ...grpc.CallOption) (*VerifyForgotPasswordResponse, error)
 	ResetPassword(ctx context.Context, in *ResetPasswordRequest, opts ...grpc.CallOption) (*ResetPasswordResponse, error)
-	CheckIfUserExists(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CheckIfUserExistsResponse, error)
+	CheckIfUserExists(ctx context.Context, in *CheckIfUserExistsResquest, opts ...grpc.CallOption) (*CheckIfUserExistsResponse, error)
 }
 
 type userServiceClient struct {
@@ -169,7 +169,7 @@ func (c *userServiceClient) ResetPassword(ctx context.Context, in *ResetPassword
 	return out, nil
 }
 
-func (c *userServiceClient) CheckIfUserExists(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CheckIfUserExistsResponse, error) {
+func (c *userServiceClient) CheckIfUserExists(ctx context.Context, in *CheckIfUserExistsResquest, opts ...grpc.CallOption) (*CheckIfUserExistsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(CheckIfUserExistsResponse)
 	err := c.cc.Invoke(ctx, UserService_CheckIfUserExists_FullMethodName, in, out, cOpts...)
@@ -194,7 +194,7 @@ type UserServiceServer interface {
 	ForgotPassword(context.Context, *ForgotPasswordRequest) (*ForgotPasswordResponse, error)
 	VerifyForgotPassword(context.Context, *VerifyForgotPasswordRequest) (*VerifyForgotPasswordResponse, error)
 	ResetPassword(context.Context, *ResetPasswordRequest) (*ResetPasswordResponse, error)
-	CheckIfUserExists(context.Context, *CreateUserRequest) (*CheckIfUserExistsResponse, error)
+	CheckIfUserExists(context.Context, *CheckIfUserExistsResquest) (*CheckIfUserExistsResponse, error)
 	mustEmbedUnimplementedUserServiceServer()
 }
 
@@ -238,7 +238,7 @@ func (UnimplementedUserServiceServer) VerifyForgotPassword(context.Context, *Ver
 func (UnimplementedUserServiceServer) ResetPassword(context.Context, *ResetPasswordRequest) (*ResetPasswordResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ResetPassword not implemented")
 }
-func (UnimplementedUserServiceServer) CheckIfUserExists(context.Context, *CreateUserRequest) (*CheckIfUserExistsResponse, error) {
+func (UnimplementedUserServiceServer) CheckIfUserExists(context.Context, *CheckIfUserExistsResquest) (*CheckIfUserExistsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CheckIfUserExists not implemented")
 }
 func (UnimplementedUserServiceServer) mustEmbedUnimplementedUserServiceServer() {}
@@ -461,7 +461,7 @@ func _UserService_ResetPassword_Handler(srv interface{}, ctx context.Context, de
 }
 
 func _UserService_CheckIfUserExists_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateUserRequest)
+	in := new(CheckIfUserExistsResquest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -473,7 +473,7 @@ func _UserService_CheckIfUserExists_Handler(srv interface{}, ctx context.Context
 		FullMethod: UserService_CheckIfUserExists_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).CheckIfUserExists(ctx, req.(*CreateUserRequest))
+		return srv.(UserServiceServer).CheckIfUserExists(ctx, req.(*CheckIfUserExistsResquest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
