@@ -113,7 +113,7 @@ message ResetPasswordResponse {
   bool is_done = 1;
 }
   
-message CheckIfUserExistsResquest {
+message CheckIfUserExistsRequest {
   string email = 1;
 }
 
@@ -123,6 +123,15 @@ message CheckIfUserExistsResponse {
   string email = 3;
 }
 
+message CheckIfUserExistsByIDRequest {
+  string user_id = 1;
+}
+
+message CheckIfUserExistsByIDResponse {
+  string user_id = 1;
+  string full_name = 2;
+  string email = 3;
+}
 
 service UserService {
   rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
@@ -136,5 +145,6 @@ service UserService {
   rpc ForgotPassword(ForgotPasswordRequest) returns (ForgotPasswordResponse);
   rpc VerifyForgotPassword(VerifyForgotPasswordRequest) returns (VerifyForgotPasswordResponse);
   rpc ResetPassword(ResetPasswordRequest) returns (ResetPasswordResponse);
-  rpc CheckIfUserExists(CheckIfUserExistsResquest) returns (CheckIfUserExistsResponse);
+  rpc CheckIfUserExists(CheckIfUserExistsRequest) returns (CheckIfUserExistsResponse);
+  rpc CheckIfUserExistsByID(CheckIfUserExistsByIDRequest) returns (CheckIfUserExistsByIDResponse);
 }
