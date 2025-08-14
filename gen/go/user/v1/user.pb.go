@@ -1330,10 +1330,11 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\x1dCheckIfUserExistsByIDResponse\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x1b\n" +
 	"\tfull_name\x18\x02 \x01(\tR\bfullName\x12\x14\n" +
-	"\x05email\x18\x03 \x01(\tR\x05email2\xe2\b\n" +
+	"\x05email\x18\x03 \x01(\tR\x05email2\xae\t\n" +
 	"\vUserService\x12E\n" +
 	"\n" +
-	"CreateUser\x12\x1a.user.v1.CreateUserRequest\x1a\x1b.user.v1.CreateUserResponse\x12Q\n" +
+	"CreateUser\x12\x1a.user.v1.CreateUserRequest\x1a\x1b.user.v1.CreateUserResponse\x12J\n" +
+	"\x0fCreateAdminUser\x12\x1a.user.v1.CreateUserRequest\x1a\x1b.user.v1.CreateUserResponse\x12Q\n" +
 	"\x0eRemoveUserById\x12\x1e.user.v1.RemoveUserByIdRequest\x1a\x1f.user.v1.RemoveUserByIdResponse\x12f\n" +
 	"\x15SendVerificationEmail\x12%.user.v1.SendVerificationEmailRequest\x1a&.user.v1.SendVerificationEmailResponse\x129\n" +
 	"\x06SignIn\x12\x16.user.v1.SignInRequest\x1a\x17.user.v1.SignInResponse\x12Q\n" +
@@ -1392,33 +1393,35 @@ var file_user_v1_user_proto_goTypes = []any{
 }
 var file_user_v1_user_proto_depIdxs = []int32{
 	0,  // 0: user.v1.UserService.CreateUser:input_type -> user.v1.CreateUserRequest
-	2,  // 1: user.v1.UserService.RemoveUserById:input_type -> user.v1.RemoveUserByIdRequest
-	4,  // 2: user.v1.UserService.SendVerificationEmail:input_type -> user.v1.SendVerificationEmailRequest
-	6,  // 3: user.v1.UserService.SignIn:input_type -> user.v1.SignInRequest
-	8,  // 4: user.v1.UserService.DeleteUserById:input_type -> user.v1.DeleteUserByIdRequest
-	10, // 5: user.v1.UserService.UnDeleteUserById:input_type -> user.v1.UnDeleteUserByIdRequest
-	12, // 6: user.v1.UserService.VerifyUser:input_type -> user.v1.VerifyUserRequest
-	14, // 7: user.v1.UserService.ResendVerifyUser:input_type -> user.v1.ResendVerifyUserRequest
-	16, // 8: user.v1.UserService.ForgotPassword:input_type -> user.v1.ForgotPasswordRequest
-	18, // 9: user.v1.UserService.VerifyForgotPassword:input_type -> user.v1.VerifyForgotPasswordRequest
-	20, // 10: user.v1.UserService.ResetPassword:input_type -> user.v1.ResetPasswordRequest
-	22, // 11: user.v1.UserService.CheckIfUserExists:input_type -> user.v1.CheckIfUserExistsRequest
-	24, // 12: user.v1.UserService.CheckIfUserExistsByID:input_type -> user.v1.CheckIfUserExistsByIDRequest
-	1,  // 13: user.v1.UserService.CreateUser:output_type -> user.v1.CreateUserResponse
-	3,  // 14: user.v1.UserService.RemoveUserById:output_type -> user.v1.RemoveUserByIdResponse
-	5,  // 15: user.v1.UserService.SendVerificationEmail:output_type -> user.v1.SendVerificationEmailResponse
-	7,  // 16: user.v1.UserService.SignIn:output_type -> user.v1.SignInResponse
-	9,  // 17: user.v1.UserService.DeleteUserById:output_type -> user.v1.DeleteUserByIdResponse
-	11, // 18: user.v1.UserService.UnDeleteUserById:output_type -> user.v1.UnDeleteUserByIdResponse
-	13, // 19: user.v1.UserService.VerifyUser:output_type -> user.v1.VerifyUserResponse
-	15, // 20: user.v1.UserService.ResendVerifyUser:output_type -> user.v1.ResendVerifyUserResponse
-	17, // 21: user.v1.UserService.ForgotPassword:output_type -> user.v1.ForgotPasswordResponse
-	19, // 22: user.v1.UserService.VerifyForgotPassword:output_type -> user.v1.VerifyForgotPasswordResponse
-	21, // 23: user.v1.UserService.ResetPassword:output_type -> user.v1.ResetPasswordResponse
-	23, // 24: user.v1.UserService.CheckIfUserExists:output_type -> user.v1.CheckIfUserExistsResponse
-	25, // 25: user.v1.UserService.CheckIfUserExistsByID:output_type -> user.v1.CheckIfUserExistsByIDResponse
-	13, // [13:26] is the sub-list for method output_type
-	0,  // [0:13] is the sub-list for method input_type
+	0,  // 1: user.v1.UserService.CreateAdminUser:input_type -> user.v1.CreateUserRequest
+	2,  // 2: user.v1.UserService.RemoveUserById:input_type -> user.v1.RemoveUserByIdRequest
+	4,  // 3: user.v1.UserService.SendVerificationEmail:input_type -> user.v1.SendVerificationEmailRequest
+	6,  // 4: user.v1.UserService.SignIn:input_type -> user.v1.SignInRequest
+	8,  // 5: user.v1.UserService.DeleteUserById:input_type -> user.v1.DeleteUserByIdRequest
+	10, // 6: user.v1.UserService.UnDeleteUserById:input_type -> user.v1.UnDeleteUserByIdRequest
+	12, // 7: user.v1.UserService.VerifyUser:input_type -> user.v1.VerifyUserRequest
+	14, // 8: user.v1.UserService.ResendVerifyUser:input_type -> user.v1.ResendVerifyUserRequest
+	16, // 9: user.v1.UserService.ForgotPassword:input_type -> user.v1.ForgotPasswordRequest
+	18, // 10: user.v1.UserService.VerifyForgotPassword:input_type -> user.v1.VerifyForgotPasswordRequest
+	20, // 11: user.v1.UserService.ResetPassword:input_type -> user.v1.ResetPasswordRequest
+	22, // 12: user.v1.UserService.CheckIfUserExists:input_type -> user.v1.CheckIfUserExistsRequest
+	24, // 13: user.v1.UserService.CheckIfUserExistsByID:input_type -> user.v1.CheckIfUserExistsByIDRequest
+	1,  // 14: user.v1.UserService.CreateUser:output_type -> user.v1.CreateUserResponse
+	1,  // 15: user.v1.UserService.CreateAdminUser:output_type -> user.v1.CreateUserResponse
+	3,  // 16: user.v1.UserService.RemoveUserById:output_type -> user.v1.RemoveUserByIdResponse
+	5,  // 17: user.v1.UserService.SendVerificationEmail:output_type -> user.v1.SendVerificationEmailResponse
+	7,  // 18: user.v1.UserService.SignIn:output_type -> user.v1.SignInResponse
+	9,  // 19: user.v1.UserService.DeleteUserById:output_type -> user.v1.DeleteUserByIdResponse
+	11, // 20: user.v1.UserService.UnDeleteUserById:output_type -> user.v1.UnDeleteUserByIdResponse
+	13, // 21: user.v1.UserService.VerifyUser:output_type -> user.v1.VerifyUserResponse
+	15, // 22: user.v1.UserService.ResendVerifyUser:output_type -> user.v1.ResendVerifyUserResponse
+	17, // 23: user.v1.UserService.ForgotPassword:output_type -> user.v1.ForgotPasswordResponse
+	19, // 24: user.v1.UserService.VerifyForgotPassword:output_type -> user.v1.VerifyForgotPasswordResponse
+	21, // 25: user.v1.UserService.ResetPassword:output_type -> user.v1.ResetPasswordResponse
+	23, // 26: user.v1.UserService.CheckIfUserExists:output_type -> user.v1.CheckIfUserExistsResponse
+	25, // 27: user.v1.UserService.CheckIfUserExistsByID:output_type -> user.v1.CheckIfUserExistsByIDResponse
+	14, // [14:28] is the sub-list for method output_type
+	0,  // [0:14] is the sub-list for method input_type
 	0,  // [0:0] is the sub-list for extension type_name
 	0,  // [0:0] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name

@@ -135,6 +135,7 @@ message CheckIfUserExistsByIDResponse {
 
 service UserService {
   rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
+  rpc CreateAdminUser(CreateUserRequest) returns (CreateUserResponse); 
   rpc RemoveUserById(RemoveUserByIdRequest) returns (RemoveUserByIdResponse);
   rpc SendVerificationEmail(SendVerificationEmailRequest) returns (SendVerificationEmailResponse);
   rpc SignIn(SignInRequest) returns (SignInResponse);
