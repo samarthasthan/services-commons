@@ -8,6 +8,7 @@ option go_package = "github.com/samarthasthan/services-commons/gen/go/auth/v1;au
 
 message GenerateTokenRequest {
   string user_id = 1 [(buf.validate.field).string.min_len = 1];
+  string role = 2 [(buf.validate.field).string.min_len = 1];;
 }
 
 message GenerateTokenResponse {

@@ -85,33 +85,34 @@ public final class AuthProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\022auth/v1/auth.proto\022\007auth.v1\032\033buf/valid" +
-      "ate/validate.proto\"8\n\024GenerateTokenReque" +
-      "st\022 \n\007user_id\030\001 \001(\tB\007\272H\004r\002\020\001R\006userId\"_\n\025" +
-      "GenerateTokenResponse\022!\n\014access_token\030\001 " +
-      "\001(\tR\013accessToken\022#\n\rrefresh_token\030\002 \001(\tR" +
-      "\014refreshToken\"\026\n\024ValidateTokenRequest\"K\n" +
-      "\025ValidateTokenResponse\022\027\n\007user_id\030\001 \001(\tR" +
-      "\006userId\022\031\n\010is_valid\030\003 \001(\010R\007isValid\"\025\n\023Re" +
-      "freshTokenRequest\"^\n\024RefreshTokenRespons" +
-      "e\022!\n\014access_token\030\001 \001(\tR\013accessToken\022#\n\r" +
-      "refresh_token\030\002 \001(\tR\014refreshToken\"\025\n\023Del" +
-      "eteTokensRequest\"\026\n\024DeleteTokensResponse" +
-      "\"\024\n\022RevokeTokenRequest\"\025\n\023RevokeTokenRes" +
-      "ponse2\221\003\n\013AuthService\022N\n\rGenerateToken\022\035" +
-      ".auth.v1.GenerateTokenRequest\032\036.auth.v1." +
-      "GenerateTokenResponse\022N\n\rValidateToken\022\035" +
-      ".auth.v1.ValidateTokenRequest\032\036.auth.v1." +
-      "ValidateTokenResponse\022K\n\014RefreshToken\022\034." +
-      "auth.v1.RefreshTokenRequest\032\035.auth.v1.Re" +
-      "freshTokenResponse\022K\n\014DeleteTokens\022\034.aut" +
-      "h.v1.DeleteTokensRequest\032\035.auth.v1.Delet" +
-      "eTokensResponse\022H\n\013RevokeToken\022\033.auth.v1" +
-      ".RevokeTokenRequest\032\034.auth.v1.RevokeToke" +
-      "nResponseB\244\001\n\031com.samarthasthan.auth.v1B" +
-      "\tAuthProtoP\001Z?github.com/samarthasthan/s" +
-      "ervices-commons/gen/go/auth/v1;authv1\242\002\003" +
-      "AXX\252\002\007Auth.V1\312\002\007Auth\\V1\342\002\023Auth\\V1\\GPBMet" +
-      "adata\352\002\010Auth::V1b\006proto3"
+      "ate/validate.proto\"U\n\024GenerateTokenReque" +
+      "st\022 \n\007user_id\030\001 \001(\tB\007\272H\004r\002\020\001R\006userId\022\033\n\004" +
+      "role\030\002 \001(\tB\007\272H\004r\002\020\001R\004role\"_\n\025GenerateTok" +
+      "enResponse\022!\n\014access_token\030\001 \001(\tR\013access" +
+      "Token\022#\n\rrefresh_token\030\002 \001(\tR\014refreshTok" +
+      "en\"\026\n\024ValidateTokenRequest\"K\n\025ValidateTo" +
+      "kenResponse\022\027\n\007user_id\030\001 \001(\tR\006userId\022\031\n\010" +
+      "is_valid\030\003 \001(\010R\007isValid\"\025\n\023RefreshTokenR" +
+      "equest\"^\n\024RefreshTokenResponse\022!\n\014access" +
+      "_token\030\001 \001(\tR\013accessToken\022#\n\rrefresh_tok" +
+      "en\030\002 \001(\tR\014refreshToken\"\025\n\023DeleteTokensRe" +
+      "quest\"\026\n\024DeleteTokensResponse\"\024\n\022RevokeT" +
+      "okenRequest\"\025\n\023RevokeTokenResponse2\221\003\n\013A" +
+      "uthService\022N\n\rGenerateToken\022\035.auth.v1.Ge" +
+      "nerateTokenRequest\032\036.auth.v1.GenerateTok" +
+      "enResponse\022N\n\rValidateToken\022\035.auth.v1.Va" +
+      "lidateTokenRequest\032\036.auth.v1.ValidateTok" +
+      "enResponse\022K\n\014RefreshToken\022\034.auth.v1.Ref" +
+      "reshTokenRequest\032\035.auth.v1.RefreshTokenR" +
+      "esponse\022K\n\014DeleteTokens\022\034.auth.v1.Delete" +
+      "TokensRequest\032\035.auth.v1.DeleteTokensResp" +
+      "onse\022H\n\013RevokeToken\022\033.auth.v1.RevokeToke" +
+      "nRequest\032\034.auth.v1.RevokeTokenResponseB\244" +
+      "\001\n\031com.samarthasthan.auth.v1B\tAuthProtoP" +
+      "\001Z?github.com/samarthasthan/services-com" +
+      "mons/gen/go/auth/v1;authv1\242\002\003AXX\252\002\007Auth." +
+      "V1\312\002\007Auth\\V1\342\002\023Auth\\V1\\GPBMetadata\352\002\010Aut" +
+      "h::V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -123,7 +124,7 @@ public final class AuthProto {
     internal_static_auth_v1_GenerateTokenRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_auth_v1_GenerateTokenRequest_descriptor,
-        new java.lang.String[] { "UserId", });
+        new java.lang.String[] { "UserId", "Role", });
     internal_static_auth_v1_GenerateTokenResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_auth_v1_GenerateTokenResponse_fieldAccessorTable = new

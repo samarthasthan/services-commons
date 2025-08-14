@@ -20,4 +20,16 @@ public interface GenerateTokenRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getUserIdBytes();
+
+  /**
+   * <code>string role = 2 [json_name = "role", (.buf.validate.field) = { ... }</code>
+   * @return The role.
+   */
+  java.lang.String getRole();
+  /**
+   * <code>string role = 2 [json_name = "role", (.buf.validate.field) = { ... }</code>
+   * @return The bytes for role.
+   */
+  com.google.protobuf.ByteString
+      getRoleBytes();
 }

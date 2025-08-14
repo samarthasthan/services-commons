@@ -70,7 +70,8 @@ proto.auth.v1.GenerateTokenRequest.prototype.toObject = function(opt_includeInst
  */
 proto.auth.v1.GenerateTokenRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-userId: jspb.Message.getFieldWithDefault(msg, 1, "")
+userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+role: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -111,6 +112,10 @@ proto.auth.v1.GenerateTokenRequest.deserializeBinaryFromReader = function(msg, r
       var value = /** @type {string} */ (reader.readString());
       msg.setUserId(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRole(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -147,6 +152,13 @@ proto.auth.v1.GenerateTokenRequest.serializeBinaryToWriter = function(message, w
       f
     );
   }
+  f = message.getRole();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -165,6 +177,24 @@ proto.auth.v1.GenerateTokenRequest.prototype.getUserId = function() {
  */
 proto.auth.v1.GenerateTokenRequest.prototype.setUserId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string role = 2;
+ * @return {string}
+ */
+proto.auth.v1.GenerateTokenRequest.prototype.getRole = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.auth.v1.GenerateTokenRequest} returns this
+ */
+proto.auth.v1.GenerateTokenRequest.prototype.setRole = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
