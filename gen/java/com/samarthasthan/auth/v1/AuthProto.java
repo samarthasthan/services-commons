@@ -90,29 +90,29 @@ public final class AuthProto {
       "role\030\002 \001(\tB\007\272H\004r\002\020\001R\004role\"_\n\025GenerateTok" +
       "enResponse\022!\n\014access_token\030\001 \001(\tR\013access" +
       "Token\022#\n\rrefresh_token\030\002 \001(\tR\014refreshTok" +
-      "en\"\026\n\024ValidateTokenRequest\"K\n\025ValidateTo" +
-      "kenResponse\022\027\n\007user_id\030\001 \001(\tR\006userId\022\031\n\010" +
-      "is_valid\030\003 \001(\010R\007isValid\"\025\n\023RefreshTokenR" +
-      "equest\"^\n\024RefreshTokenResponse\022!\n\014access" +
-      "_token\030\001 \001(\tR\013accessToken\022#\n\rrefresh_tok" +
-      "en\030\002 \001(\tR\014refreshToken\"\025\n\023DeleteTokensRe" +
-      "quest\"\026\n\024DeleteTokensResponse\"\024\n\022RevokeT" +
-      "okenRequest\"\025\n\023RevokeTokenResponse2\221\003\n\013A" +
-      "uthService\022N\n\rGenerateToken\022\035.auth.v1.Ge" +
-      "nerateTokenRequest\032\036.auth.v1.GenerateTok" +
-      "enResponse\022N\n\rValidateToken\022\035.auth.v1.Va" +
-      "lidateTokenRequest\032\036.auth.v1.ValidateTok" +
-      "enResponse\022K\n\014RefreshToken\022\034.auth.v1.Ref" +
-      "reshTokenRequest\032\035.auth.v1.RefreshTokenR" +
-      "esponse\022K\n\014DeleteTokens\022\034.auth.v1.Delete" +
-      "TokensRequest\032\035.auth.v1.DeleteTokensResp" +
-      "onse\022H\n\013RevokeToken\022\033.auth.v1.RevokeToke" +
-      "nRequest\032\034.auth.v1.RevokeTokenResponseB\244" +
-      "\001\n\031com.samarthasthan.auth.v1B\tAuthProtoP" +
-      "\001Z?github.com/samarthasthan/services-com" +
-      "mons/gen/go/auth/v1;authv1\242\002\003AXX\252\002\007Auth." +
-      "V1\312\002\007Auth\\V1\342\002\023Auth\\V1\\GPBMetadata\352\002\010Aut" +
-      "h::V1b\006proto3"
+      "en\"\026\n\024ValidateTokenRequest\"_\n\025ValidateTo" +
+      "kenResponse\022\027\n\007user_id\030\001 \001(\tR\006userId\022\022\n\004" +
+      "role\030\002 \001(\tR\004role\022\031\n\010is_valid\030\003 \001(\010R\007isVa" +
+      "lid\"\025\n\023RefreshTokenRequest\"^\n\024RefreshTok" +
+      "enResponse\022!\n\014access_token\030\001 \001(\tR\013access" +
+      "Token\022#\n\rrefresh_token\030\002 \001(\tR\014refreshTok" +
+      "en\"\025\n\023DeleteTokensRequest\"\026\n\024DeleteToken" +
+      "sResponse\"\024\n\022RevokeTokenRequest\"\025\n\023Revok" +
+      "eTokenResponse2\221\003\n\013AuthService\022N\n\rGenera" +
+      "teToken\022\035.auth.v1.GenerateTokenRequest\032\036" +
+      ".auth.v1.GenerateTokenResponse\022N\n\rValida" +
+      "teToken\022\035.auth.v1.ValidateTokenRequest\032\036" +
+      ".auth.v1.ValidateTokenResponse\022K\n\014Refres" +
+      "hToken\022\034.auth.v1.RefreshTokenRequest\032\035.a" +
+      "uth.v1.RefreshTokenResponse\022K\n\014DeleteTok" +
+      "ens\022\034.auth.v1.DeleteTokensRequest\032\035.auth" +
+      ".v1.DeleteTokensResponse\022H\n\013RevokeToken\022" +
+      "\033.auth.v1.RevokeTokenRequest\032\034.auth.v1.R" +
+      "evokeTokenResponseB\244\001\n\031com.samarthasthan" +
+      ".auth.v1B\tAuthProtoP\001Z?github.com/samart" +
+      "hasthan/services-commons/gen/go/auth/v1;" +
+      "authv1\242\002\003AXX\252\002\007Auth.V1\312\002\007Auth\\V1\342\002\023Auth\\" +
+      "V1\\GPBMetadata\352\002\010Auth::V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -142,7 +142,7 @@ public final class AuthProto {
     internal_static_auth_v1_ValidateTokenResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_auth_v1_ValidateTokenResponse_descriptor,
-        new java.lang.String[] { "UserId", "IsValid", });
+        new java.lang.String[] { "UserId", "Role", "IsValid", });
     internal_static_auth_v1_RefreshTokenRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_auth_v1_RefreshTokenRequest_fieldAccessorTable = new

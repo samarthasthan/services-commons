@@ -165,6 +165,7 @@ func (*ValidateTokenRequest) Descriptor() ([]byte, []int) {
 type ValidateTokenResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Role          string                 `protobuf:"bytes,2,opt,name=role,proto3" json:"role,omitempty"`
 	IsValid       bool                   `protobuf:"varint,3,opt,name=is_valid,json=isValid,proto3" json:"is_valid,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -203,6 +204,13 @@ func (*ValidateTokenResponse) Descriptor() ([]byte, []int) {
 func (x *ValidateTokenResponse) GetUserId() string {
 	if x != nil {
 		return x.UserId
+	}
+	return ""
+}
+
+func (x *ValidateTokenResponse) GetRole() string {
+	if x != nil {
+		return x.Role
 	}
 	return ""
 }
@@ -457,9 +465,10 @@ const file_auth_v1_auth_proto_rawDesc = "" +
 	"\x15GenerateTokenResponse\x12!\n" +
 	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\x12#\n" +
 	"\rrefresh_token\x18\x02 \x01(\tR\frefreshToken\"\x16\n" +
-	"\x14ValidateTokenRequest\"K\n" +
+	"\x14ValidateTokenRequest\"_\n" +
 	"\x15ValidateTokenResponse\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x19\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x12\n" +
+	"\x04role\x18\x02 \x01(\tR\x04role\x12\x19\n" +
 	"\bis_valid\x18\x03 \x01(\bR\aisValid\"\x15\n" +
 	"\x13RefreshTokenRequest\"^\n" +
 	"\x14RefreshTokenResponse\x12!\n" +

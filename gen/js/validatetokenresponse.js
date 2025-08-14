@@ -71,6 +71,7 @@ proto.auth.v1.ValidateTokenResponse.prototype.toObject = function(opt_includeIns
 proto.auth.v1.ValidateTokenResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+role: jspb.Message.getFieldWithDefault(msg, 2, ""),
 isValid: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
@@ -112,6 +113,10 @@ proto.auth.v1.ValidateTokenResponse.deserializeBinaryFromReader = function(msg, 
       var value = /** @type {string} */ (reader.readString());
       msg.setUserId(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRole(value);
+      break;
     case 3:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsValid(value);
@@ -152,6 +157,13 @@ proto.auth.v1.ValidateTokenResponse.serializeBinaryToWriter = function(message, 
       f
     );
   }
+  f = message.getRole();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
   f = message.getIsValid();
   if (f) {
     writer.writeBool(
@@ -177,6 +189,24 @@ proto.auth.v1.ValidateTokenResponse.prototype.getUserId = function() {
  */
 proto.auth.v1.ValidateTokenResponse.prototype.setUserId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string role = 2;
+ * @return {string}
+ */
+proto.auth.v1.ValidateTokenResponse.prototype.getRole = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.auth.v1.ValidateTokenResponse} returns this
+ */
+proto.auth.v1.ValidateTokenResponse.prototype.setRole = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
