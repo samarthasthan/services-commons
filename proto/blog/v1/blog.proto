@@ -1,0 +1,107 @@
+syntax = "proto3";
+
+package blog.v1;
+
+import "buf/validate/validate.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/samarthasthan/services-commons/gen/go/blog/v1;blogv1";
+
+enum BlogStatus {
+  BLOG_STATUS_UNSPECIFIED = 0;
+  BLOG_STATUS_DRAFT = 1;
+  BLOG_STATUS_PUBLISHED = 2;
+  BLOG_STATUS_ARCHIVED = 3;
+}
+
+message CreateBlogRequest {
+   string title = 2 [(buf.validate.field).string.min_len = 1];
+  string slug = 3 [(buf.validate.field).string.min_len = 1];
+  string thumbnail = 4;
+  string content = 5; // JSON from TipTap
+  repeated string tags = 6;
+  BlogStatus status = 7;
+}
+
+message CreateBlogResponse {
+  string blog_id = 1;
+  string author_id = 2;
+}
+
+message GetBlogRequest {
+  string blog_id = 1 [(buf.validate.field).string.uuid = true];
+}
+
+message GetBlogBySlugRequest {
+  string slug = 1 [(buf.validate.field).string.min_len = 1];
+}
+
+message Blog {
+  string blog_id = 1;
+  string author_id = 2;
+  string title = 3;
+  string slug = 4;
+  string thumbnail = 5;
+  string content = 6;
+  repeated string tags = 7;
+  BlogStatus status = 8;
+  google.protobuf.Timestamp created_at = 9;
+  google.protobuf.Timestamp updated_at = 10;
+  google.protobuf.Timestamp deleted_at = 11;
+}
+
+message GetBlogResponse {
+  Blog blog = 1;
+}
+
+message ListBlogsRequest {
+  BlogStatus status = 1; // optional filter
+  int32 page = 2;        // for pagination
+  int32 page_size = 3;   // for pagination
+}
+
+message ListBlogsResponse {
+  repeated Blog blogs = 1;
+  int32 total_count = 2;
+}
+
+message UpdateBlogRequest {
+  string blog_id = 1 [(buf.validate.field).string.uuid = true];
+  string title = 2;
+  string slug = 3;
+  string thumbnail = 4;
+  string content = 5;
+  repeated string tags = 6;
+  BlogStatus status = 7;
+}
+
+message UpdateBlogResponse {
+  string blog_id = 1;
+  string author_id = 2;
+}
+
+message DeleteBlogRequest {
+  string blog_id = 1 [(buf.validate.field).string.uuid = true];
+}
+
+message DeleteBlogResponse {
+  bool is_done = 1;
+}
+
+message UnDeleteBlogRequest {
+  string blog_id = 1 [(buf.validate.field).string.uuid = true];
+}
+
+message UnDeleteBlogResponse {
+  bool is_done = 1;
+}
+
+service BlogService {
+  rpc CreateBlog(CreateBlogRequest) returns (CreateBlogResponse);
+  rpc GetBlog(GetBlogRequest) returns (GetBlogResponse);
+  rpc GetBlogBySlug(GetBlogBySlugRequest) returns (GetBlogResponse);
+  rpc ListBlogs(ListBlogsRequest) returns (ListBlogsResponse);
+  rpc UpdateBlog(UpdateBlogRequest) returns (UpdateBlogResponse);
+  rpc DeleteBlog(DeleteBlogRequest) returns (DeleteBlogResponse);
+  rpc UnDeleteBlog(UnDeleteBlogRequest) returns (UnDeleteBlogResponse);
+}
