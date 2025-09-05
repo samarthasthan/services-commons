@@ -106,67 +106,66 @@ public final class BlogProto {
     java.lang.String[] descriptorData = {
       "\n\022blog/v1/blog.proto\022\007blog.v1\032\033buf/valid" +
       "ate/validate.proto\032\037google/protobuf/time" +
-      "stamp.proto\"\357\001\n\021CreateBlogRequest\022%\n\taut" +
-      "hor_id\030\001 \001(\tB\010\272H\005r\003\260\001\001R\010authorId\022\035\n\005titl" +
-      "e\030\002 \001(\tB\007\272H\004r\002\020\001R\005title\022\033\n\004slug\030\003 \001(\tB\007\272" +
-      "H\004r\002\020\001R\004slug\022\034\n\tthumbnail\030\004 \001(\tR\tthumbna" +
-      "il\022\030\n\007content\030\005 \001(\tR\007content\022\022\n\004tags\030\006 \003" +
-      "(\tR\004tags\022+\n\006status\030\007 \001(\0162\023.blog.v1.BlogS" +
-      "tatusR\006status\"J\n\022CreateBlogResponse\022\027\n\007b" +
-      "log_id\030\001 \001(\tR\006blogId\022\033\n\tauthor_id\030\002 \001(\tR" +
-      "\010authorId\"3\n\016GetBlogRequest\022!\n\007blog_id\030\001" +
-      " \001(\tB\010\272H\005r\003\260\001\001R\006blogId\"3\n\024GetBlogBySlugR" +
-      "equest\022\033\n\004slug\030\001 \001(\tB\007\272H\004r\002\020\001R\004slug\"\220\003\n\004" +
-      "Blog\022\027\n\007blog_id\030\001 \001(\tR\006blogId\022\033\n\tauthor_" +
-      "id\030\002 \001(\tR\010authorId\022\024\n\005title\030\003 \001(\tR\005title" +
-      "\022\022\n\004slug\030\004 \001(\tR\004slug\022\034\n\tthumbnail\030\005 \001(\tR" +
-      "\tthumbnail\022\030\n\007content\030\006 \001(\tR\007content\022\022\n\004" +
-      "tags\030\007 \003(\tR\004tags\022+\n\006status\030\010 \001(\0162\023.blog." +
-      "v1.BlogStatusR\006status\0229\n\ncreated_at\030\t \001(" +
-      "\0132\032.google.protobuf.TimestampR\tcreatedAt" +
-      "\0229\n\nupdated_at\030\n \001(\0132\032.google.protobuf.T" +
-      "imestampR\tupdatedAt\0229\n\ndeleted_at\030\013 \001(\0132" +
-      "\032.google.protobuf.TimestampR\tdeletedAt\"4" +
-      "\n\017GetBlogResponse\022!\n\004blog\030\001 \001(\0132\r.blog.v" +
-      "1.BlogR\004blog\"p\n\020ListBlogsRequest\022+\n\006stat" +
-      "us\030\001 \001(\0162\023.blog.v1.BlogStatusR\006status\022\022\n" +
-      "\004page\030\002 \001(\005R\004page\022\033\n\tpage_size\030\003 \001(\005R\010pa" +
-      "geSize\"Y\n\021ListBlogsResponse\022#\n\005blogs\030\001 \003" +
-      "(\0132\r.blog.v1.BlogR\005blogs\022\037\n\013total_count\030" +
-      "\002 \001(\005R\ntotalCount\"\331\001\n\021UpdateBlogRequest\022" +
-      "!\n\007blog_id\030\001 \001(\tB\010\272H\005r\003\260\001\001R\006blogId\022\024\n\005ti" +
-      "tle\030\002 \001(\tR\005title\022\022\n\004slug\030\003 \001(\tR\004slug\022\034\n\t" +
-      "thumbnail\030\004 \001(\tR\tthumbnail\022\030\n\007content\030\005 " +
-      "\001(\tR\007content\022\022\n\004tags\030\006 \003(\tR\004tags\022+\n\006stat" +
-      "us\030\007 \001(\0162\023.blog.v1.BlogStatusR\006status\"J\n" +
-      "\022UpdateBlogResponse\022\027\n\007blog_id\030\001 \001(\tR\006bl" +
-      "ogId\022\033\n\tauthor_id\030\002 \001(\tR\010authorId\"6\n\021Del" +
-      "eteBlogRequest\022!\n\007blog_id\030\001 \001(\tB\010\272H\005r\003\260\001" +
-      "\001R\006blogId\"-\n\022DeleteBlogResponse\022\027\n\007is_do" +
-      "ne\030\001 \001(\010R\006isDone\"8\n\023UnDeleteBlogRequest\022" +
-      "!\n\007blog_id\030\001 \001(\tB\010\272H\005r\003\260\001\001R\006blogId\"/\n\024Un" +
-      "DeleteBlogResponse\022\027\n\007is_done\030\001 \001(\010R\006isD" +
-      "one*u\n\nBlogStatus\022\033\n\027BLOG_STATUS_UNSPECI" +
-      "FIED\020\000\022\025\n\021BLOG_STATUS_DRAFT\020\001\022\031\n\025BLOG_ST" +
-      "ATUS_PUBLISHED\020\002\022\030\n\024BLOG_STATUS_ARCHIVED" +
-      "\020\0032\373\003\n\013BlogService\022E\n\nCreateBlog\022\032.blog." +
-      "v1.CreateBlogRequest\032\033.blog.v1.CreateBlo" +
-      "gResponse\022<\n\007GetBlog\022\027.blog.v1.GetBlogRe" +
-      "quest\032\030.blog.v1.GetBlogResponse\022H\n\rGetBl" +
-      "ogBySlug\022\035.blog.v1.GetBlogBySlugRequest\032" +
-      "\030.blog.v1.GetBlogResponse\022B\n\tListBlogs\022\031" +
-      ".blog.v1.ListBlogsRequest\032\032.blog.v1.List" +
-      "BlogsResponse\022E\n\nUpdateBlog\022\032.blog.v1.Up" +
-      "dateBlogRequest\032\033.blog.v1.UpdateBlogResp" +
-      "onse\022E\n\nDeleteBlog\022\032.blog.v1.DeleteBlogR" +
-      "equest\032\033.blog.v1.DeleteBlogResponse\022K\n\014U" +
-      "nDeleteBlog\022\034.blog.v1.UnDeleteBlogReques" +
-      "t\032\035.blog.v1.UnDeleteBlogResponseB\244\001\n\031com" +
-      ".samarthasthan.blog.v1B\tBlogProtoP\001Z?git" +
-      "hub.com/samarthasthan/services-commons/g" +
-      "en/go/blog/v1;blogv1\242\002\003BXX\252\002\007Blog.V1\312\002\007B" +
-      "log\\V1\342\002\023Blog\\V1\\GPBMetadata\352\002\010Blog::V1b" +
-      "\006proto3"
+      "stamp.proto\"\310\001\n\021CreateBlogRequest\022\035\n\005tit" +
+      "le\030\002 \001(\tB\007\272H\004r\002\020\001R\005title\022\033\n\004slug\030\003 \001(\tB\007" +
+      "\272H\004r\002\020\001R\004slug\022\034\n\tthumbnail\030\004 \001(\tR\tthumbn" +
+      "ail\022\030\n\007content\030\005 \001(\tR\007content\022\022\n\004tags\030\006 " +
+      "\003(\tR\004tags\022+\n\006status\030\007 \001(\0162\023.blog.v1.Blog" +
+      "StatusR\006status\"J\n\022CreateBlogResponse\022\027\n\007" +
+      "blog_id\030\001 \001(\tR\006blogId\022\033\n\tauthor_id\030\002 \001(\t" +
+      "R\010authorId\"3\n\016GetBlogRequest\022!\n\007blog_id\030" +
+      "\001 \001(\tB\010\272H\005r\003\260\001\001R\006blogId\"3\n\024GetBlogBySlug" +
+      "Request\022\033\n\004slug\030\001 \001(\tB\007\272H\004r\002\020\001R\004slug\"\220\003\n" +
+      "\004Blog\022\027\n\007blog_id\030\001 \001(\tR\006blogId\022\033\n\tauthor" +
+      "_id\030\002 \001(\tR\010authorId\022\024\n\005title\030\003 \001(\tR\005titl" +
+      "e\022\022\n\004slug\030\004 \001(\tR\004slug\022\034\n\tthumbnail\030\005 \001(\t" +
+      "R\tthumbnail\022\030\n\007content\030\006 \001(\tR\007content\022\022\n" +
+      "\004tags\030\007 \003(\tR\004tags\022+\n\006status\030\010 \001(\0162\023.blog" +
+      ".v1.BlogStatusR\006status\0229\n\ncreated_at\030\t \001" +
+      "(\0132\032.google.protobuf.TimestampR\tcreatedA" +
+      "t\0229\n\nupdated_at\030\n \001(\0132\032.google.protobuf." +
+      "TimestampR\tupdatedAt\0229\n\ndeleted_at\030\013 \001(\013" +
+      "2\032.google.protobuf.TimestampR\tdeletedAt\"" +
+      "4\n\017GetBlogResponse\022!\n\004blog\030\001 \001(\0132\r.blog." +
+      "v1.BlogR\004blog\"p\n\020ListBlogsRequest\022+\n\006sta" +
+      "tus\030\001 \001(\0162\023.blog.v1.BlogStatusR\006status\022\022" +
+      "\n\004page\030\002 \001(\005R\004page\022\033\n\tpage_size\030\003 \001(\005R\010p" +
+      "ageSize\"Y\n\021ListBlogsResponse\022#\n\005blogs\030\001 " +
+      "\003(\0132\r.blog.v1.BlogR\005blogs\022\037\n\013total_count" +
+      "\030\002 \001(\005R\ntotalCount\"\331\001\n\021UpdateBlogRequest" +
+      "\022!\n\007blog_id\030\001 \001(\tB\010\272H\005r\003\260\001\001R\006blogId\022\024\n\005t" +
+      "itle\030\002 \001(\tR\005title\022\022\n\004slug\030\003 \001(\tR\004slug\022\034\n" +
+      "\tthumbnail\030\004 \001(\tR\tthumbnail\022\030\n\007content\030\005" +
+      " \001(\tR\007content\022\022\n\004tags\030\006 \003(\tR\004tags\022+\n\006sta" +
+      "tus\030\007 \001(\0162\023.blog.v1.BlogStatusR\006status\"J" +
+      "\n\022UpdateBlogResponse\022\027\n\007blog_id\030\001 \001(\tR\006b" +
+      "logId\022\033\n\tauthor_id\030\002 \001(\tR\010authorId\"6\n\021De" +
+      "leteBlogRequest\022!\n\007blog_id\030\001 \001(\tB\010\272H\005r\003\260" +
+      "\001\001R\006blogId\"-\n\022DeleteBlogResponse\022\027\n\007is_d" +
+      "one\030\001 \001(\010R\006isDone\"8\n\023UnDeleteBlogRequest" +
+      "\022!\n\007blog_id\030\001 \001(\tB\010\272H\005r\003\260\001\001R\006blogId\"/\n\024U" +
+      "nDeleteBlogResponse\022\027\n\007is_done\030\001 \001(\010R\006is" +
+      "Done*u\n\nBlogStatus\022\033\n\027BLOG_STATUS_UNSPEC" +
+      "IFIED\020\000\022\025\n\021BLOG_STATUS_DRAFT\020\001\022\031\n\025BLOG_S" +
+      "TATUS_PUBLISHED\020\002\022\030\n\024BLOG_STATUS_ARCHIVE" +
+      "D\020\0032\373\003\n\013BlogService\022E\n\nCreateBlog\022\032.blog" +
+      ".v1.CreateBlogRequest\032\033.blog.v1.CreateBl" +
+      "ogResponse\022<\n\007GetBlog\022\027.blog.v1.GetBlogR" +
+      "equest\032\030.blog.v1.GetBlogResponse\022H\n\rGetB" +
+      "logBySlug\022\035.blog.v1.GetBlogBySlugRequest" +
+      "\032\030.blog.v1.GetBlogResponse\022B\n\tListBlogs\022" +
+      "\031.blog.v1.ListBlogsRequest\032\032.blog.v1.Lis" +
+      "tBlogsResponse\022E\n\nUpdateBlog\022\032.blog.v1.U" +
+      "pdateBlogRequest\032\033.blog.v1.UpdateBlogRes" +
+      "ponse\022E\n\nDeleteBlog\022\032.blog.v1.DeleteBlog" +
+      "Request\032\033.blog.v1.DeleteBlogResponse\022K\n\014" +
+      "UnDeleteBlog\022\034.blog.v1.UnDeleteBlogReque" +
+      "st\032\035.blog.v1.UnDeleteBlogResponseB\244\001\n\031co" +
+      "m.samarthasthan.blog.v1B\tBlogProtoP\001Z?gi" +
+      "thub.com/samarthasthan/services-commons/" +
+      "gen/go/blog/v1;blogv1\242\002\003BXX\252\002\007Blog.V1\312\002\007" +
+      "Blog\\V1\342\002\023Blog\\V1\\GPBMetadata\352\002\010Blog::V1" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -179,7 +178,7 @@ public final class BlogProto {
     internal_static_blog_v1_CreateBlogRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_blog_v1_CreateBlogRequest_descriptor,
-        new java.lang.String[] { "AuthorId", "Title", "Slug", "Thumbnail", "Content", "Tags", "Status", });
+        new java.lang.String[] { "Title", "Slug", "Thumbnail", "Content", "Tags", "Status", });
     internal_static_blog_v1_CreateBlogResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_blog_v1_CreateBlogResponse_fieldAccessorTable = new

@@ -27,7 +27,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateBlogRequest() {
-    authorId_ = "";
     title_ = "";
     slug_ = "";
     thumbnail_ = "";
@@ -48,45 +47,6 @@ private static final long serialVersionUID = 0L;
     return com.samarthasthan.blog.v1.BlogProto.internal_static_blog_v1_CreateBlogRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.samarthasthan.blog.v1.CreateBlogRequest.class, com.samarthasthan.blog.v1.CreateBlogRequest.Builder.class);
-  }
-
-  public static final int AUTHOR_ID_FIELD_NUMBER = 1;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object authorId_ = "";
-  /**
-   * <code>string author_id = 1 [json_name = "authorId", (.buf.validate.field) = { ... }</code>
-   * @return The authorId.
-   */
-  @java.lang.Override
-  public java.lang.String getAuthorId() {
-    java.lang.Object ref = authorId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      authorId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string author_id = 1 [json_name = "authorId", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for authorId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getAuthorIdBytes() {
-    java.lang.Object ref = authorId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      authorId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
   }
 
   public static final int TITLE_FIELD_NUMBER = 2;
@@ -322,9 +282,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(authorId_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 1, authorId_);
-    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(title_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 2, title_);
     }
@@ -352,9 +309,6 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(authorId_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, authorId_);
-    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(title_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, title_);
     }
@@ -394,8 +348,6 @@ private static final long serialVersionUID = 0L;
     }
     com.samarthasthan.blog.v1.CreateBlogRequest other = (com.samarthasthan.blog.v1.CreateBlogRequest) obj;
 
-    if (!getAuthorId()
-        .equals(other.getAuthorId())) return false;
     if (!getTitle()
         .equals(other.getTitle())) return false;
     if (!getSlug()
@@ -418,8 +370,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + AUTHOR_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getAuthorId().hashCode();
     hash = (37 * hash) + TITLE_FIELD_NUMBER;
     hash = (53 * hash) + getTitle().hashCode();
     hash = (37 * hash) + SLUG_FIELD_NUMBER;
@@ -565,7 +515,6 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      authorId_ = "";
       title_ = "";
       slug_ = "";
       thumbnail_ = "";
@@ -607,25 +556,22 @@ private static final long serialVersionUID = 0L;
     private void buildPartial0(com.samarthasthan.blog.v1.CreateBlogRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.authorId_ = authorId_;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.title_ = title_;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.slug_ = slug_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.thumbnail_ = thumbnail_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.content_ = content_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         tags_.makeImmutable();
         result.tags_ = tags_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.status_ = status_;
       }
     }
@@ -642,35 +588,30 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.samarthasthan.blog.v1.CreateBlogRequest other) {
       if (other == com.samarthasthan.blog.v1.CreateBlogRequest.getDefaultInstance()) return this;
-      if (!other.getAuthorId().isEmpty()) {
-        authorId_ = other.authorId_;
-        bitField0_ |= 0x00000001;
-        onChanged();
-      }
       if (!other.getTitle().isEmpty()) {
         title_ = other.title_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSlug().isEmpty()) {
         slug_ = other.slug_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getThumbnail().isEmpty()) {
         thumbnail_ = other.thumbnail_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getContent().isEmpty()) {
         content_ = other.content_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000010;
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -706,29 +647,24 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              authorId_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              break;
-            } // case 10
             case 18: {
               title_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000001;
               break;
             } // case 18
             case 26: {
               slug_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000002;
               break;
             } // case 26
             case 34: {
               thumbnail_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000004;
               break;
             } // case 34
             case 42: {
               content_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000008;
               break;
             } // case 42
             case 50: {
@@ -739,7 +675,7 @@ private static final long serialVersionUID = 0L;
             } // case 50
             case 56: {
               status_ = input.readEnum();
-              bitField0_ |= 0x00000040;
+              bitField0_ |= 0x00000020;
               break;
             } // case 56
             default: {
@@ -758,78 +694,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     private int bitField0_;
-
-    private java.lang.Object authorId_ = "";
-    /**
-     * <code>string author_id = 1 [json_name = "authorId", (.buf.validate.field) = { ... }</code>
-     * @return The authorId.
-     */
-    public java.lang.String getAuthorId() {
-      java.lang.Object ref = authorId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        authorId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string author_id = 1 [json_name = "authorId", (.buf.validate.field) = { ... }</code>
-     * @return The bytes for authorId.
-     */
-    public com.google.protobuf.ByteString
-        getAuthorIdBytes() {
-      java.lang.Object ref = authorId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        authorId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string author_id = 1 [json_name = "authorId", (.buf.validate.field) = { ... }</code>
-     * @param value The authorId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAuthorId(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      authorId_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string author_id = 1 [json_name = "authorId", (.buf.validate.field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearAuthorId() {
-      authorId_ = getDefaultInstance().getAuthorId();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string author_id = 1 [json_name = "authorId", (.buf.validate.field) = { ... }</code>
-     * @param value The bytes for authorId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAuthorIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      authorId_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
 
     private java.lang.Object title_ = "";
     /**
@@ -874,7 +738,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       title_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -884,7 +748,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTitle() {
       title_ = getDefaultInstance().getTitle();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -898,7 +762,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       title_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -946,7 +810,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       slug_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -956,7 +820,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearSlug() {
       slug_ = getDefaultInstance().getSlug();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -970,7 +834,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       slug_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1018,7 +882,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       thumbnail_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1028,7 +892,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearThumbnail() {
       thumbnail_ = getDefaultInstance().getThumbnail();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1042,7 +906,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       thumbnail_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1102,7 +966,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       content_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1116,7 +980,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearContent() {
       content_ = getDefaultInstance().getContent();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1134,7 +998,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       content_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1145,7 +1009,7 @@ private static final long serialVersionUID = 0L;
       if (!tags_.isModifiable()) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
     }
     /**
      * <code>repeated string tags = 6 [json_name = "tags"];</code>
@@ -1191,7 +1055,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureTagsIsMutable();
       tags_.set(index, value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1205,7 +1069,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureTagsIsMutable();
       tags_.add(value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1219,7 +1083,7 @@ private static final long serialVersionUID = 0L;
       ensureTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, tags_);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1230,7 +1094,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearTags() {
       tags_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000020);;
+      bitField0_ = (bitField0_ & ~0x00000010);;
       onChanged();
       return this;
     }
@@ -1245,7 +1109,7 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       ensureTagsIsMutable();
       tags_.add(value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1265,7 +1129,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setStatusValue(int value) {
       status_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1287,7 +1151,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       status_ = value.getNumber();
       onChanged();
       return this;
@@ -1297,7 +1161,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000020);
       status_ = 0;
       onChanged();
       return this;

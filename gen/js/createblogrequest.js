@@ -78,7 +78,6 @@ proto.blog.v1.CreateBlogRequest.prototype.toObject = function(opt_includeInstanc
  */
 proto.blog.v1.CreateBlogRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-authorId: jspb.Message.getFieldWithDefault(msg, 1, ""),
 title: jspb.Message.getFieldWithDefault(msg, 2, ""),
 slug: jspb.Message.getFieldWithDefault(msg, 3, ""),
 thumbnail: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -121,10 +120,6 @@ proto.blog.v1.CreateBlogRequest.deserializeBinaryFromReader = function(msg, read
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setAuthorId(value);
-      break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setTitle(value);
@@ -178,13 +173,6 @@ proto.blog.v1.CreateBlogRequest.prototype.serializeBinary = function() {
  */
 proto.blog.v1.CreateBlogRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getAuthorId();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
   f = message.getTitle();
   if (f.length > 0) {
     writer.writeString(
@@ -227,24 +215,6 @@ proto.blog.v1.CreateBlogRequest.serializeBinaryToWriter = function(message, writ
       f
     );
   }
-};
-
-
-/**
- * optional string author_id = 1;
- * @return {string}
- */
-proto.blog.v1.CreateBlogRequest.prototype.getAuthorId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.blog.v1.CreateBlogRequest} returns this
- */
-proto.blog.v1.CreateBlogRequest.prototype.setAuthorId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 

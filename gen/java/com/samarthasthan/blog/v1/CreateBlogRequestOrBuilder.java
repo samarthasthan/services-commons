@@ -10,18 +10,6 @@ public interface CreateBlogRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string author_id = 1 [json_name = "authorId", (.buf.validate.field) = { ... }</code>
-   * @return The authorId.
-   */
-  java.lang.String getAuthorId();
-  /**
-   * <code>string author_id = 1 [json_name = "authorId", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for authorId.
-   */
-  com.google.protobuf.ByteString
-      getAuthorIdBytes();
-
-  /**
    * <code>string title = 2 [json_name = "title", (.buf.validate.field) = { ... }</code>
    * @return The title.
    */
