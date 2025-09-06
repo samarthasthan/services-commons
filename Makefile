@@ -40,3 +40,16 @@ db-up:
 
 db-down:
 	docker compose --env-file .env -f build/docker-compose.yml down
+
+
+# Make migrations
+migrate-up:
+	@echo "Making migrations..."
+	@migrate -path ./migrations -database "postgres://postgres:postgres@localhost:5432/postgres?sslmode=disable" -verbose up	
+	@echo "Migrations completed."
+
+# Delete migrations
+migrate-down:
+	@echo "Deleting migrations..."
+	@migrate -path ./migrations -database "postgres://postgres:postgres@localhost:5432/postgres?sslmode=disable" -verbose down
+

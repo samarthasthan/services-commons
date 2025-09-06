@@ -33,6 +33,7 @@ const (
 	UserService_ResetPassword_FullMethodName         = "/user.v1.UserService/ResetPassword"
 	UserService_CheckIfUserExists_FullMethodName     = "/user.v1.UserService/CheckIfUserExists"
 	UserService_CheckIfUserExistsByID_FullMethodName = "/user.v1.UserService/CheckIfUserExistsByID"
+	UserService_ContactUs_FullMethodName             = "/user.v1.UserService/ContactUs"
 )
 
 // UserServiceClient is the client API for UserService service.
@@ -53,6 +54,7 @@ type UserServiceClient interface {
 	ResetPassword(ctx context.Context, in *ResetPasswordRequest, opts ...grpc.CallOption) (*ResetPasswordResponse, error)
 	CheckIfUserExists(ctx context.Context, in *CheckIfUserExistsRequest, opts ...grpc.CallOption) (*CheckIfUserExistsResponse, error)
 	CheckIfUserExistsByID(ctx context.Context, in *CheckIfUserExistsByIDRequest, opts ...grpc.CallOption) (*CheckIfUserExistsByIDResponse, error)
+	ContactUs(ctx context.Context, in *ContactUsRequest, opts ...grpc.CallOption) (*ContactUsResponse, error)
 }
 
 type userServiceClient struct {
@@ -203,6 +205,16 @@ func (c *userServiceClient) CheckIfUserExistsByID(ctx context.Context, in *Check
 	return out, nil
 }
 
+func (c *userServiceClient) ContactUs(ctx context.Context, in *ContactUsRequest, opts ...grpc.CallOption) (*ContactUsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ContactUsResponse)
+	err := c.cc.Invoke(ctx, UserService_ContactUs_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // UserServiceServer is the server API for UserService service.
 // All implementations must embed UnimplementedUserServiceServer
 // for forward compatibility.
@@ -221,6 +233,7 @@ type UserServiceServer interface {
 	ResetPassword(context.Context, *ResetPasswordRequest) (*ResetPasswordResponse, error)
 	CheckIfUserExists(context.Context, *CheckIfUserExistsRequest) (*CheckIfUserExistsResponse, error)
 	CheckIfUserExistsByID(context.Context, *CheckIfUserExistsByIDRequest) (*CheckIfUserExistsByIDResponse, error)
+	ContactUs(context.Context, *ContactUsRequest) (*ContactUsResponse, error)
 	mustEmbedUnimplementedUserServiceServer()
 }
 
@@ -272,6 +285,9 @@ func (UnimplementedUserServiceServer) CheckIfUserExists(context.Context, *CheckI
 }
 func (UnimplementedUserServiceServer) CheckIfUserExistsByID(context.Context, *CheckIfUserExistsByIDRequest) (*CheckIfUserExistsByIDResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CheckIfUserExistsByID not implemented")
+}
+func (UnimplementedUserServiceServer) ContactUs(context.Context, *ContactUsRequest) (*ContactUsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ContactUs not implemented")
 }
 func (UnimplementedUserServiceServer) mustEmbedUnimplementedUserServiceServer() {}
 func (UnimplementedUserServiceServer) testEmbeddedByValue()                     {}
@@ -546,6 +562,24 @@ func _UserService_CheckIfUserExistsByID_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _UserService_ContactUs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ContactUsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).ContactUs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: UserService_ContactUs_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).ContactUs(ctx, req.(*ContactUsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // UserService_ServiceDesc is the grpc.ServiceDesc for UserService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -608,6 +642,10 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CheckIfUserExistsByID",
 			Handler:    _UserService_CheckIfUserExistsByID_Handler,
+		},
+		{
+			MethodName: "ContactUs",
+			Handler:    _UserService_ContactUs_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -155,6 +155,16 @@ public final class UserProto {
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_user_v1_CheckIfUserExistsByIDResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_user_v1_ContactUsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_user_v1_ContactUsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_user_v1_ContactUsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_user_v1_ContactUsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -211,41 +221,52 @@ public final class UserProto {
       "r_id\030\001 \001(\tR\006userId\"k\n\035CheckIfUserExistsB" +
       "yIDResponse\022\027\n\007user_id\030\001 \001(\tR\006userId\022\033\n\t" +
       "full_name\030\002 \001(\tR\010fullName\022\024\n\005email\030\003 \001(\t" +
-      "R\005email2\256\t\n\013UserService\022E\n\nCreateUser\022\032." +
+      "R\005email\"\233\002\n\020ContactUsRequest\022&\n\tfull_nam" +
+      "e\030\001 \001(\tB\t\272H\006r\004\020\001\030dR\010fullName\022&\n\nwork_ema" +
+      "il\030\002 \001(\tB\007\272H\004r\002`\001R\tworkEmail\0220\n\016country_" +
+      "region\030\003 \001(\tB\t\272H\006r\004\020\001\030dR\rcountryRegion\0221" +
+      "\n\017company_website\030\004 \001(\tB\010\272H\005r\003\210\001\001R\016compa" +
+      "nyWebsite\022,\n\014job_function\030\005 \001(\tB\t\272H\006r\004\020\001" +
+      "\030dR\013jobFunction\022$\n\007message\030\006 \001(\tB\n\272H\007r\005\020" +
+      "\001\030\320\017R\007message\"L\n\021ContactUsResponse\022\030\n\007su" +
+      "ccess\030\001 \001(\010R\007success\022\035\n\ncontact_id\030\002 \001(\t" +
+      "R\tcontactId2\362\t\n\013UserService\022E\n\nCreateUse" +
+      "r\022\032.user.v1.CreateUserRequest\032\033.user.v1." +
+      "CreateUserResponse\022J\n\017CreateAdminUser\022\032." +
       "user.v1.CreateUserRequest\032\033.user.v1.Crea" +
-      "teUserResponse\022J\n\017CreateAdminUser\022\032.user" +
-      ".v1.CreateUserRequest\032\033.user.v1.CreateUs" +
-      "erResponse\022Q\n\016RemoveUserById\022\036.user.v1.R" +
-      "emoveUserByIdRequest\032\037.user.v1.RemoveUse" +
-      "rByIdResponse\022f\n\025SendVerificationEmail\022%" +
-      ".user.v1.SendVerificationEmailRequest\032&." +
-      "user.v1.SendVerificationEmailResponse\0229\n" +
-      "\006SignIn\022\026.user.v1.SignInRequest\032\027.user.v" +
-      "1.SignInResponse\022Q\n\016DeleteUserById\022\036.use" +
-      "r.v1.DeleteUserByIdRequest\032\037.user.v1.Del" +
-      "eteUserByIdResponse\022W\n\020UnDeleteUserById\022" +
-      " .user.v1.UnDeleteUserByIdRequest\032!.user" +
-      ".v1.UnDeleteUserByIdResponse\022E\n\nVerifyUs" +
-      "er\022\032.user.v1.VerifyUserRequest\032\033.user.v1" +
-      ".VerifyUserResponse\022W\n\020ResendVerifyUser\022" +
-      " .user.v1.ResendVerifyUserRequest\032!.user" +
-      ".v1.ResendVerifyUserResponse\022Q\n\016ForgotPa" +
-      "ssword\022\036.user.v1.ForgotPasswordRequest\032\037" +
-      ".user.v1.ForgotPasswordResponse\022c\n\024Verif" +
-      "yForgotPassword\022$.user.v1.VerifyForgotPa" +
-      "sswordRequest\032%.user.v1.VerifyForgotPass" +
-      "wordResponse\022N\n\rResetPassword\022\035.user.v1." +
-      "ResetPasswordRequest\032\036.user.v1.ResetPass" +
-      "wordResponse\022Z\n\021CheckIfUserExists\022!.user" +
-      ".v1.CheckIfUserExistsRequest\032\".user.v1.C" +
-      "heckIfUserExistsResponse\022f\n\025CheckIfUserE" +
-      "xistsByID\022%.user.v1.CheckIfUserExistsByI" +
-      "DRequest\032&.user.v1.CheckIfUserExistsByID" +
-      "ResponseB\244\001\n\031com.samarthasthan.user.v1B\t" +
-      "UserProtoP\001Z?github.com/samarthasthan/se" +
-      "rvices-commons/gen/go/user/v1;userv1\242\002\003U" +
-      "XX\252\002\007User.V1\312\002\007User\\V1\342\002\023User\\V1\\GPBMeta" +
-      "data\352\002\010User::V1b\006proto3"
+      "teUserResponse\022Q\n\016RemoveUserById\022\036.user." +
+      "v1.RemoveUserByIdRequest\032\037.user.v1.Remov" +
+      "eUserByIdResponse\022f\n\025SendVerificationEma" +
+      "il\022%.user.v1.SendVerificationEmailReques" +
+      "t\032&.user.v1.SendVerificationEmailRespons" +
+      "e\0229\n\006SignIn\022\026.user.v1.SignInRequest\032\027.us" +
+      "er.v1.SignInResponse\022Q\n\016DeleteUserById\022\036" +
+      ".user.v1.DeleteUserByIdRequest\032\037.user.v1" +
+      ".DeleteUserByIdResponse\022W\n\020UnDeleteUserB" +
+      "yId\022 .user.v1.UnDeleteUserByIdRequest\032!." +
+      "user.v1.UnDeleteUserByIdResponse\022E\n\nVeri" +
+      "fyUser\022\032.user.v1.VerifyUserRequest\032\033.use" +
+      "r.v1.VerifyUserResponse\022W\n\020ResendVerifyU" +
+      "ser\022 .user.v1.ResendVerifyUserRequest\032!." +
+      "user.v1.ResendVerifyUserResponse\022Q\n\016Forg" +
+      "otPassword\022\036.user.v1.ForgotPasswordReque" +
+      "st\032\037.user.v1.ForgotPasswordResponse\022c\n\024V" +
+      "erifyForgotPassword\022$.user.v1.VerifyForg" +
+      "otPasswordRequest\032%.user.v1.VerifyForgot" +
+      "PasswordResponse\022N\n\rResetPassword\022\035.user" +
+      ".v1.ResetPasswordRequest\032\036.user.v1.Reset" +
+      "PasswordResponse\022Z\n\021CheckIfUserExists\022!." +
+      "user.v1.CheckIfUserExistsRequest\032\".user." +
+      "v1.CheckIfUserExistsResponse\022f\n\025CheckIfU" +
+      "serExistsByID\022%.user.v1.CheckIfUserExist" +
+      "sByIDRequest\032&.user.v1.CheckIfUserExists" +
+      "ByIDResponse\022B\n\tContactUs\022\031.user.v1.Cont" +
+      "actUsRequest\032\032.user.v1.ContactUsResponse" +
+      "B\244\001\n\031com.samarthasthan.user.v1B\tUserProt" +
+      "oP\001Z?github.com/samarthasthan/services-c" +
+      "ommons/gen/go/user/v1;userv1\242\002\003UXX\252\002\007Use" +
+      "r.V1\312\002\007User\\V1\342\002\023User\\V1\\GPBMetadata\352\002\010U" +
+      "ser::V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -408,6 +429,18 @@ public final class UserProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_user_v1_CheckIfUserExistsByIDResponse_descriptor,
         new java.lang.String[] { "UserId", "FullName", "Email", });
+    internal_static_user_v1_ContactUsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(26);
+    internal_static_user_v1_ContactUsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_user_v1_ContactUsRequest_descriptor,
+        new java.lang.String[] { "FullName", "WorkEmail", "CountryRegion", "CompanyWebsite", "JobFunction", "Message", });
+    internal_static_user_v1_ContactUsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(27);
+    internal_static_user_v1_ContactUsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_user_v1_ContactUsResponse_descriptor,
+        new java.lang.String[] { "Success", "ContactId", });
     descriptor.resolveAllFeaturesImmutable();
     build.buf.validate.ValidateProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =

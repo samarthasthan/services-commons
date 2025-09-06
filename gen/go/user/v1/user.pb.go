@@ -1262,6 +1262,142 @@ func (x *CheckIfUserExistsByIDResponse) GetEmail() string {
 	return ""
 }
 
+type ContactUsRequest struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	FullName       string                 `protobuf:"bytes,1,opt,name=full_name,json=fullName,proto3" json:"full_name,omitempty"`
+	WorkEmail      string                 `protobuf:"bytes,2,opt,name=work_email,json=workEmail,proto3" json:"work_email,omitempty"`
+	CountryRegion  string                 `protobuf:"bytes,3,opt,name=country_region,json=countryRegion,proto3" json:"country_region,omitempty"`
+	CompanyWebsite string                 `protobuf:"bytes,4,opt,name=company_website,json=companyWebsite,proto3" json:"company_website,omitempty"`
+	JobFunction    string                 `protobuf:"bytes,5,opt,name=job_function,json=jobFunction,proto3" json:"job_function,omitempty"`
+	Message        string                 `protobuf:"bytes,6,opt,name=message,proto3" json:"message,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *ContactUsRequest) Reset() {
+	*x = ContactUsRequest{}
+	mi := &file_user_v1_user_proto_msgTypes[26]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ContactUsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ContactUsRequest) ProtoMessage() {}
+
+func (x *ContactUsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_user_v1_user_proto_msgTypes[26]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ContactUsRequest.ProtoReflect.Descriptor instead.
+func (*ContactUsRequest) Descriptor() ([]byte, []int) {
+	return file_user_v1_user_proto_rawDescGZIP(), []int{26}
+}
+
+func (x *ContactUsRequest) GetFullName() string {
+	if x != nil {
+		return x.FullName
+	}
+	return ""
+}
+
+func (x *ContactUsRequest) GetWorkEmail() string {
+	if x != nil {
+		return x.WorkEmail
+	}
+	return ""
+}
+
+func (x *ContactUsRequest) GetCountryRegion() string {
+	if x != nil {
+		return x.CountryRegion
+	}
+	return ""
+}
+
+func (x *ContactUsRequest) GetCompanyWebsite() string {
+	if x != nil {
+		return x.CompanyWebsite
+	}
+	return ""
+}
+
+func (x *ContactUsRequest) GetJobFunction() string {
+	if x != nil {
+		return x.JobFunction
+	}
+	return ""
+}
+
+func (x *ContactUsRequest) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
+type ContactUsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Success       bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
+	ContactId     string                 `protobuf:"bytes,2,opt,name=contact_id,json=contactId,proto3" json:"contact_id,omitempty"` // optional: identifier for tracking
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ContactUsResponse) Reset() {
+	*x = ContactUsResponse{}
+	mi := &file_user_v1_user_proto_msgTypes[27]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ContactUsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ContactUsResponse) ProtoMessage() {}
+
+func (x *ContactUsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_user_v1_user_proto_msgTypes[27]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ContactUsResponse.ProtoReflect.Descriptor instead.
+func (*ContactUsResponse) Descriptor() ([]byte, []int) {
+	return file_user_v1_user_proto_rawDescGZIP(), []int{27}
+}
+
+func (x *ContactUsResponse) GetSuccess() bool {
+	if x != nil {
+		return x.Success
+	}
+	return false
+}
+
+func (x *ContactUsResponse) GetContactId() string {
+	if x != nil {
+		return x.ContactId
+	}
+	return ""
+}
+
 var File_user_v1_user_proto protoreflect.FileDescriptor
 
 const file_user_v1_user_proto_rawDesc = "" +
@@ -1330,7 +1466,20 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\x1dCheckIfUserExistsByIDResponse\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x1b\n" +
 	"\tfull_name\x18\x02 \x01(\tR\bfullName\x12\x14\n" +
-	"\x05email\x18\x03 \x01(\tR\x05email2\xae\t\n" +
+	"\x05email\x18\x03 \x01(\tR\x05email\"\x9b\x02\n" +
+	"\x10ContactUsRequest\x12&\n" +
+	"\tfull_name\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\bfullName\x12&\n" +
+	"\n" +
+	"work_email\x18\x02 \x01(\tB\a\xbaH\x04r\x02`\x01R\tworkEmail\x120\n" +
+	"\x0ecountry_region\x18\x03 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\rcountryRegion\x121\n" +
+	"\x0fcompany_website\x18\x04 \x01(\tB\b\xbaH\x05r\x03\x88\x01\x01R\x0ecompanyWebsite\x12,\n" +
+	"\fjob_function\x18\x05 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\vjobFunction\x12$\n" +
+	"\amessage\x18\x06 \x01(\tB\n" +
+	"\xbaH\ar\x05\x10\x01\x18\xd0\x0fR\amessage\"L\n" +
+	"\x11ContactUsResponse\x12\x18\n" +
+	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x1d\n" +
+	"\n" +
+	"contact_id\x18\x02 \x01(\tR\tcontactId2\xf2\t\n" +
 	"\vUserService\x12E\n" +
 	"\n" +
 	"CreateUser\x12\x1a.user.v1.CreateUserRequest\x1a\x1b.user.v1.CreateUserResponse\x12J\n" +
@@ -1347,7 +1496,8 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\x14VerifyForgotPassword\x12$.user.v1.VerifyForgotPasswordRequest\x1a%.user.v1.VerifyForgotPasswordResponse\x12N\n" +
 	"\rResetPassword\x12\x1d.user.v1.ResetPasswordRequest\x1a\x1e.user.v1.ResetPasswordResponse\x12Z\n" +
 	"\x11CheckIfUserExists\x12!.user.v1.CheckIfUserExistsRequest\x1a\".user.v1.CheckIfUserExistsResponse\x12f\n" +
-	"\x15CheckIfUserExistsByID\x12%.user.v1.CheckIfUserExistsByIDRequest\x1a&.user.v1.CheckIfUserExistsByIDResponseB\xa4\x01\n" +
+	"\x15CheckIfUserExistsByID\x12%.user.v1.CheckIfUserExistsByIDRequest\x1a&.user.v1.CheckIfUserExistsByIDResponse\x12B\n" +
+	"\tContactUs\x12\x19.user.v1.ContactUsRequest\x1a\x1a.user.v1.ContactUsResponseB\xa4\x01\n" +
 	"\x19com.samarthasthan.user.v1B\tUserProtoP\x01Z?github.com/samarthasthan/services-commons/gen/go/user/v1;userv1\xa2\x02\x03UXX\xaa\x02\aUser.V1\xca\x02\aUser\\V1\xe2\x02\x13User\\V1\\GPBMetadata\xea\x02\bUser::V1b\x06proto3"
 
 var (
@@ -1362,7 +1512,7 @@ func file_user_v1_user_proto_rawDescGZIP() []byte {
 	return file_user_v1_user_proto_rawDescData
 }
 
-var file_user_v1_user_proto_msgTypes = make([]protoimpl.MessageInfo, 26)
+var file_user_v1_user_proto_msgTypes = make([]protoimpl.MessageInfo, 28)
 var file_user_v1_user_proto_goTypes = []any{
 	(*CreateUserRequest)(nil),             // 0: user.v1.CreateUserRequest
 	(*CreateUserResponse)(nil),            // 1: user.v1.CreateUserResponse
@@ -1390,6 +1540,8 @@ var file_user_v1_user_proto_goTypes = []any{
 	(*CheckIfUserExistsResponse)(nil),     // 23: user.v1.CheckIfUserExistsResponse
 	(*CheckIfUserExistsByIDRequest)(nil),  // 24: user.v1.CheckIfUserExistsByIDRequest
 	(*CheckIfUserExistsByIDResponse)(nil), // 25: user.v1.CheckIfUserExistsByIDResponse
+	(*ContactUsRequest)(nil),              // 26: user.v1.ContactUsRequest
+	(*ContactUsResponse)(nil),             // 27: user.v1.ContactUsResponse
 }
 var file_user_v1_user_proto_depIdxs = []int32{
 	0,  // 0: user.v1.UserService.CreateUser:input_type -> user.v1.CreateUserRequest
@@ -1406,22 +1558,24 @@ var file_user_v1_user_proto_depIdxs = []int32{
 	20, // 11: user.v1.UserService.ResetPassword:input_type -> user.v1.ResetPasswordRequest
 	22, // 12: user.v1.UserService.CheckIfUserExists:input_type -> user.v1.CheckIfUserExistsRequest
 	24, // 13: user.v1.UserService.CheckIfUserExistsByID:input_type -> user.v1.CheckIfUserExistsByIDRequest
-	1,  // 14: user.v1.UserService.CreateUser:output_type -> user.v1.CreateUserResponse
-	1,  // 15: user.v1.UserService.CreateAdminUser:output_type -> user.v1.CreateUserResponse
-	3,  // 16: user.v1.UserService.RemoveUserById:output_type -> user.v1.RemoveUserByIdResponse
-	5,  // 17: user.v1.UserService.SendVerificationEmail:output_type -> user.v1.SendVerificationEmailResponse
-	7,  // 18: user.v1.UserService.SignIn:output_type -> user.v1.SignInResponse
-	9,  // 19: user.v1.UserService.DeleteUserById:output_type -> user.v1.DeleteUserByIdResponse
-	11, // 20: user.v1.UserService.UnDeleteUserById:output_type -> user.v1.UnDeleteUserByIdResponse
-	13, // 21: user.v1.UserService.VerifyUser:output_type -> user.v1.VerifyUserResponse
-	15, // 22: user.v1.UserService.ResendVerifyUser:output_type -> user.v1.ResendVerifyUserResponse
-	17, // 23: user.v1.UserService.ForgotPassword:output_type -> user.v1.ForgotPasswordResponse
-	19, // 24: user.v1.UserService.VerifyForgotPassword:output_type -> user.v1.VerifyForgotPasswordResponse
-	21, // 25: user.v1.UserService.ResetPassword:output_type -> user.v1.ResetPasswordResponse
-	23, // 26: user.v1.UserService.CheckIfUserExists:output_type -> user.v1.CheckIfUserExistsResponse
-	25, // 27: user.v1.UserService.CheckIfUserExistsByID:output_type -> user.v1.CheckIfUserExistsByIDResponse
-	14, // [14:28] is the sub-list for method output_type
-	0,  // [0:14] is the sub-list for method input_type
+	26, // 14: user.v1.UserService.ContactUs:input_type -> user.v1.ContactUsRequest
+	1,  // 15: user.v1.UserService.CreateUser:output_type -> user.v1.CreateUserResponse
+	1,  // 16: user.v1.UserService.CreateAdminUser:output_type -> user.v1.CreateUserResponse
+	3,  // 17: user.v1.UserService.RemoveUserById:output_type -> user.v1.RemoveUserByIdResponse
+	5,  // 18: user.v1.UserService.SendVerificationEmail:output_type -> user.v1.SendVerificationEmailResponse
+	7,  // 19: user.v1.UserService.SignIn:output_type -> user.v1.SignInResponse
+	9,  // 20: user.v1.UserService.DeleteUserById:output_type -> user.v1.DeleteUserByIdResponse
+	11, // 21: user.v1.UserService.UnDeleteUserById:output_type -> user.v1.UnDeleteUserByIdResponse
+	13, // 22: user.v1.UserService.VerifyUser:output_type -> user.v1.VerifyUserResponse
+	15, // 23: user.v1.UserService.ResendVerifyUser:output_type -> user.v1.ResendVerifyUserResponse
+	17, // 24: user.v1.UserService.ForgotPassword:output_type -> user.v1.ForgotPasswordResponse
+	19, // 25: user.v1.UserService.VerifyForgotPassword:output_type -> user.v1.VerifyForgotPasswordResponse
+	21, // 26: user.v1.UserService.ResetPassword:output_type -> user.v1.ResetPasswordResponse
+	23, // 27: user.v1.UserService.CheckIfUserExists:output_type -> user.v1.CheckIfUserExistsResponse
+	25, // 28: user.v1.UserService.CheckIfUserExistsByID:output_type -> user.v1.CheckIfUserExistsByIDResponse
+	27, // 29: user.v1.UserService.ContactUs:output_type -> user.v1.ContactUsResponse
+	15, // [15:30] is the sub-list for method output_type
+	0,  // [0:15] is the sub-list for method input_type
 	0,  // [0:0] is the sub-list for extension type_name
 	0,  // [0:0] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name
@@ -1438,7 +1592,7 @@ func file_user_v1_user_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_user_v1_user_proto_rawDesc), len(file_user_v1_user_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   26,
+			NumMessages:   28,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
