@@ -19,13 +19,17 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	BlogService_CreateBlog_FullMethodName    = "/blog.v1.BlogService/CreateBlog"
-	BlogService_GetBlog_FullMethodName       = "/blog.v1.BlogService/GetBlog"
-	BlogService_GetBlogBySlug_FullMethodName = "/blog.v1.BlogService/GetBlogBySlug"
-	BlogService_ListBlogs_FullMethodName     = "/blog.v1.BlogService/ListBlogs"
-	BlogService_UpdateBlog_FullMethodName    = "/blog.v1.BlogService/UpdateBlog"
-	BlogService_DeleteBlog_FullMethodName    = "/blog.v1.BlogService/DeleteBlog"
-	BlogService_UnDeleteBlog_FullMethodName  = "/blog.v1.BlogService/UnDeleteBlog"
+	BlogService_CreateBlog_FullMethodName            = "/blog.v1.BlogService/CreateBlog"
+	BlogService_GetBlog_FullMethodName               = "/blog.v1.BlogService/GetBlog"
+	BlogService_GetBlogBySlug_FullMethodName         = "/blog.v1.BlogService/GetBlogBySlug"
+	BlogService_ListBlogs_FullMethodName             = "/blog.v1.BlogService/ListBlogs"
+	BlogService_UpdateBlog_FullMethodName            = "/blog.v1.BlogService/UpdateBlog"
+	BlogService_DeleteBlog_FullMethodName            = "/blog.v1.BlogService/DeleteBlog"
+	BlogService_UnDeleteBlog_FullMethodName          = "/blog.v1.BlogService/UnDeleteBlog"
+	BlogService_SubscribeNewsletter_FullMethodName   = "/blog.v1.BlogService/SubscribeNewsletter"
+	BlogService_UnsubscribeNewsletter_FullMethodName = "/blog.v1.BlogService/UnsubscribeNewsletter"
+	BlogService_GetNewsletter_FullMethodName         = "/blog.v1.BlogService/GetNewsletter"
+	BlogService_ListNewsletters_FullMethodName       = "/blog.v1.BlogService/ListNewsletters"
 )
 
 // BlogServiceClient is the client API for BlogService service.
@@ -39,6 +43,10 @@ type BlogServiceClient interface {
 	UpdateBlog(ctx context.Context, in *UpdateBlogRequest, opts ...grpc.CallOption) (*UpdateBlogResponse, error)
 	DeleteBlog(ctx context.Context, in *DeleteBlogRequest, opts ...grpc.CallOption) (*DeleteBlogResponse, error)
 	UnDeleteBlog(ctx context.Context, in *UnDeleteBlogRequest, opts ...grpc.CallOption) (*UnDeleteBlogResponse, error)
+	SubscribeNewsletter(ctx context.Context, in *SubscribeNewsletterRequest, opts ...grpc.CallOption) (*SubscribeNewsletterResponse, error)
+	UnsubscribeNewsletter(ctx context.Context, in *UnsubscribeNewsletterRequest, opts ...grpc.CallOption) (*UnsubscribeNewsletterResponse, error)
+	GetNewsletter(ctx context.Context, in *GetNewsletterRequest, opts ...grpc.CallOption) (*GetNewsletterResponse, error)
+	ListNewsletters(ctx context.Context, in *ListNewslettersRequest, opts ...grpc.CallOption) (*ListNewslettersResponse, error)
 }
 
 type blogServiceClient struct {
@@ -119,6 +127,46 @@ func (c *blogServiceClient) UnDeleteBlog(ctx context.Context, in *UnDeleteBlogRe
 	return out, nil
 }
 
+func (c *blogServiceClient) SubscribeNewsletter(ctx context.Context, in *SubscribeNewsletterRequest, opts ...grpc.CallOption) (*SubscribeNewsletterResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubscribeNewsletterResponse)
+	err := c.cc.Invoke(ctx, BlogService_SubscribeNewsletter_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *blogServiceClient) UnsubscribeNewsletter(ctx context.Context, in *UnsubscribeNewsletterRequest, opts ...grpc.CallOption) (*UnsubscribeNewsletterResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UnsubscribeNewsletterResponse)
+	err := c.cc.Invoke(ctx, BlogService_UnsubscribeNewsletter_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *blogServiceClient) GetNewsletter(ctx context.Context, in *GetNewsletterRequest, opts ...grpc.CallOption) (*GetNewsletterResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetNewsletterResponse)
+	err := c.cc.Invoke(ctx, BlogService_GetNewsletter_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *blogServiceClient) ListNewsletters(ctx context.Context, in *ListNewslettersRequest, opts ...grpc.CallOption) (*ListNewslettersResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListNewslettersResponse)
+	err := c.cc.Invoke(ctx, BlogService_ListNewsletters_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // BlogServiceServer is the server API for BlogService service.
 // All implementations must embed UnimplementedBlogServiceServer
 // for forward compatibility.
@@ -130,6 +178,10 @@ type BlogServiceServer interface {
 	UpdateBlog(context.Context, *UpdateBlogRequest) (*UpdateBlogResponse, error)
 	DeleteBlog(context.Context, *DeleteBlogRequest) (*DeleteBlogResponse, error)
 	UnDeleteBlog(context.Context, *UnDeleteBlogRequest) (*UnDeleteBlogResponse, error)
+	SubscribeNewsletter(context.Context, *SubscribeNewsletterRequest) (*SubscribeNewsletterResponse, error)
+	UnsubscribeNewsletter(context.Context, *UnsubscribeNewsletterRequest) (*UnsubscribeNewsletterResponse, error)
+	GetNewsletter(context.Context, *GetNewsletterRequest) (*GetNewsletterResponse, error)
+	ListNewsletters(context.Context, *ListNewslettersRequest) (*ListNewslettersResponse, error)
 	mustEmbedUnimplementedBlogServiceServer()
 }
 
@@ -160,6 +212,18 @@ func (UnimplementedBlogServiceServer) DeleteBlog(context.Context, *DeleteBlogReq
 }
 func (UnimplementedBlogServiceServer) UnDeleteBlog(context.Context, *UnDeleteBlogRequest) (*UnDeleteBlogResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UnDeleteBlog not implemented")
+}
+func (UnimplementedBlogServiceServer) SubscribeNewsletter(context.Context, *SubscribeNewsletterRequest) (*SubscribeNewsletterResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SubscribeNewsletter not implemented")
+}
+func (UnimplementedBlogServiceServer) UnsubscribeNewsletter(context.Context, *UnsubscribeNewsletterRequest) (*UnsubscribeNewsletterResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UnsubscribeNewsletter not implemented")
+}
+func (UnimplementedBlogServiceServer) GetNewsletter(context.Context, *GetNewsletterRequest) (*GetNewsletterResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetNewsletter not implemented")
+}
+func (UnimplementedBlogServiceServer) ListNewsletters(context.Context, *ListNewslettersRequest) (*ListNewslettersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListNewsletters not implemented")
 }
 func (UnimplementedBlogServiceServer) mustEmbedUnimplementedBlogServiceServer() {}
 func (UnimplementedBlogServiceServer) testEmbeddedByValue()                     {}
@@ -308,6 +372,78 @@ func _BlogService_UnDeleteBlog_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _BlogService_SubscribeNewsletter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubscribeNewsletterRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BlogServiceServer).SubscribeNewsletter(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: BlogService_SubscribeNewsletter_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BlogServiceServer).SubscribeNewsletter(ctx, req.(*SubscribeNewsletterRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BlogService_UnsubscribeNewsletter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UnsubscribeNewsletterRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BlogServiceServer).UnsubscribeNewsletter(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: BlogService_UnsubscribeNewsletter_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BlogServiceServer).UnsubscribeNewsletter(ctx, req.(*UnsubscribeNewsletterRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BlogService_GetNewsletter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetNewsletterRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BlogServiceServer).GetNewsletter(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: BlogService_GetNewsletter_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BlogServiceServer).GetNewsletter(ctx, req.(*GetNewsletterRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BlogService_ListNewsletters_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListNewslettersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BlogServiceServer).ListNewsletters(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: BlogService_ListNewsletters_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BlogServiceServer).ListNewsletters(ctx, req.(*ListNewslettersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // BlogService_ServiceDesc is the grpc.ServiceDesc for BlogService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -343,221 +479,21 @@ var BlogService_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "UnDeleteBlog",
 			Handler:    _BlogService_UnDeleteBlog_Handler,
 		},
-	},
-	Streams:  []grpc.StreamDesc{},
-	Metadata: "blog/v1/blog.proto",
-}
-
-const (
-	NewsletterService_SubscribeNewsletter_FullMethodName   = "/blog.v1.NewsletterService/SubscribeNewsletter"
-	NewsletterService_UnsubscribeNewsletter_FullMethodName = "/blog.v1.NewsletterService/UnsubscribeNewsletter"
-	NewsletterService_GetNewsletter_FullMethodName         = "/blog.v1.NewsletterService/GetNewsletter"
-	NewsletterService_ListNewsletters_FullMethodName       = "/blog.v1.NewsletterService/ListNewsletters"
-)
-
-// NewsletterServiceClient is the client API for NewsletterService service.
-//
-// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type NewsletterServiceClient interface {
-	SubscribeNewsletter(ctx context.Context, in *SubscribeNewsletterRequest, opts ...grpc.CallOption) (*SubscribeNewsletterResponse, error)
-	UnsubscribeNewsletter(ctx context.Context, in *UnsubscribeNewsletterRequest, opts ...grpc.CallOption) (*UnsubscribeNewsletterResponse, error)
-	GetNewsletter(ctx context.Context, in *GetNewsletterRequest, opts ...grpc.CallOption) (*GetNewsletterResponse, error)
-	ListNewsletters(ctx context.Context, in *ListNewslettersRequest, opts ...grpc.CallOption) (*ListNewslettersResponse, error)
-}
-
-type newsletterServiceClient struct {
-	cc grpc.ClientConnInterface
-}
-
-func NewNewsletterServiceClient(cc grpc.ClientConnInterface) NewsletterServiceClient {
-	return &newsletterServiceClient{cc}
-}
-
-func (c *newsletterServiceClient) SubscribeNewsletter(ctx context.Context, in *SubscribeNewsletterRequest, opts ...grpc.CallOption) (*SubscribeNewsletterResponse, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(SubscribeNewsletterResponse)
-	err := c.cc.Invoke(ctx, NewsletterService_SubscribeNewsletter_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *newsletterServiceClient) UnsubscribeNewsletter(ctx context.Context, in *UnsubscribeNewsletterRequest, opts ...grpc.CallOption) (*UnsubscribeNewsletterResponse, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(UnsubscribeNewsletterResponse)
-	err := c.cc.Invoke(ctx, NewsletterService_UnsubscribeNewsletter_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *newsletterServiceClient) GetNewsletter(ctx context.Context, in *GetNewsletterRequest, opts ...grpc.CallOption) (*GetNewsletterResponse, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(GetNewsletterResponse)
-	err := c.cc.Invoke(ctx, NewsletterService_GetNewsletter_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *newsletterServiceClient) ListNewsletters(ctx context.Context, in *ListNewslettersRequest, opts ...grpc.CallOption) (*ListNewslettersResponse, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListNewslettersResponse)
-	err := c.cc.Invoke(ctx, NewsletterService_ListNewsletters_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-// NewsletterServiceServer is the server API for NewsletterService service.
-// All implementations must embed UnimplementedNewsletterServiceServer
-// for forward compatibility.
-type NewsletterServiceServer interface {
-	SubscribeNewsletter(context.Context, *SubscribeNewsletterRequest) (*SubscribeNewsletterResponse, error)
-	UnsubscribeNewsletter(context.Context, *UnsubscribeNewsletterRequest) (*UnsubscribeNewsletterResponse, error)
-	GetNewsletter(context.Context, *GetNewsletterRequest) (*GetNewsletterResponse, error)
-	ListNewsletters(context.Context, *ListNewslettersRequest) (*ListNewslettersResponse, error)
-	mustEmbedUnimplementedNewsletterServiceServer()
-}
-
-// UnimplementedNewsletterServiceServer must be embedded to have
-// forward compatible implementations.
-//
-// NOTE: this should be embedded by value instead of pointer to avoid a nil
-// pointer dereference when methods are called.
-type UnimplementedNewsletterServiceServer struct{}
-
-func (UnimplementedNewsletterServiceServer) SubscribeNewsletter(context.Context, *SubscribeNewsletterRequest) (*SubscribeNewsletterResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SubscribeNewsletter not implemented")
-}
-func (UnimplementedNewsletterServiceServer) UnsubscribeNewsletter(context.Context, *UnsubscribeNewsletterRequest) (*UnsubscribeNewsletterResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UnsubscribeNewsletter not implemented")
-}
-func (UnimplementedNewsletterServiceServer) GetNewsletter(context.Context, *GetNewsletterRequest) (*GetNewsletterResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetNewsletter not implemented")
-}
-func (UnimplementedNewsletterServiceServer) ListNewsletters(context.Context, *ListNewslettersRequest) (*ListNewslettersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListNewsletters not implemented")
-}
-func (UnimplementedNewsletterServiceServer) mustEmbedUnimplementedNewsletterServiceServer() {}
-func (UnimplementedNewsletterServiceServer) testEmbeddedByValue()                           {}
-
-// UnsafeNewsletterServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to NewsletterServiceServer will
-// result in compilation errors.
-type UnsafeNewsletterServiceServer interface {
-	mustEmbedUnimplementedNewsletterServiceServer()
-}
-
-func RegisterNewsletterServiceServer(s grpc.ServiceRegistrar, srv NewsletterServiceServer) {
-	// If the following call pancis, it indicates UnimplementedNewsletterServiceServer was
-	// embedded by pointer and is nil.  This will cause panics if an
-	// unimplemented method is ever invoked, so we test this at initialization
-	// time to prevent it from happening at runtime later due to I/O.
-	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
-		t.testEmbeddedByValue()
-	}
-	s.RegisterService(&NewsletterService_ServiceDesc, srv)
-}
-
-func _NewsletterService_SubscribeNewsletter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SubscribeNewsletterRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(NewsletterServiceServer).SubscribeNewsletter(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: NewsletterService_SubscribeNewsletter_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NewsletterServiceServer).SubscribeNewsletter(ctx, req.(*SubscribeNewsletterRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _NewsletterService_UnsubscribeNewsletter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UnsubscribeNewsletterRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(NewsletterServiceServer).UnsubscribeNewsletter(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: NewsletterService_UnsubscribeNewsletter_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NewsletterServiceServer).UnsubscribeNewsletter(ctx, req.(*UnsubscribeNewsletterRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _NewsletterService_GetNewsletter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetNewsletterRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(NewsletterServiceServer).GetNewsletter(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: NewsletterService_GetNewsletter_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NewsletterServiceServer).GetNewsletter(ctx, req.(*GetNewsletterRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _NewsletterService_ListNewsletters_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListNewslettersRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(NewsletterServiceServer).ListNewsletters(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: NewsletterService_ListNewsletters_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NewsletterServiceServer).ListNewsletters(ctx, req.(*ListNewslettersRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-// NewsletterService_ServiceDesc is the grpc.ServiceDesc for NewsletterService service.
-// It's only intended for direct use with grpc.RegisterService,
-// and not to be introspected or modified (even as a copy)
-var NewsletterService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "blog.v1.NewsletterService",
-	HandlerType: (*NewsletterServiceServer)(nil),
-	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "SubscribeNewsletter",
-			Handler:    _NewsletterService_SubscribeNewsletter_Handler,
+			Handler:    _BlogService_SubscribeNewsletter_Handler,
 		},
 		{
 			MethodName: "UnsubscribeNewsletter",
-			Handler:    _NewsletterService_UnsubscribeNewsletter_Handler,
+			Handler:    _BlogService_UnsubscribeNewsletter_Handler,
 		},
 		{
 			MethodName: "GetNewsletter",
-			Handler:    _NewsletterService_GetNewsletter_Handler,
+			Handler:    _BlogService_GetNewsletter_Handler,
 		},
 		{
 			MethodName: "ListNewsletters",
-			Handler:    _NewsletterService_ListNewsletters_Handler,
+			Handler:    _BlogService_ListNewsletters_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

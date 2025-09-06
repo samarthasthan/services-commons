@@ -96,17 +96,6 @@ message UnDeleteBlogResponse {
   bool is_done = 1;
 }
 
-service BlogService {
-  rpc CreateBlog(CreateBlogRequest) returns (CreateBlogResponse);
-  rpc GetBlog(GetBlogRequest) returns (GetBlogResponse);
-  rpc GetBlogBySlug(GetBlogBySlugRequest) returns (GetBlogResponse);
-  rpc ListBlogs(ListBlogsRequest) returns (ListBlogsResponse);
-  rpc UpdateBlog(UpdateBlogRequest) returns (UpdateBlogResponse);
-  rpc DeleteBlog(DeleteBlogRequest) returns (DeleteBlogResponse);
-  rpc UnDeleteBlog(UnDeleteBlogRequest) returns (UnDeleteBlogResponse);
-}
-
-
 
 // ------------------------- Newsletter -------------------------
 
@@ -158,9 +147,15 @@ message ListNewslettersResponse {
   int32 total_count = 2;
 }
 
-// ------------------------- Newsletter Service -------------------------
 
-service NewsletterService {
+service BlogService {
+  rpc CreateBlog(CreateBlogRequest) returns (CreateBlogResponse);
+  rpc GetBlog(GetBlogRequest) returns (GetBlogResponse);
+  rpc GetBlogBySlug(GetBlogBySlugRequest) returns (GetBlogResponse);
+  rpc ListBlogs(ListBlogsRequest) returns (ListBlogsResponse);
+  rpc UpdateBlog(UpdateBlogRequest) returns (UpdateBlogResponse);
+  rpc DeleteBlog(DeleteBlogRequest) returns (DeleteBlogResponse);
+  rpc UnDeleteBlog(UnDeleteBlogRequest) returns (UnDeleteBlogResponse);
   rpc SubscribeNewsletter(SubscribeNewsletterRequest) returns (SubscribeNewsletterResponse);
   rpc UnsubscribeNewsletter(UnsubscribeNewsletterRequest) returns (UnsubscribeNewsletterResponse);
   rpc GetNewsletter(GetNewsletterRequest) returns (GetNewsletterResponse);

@@ -216,7 +216,7 @@ public final class BlogProto {
       "\024BLOG_STATUS_ARCHIVED\020\003*{\n\020NewsletterSta" +
       "tus\022!\n\035NEWSLETTER_STATUS_UNSPECIFIED\020\000\022 " +
       "\n\034NEWSLETTER_STATUS_SUBSCRIBED\020\001\022\"\n\036NEWS" +
-      "LETTER_STATUS_UNSUBSCRIBED\020\0022\373\003\n\013BlogSer" +
+      "LETTER_STATUS_UNSUBSCRIBED\020\0022\353\006\n\013BlogSer" +
       "vice\022E\n\nCreateBlog\022\032.blog.v1.CreateBlogR" +
       "equest\032\033.blog.v1.CreateBlogResponse\022<\n\007G" +
       "etBlog\022\027.blog.v1.GetBlogRequest\032\030.blog.v" +
@@ -229,21 +229,21 @@ public final class BlogProto {
       "Blog\022\032.blog.v1.DeleteBlogRequest\032\033.blog." +
       "v1.DeleteBlogResponse\022K\n\014UnDeleteBlog\022\034." +
       "blog.v1.UnDeleteBlogRequest\032\035.blog.v1.Un" +
-      "DeleteBlogResponse2\203\003\n\021NewsletterService" +
-      "\022`\n\023SubscribeNewsletter\022#.blog.v1.Subscr" +
-      "ibeNewsletterRequest\032$.blog.v1.Subscribe" +
-      "NewsletterResponse\022f\n\025UnsubscribeNewslet" +
-      "ter\022%.blog.v1.UnsubscribeNewsletterReque" +
-      "st\032&.blog.v1.UnsubscribeNewsletterRespon" +
-      "se\022N\n\rGetNewsletter\022\035.blog.v1.GetNewslet" +
-      "terRequest\032\036.blog.v1.GetNewsletterRespon" +
-      "se\022T\n\017ListNewsletters\022\037.blog.v1.ListNews" +
-      "lettersRequest\032 .blog.v1.ListNewsletters" +
-      "ResponseB\244\001\n\031com.samarthasthan.blog.v1B\t" +
-      "BlogProtoP\001Z?github.com/samarthasthan/se" +
-      "rvices-commons/gen/go/blog/v1;blogv1\242\002\003B" +
-      "XX\252\002\007Blog.V1\312\002\007Blog\\V1\342\002\023Blog\\V1\\GPBMeta" +
-      "data\352\002\010Blog::V1b\006proto3"
+      "DeleteBlogResponse\022`\n\023SubscribeNewslette" +
+      "r\022#.blog.v1.SubscribeNewsletterRequest\032$" +
+      ".blog.v1.SubscribeNewsletterResponse\022f\n\025" +
+      "UnsubscribeNewsletter\022%.blog.v1.Unsubscr" +
+      "ibeNewsletterRequest\032&.blog.v1.Unsubscri" +
+      "beNewsletterResponse\022N\n\rGetNewsletter\022\035." +
+      "blog.v1.GetNewsletterRequest\032\036.blog.v1.G" +
+      "etNewsletterResponse\022T\n\017ListNewsletters\022" +
+      "\037.blog.v1.ListNewslettersRequest\032 .blog." +
+      "v1.ListNewslettersResponseB\244\001\n\031com.samar" +
+      "thasthan.blog.v1B\tBlogProtoP\001Z?github.co" +
+      "m/samarthasthan/services-commons/gen/go/" +
+      "blog/v1;blogv1\242\002\003BXX\252\002\007Blog.V1\312\002\007Blog\\V1" +
+      "\342\002\023Blog\\V1\\GPBMetadata\352\002\010Blog::V1b\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

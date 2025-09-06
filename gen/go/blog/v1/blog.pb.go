@@ -1483,7 +1483,7 @@ const file_blog_v1_blog_proto_rawDesc = "" +
 	"\x10NewsletterStatus\x12!\n" +
 	"\x1dNEWSLETTER_STATUS_UNSPECIFIED\x10\x00\x12 \n" +
 	"\x1cNEWSLETTER_STATUS_SUBSCRIBED\x10\x01\x12\"\n" +
-	"\x1eNEWSLETTER_STATUS_UNSUBSCRIBED\x10\x022\xfb\x03\n" +
+	"\x1eNEWSLETTER_STATUS_UNSUBSCRIBED\x10\x022\xeb\x06\n" +
 	"\vBlogService\x12E\n" +
 	"\n" +
 	"CreateBlog\x12\x1a.blog.v1.CreateBlogRequest\x1a\x1b.blog.v1.CreateBlogResponse\x12<\n" +
@@ -1494,8 +1494,7 @@ const file_blog_v1_blog_proto_rawDesc = "" +
 	"UpdateBlog\x12\x1a.blog.v1.UpdateBlogRequest\x1a\x1b.blog.v1.UpdateBlogResponse\x12E\n" +
 	"\n" +
 	"DeleteBlog\x12\x1a.blog.v1.DeleteBlogRequest\x1a\x1b.blog.v1.DeleteBlogResponse\x12K\n" +
-	"\fUnDeleteBlog\x12\x1c.blog.v1.UnDeleteBlogRequest\x1a\x1d.blog.v1.UnDeleteBlogResponse2\x83\x03\n" +
-	"\x11NewsletterService\x12`\n" +
+	"\fUnDeleteBlog\x12\x1c.blog.v1.UnDeleteBlogRequest\x1a\x1d.blog.v1.UnDeleteBlogResponse\x12`\n" +
 	"\x13SubscribeNewsletter\x12#.blog.v1.SubscribeNewsletterRequest\x1a$.blog.v1.SubscribeNewsletterResponse\x12f\n" +
 	"\x15UnsubscribeNewsletter\x12%.blog.v1.UnsubscribeNewsletterRequest\x1a&.blog.v1.UnsubscribeNewsletterResponse\x12N\n" +
 	"\rGetNewsletter\x12\x1d.blog.v1.GetNewsletterRequest\x1a\x1e.blog.v1.GetNewsletterResponse\x12T\n" +
@@ -1568,10 +1567,10 @@ var file_blog_v1_blog_proto_depIdxs = []int32{
 	10, // 21: blog.v1.BlogService.UpdateBlog:input_type -> blog.v1.UpdateBlogRequest
 	12, // 22: blog.v1.BlogService.DeleteBlog:input_type -> blog.v1.DeleteBlogRequest
 	14, // 23: blog.v1.BlogService.UnDeleteBlog:input_type -> blog.v1.UnDeleteBlogRequest
-	16, // 24: blog.v1.NewsletterService.SubscribeNewsletter:input_type -> blog.v1.SubscribeNewsletterRequest
-	18, // 25: blog.v1.NewsletterService.UnsubscribeNewsletter:input_type -> blog.v1.UnsubscribeNewsletterRequest
-	20, // 26: blog.v1.NewsletterService.GetNewsletter:input_type -> blog.v1.GetNewsletterRequest
-	22, // 27: blog.v1.NewsletterService.ListNewsletters:input_type -> blog.v1.ListNewslettersRequest
+	16, // 24: blog.v1.BlogService.SubscribeNewsletter:input_type -> blog.v1.SubscribeNewsletterRequest
+	18, // 25: blog.v1.BlogService.UnsubscribeNewsletter:input_type -> blog.v1.UnsubscribeNewsletterRequest
+	20, // 26: blog.v1.BlogService.GetNewsletter:input_type -> blog.v1.GetNewsletterRequest
+	22, // 27: blog.v1.BlogService.ListNewsletters:input_type -> blog.v1.ListNewslettersRequest
 	3,  // 28: blog.v1.BlogService.CreateBlog:output_type -> blog.v1.CreateBlogResponse
 	7,  // 29: blog.v1.BlogService.GetBlog:output_type -> blog.v1.GetBlogResponse
 	7,  // 30: blog.v1.BlogService.GetBlogBySlug:output_type -> blog.v1.GetBlogResponse
@@ -1579,10 +1578,10 @@ var file_blog_v1_blog_proto_depIdxs = []int32{
 	11, // 32: blog.v1.BlogService.UpdateBlog:output_type -> blog.v1.UpdateBlogResponse
 	13, // 33: blog.v1.BlogService.DeleteBlog:output_type -> blog.v1.DeleteBlogResponse
 	15, // 34: blog.v1.BlogService.UnDeleteBlog:output_type -> blog.v1.UnDeleteBlogResponse
-	17, // 35: blog.v1.NewsletterService.SubscribeNewsletter:output_type -> blog.v1.SubscribeNewsletterResponse
-	19, // 36: blog.v1.NewsletterService.UnsubscribeNewsletter:output_type -> blog.v1.UnsubscribeNewsletterResponse
-	21, // 37: blog.v1.NewsletterService.GetNewsletter:output_type -> blog.v1.GetNewsletterResponse
-	23, // 38: blog.v1.NewsletterService.ListNewsletters:output_type -> blog.v1.ListNewslettersResponse
+	17, // 35: blog.v1.BlogService.SubscribeNewsletter:output_type -> blog.v1.SubscribeNewsletterResponse
+	19, // 36: blog.v1.BlogService.UnsubscribeNewsletter:output_type -> blog.v1.UnsubscribeNewsletterResponse
+	21, // 37: blog.v1.BlogService.GetNewsletter:output_type -> blog.v1.GetNewsletterResponse
+	23, // 38: blog.v1.BlogService.ListNewsletters:output_type -> blog.v1.ListNewslettersResponse
 	28, // [28:39] is the sub-list for method output_type
 	17, // [17:28] is the sub-list for method input_type
 	17, // [17:17] is the sub-list for extension type_name
@@ -1603,7 +1602,7 @@ func file_blog_v1_blog_proto_init() {
 			NumEnums:      2,
 			NumMessages:   22,
 			NumExtensions: 0,
-			NumServices:   2,
+			NumServices:   1,
 		},
 		GoTypes:           file_blog_v1_blog_proto_goTypes,
 		DependencyIndexes: file_blog_v1_blog_proto_depIdxs,
