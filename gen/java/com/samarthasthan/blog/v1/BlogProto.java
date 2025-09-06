@@ -95,6 +95,46 @@ public final class BlogProto {
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_blog_v1_UnDeleteBlogResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_blog_v1_SubscribeNewsletterRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_blog_v1_SubscribeNewsletterRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_blog_v1_SubscribeNewsletterResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_blog_v1_SubscribeNewsletterResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_blog_v1_UnsubscribeNewsletterRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_blog_v1_UnsubscribeNewsletterRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_blog_v1_UnsubscribeNewsletterResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_blog_v1_UnsubscribeNewsletterResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_blog_v1_GetNewsletterRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_blog_v1_GetNewsletterRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_blog_v1_GetNewsletterResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_blog_v1_GetNewsletterResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_blog_v1_ListNewslettersRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_blog_v1_ListNewslettersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_blog_v1_ListNewslettersResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_blog_v1_ListNewslettersResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -145,27 +185,65 @@ public final class BlogProto {
       "one\030\001 \001(\010R\006isDone\"8\n\023UnDeleteBlogRequest" +
       "\022!\n\007blog_id\030\001 \001(\tB\010\272H\005r\003\260\001\001R\006blogId\"/\n\024U" +
       "nDeleteBlogResponse\022\027\n\007is_done\030\001 \001(\010R\006is" +
-      "Done*u\n\nBlogStatus\022\033\n\027BLOG_STATUS_UNSPEC" +
-      "IFIED\020\000\022\025\n\021BLOG_STATUS_DRAFT\020\001\022\031\n\025BLOG_S" +
-      "TATUS_PUBLISHED\020\002\022\030\n\024BLOG_STATUS_ARCHIVE" +
-      "D\020\0032\373\003\n\013BlogService\022E\n\nCreateBlog\022\032.blog" +
-      ".v1.CreateBlogRequest\032\033.blog.v1.CreateBl" +
-      "ogResponse\022<\n\007GetBlog\022\027.blog.v1.GetBlogR" +
-      "equest\032\030.blog.v1.GetBlogResponse\022H\n\rGetB" +
-      "logBySlug\022\035.blog.v1.GetBlogBySlugRequest" +
-      "\032\030.blog.v1.GetBlogResponse\022B\n\tListBlogs\022" +
-      "\031.blog.v1.ListBlogsRequest\032\032.blog.v1.Lis" +
-      "tBlogsResponse\022E\n\nUpdateBlog\022\032.blog.v1.U" +
-      "pdateBlogRequest\032\033.blog.v1.UpdateBlogRes" +
-      "ponse\022E\n\nDeleteBlog\022\032.blog.v1.DeleteBlog" +
-      "Request\032\033.blog.v1.DeleteBlogResponse\022K\n\014" +
-      "UnDeleteBlog\022\034.blog.v1.UnDeleteBlogReque" +
-      "st\032\035.blog.v1.UnDeleteBlogResponseB\244\001\n\031co" +
-      "m.samarthasthan.blog.v1B\tBlogProtoP\001Z?gi" +
-      "thub.com/samarthasthan/services-commons/" +
-      "gen/go/blog/v1;blogv1\242\002\003BXX\252\002\007Blog.V1\312\002\007" +
-      "Blog\\V1\342\002\023Blog\\V1\\GPBMetadata\352\002\010Blog::V1" +
-      "b\006proto3"
+      "Done\";\n\032SubscribeNewsletterRequest\022\035\n\005em" +
+      "ail\030\001 \001(\tB\007\272H\004r\002\020\005R\005email\"B\n\033SubscribeNe" +
+      "wsletterResponse\022#\n\rnewsletter_id\030\001 \001(\tR" +
+      "\014newsletterId\"=\n\034UnsubscribeNewsletterRe" +
+      "quest\022\035\n\005email\030\001 \001(\tB\007\272H\004r\002\020\005R\005email\"8\n\035" +
+      "UnsubscribeNewsletterResponse\022\027\n\007is_done" +
+      "\030\001 \001(\010R\006isDone\"E\n\024GetNewsletterRequest\022-" +
+      "\n\rnewsletter_id\030\001 \001(\tB\010\272H\005r\003\260\001\001R\014newslet" +
+      "terId\"\274\003\n\025GetNewsletterResponse\022#\n\rnewsl" +
+      "etter_id\030\001 \001(\tR\014newsletterId\022\024\n\005email\030\002 " +
+      "\001(\tR\005email\0221\n\006status\030\003 \001(\0162\031.blog.v1.New" +
+      "sletterStatusR\006status\022?\n\rsubscribed_at\030\004" +
+      " \001(\0132\032.google.protobuf.TimestampR\014subscr" +
+      "ibedAt\022C\n\017unsubscribed_at\030\005 \001(\0132\032.google" +
+      ".protobuf.TimestampR\016unsubscribedAt\0229\n\nc" +
+      "reated_at\030\006 \001(\0132\032.google.protobuf.Timest" +
+      "ampR\tcreatedAt\0229\n\nupdated_at\030\007 \001(\0132\032.goo" +
+      "gle.protobuf.TimestampR\tupdatedAt\0229\n\ndel" +
+      "eted_at\030\010 \001(\0132\032.google.protobuf.Timestam" +
+      "pR\tdeletedAt\"|\n\026ListNewslettersRequest\0221" +
+      "\n\006status\030\001 \001(\0162\031.blog.v1.NewsletterStatu" +
+      "sR\006status\022\022\n\004page\030\002 \001(\005R\004page\022\033\n\tpage_si" +
+      "ze\030\003 \001(\005R\010pageSize\"|\n\027ListNewslettersRes" +
+      "ponse\022@\n\013newsletters\030\001 \003(\0132\036.blog.v1.Get" +
+      "NewsletterResponseR\013newsletters\022\037\n\013total" +
+      "_count\030\002 \001(\005R\ntotalCount*u\n\nBlogStatus\022\033" +
+      "\n\027BLOG_STATUS_UNSPECIFIED\020\000\022\025\n\021BLOG_STAT" +
+      "US_DRAFT\020\001\022\031\n\025BLOG_STATUS_PUBLISHED\020\002\022\030\n" +
+      "\024BLOG_STATUS_ARCHIVED\020\003*{\n\020NewsletterSta" +
+      "tus\022!\n\035NEWSLETTER_STATUS_UNSPECIFIED\020\000\022 " +
+      "\n\034NEWSLETTER_STATUS_SUBSCRIBED\020\001\022\"\n\036NEWS" +
+      "LETTER_STATUS_UNSUBSCRIBED\020\0022\373\003\n\013BlogSer" +
+      "vice\022E\n\nCreateBlog\022\032.blog.v1.CreateBlogR" +
+      "equest\032\033.blog.v1.CreateBlogResponse\022<\n\007G" +
+      "etBlog\022\027.blog.v1.GetBlogRequest\032\030.blog.v" +
+      "1.GetBlogResponse\022H\n\rGetBlogBySlug\022\035.blo" +
+      "g.v1.GetBlogBySlugRequest\032\030.blog.v1.GetB" +
+      "logResponse\022B\n\tListBlogs\022\031.blog.v1.ListB" +
+      "logsRequest\032\032.blog.v1.ListBlogsResponse\022" +
+      "E\n\nUpdateBlog\022\032.blog.v1.UpdateBlogReques" +
+      "t\032\033.blog.v1.UpdateBlogResponse\022E\n\nDelete" +
+      "Blog\022\032.blog.v1.DeleteBlogRequest\032\033.blog." +
+      "v1.DeleteBlogResponse\022K\n\014UnDeleteBlog\022\034." +
+      "blog.v1.UnDeleteBlogRequest\032\035.blog.v1.Un" +
+      "DeleteBlogResponse2\203\003\n\021NewsletterService" +
+      "\022`\n\023SubscribeNewsletter\022#.blog.v1.Subscr" +
+      "ibeNewsletterRequest\032$.blog.v1.Subscribe" +
+      "NewsletterResponse\022f\n\025UnsubscribeNewslet" +
+      "ter\022%.blog.v1.UnsubscribeNewsletterReque" +
+      "st\032&.blog.v1.UnsubscribeNewsletterRespon" +
+      "se\022N\n\rGetNewsletter\022\035.blog.v1.GetNewslet" +
+      "terRequest\032\036.blog.v1.GetNewsletterRespon" +
+      "se\022T\n\017ListNewsletters\022\037.blog.v1.ListNews" +
+      "lettersRequest\032 .blog.v1.ListNewsletters" +
+      "ResponseB\244\001\n\031com.samarthasthan.blog.v1B\t" +
+      "BlogProtoP\001Z?github.com/samarthasthan/se" +
+      "rvices-commons/gen/go/blog/v1;blogv1\242\002\003B" +
+      "XX\252\002\007Blog.V1\312\002\007Blog\\V1\342\002\023Blog\\V1\\GPBMeta" +
+      "data\352\002\010Blog::V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -257,6 +335,54 @@ public final class BlogProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_blog_v1_UnDeleteBlogResponse_descriptor,
         new java.lang.String[] { "IsDone", });
+    internal_static_blog_v1_SubscribeNewsletterRequest_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_blog_v1_SubscribeNewsletterRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_blog_v1_SubscribeNewsletterRequest_descriptor,
+        new java.lang.String[] { "Email", });
+    internal_static_blog_v1_SubscribeNewsletterResponse_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_blog_v1_SubscribeNewsletterResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_blog_v1_SubscribeNewsletterResponse_descriptor,
+        new java.lang.String[] { "NewsletterId", });
+    internal_static_blog_v1_UnsubscribeNewsletterRequest_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_blog_v1_UnsubscribeNewsletterRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_blog_v1_UnsubscribeNewsletterRequest_descriptor,
+        new java.lang.String[] { "Email", });
+    internal_static_blog_v1_UnsubscribeNewsletterResponse_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_blog_v1_UnsubscribeNewsletterResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_blog_v1_UnsubscribeNewsletterResponse_descriptor,
+        new java.lang.String[] { "IsDone", });
+    internal_static_blog_v1_GetNewsletterRequest_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_blog_v1_GetNewsletterRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_blog_v1_GetNewsletterRequest_descriptor,
+        new java.lang.String[] { "NewsletterId", });
+    internal_static_blog_v1_GetNewsletterResponse_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_blog_v1_GetNewsletterResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_blog_v1_GetNewsletterResponse_descriptor,
+        new java.lang.String[] { "NewsletterId", "Email", "Status", "SubscribedAt", "UnsubscribedAt", "CreatedAt", "UpdatedAt", "DeletedAt", });
+    internal_static_blog_v1_ListNewslettersRequest_descriptor =
+      getDescriptor().getMessageTypes().get(20);
+    internal_static_blog_v1_ListNewslettersRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_blog_v1_ListNewslettersRequest_descriptor,
+        new java.lang.String[] { "Status", "Page", "PageSize", });
+    internal_static_blog_v1_ListNewslettersResponse_descriptor =
+      getDescriptor().getMessageTypes().get(21);
+    internal_static_blog_v1_ListNewslettersResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_blog_v1_ListNewslettersResponse_descriptor,
+        new java.lang.String[] { "Newsletters", "TotalCount", });
     descriptor.resolveAllFeaturesImmutable();
     build.buf.validate.ValidateProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

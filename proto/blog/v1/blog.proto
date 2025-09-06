@@ -105,3 +105,64 @@ service BlogService {
   rpc DeleteBlog(DeleteBlogRequest) returns (DeleteBlogResponse);
   rpc UnDeleteBlog(UnDeleteBlogRequest) returns (UnDeleteBlogResponse);
 }
+
+
+
+// ------------------------- Newsletter -------------------------
+
+enum NewsletterStatus {
+  NEWSLETTER_STATUS_UNSPECIFIED = 0;
+  NEWSLETTER_STATUS_SUBSCRIBED = 1;
+  NEWSLETTER_STATUS_UNSUBSCRIBED = 2;
+}
+
+message SubscribeNewsletterRequest {
+  string email = 1 [(buf.validate.field).string.min_len = 5]; // validate email length
+}
+
+message SubscribeNewsletterResponse {
+  string newsletter_id = 1;
+}
+
+message UnsubscribeNewsletterRequest {
+  string email = 1 [(buf.validate.field).string.min_len = 5];
+}
+
+message UnsubscribeNewsletterResponse {
+  bool is_done = 1;
+}
+
+message GetNewsletterRequest {
+  string newsletter_id = 1 [(buf.validate.field).string.uuid = true];
+}
+
+message GetNewsletterResponse {
+  string newsletter_id = 1;
+  string email = 2;
+  NewsletterStatus status = 3;
+  google.protobuf.Timestamp subscribed_at = 4;
+  google.protobuf.Timestamp unsubscribed_at = 5;
+  google.protobuf.Timestamp created_at = 6;
+  google.protobuf.Timestamp updated_at = 7;
+  google.protobuf.Timestamp deleted_at = 8;
+}
+
+message ListNewslettersRequest {
+  NewsletterStatus status = 1; // optional filter
+  int32 page = 2;
+  int32 page_size = 3;
+}
+
+message ListNewslettersResponse {
+  repeated GetNewsletterResponse newsletters = 1;
+  int32 total_count = 2;
+}
+
+// ------------------------- Newsletter Service -------------------------
+
+service NewsletterService {
+  rpc SubscribeNewsletter(SubscribeNewsletterRequest) returns (SubscribeNewsletterResponse);
+  rpc UnsubscribeNewsletter(UnsubscribeNewsletterRequest) returns (UnsubscribeNewsletterResponse);
+  rpc GetNewsletter(GetNewsletterRequest) returns (GetNewsletterResponse);
+  rpc ListNewsletters(ListNewslettersRequest) returns (ListNewslettersResponse);
+}

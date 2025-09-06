@@ -75,6 +75,55 @@ func (BlogStatus) EnumDescriptor() ([]byte, []int) {
 	return file_blog_v1_blog_proto_rawDescGZIP(), []int{0}
 }
 
+type NewsletterStatus int32
+
+const (
+	NewsletterStatus_NEWSLETTER_STATUS_UNSPECIFIED  NewsletterStatus = 0
+	NewsletterStatus_NEWSLETTER_STATUS_SUBSCRIBED   NewsletterStatus = 1
+	NewsletterStatus_NEWSLETTER_STATUS_UNSUBSCRIBED NewsletterStatus = 2
+)
+
+// Enum value maps for NewsletterStatus.
+var (
+	NewsletterStatus_name = map[int32]string{
+		0: "NEWSLETTER_STATUS_UNSPECIFIED",
+		1: "NEWSLETTER_STATUS_SUBSCRIBED",
+		2: "NEWSLETTER_STATUS_UNSUBSCRIBED",
+	}
+	NewsletterStatus_value = map[string]int32{
+		"NEWSLETTER_STATUS_UNSPECIFIED":  0,
+		"NEWSLETTER_STATUS_SUBSCRIBED":   1,
+		"NEWSLETTER_STATUS_UNSUBSCRIBED": 2,
+	}
+)
+
+func (x NewsletterStatus) Enum() *NewsletterStatus {
+	p := new(NewsletterStatus)
+	*p = x
+	return p
+}
+
+func (x NewsletterStatus) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (NewsletterStatus) Descriptor() protoreflect.EnumDescriptor {
+	return file_blog_v1_blog_proto_enumTypes[1].Descriptor()
+}
+
+func (NewsletterStatus) Type() protoreflect.EnumType {
+	return &file_blog_v1_blog_proto_enumTypes[1]
+}
+
+func (x NewsletterStatus) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use NewsletterStatus.Descriptor instead.
+func (NewsletterStatus) EnumDescriptor() ([]byte, []int) {
+	return file_blog_v1_blog_proto_rawDescGZIP(), []int{1}
+}
+
 type CreateBlogRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
@@ -899,6 +948,438 @@ func (x *UnDeleteBlogResponse) GetIsDone() bool {
 	return false
 }
 
+type SubscribeNewsletterRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Email         string                 `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"` // validate email length
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SubscribeNewsletterRequest) Reset() {
+	*x = SubscribeNewsletterRequest{}
+	mi := &file_blog_v1_blog_proto_msgTypes[14]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubscribeNewsletterRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubscribeNewsletterRequest) ProtoMessage() {}
+
+func (x *SubscribeNewsletterRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_blog_v1_blog_proto_msgTypes[14]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubscribeNewsletterRequest.ProtoReflect.Descriptor instead.
+func (*SubscribeNewsletterRequest) Descriptor() ([]byte, []int) {
+	return file_blog_v1_blog_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *SubscribeNewsletterRequest) GetEmail() string {
+	if x != nil {
+		return x.Email
+	}
+	return ""
+}
+
+type SubscribeNewsletterResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	NewsletterId  string                 `protobuf:"bytes,1,opt,name=newsletter_id,json=newsletterId,proto3" json:"newsletter_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SubscribeNewsletterResponse) Reset() {
+	*x = SubscribeNewsletterResponse{}
+	mi := &file_blog_v1_blog_proto_msgTypes[15]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubscribeNewsletterResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubscribeNewsletterResponse) ProtoMessage() {}
+
+func (x *SubscribeNewsletterResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_blog_v1_blog_proto_msgTypes[15]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubscribeNewsletterResponse.ProtoReflect.Descriptor instead.
+func (*SubscribeNewsletterResponse) Descriptor() ([]byte, []int) {
+	return file_blog_v1_blog_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *SubscribeNewsletterResponse) GetNewsletterId() string {
+	if x != nil {
+		return x.NewsletterId
+	}
+	return ""
+}
+
+type UnsubscribeNewsletterRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Email         string                 `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UnsubscribeNewsletterRequest) Reset() {
+	*x = UnsubscribeNewsletterRequest{}
+	mi := &file_blog_v1_blog_proto_msgTypes[16]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UnsubscribeNewsletterRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UnsubscribeNewsletterRequest) ProtoMessage() {}
+
+func (x *UnsubscribeNewsletterRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_blog_v1_blog_proto_msgTypes[16]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UnsubscribeNewsletterRequest.ProtoReflect.Descriptor instead.
+func (*UnsubscribeNewsletterRequest) Descriptor() ([]byte, []int) {
+	return file_blog_v1_blog_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *UnsubscribeNewsletterRequest) GetEmail() string {
+	if x != nil {
+		return x.Email
+	}
+	return ""
+}
+
+type UnsubscribeNewsletterResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	IsDone        bool                   `protobuf:"varint,1,opt,name=is_done,json=isDone,proto3" json:"is_done,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UnsubscribeNewsletterResponse) Reset() {
+	*x = UnsubscribeNewsletterResponse{}
+	mi := &file_blog_v1_blog_proto_msgTypes[17]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UnsubscribeNewsletterResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UnsubscribeNewsletterResponse) ProtoMessage() {}
+
+func (x *UnsubscribeNewsletterResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_blog_v1_blog_proto_msgTypes[17]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UnsubscribeNewsletterResponse.ProtoReflect.Descriptor instead.
+func (*UnsubscribeNewsletterResponse) Descriptor() ([]byte, []int) {
+	return file_blog_v1_blog_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *UnsubscribeNewsletterResponse) GetIsDone() bool {
+	if x != nil {
+		return x.IsDone
+	}
+	return false
+}
+
+type GetNewsletterRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	NewsletterId  string                 `protobuf:"bytes,1,opt,name=newsletter_id,json=newsletterId,proto3" json:"newsletter_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetNewsletterRequest) Reset() {
+	*x = GetNewsletterRequest{}
+	mi := &file_blog_v1_blog_proto_msgTypes[18]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetNewsletterRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetNewsletterRequest) ProtoMessage() {}
+
+func (x *GetNewsletterRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_blog_v1_blog_proto_msgTypes[18]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetNewsletterRequest.ProtoReflect.Descriptor instead.
+func (*GetNewsletterRequest) Descriptor() ([]byte, []int) {
+	return file_blog_v1_blog_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *GetNewsletterRequest) GetNewsletterId() string {
+	if x != nil {
+		return x.NewsletterId
+	}
+	return ""
+}
+
+type GetNewsletterResponse struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	NewsletterId   string                 `protobuf:"bytes,1,opt,name=newsletter_id,json=newsletterId,proto3" json:"newsletter_id,omitempty"`
+	Email          string                 `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
+	Status         NewsletterStatus       `protobuf:"varint,3,opt,name=status,proto3,enum=blog.v1.NewsletterStatus" json:"status,omitempty"`
+	SubscribedAt   *timestamppb.Timestamp `protobuf:"bytes,4,opt,name=subscribed_at,json=subscribedAt,proto3" json:"subscribed_at,omitempty"`
+	UnsubscribedAt *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=unsubscribed_at,json=unsubscribedAt,proto3" json:"unsubscribed_at,omitempty"`
+	CreatedAt      *timestamppb.Timestamp `protobuf:"bytes,6,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	UpdatedAt      *timestamppb.Timestamp `protobuf:"bytes,7,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	DeletedAt      *timestamppb.Timestamp `protobuf:"bytes,8,opt,name=deleted_at,json=deletedAt,proto3" json:"deleted_at,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *GetNewsletterResponse) Reset() {
+	*x = GetNewsletterResponse{}
+	mi := &file_blog_v1_blog_proto_msgTypes[19]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetNewsletterResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetNewsletterResponse) ProtoMessage() {}
+
+func (x *GetNewsletterResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_blog_v1_blog_proto_msgTypes[19]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetNewsletterResponse.ProtoReflect.Descriptor instead.
+func (*GetNewsletterResponse) Descriptor() ([]byte, []int) {
+	return file_blog_v1_blog_proto_rawDescGZIP(), []int{19}
+}
+
+func (x *GetNewsletterResponse) GetNewsletterId() string {
+	if x != nil {
+		return x.NewsletterId
+	}
+	return ""
+}
+
+func (x *GetNewsletterResponse) GetEmail() string {
+	if x != nil {
+		return x.Email
+	}
+	return ""
+}
+
+func (x *GetNewsletterResponse) GetStatus() NewsletterStatus {
+	if x != nil {
+		return x.Status
+	}
+	return NewsletterStatus_NEWSLETTER_STATUS_UNSPECIFIED
+}
+
+func (x *GetNewsletterResponse) GetSubscribedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.SubscribedAt
+	}
+	return nil
+}
+
+func (x *GetNewsletterResponse) GetUnsubscribedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.UnsubscribedAt
+	}
+	return nil
+}
+
+func (x *GetNewsletterResponse) GetCreatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return nil
+}
+
+func (x *GetNewsletterResponse) GetUpdatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return nil
+}
+
+func (x *GetNewsletterResponse) GetDeletedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.DeletedAt
+	}
+	return nil
+}
+
+type ListNewslettersRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Status        NewsletterStatus       `protobuf:"varint,1,opt,name=status,proto3,enum=blog.v1.NewsletterStatus" json:"status,omitempty"` // optional filter
+	Page          int32                  `protobuf:"varint,2,opt,name=page,proto3" json:"page,omitempty"`
+	PageSize      int32                  `protobuf:"varint,3,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListNewslettersRequest) Reset() {
+	*x = ListNewslettersRequest{}
+	mi := &file_blog_v1_blog_proto_msgTypes[20]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListNewslettersRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListNewslettersRequest) ProtoMessage() {}
+
+func (x *ListNewslettersRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_blog_v1_blog_proto_msgTypes[20]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListNewslettersRequest.ProtoReflect.Descriptor instead.
+func (*ListNewslettersRequest) Descriptor() ([]byte, []int) {
+	return file_blog_v1_blog_proto_rawDescGZIP(), []int{20}
+}
+
+func (x *ListNewslettersRequest) GetStatus() NewsletterStatus {
+	if x != nil {
+		return x.Status
+	}
+	return NewsletterStatus_NEWSLETTER_STATUS_UNSPECIFIED
+}
+
+func (x *ListNewslettersRequest) GetPage() int32 {
+	if x != nil {
+		return x.Page
+	}
+	return 0
+}
+
+func (x *ListNewslettersRequest) GetPageSize() int32 {
+	if x != nil {
+		return x.PageSize
+	}
+	return 0
+}
+
+type ListNewslettersResponse struct {
+	state         protoimpl.MessageState   `protogen:"open.v1"`
+	Newsletters   []*GetNewsletterResponse `protobuf:"bytes,1,rep,name=newsletters,proto3" json:"newsletters,omitempty"`
+	TotalCount    int32                    `protobuf:"varint,2,opt,name=total_count,json=totalCount,proto3" json:"total_count,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListNewslettersResponse) Reset() {
+	*x = ListNewslettersResponse{}
+	mi := &file_blog_v1_blog_proto_msgTypes[21]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListNewslettersResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListNewslettersResponse) ProtoMessage() {}
+
+func (x *ListNewslettersResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_blog_v1_blog_proto_msgTypes[21]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListNewslettersResponse.ProtoReflect.Descriptor instead.
+func (*ListNewslettersResponse) Descriptor() ([]byte, []int) {
+	return file_blog_v1_blog_proto_rawDescGZIP(), []int{21}
+}
+
+func (x *ListNewslettersResponse) GetNewsletters() []*GetNewsletterResponse {
+	if x != nil {
+		return x.Newsletters
+	}
+	return nil
+}
+
+func (x *ListNewslettersResponse) GetTotalCount() int32 {
+	if x != nil {
+		return x.TotalCount
+	}
+	return 0
+}
+
 var File_blog_v1_blog_proto protoreflect.FileDescriptor
 
 const file_blog_v1_blog_proto_rawDesc = "" +
@@ -962,13 +1443,47 @@ const file_blog_v1_blog_proto_rawDesc = "" +
 	"\x13UnDeleteBlogRequest\x12!\n" +
 	"\ablog_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06blogId\"/\n" +
 	"\x14UnDeleteBlogResponse\x12\x17\n" +
-	"\ais_done\x18\x01 \x01(\bR\x06isDone*u\n" +
+	"\ais_done\x18\x01 \x01(\bR\x06isDone\";\n" +
+	"\x1aSubscribeNewsletterRequest\x12\x1d\n" +
+	"\x05email\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x05R\x05email\"B\n" +
+	"\x1bSubscribeNewsletterResponse\x12#\n" +
+	"\rnewsletter_id\x18\x01 \x01(\tR\fnewsletterId\"=\n" +
+	"\x1cUnsubscribeNewsletterRequest\x12\x1d\n" +
+	"\x05email\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x05R\x05email\"8\n" +
+	"\x1dUnsubscribeNewsletterResponse\x12\x17\n" +
+	"\ais_done\x18\x01 \x01(\bR\x06isDone\"E\n" +
+	"\x14GetNewsletterRequest\x12-\n" +
+	"\rnewsletter_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\fnewsletterId\"\xbc\x03\n" +
+	"\x15GetNewsletterResponse\x12#\n" +
+	"\rnewsletter_id\x18\x01 \x01(\tR\fnewsletterId\x12\x14\n" +
+	"\x05email\x18\x02 \x01(\tR\x05email\x121\n" +
+	"\x06status\x18\x03 \x01(\x0e2\x19.blog.v1.NewsletterStatusR\x06status\x12?\n" +
+	"\rsubscribed_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\fsubscribedAt\x12C\n" +
+	"\x0funsubscribed_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\x0eunsubscribedAt\x129\n" +
+	"\n" +
+	"created_at\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
+	"\n" +
+	"updated_at\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\x129\n" +
+	"\n" +
+	"deleted_at\x18\b \x01(\v2\x1a.google.protobuf.TimestampR\tdeletedAt\"|\n" +
+	"\x16ListNewslettersRequest\x121\n" +
+	"\x06status\x18\x01 \x01(\x0e2\x19.blog.v1.NewsletterStatusR\x06status\x12\x12\n" +
+	"\x04page\x18\x02 \x01(\x05R\x04page\x12\x1b\n" +
+	"\tpage_size\x18\x03 \x01(\x05R\bpageSize\"|\n" +
+	"\x17ListNewslettersResponse\x12@\n" +
+	"\vnewsletters\x18\x01 \x03(\v2\x1e.blog.v1.GetNewsletterResponseR\vnewsletters\x12\x1f\n" +
+	"\vtotal_count\x18\x02 \x01(\x05R\n" +
+	"totalCount*u\n" +
 	"\n" +
 	"BlogStatus\x12\x1b\n" +
 	"\x17BLOG_STATUS_UNSPECIFIED\x10\x00\x12\x15\n" +
 	"\x11BLOG_STATUS_DRAFT\x10\x01\x12\x19\n" +
 	"\x15BLOG_STATUS_PUBLISHED\x10\x02\x12\x18\n" +
-	"\x14BLOG_STATUS_ARCHIVED\x10\x032\xfb\x03\n" +
+	"\x14BLOG_STATUS_ARCHIVED\x10\x03*{\n" +
+	"\x10NewsletterStatus\x12!\n" +
+	"\x1dNEWSLETTER_STATUS_UNSPECIFIED\x10\x00\x12 \n" +
+	"\x1cNEWSLETTER_STATUS_SUBSCRIBED\x10\x01\x12\"\n" +
+	"\x1eNEWSLETTER_STATUS_UNSUBSCRIBED\x10\x022\xfb\x03\n" +
 	"\vBlogService\x12E\n" +
 	"\n" +
 	"CreateBlog\x12\x1a.blog.v1.CreateBlogRequest\x1a\x1b.blog.v1.CreateBlogResponse\x12<\n" +
@@ -979,7 +1494,12 @@ const file_blog_v1_blog_proto_rawDesc = "" +
 	"UpdateBlog\x12\x1a.blog.v1.UpdateBlogRequest\x1a\x1b.blog.v1.UpdateBlogResponse\x12E\n" +
 	"\n" +
 	"DeleteBlog\x12\x1a.blog.v1.DeleteBlogRequest\x1a\x1b.blog.v1.DeleteBlogResponse\x12K\n" +
-	"\fUnDeleteBlog\x12\x1c.blog.v1.UnDeleteBlogRequest\x1a\x1d.blog.v1.UnDeleteBlogResponseB\xa4\x01\n" +
+	"\fUnDeleteBlog\x12\x1c.blog.v1.UnDeleteBlogRequest\x1a\x1d.blog.v1.UnDeleteBlogResponse2\x83\x03\n" +
+	"\x11NewsletterService\x12`\n" +
+	"\x13SubscribeNewsletter\x12#.blog.v1.SubscribeNewsletterRequest\x1a$.blog.v1.SubscribeNewsletterResponse\x12f\n" +
+	"\x15UnsubscribeNewsletter\x12%.blog.v1.UnsubscribeNewsletterRequest\x1a&.blog.v1.UnsubscribeNewsletterResponse\x12N\n" +
+	"\rGetNewsletter\x12\x1d.blog.v1.GetNewsletterRequest\x1a\x1e.blog.v1.GetNewsletterResponse\x12T\n" +
+	"\x0fListNewsletters\x12\x1f.blog.v1.ListNewslettersRequest\x1a .blog.v1.ListNewslettersResponseB\xa4\x01\n" +
 	"\x19com.samarthasthan.blog.v1B\tBlogProtoP\x01Z?github.com/samarthasthan/services-commons/gen/go/blog/v1;blogv1\xa2\x02\x03BXX\xaa\x02\aBlog.V1\xca\x02\aBlog\\V1\xe2\x02\x13Blog\\V1\\GPBMetadata\xea\x02\bBlog::V1b\x06proto3"
 
 var (
@@ -994,55 +1514,80 @@ func file_blog_v1_blog_proto_rawDescGZIP() []byte {
 	return file_blog_v1_blog_proto_rawDescData
 }
 
-var file_blog_v1_blog_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_blog_v1_blog_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
+var file_blog_v1_blog_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
+var file_blog_v1_blog_proto_msgTypes = make([]protoimpl.MessageInfo, 22)
 var file_blog_v1_blog_proto_goTypes = []any{
-	(BlogStatus)(0),               // 0: blog.v1.BlogStatus
-	(*CreateBlogRequest)(nil),     // 1: blog.v1.CreateBlogRequest
-	(*CreateBlogResponse)(nil),    // 2: blog.v1.CreateBlogResponse
-	(*GetBlogRequest)(nil),        // 3: blog.v1.GetBlogRequest
-	(*GetBlogBySlugRequest)(nil),  // 4: blog.v1.GetBlogBySlugRequest
-	(*Blog)(nil),                  // 5: blog.v1.Blog
-	(*GetBlogResponse)(nil),       // 6: blog.v1.GetBlogResponse
-	(*ListBlogsRequest)(nil),      // 7: blog.v1.ListBlogsRequest
-	(*ListBlogsResponse)(nil),     // 8: blog.v1.ListBlogsResponse
-	(*UpdateBlogRequest)(nil),     // 9: blog.v1.UpdateBlogRequest
-	(*UpdateBlogResponse)(nil),    // 10: blog.v1.UpdateBlogResponse
-	(*DeleteBlogRequest)(nil),     // 11: blog.v1.DeleteBlogRequest
-	(*DeleteBlogResponse)(nil),    // 12: blog.v1.DeleteBlogResponse
-	(*UnDeleteBlogRequest)(nil),   // 13: blog.v1.UnDeleteBlogRequest
-	(*UnDeleteBlogResponse)(nil),  // 14: blog.v1.UnDeleteBlogResponse
-	(*timestamppb.Timestamp)(nil), // 15: google.protobuf.Timestamp
+	(BlogStatus)(0),                       // 0: blog.v1.BlogStatus
+	(NewsletterStatus)(0),                 // 1: blog.v1.NewsletterStatus
+	(*CreateBlogRequest)(nil),             // 2: blog.v1.CreateBlogRequest
+	(*CreateBlogResponse)(nil),            // 3: blog.v1.CreateBlogResponse
+	(*GetBlogRequest)(nil),                // 4: blog.v1.GetBlogRequest
+	(*GetBlogBySlugRequest)(nil),          // 5: blog.v1.GetBlogBySlugRequest
+	(*Blog)(nil),                          // 6: blog.v1.Blog
+	(*GetBlogResponse)(nil),               // 7: blog.v1.GetBlogResponse
+	(*ListBlogsRequest)(nil),              // 8: blog.v1.ListBlogsRequest
+	(*ListBlogsResponse)(nil),             // 9: blog.v1.ListBlogsResponse
+	(*UpdateBlogRequest)(nil),             // 10: blog.v1.UpdateBlogRequest
+	(*UpdateBlogResponse)(nil),            // 11: blog.v1.UpdateBlogResponse
+	(*DeleteBlogRequest)(nil),             // 12: blog.v1.DeleteBlogRequest
+	(*DeleteBlogResponse)(nil),            // 13: blog.v1.DeleteBlogResponse
+	(*UnDeleteBlogRequest)(nil),           // 14: blog.v1.UnDeleteBlogRequest
+	(*UnDeleteBlogResponse)(nil),          // 15: blog.v1.UnDeleteBlogResponse
+	(*SubscribeNewsletterRequest)(nil),    // 16: blog.v1.SubscribeNewsletterRequest
+	(*SubscribeNewsletterResponse)(nil),   // 17: blog.v1.SubscribeNewsletterResponse
+	(*UnsubscribeNewsletterRequest)(nil),  // 18: blog.v1.UnsubscribeNewsletterRequest
+	(*UnsubscribeNewsletterResponse)(nil), // 19: blog.v1.UnsubscribeNewsletterResponse
+	(*GetNewsletterRequest)(nil),          // 20: blog.v1.GetNewsletterRequest
+	(*GetNewsletterResponse)(nil),         // 21: blog.v1.GetNewsletterResponse
+	(*ListNewslettersRequest)(nil),        // 22: blog.v1.ListNewslettersRequest
+	(*ListNewslettersResponse)(nil),       // 23: blog.v1.ListNewslettersResponse
+	(*timestamppb.Timestamp)(nil),         // 24: google.protobuf.Timestamp
 }
 var file_blog_v1_blog_proto_depIdxs = []int32{
 	0,  // 0: blog.v1.CreateBlogRequest.status:type_name -> blog.v1.BlogStatus
 	0,  // 1: blog.v1.Blog.status:type_name -> blog.v1.BlogStatus
-	15, // 2: blog.v1.Blog.created_at:type_name -> google.protobuf.Timestamp
-	15, // 3: blog.v1.Blog.updated_at:type_name -> google.protobuf.Timestamp
-	15, // 4: blog.v1.Blog.deleted_at:type_name -> google.protobuf.Timestamp
-	5,  // 5: blog.v1.GetBlogResponse.blog:type_name -> blog.v1.Blog
+	24, // 2: blog.v1.Blog.created_at:type_name -> google.protobuf.Timestamp
+	24, // 3: blog.v1.Blog.updated_at:type_name -> google.protobuf.Timestamp
+	24, // 4: blog.v1.Blog.deleted_at:type_name -> google.protobuf.Timestamp
+	6,  // 5: blog.v1.GetBlogResponse.blog:type_name -> blog.v1.Blog
 	0,  // 6: blog.v1.ListBlogsRequest.status:type_name -> blog.v1.BlogStatus
-	5,  // 7: blog.v1.ListBlogsResponse.blogs:type_name -> blog.v1.Blog
+	6,  // 7: blog.v1.ListBlogsResponse.blogs:type_name -> blog.v1.Blog
 	0,  // 8: blog.v1.UpdateBlogRequest.status:type_name -> blog.v1.BlogStatus
-	1,  // 9: blog.v1.BlogService.CreateBlog:input_type -> blog.v1.CreateBlogRequest
-	3,  // 10: blog.v1.BlogService.GetBlog:input_type -> blog.v1.GetBlogRequest
-	4,  // 11: blog.v1.BlogService.GetBlogBySlug:input_type -> blog.v1.GetBlogBySlugRequest
-	7,  // 12: blog.v1.BlogService.ListBlogs:input_type -> blog.v1.ListBlogsRequest
-	9,  // 13: blog.v1.BlogService.UpdateBlog:input_type -> blog.v1.UpdateBlogRequest
-	11, // 14: blog.v1.BlogService.DeleteBlog:input_type -> blog.v1.DeleteBlogRequest
-	13, // 15: blog.v1.BlogService.UnDeleteBlog:input_type -> blog.v1.UnDeleteBlogRequest
-	2,  // 16: blog.v1.BlogService.CreateBlog:output_type -> blog.v1.CreateBlogResponse
-	6,  // 17: blog.v1.BlogService.GetBlog:output_type -> blog.v1.GetBlogResponse
-	6,  // 18: blog.v1.BlogService.GetBlogBySlug:output_type -> blog.v1.GetBlogResponse
-	8,  // 19: blog.v1.BlogService.ListBlogs:output_type -> blog.v1.ListBlogsResponse
-	10, // 20: blog.v1.BlogService.UpdateBlog:output_type -> blog.v1.UpdateBlogResponse
-	12, // 21: blog.v1.BlogService.DeleteBlog:output_type -> blog.v1.DeleteBlogResponse
-	14, // 22: blog.v1.BlogService.UnDeleteBlog:output_type -> blog.v1.UnDeleteBlogResponse
-	16, // [16:23] is the sub-list for method output_type
-	9,  // [9:16] is the sub-list for method input_type
-	9,  // [9:9] is the sub-list for extension type_name
-	9,  // [9:9] is the sub-list for extension extendee
-	0,  // [0:9] is the sub-list for field type_name
+	1,  // 9: blog.v1.GetNewsletterResponse.status:type_name -> blog.v1.NewsletterStatus
+	24, // 10: blog.v1.GetNewsletterResponse.subscribed_at:type_name -> google.protobuf.Timestamp
+	24, // 11: blog.v1.GetNewsletterResponse.unsubscribed_at:type_name -> google.protobuf.Timestamp
+	24, // 12: blog.v1.GetNewsletterResponse.created_at:type_name -> google.protobuf.Timestamp
+	24, // 13: blog.v1.GetNewsletterResponse.updated_at:type_name -> google.protobuf.Timestamp
+	24, // 14: blog.v1.GetNewsletterResponse.deleted_at:type_name -> google.protobuf.Timestamp
+	1,  // 15: blog.v1.ListNewslettersRequest.status:type_name -> blog.v1.NewsletterStatus
+	21, // 16: blog.v1.ListNewslettersResponse.newsletters:type_name -> blog.v1.GetNewsletterResponse
+	2,  // 17: blog.v1.BlogService.CreateBlog:input_type -> blog.v1.CreateBlogRequest
+	4,  // 18: blog.v1.BlogService.GetBlog:input_type -> blog.v1.GetBlogRequest
+	5,  // 19: blog.v1.BlogService.GetBlogBySlug:input_type -> blog.v1.GetBlogBySlugRequest
+	8,  // 20: blog.v1.BlogService.ListBlogs:input_type -> blog.v1.ListBlogsRequest
+	10, // 21: blog.v1.BlogService.UpdateBlog:input_type -> blog.v1.UpdateBlogRequest
+	12, // 22: blog.v1.BlogService.DeleteBlog:input_type -> blog.v1.DeleteBlogRequest
+	14, // 23: blog.v1.BlogService.UnDeleteBlog:input_type -> blog.v1.UnDeleteBlogRequest
+	16, // 24: blog.v1.NewsletterService.SubscribeNewsletter:input_type -> blog.v1.SubscribeNewsletterRequest
+	18, // 25: blog.v1.NewsletterService.UnsubscribeNewsletter:input_type -> blog.v1.UnsubscribeNewsletterRequest
+	20, // 26: blog.v1.NewsletterService.GetNewsletter:input_type -> blog.v1.GetNewsletterRequest
+	22, // 27: blog.v1.NewsletterService.ListNewsletters:input_type -> blog.v1.ListNewslettersRequest
+	3,  // 28: blog.v1.BlogService.CreateBlog:output_type -> blog.v1.CreateBlogResponse
+	7,  // 29: blog.v1.BlogService.GetBlog:output_type -> blog.v1.GetBlogResponse
+	7,  // 30: blog.v1.BlogService.GetBlogBySlug:output_type -> blog.v1.GetBlogResponse
+	9,  // 31: blog.v1.BlogService.ListBlogs:output_type -> blog.v1.ListBlogsResponse
+	11, // 32: blog.v1.BlogService.UpdateBlog:output_type -> blog.v1.UpdateBlogResponse
+	13, // 33: blog.v1.BlogService.DeleteBlog:output_type -> blog.v1.DeleteBlogResponse
+	15, // 34: blog.v1.BlogService.UnDeleteBlog:output_type -> blog.v1.UnDeleteBlogResponse
+	17, // 35: blog.v1.NewsletterService.SubscribeNewsletter:output_type -> blog.v1.SubscribeNewsletterResponse
+	19, // 36: blog.v1.NewsletterService.UnsubscribeNewsletter:output_type -> blog.v1.UnsubscribeNewsletterResponse
+	21, // 37: blog.v1.NewsletterService.GetNewsletter:output_type -> blog.v1.GetNewsletterResponse
+	23, // 38: blog.v1.NewsletterService.ListNewsletters:output_type -> blog.v1.ListNewslettersResponse
+	28, // [28:39] is the sub-list for method output_type
+	17, // [17:28] is the sub-list for method input_type
+	17, // [17:17] is the sub-list for extension type_name
+	17, // [17:17] is the sub-list for extension extendee
+	0,  // [0:17] is the sub-list for field type_name
 }
 
 func init() { file_blog_v1_blog_proto_init() }
@@ -1055,10 +1600,10 @@ func file_blog_v1_blog_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_blog_v1_blog_proto_rawDesc), len(file_blog_v1_blog_proto_rawDesc)),
-			NumEnums:      1,
-			NumMessages:   14,
+			NumEnums:      2,
+			NumMessages:   22,
 			NumExtensions: 0,
-			NumServices:   1,
+			NumServices:   2,
 		},
 		GoTypes:           file_blog_v1_blog_proto_goTypes,
 		DependencyIndexes: file_blog_v1_blog_proto_depIdxs,
