@@ -1,0 +1,18 @@
+{{- if .Values.persistence.minioLocalPath }}
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: minio-pv
+  namespace: services
+  labels:
+    statefulset: minio
+spec:
+  capacity:
+    storage: {{ .Values.storage.minioSize }}
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: {{ .Values.persistence.minioLocalPath }}
+  storageClassName: ""
+  persistentVolumeReclaimPolicy: Retain
+{{- end }}

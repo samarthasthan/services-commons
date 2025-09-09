@@ -1,0 +1,40 @@
+env:
+  DB_USER: "postgres"
+  DB_PASSWORD: "postgres"
+  DB_NAME: "postgres"
+  MONGO_USER: "mongo"
+  MONGO_PASSWORD: "mongo"
+  MONGO_DATABASE: "mongo"
+  REDIS_PASSWORD: "redis"
+  S3_ACCESS_KEY: "minio-access-key"
+  S3_SECRET_KEY: "minio-secret-key"
+  ES_JAVA_OPTS: "-Xms512m -Xmx512m"
+  ES_PASSWORD: "elastic"
+  TEMPORAL_PORT: "7233"
+  TEMPORAL_DYNAMIC_CONFIG_PATH: "/etc/temporal/config/dynamicconfig/development-sql.yaml"
+
+images:
+  postgres: "postgres:latest"
+  kafka: "bitnami/kafka:3.6.1"
+  mongo: "mongo:latest"
+  redis: "redis:latest"
+  minio: "minio/minio:latest"
+  elasticsearch: "elasticsearch:7.17.10"
+  temporal: "temporalio/auto-setup:1.22.3"
+  temporalAdminTools: "temporalio/admin-tools:1.22.3"
+
+storage:
+  postgresSize: 5Gi
+  kafkaSize: 5Gi
+  mongoSize: 5Gi
+  redisSize: 5Gi
+  minioSize: 10Gi
+  elasticsearchSize: 10Gi
+
+persistence:
+  postgresLocalPath: /Users/samarthasthan/personal/.services/postgres
+  kafkaLocalPath: /Users/samarthasthan/personal/.services/kafka
+  mongoLocalPath: /Users/samarthasthan/personal/.services/mongo
+  redisLocalPath: /Users/samarthasthan/personal/.services/redis
+  minioLocalPath: /Users/samarthasthan/personal/.services/minio
+  elasticsearchLocalPath: /Users/samarthasthan/personal/.services/elasticsearch

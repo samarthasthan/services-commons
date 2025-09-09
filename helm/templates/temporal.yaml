@@ -1,0 +1,75 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: temporal
+  namespace: services
+spec:
+  serviceName: temporal
+  replicas: 1
+  selector:
+    matchLabels:
+      app: temporal
+  template:
+    metadata:
+      labels:
+        app: temporal
+    spec:
+      containers:
+        - name: temporal
+          image: "{{ .Values.images.temporal }}"
+          args: ["temporal-server", "--address", "0.0.0.0:7233"]
+          env:
+            - name: DB
+              value: "postgres12"
+            - name: DB_PORT
+              value: "5432"
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: services-secret
+                  key: DB_USER
+            - name: POSTGRES_PWD
+              valueFrom:
+                secretKeyRef:
+                  name: services-secret
+                  key: DB_PASSWORD
+            - name: POSTGRES_SEEDS
+              value: "postgres-0.postgres.services.svc.cluster.local"
+            - name: ENABLE_ES
+              value: "true"
+            - name: ES_SEEDS
+              value: "elasticsearch"
+            - name: ES_VERSION
+              value: "v7"
+            - name: TEMPORAL_ADDRESS
+              value: "temporal:{{ .Values.env.TEMPORAL_PORT }}"
+            - name: TEMPORAL_CLI_ADDRESS
+              value: "temporal:{{ .Values.env.TEMPORAL_PORT }}"
+            - name: DYNAMIC_CONFIG_FILE_PATH
+              value: "{{ .Values.env.TEMPORAL_DYNAMIC_CONFIG_PATH }}"
+          ports:
+            - containerPort: {{ .Values.env.TEMPORAL_PORT }}
+          volumeMounts:
+            - name: temporal-config
+              mountPath: /etc/temporal/config/dynamicconfig
+      volumes:
+        - name: temporal-config
+          hostPath:
+            path: /Users/samarthasthan/personal/services-commons/build/dynamicconfig
+            type: Directory
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: temporal
+  namespace: services
+spec:
+  selector:
+    app: temporal
+  ports:
+    - name: grpc
+      port: 7233
+      targetPort: 7233
+  clusterIP: None

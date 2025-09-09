@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mongo
+  namespace: services
+spec:
+  serviceName: mongo
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongo
+  template:
+    metadata:
+      labels:
+        app: mongo
+    spec:
+      containers:
+        - name: mongo
+          image: "{{ .Values.images.mongo }}"
+          env:
+            - name: MONGO_INITDB_ROOT_USERNAME
+              value: "{{ .Values.env.MONGO_USER }}"
+            - name: MONGO_INITDB_ROOT_PASSWORD
+              value: "{{ .Values.env.MONGO_PASSWORD }}"
+            - name: MONGO_INITDB_DATABASE
+              value: "{{ .Values.env.MONGO_DATABASE }}"
+          ports:
+            - name: mongo
+              containerPort: 27017
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "200m"
+          volumeMounts:
+            - name: mongo-data
+              mountPath: /data/db
+  volumeClaimTemplates:
+    - metadata:
+        name: mongo-data
+      spec:
+        accessModes: [ "ReadWriteOnce" ]
+        resources:
+          requests:
+            storage: {{ .Values.storage.mongoSize }}
+        {{- if .Values.persistence.mongoLocalPath }}
+        storageClassName: ""
+        selector:
+          matchLabels:
+            statefulset: mongo
+        {{- end }}
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo
+  namespace: services
+spec:
+  selector:
+    app: mongo
+  ports:
+    - port: 27017
+      targetPort: 27017
+  clusterIP: None

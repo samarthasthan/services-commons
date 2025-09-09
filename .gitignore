@@ -51,7 +51,6 @@ target/
 
 # Gradle-specific
 .gradle/
-build/
 !gradle-wrapper.jar
 !gradle-wrapper.properties
 .gradle-wrapper/
@@ -111,7 +110,6 @@ yarn.lock
 
 # Compiled output
 dist/
-build/
 out/
 
 # Environment files

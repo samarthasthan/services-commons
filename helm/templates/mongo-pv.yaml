@@ -1,0 +1,18 @@
+{{- if .Values.persistence.mongoLocalPath }}
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mongo-pv
+  namespace: services
+  labels:
+    statefulset: mongo
+spec:
+  capacity:
+    storage: {{ .Values.storage.mongoSize }}
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: {{ .Values.persistence.mongoLocalPath }}
+  storageClassName: ""
+  persistentVolumeReclaimPolicy: Retain
+{{- end }}

@@ -36,10 +36,10 @@ gen-ts:
 		$(PROTO_FILES) $(PROTO_VALIDATE_FILES)
 
 db-up:
-	docker compose --env-file .env -f build/docker-compose.yml up -d
+	@docker compose --env-file .env -f build/docker-compose.yml up -d
 
 db-down:
-	docker compose --env-file .env -f build/docker-compose.yml down
+	@docker compose --env-file .env -f build/docker-compose.yml down
 
 
 # Make migrations

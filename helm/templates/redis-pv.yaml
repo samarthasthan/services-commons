@@ -1,0 +1,18 @@
+{{- if .Values.persistence.redisLocalPath }}
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: redis-pv
+  namespace: services
+  labels:
+    statefulset: redis
+spec:
+  capacity:
+    storage: {{ .Values.storage.redisSize }}
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: {{ .Values.persistence.redisLocalPath }}
+  storageClassName: ""
+  persistentVolumeReclaimPolicy: Retain
+{{- end }}

@@ -1,0 +1,18 @@
+{{- if .Values.persistence.postgresLocalPath }}
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: postgres-pv
+  namespace: services
+  labels:
+    statefulset: postgres
+spec:
+  capacity:
+    storage: {{ .Values.storage.postgresSize }}
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: {{ .Values.persistence.postgresLocalPath }}
+  storageClassName: ""
+  persistentVolumeReclaimPolicy: Retain
+{{- end }}
