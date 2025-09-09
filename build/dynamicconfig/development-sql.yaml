@@ -1,6 +1,74 @@
+# Enhanced dynamic configuration for single-node Temporal setup
 limit.maxIDLength:
   - value: 255
     constraints: {}
+
 system.forceSearchAttributesCacheRefreshOnRead:
   - value: true # Dev setup only. Please don't turn this on in production.
+    constraints: {}
+
+# Single-node cluster configuration
+system.enableLogicalShardID:
+  - value: true
+    constraints: {}
+
+# Matching service configuration for single node
+matching.numTaskqueueReadPartitions:
+  - value: 1
+    constraints: {}
+
+matching.numTaskqueueWritePartitions:
+  - value: 1
+    constraints: {}
+
+# History service configuration
+history.numShards:
+  - value: 4
+    constraints: {}
+
+# Frontend service configuration
+frontend.enableClientVersionCheck:
+  - value: false
+    constraints: {}
+
+# Worker service configuration
+worker.replicationTaskMaxRetryCount:
+  - value: 10
+    constraints: {}
+
+# System workflow configuration
+system.enableParentClosePolicy:
+  - value: true
+    constraints: {}
+
+# Archival configuration (disable for development)
+system.enableArchival:
+  - value: false
+    constraints: {}
+
+# Cluster membership settings for single node
+system.membershipMaxJoinDuration:
+  - value: "30s"
+    constraints: {}
+
+# Persistence settings
+system.advancedVisibilityWritingMode:
+  - value: "dual"
+    constraints: {}
+
+
+
+# Namespace settings
+system.enableNamespaceNotActiveAutoForwarding:
+  - value: false
+    constraints: {}
+
+# Task processing
+system.taskProcessRPS:
+  - value: 1000
+    constraints: {}
+
+# Workflow task timeout
+system.defaultWorkflowTaskTimeout:
+  - value: "10s"
     constraints: {}
