@@ -17,6 +17,7 @@ spec:
       containers:
         - name: mongo
           image: "{{ .Values.images.mongo }}"
+          command: ["mongod", "--bind_ip", "0.0.0.0"]
           env:
             - name: MONGO_INITDB_ROOT_USERNAME
               value: "{{ .Values.env.MONGO_USER }}"

@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orchestrator
+  namespace: services
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: orchestrator
+  template:
+    metadata:
+      labels:
+        app: orchestrator
+    spec:
+      containers:
+        - name: orchestrator
+          image: samarthasthan/orchestrator-service:latest
+          imagePullPolicy: Always
+          env:
+            - name: TEMPORAL_HOST
+              value: "temporal-0.temporal.services.svc.cluster.local"  
+            - name: TEMPORAL_PORT
+              value: "7233"
+            - name: USER_SERVICE_HOST
+              value: "user-grpc.services.svc.cluster.local"
+            - name: USER_SERVICE_PORT
+              value: "50051"
+            - name: AUTH_SERVICE_HOST
+              value: "auth-grpc.services.svc.cluster.local"
+            - name: AUTH_SERVICE_PORT
+              value: "50052"
+            - name: PROFILE_SERVICE_HOST
+              value: "profile-grpc.services.svc.cluster.local"
+            - name: PROFILE_SERVICE_PORT
+              value: "50053"
+

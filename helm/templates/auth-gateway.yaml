@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: auth-gateway
+  namespace: services
+spec:
+  selector:
+    app: auth-gateway
+  ports:
+    - name: grpc
+      port: 8001
+      targetPort: 8001

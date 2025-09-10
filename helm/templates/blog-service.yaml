@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: blog-grpc
+  namespace: services
+spec:
+  selector:
+    app: blog-grpc
+  ports:
+    - name: grpc
+      port: 50055
+      targetPort: 50055

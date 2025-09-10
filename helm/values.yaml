@@ -2,9 +2,9 @@ env:
   DB_USER: "postgres"
   DB_PASSWORD: "postgres"
   DB_NAME: "postgres"
-  MONGO_USER: "mongo"
-  MONGO_PASSWORD: "mongo"
-  MONGO_DATABASE: "mongo"
+  MONGO_USER: "root"
+  MONGO_PASSWORD: "password"
+  MONGO_DATABASE: "auth"
   REDIS_PASSWORD: "redis"
   S3_ACCESS_KEY: "minio-access-key"
   S3_SECRET_KEY: "minio-secret-key"
@@ -14,6 +14,7 @@ env:
   TEMPORAL_DYNAMIC_CONFIG_PATH: "/etc/temporal/config/dynamicconfig/development-sql.yaml"
 
 images:
+  profile: "samarthasthan/profile-service:latest"
   postgres: "postgres:latest"
   kafka: "bitnami/kafka:3.6.1"
   mongo: "mongo:latest"

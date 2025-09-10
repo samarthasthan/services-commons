@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-gateway
+  namespace: services
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: auth-gateway
+  template:
+    metadata:
+      labels:
+        app: auth-gateway
+    spec:
+      containers:
+        - name: auth-gateway
+          image: samarthasthan/auth-gateway-service:latest
+          imagePullPolicy: Always
+          env:
+            - name: SERVER_TYPE
+              value: "development"
+            - name: GATEWAY_HOST
+              value: "0.0.0.0"
+            - name: GATEWAY_PORT
+              value: "8001"
+            - name: USER_SERVICE_HOST
+              value: "user-grpc.services.svc.cluster.local"
+            - name: USER_SERVICE_PORT
+              value: "50051"
+            - name: AUTH_SERVICE_HOST
+              value: "auth-grpc.services.svc.cluster.local"
+            - name: AUTH_SERVICE_PORT
+              value: "50052"
+            - name: PROFILE_SERVICE_HOST
+              value: "profile-grpc.services.svc.cluster.local"
+            - name: PROFILE_SERVICE_PORT
+              value: "50053"
+            - name: BLOG_SERVICE_HOST
+              value: "blog-grpc.services.svc.cluster.local"
+            - name: BLOG_SERVICE_PORT
+              value: "50055"
+            - name: TEMPORAL_HOST
+              value: "temporal-0.temporal.services.svc.cluster.local"  
+            - name: TEMPORAL_PORT
+              value: "7233"
+            - name: DOMAIN
+              value: "localhost"
+            - name: FRONTEND_URL
+              value: "http://localhost"
+            - name: X_API_KEY
+              value: frubay
+          ports:
+            - containerPort: 8001
