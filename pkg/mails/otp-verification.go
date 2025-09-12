@@ -2,6 +2,7 @@ package mails
 
 import (
 	"bytes"
+	"path/filepath"
 	"text/template"
 )
 
@@ -12,7 +13,8 @@ type SignUpOTPMail struct {
 
 func BuildSignUpOTPMail(data *SignUpOTPMail) (string, error) {
 	// Load template file
-	tmpl, err := template.ParseFiles("otp-verification.temp.html")
+	tmplPath := filepath.Join("pkg/mails", "otp-verification.temp.html")
+	tmpl, err := template.ParseFiles(tmplPath)
 	if err != nil {
 		return "", err
 	}

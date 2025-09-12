@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mailer
+  namespace: services
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mailer
+  template:
+    metadata:
+      labels:
+        app: mailer
+    spec:
+      containers:
+        - name: mailer
+          image: samarthasthan/mail-service:latest
+          imagePullPolicy: Always
+          env:
+            - name: KAFKA_PORT
+              value: "29092"
+            - name: KAFKA_HOST
+              value: "kafka-0.kafka.services.svc.cluster.local"
+            - name: KAFKA_GROUP_ID
+              value: myGroup
+            - name: KAFKA_TOPIC
+              value: "mail"
+            - name: SMTP_SERVER
+              value: "smtp-relay.brevo.com"
+            - name: SMTP_PORT
+              value: "587"
+            - name: SMTP_LOGIN
+              value: "75a33c001@smtp-brevo.com"
+            - name: SMTP_PASSWORD
+              value: "0c8shB9P4N3vXTyV"
+
