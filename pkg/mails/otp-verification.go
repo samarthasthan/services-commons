@@ -1,0 +1,30 @@
+package mails
+
+import (
+	"bytes"
+	"text/template"
+)
+
+type SignUpOTPMail struct {
+	Name string `json:"name"`
+	Code string `json:"code"`
+}
+
+func BuildSignUpOTPMail(data *SignUpOTPMail) (string, error) {
+	// Load template file
+	tmpl, err := template.ParseFiles("otp-verification.temp.html")
+	if err != nil {
+		return "", err
+	}
+
+	// Render template into a buffer
+	var buf bytes.Buffer
+	if err := tmpl.Execute(&buf, data); err != nil {
+		return "", err
+	}
+
+	// Get final email body as string
+	emailBody := buf.String()
+
+	return emailBody, nil
+}

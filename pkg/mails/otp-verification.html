@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+        text-align: center;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      body {
+        height: auto;
+        background-color: #0a0a0a;
+        color: #fff;
+        font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+      }
+      main {
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .muted {
+        color: #777777;
+      }
+      .headline {
+        display: flex;
+        align-items: baseline;
+        gap: 0.1em;
+        font-size: clamp(72px, 18vw, 300px);
+        font-weight: 600;
+        line-height: 1;
+        user-select: none;
+        text-transform: none;
+      }
+
+      .italic {
+        font-style: italic;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+      }
+      .header {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .header h1 {
+        font-size: 30px;
+      }
+      .header .italic {
+        font-weight: 700;
+      }
+      .logo-header {
+        width: 70px;
+        height: 70px;
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background-color: #282828;
+        margin: 20px 50px 20px 50px;
+        border-radius: 5px;
+      }
+
+      .otp-code {
+        display: inline-block;
+        background-color: #0d0d0d;
+        color: #ffffff;
+        font-size: 32px;
+        font-weight: 700;
+        letter-spacing: 5px;
+        padding: 15px 30px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        margin-top: 30px;
+        border: 1px dashed #444;
+      }
+
+      .footer {
+        margin: 20px 50px 20px 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .thanks {
+        font-size: 15px;
+      }
+      .address {
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <img
+          class="logo-header"
+          src="http://localhost:3000/frubay-icon.svg"
+          alt="frubay"
+        />
+        <h1 class="headline nowrap" aria-label="Frubay">
+          <span>Fru</span>
+          <span class="italic">b</span>
+          <span>ay</span>
+        </h1>
+      </div>
+      <div class="content">
+        <p>Hi Alex!</p>
+        <p>
+          Welcome to FruBay! To complete your registration and secure your
+          account, please use the verification code below. This code will expire
+          in 10 minutes.
+        </p>
+        <div class="otp-code">12345</div>
+        <p>
+          If you didn't request this code, you can safely ignore this email.
+        </p>
+      </div>
+      <div class="footer muted">
+        <p class="thanks">
+          Thank you for joining FruBay - where we're crafting the
+          next-generation platform to redefine how people connect, build, and
+          create online.
+        </p>
+        <div class="address">
+          <p>&copy; 2025 FruBay. All rights reserved.</p>
+          <p>FruBay Inc, 123 Innovation Drive, Tech City</p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

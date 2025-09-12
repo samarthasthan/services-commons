@@ -28,13 +28,13 @@ spec:
               containerPort: 9000
             - name: minio-console
               containerPort: 9001
-          resources:
-            requests:
-              memory: "128Mi"
-              cpu: "100m"
-            limits:
-              memory: "256Mi"
-              cpu: "200m"
+          # resources:
+          #   requests:
+          #     memory: "128Mi"
+          #     cpu: "100m"
+          #   limits:
+          #     memory: "256Mi"
+          #     cpu: "200m"
           volumeMounts:
             - name: minio-data
               mountPath: /data
