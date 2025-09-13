@@ -47,7 +47,7 @@ spec:
             - name: DOMAIN
               value: "frubay.com"
             - name: FRONTEND_URL
-              value: "http://*.frubay.com"
+              value: "https://frubay.com,https://auth.frubay.com"
             - name: X_API_KEY
               value: frubay
           ports:
