@@ -39,7 +39,7 @@ spec:
             - name: PROFILE_SERVICE_PORT
               value: "50053"
             - name: KAFKA_EXTERNAL_PORT
-              value: "9092"
+              value: "29092"
             - name: KAFKA_HOST
               value: "kafka-0.kafka.services.svc.cluster.local"
             - name: USER_REDIS_PORT

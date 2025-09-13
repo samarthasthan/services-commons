@@ -45,9 +45,9 @@ spec:
             - name: TEMPORAL_PORT
               value: "7233"
             - name: DOMAIN
-              value: "localhost"
+              value: "frubay.com"
             - name: FRONTEND_URL
-              value: "http://localhost"
+              value: "http://*.frubay.com"
             - name: X_API_KEY
               value: frubay
           ports:

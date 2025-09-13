@@ -26,15 +26,15 @@ spec:
               value: "postgres-0.postgres.services.svc.cluster.local"
             - name: POSTGRES_PORT
               value: "5432"
-            - name: AUTH_MONGO_HOST
+            - name: MONGO_HOST
               value: "mongo-0.mongo.services.svc.cluster.local"
-            - name: AUTH_MONGO_PORT
+            - name: MONGO_PORT
               value: "27017"
-            - name: AUTH_MONGO_USER
+            - name: MONGO_USER
               value: "mongo"
-            - name: AUTH_MONGO_PASSWORD
+            - name: MONGO_PASSWORD
               value: "mongo"
-            - name: AUTH_MONGO_DATABASE
+            - name: MONGO_DATABASE
               value: "mongo"
             - name: BLOG_SERVICE_HOST
               value: "0.0.0.0"
