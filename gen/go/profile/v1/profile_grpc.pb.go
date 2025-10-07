@@ -19,12 +19,14 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	ProfileService_CreateProfile_FullMethodName        = "/profile.v1.ProfileService/CreateProfile"
-	ProfileService_GetProfile_FullMethodName           = "/profile.v1.ProfileService/GetProfile"
-	ProfileService_UpdateProfile_FullMethodName        = "/profile.v1.ProfileService/UpdateProfile"
-	ProfileService_DeleteProfile_FullMethodName        = "/profile.v1.ProfileService/DeleteProfile"
-	ProfileService_DeleteProfileByEmail_FullMethodName = "/profile.v1.ProfileService/DeleteProfileByEmail"
-	ProfileService_UnDeleteProfile_FullMethodName      = "/profile.v1.ProfileService/UnDeleteProfile"
+	ProfileService_CreateProfile_FullMethodName           = "/profile.v1.ProfileService/CreateProfile"
+	ProfileService_GetProfile_FullMethodName              = "/profile.v1.ProfileService/GetProfile"
+	ProfileService_UpdateProfile_FullMethodName           = "/profile.v1.ProfileService/UpdateProfile"
+	ProfileService_DeleteProfile_FullMethodName           = "/profile.v1.ProfileService/DeleteProfile"
+	ProfileService_DeleteProfileByEmail_FullMethodName    = "/profile.v1.ProfileService/DeleteProfileByEmail"
+	ProfileService_UnDeleteProfile_FullMethodName         = "/profile.v1.ProfileService/UnDeleteProfile"
+	ProfileService_GenerateAvatarUploadUrl_FullMethodName = "/profile.v1.ProfileService/GenerateAvatarUploadUrl"
+	ProfileService_UploadAvatar_FullMethodName            = "/profile.v1.ProfileService/UploadAvatar"
 )
 
 // ProfileServiceClient is the client API for ProfileService service.
@@ -37,6 +39,10 @@ type ProfileServiceClient interface {
 	DeleteProfile(ctx context.Context, in *DeleteProfileRequest, opts ...grpc.CallOption) (*DeleteProfileResponse, error)
 	DeleteProfileByEmail(ctx context.Context, in *DeleteProfileByEmailRequest, opts ...grpc.CallOption) (*DeleteProfileByEmailResponse, error)
 	UnDeleteProfile(ctx context.Context, in *UnDeleteProfileRequest, opts ...grpc.CallOption) (*UnDeleteProfileResponse, error)
+	// New RPCs for Avatar handling
+	GenerateAvatarUploadUrl(ctx context.Context, in *GenerateAvatarUploadUrlRequest, opts ...grpc.CallOption) (*GenerateAvatarUploadUrlResponse, error)
+	// Optional: streaming version if uploading file bytes via gRPC directly
+	UploadAvatar(ctx context.Context, opts ...grpc.CallOption) (grpc.ClientStreamingClient[UploadAvatarRequest, UploadAvatarResponse], error)
 }
 
 type profileServiceClient struct {
@@ -107,6 +113,29 @@ func (c *profileServiceClient) UnDeleteProfile(ctx context.Context, in *UnDelete
 	return out, nil
 }
 
+func (c *profileServiceClient) GenerateAvatarUploadUrl(ctx context.Context, in *GenerateAvatarUploadUrlRequest, opts ...grpc.CallOption) (*GenerateAvatarUploadUrlResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateAvatarUploadUrlResponse)
+	err := c.cc.Invoke(ctx, ProfileService_GenerateAvatarUploadUrl_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *profileServiceClient) UploadAvatar(ctx context.Context, opts ...grpc.CallOption) (grpc.ClientStreamingClient[UploadAvatarRequest, UploadAvatarResponse], error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	stream, err := c.cc.NewStream(ctx, &ProfileService_ServiceDesc.Streams[0], ProfileService_UploadAvatar_FullMethodName, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &grpc.GenericClientStream[UploadAvatarRequest, UploadAvatarResponse]{ClientStream: stream}
+	return x, nil
+}
+
+// This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
+type ProfileService_UploadAvatarClient = grpc.ClientStreamingClient[UploadAvatarRequest, UploadAvatarResponse]
+
 // ProfileServiceServer is the server API for ProfileService service.
 // All implementations must embed UnimplementedProfileServiceServer
 // for forward compatibility.
@@ -117,6 +146,10 @@ type ProfileServiceServer interface {
 	DeleteProfile(context.Context, *DeleteProfileRequest) (*DeleteProfileResponse, error)
 	DeleteProfileByEmail(context.Context, *DeleteProfileByEmailRequest) (*DeleteProfileByEmailResponse, error)
 	UnDeleteProfile(context.Context, *UnDeleteProfileRequest) (*UnDeleteProfileResponse, error)
+	// New RPCs for Avatar handling
+	GenerateAvatarUploadUrl(context.Context, *GenerateAvatarUploadUrlRequest) (*GenerateAvatarUploadUrlResponse, error)
+	// Optional: streaming version if uploading file bytes via gRPC directly
+	UploadAvatar(grpc.ClientStreamingServer[UploadAvatarRequest, UploadAvatarResponse]) error
 	mustEmbedUnimplementedProfileServiceServer()
 }
 
@@ -144,6 +177,12 @@ func (UnimplementedProfileServiceServer) DeleteProfileByEmail(context.Context, *
 }
 func (UnimplementedProfileServiceServer) UnDeleteProfile(context.Context, *UnDeleteProfileRequest) (*UnDeleteProfileResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UnDeleteProfile not implemented")
+}
+func (UnimplementedProfileServiceServer) GenerateAvatarUploadUrl(context.Context, *GenerateAvatarUploadUrlRequest) (*GenerateAvatarUploadUrlResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GenerateAvatarUploadUrl not implemented")
+}
+func (UnimplementedProfileServiceServer) UploadAvatar(grpc.ClientStreamingServer[UploadAvatarRequest, UploadAvatarResponse]) error {
+	return status.Errorf(codes.Unimplemented, "method UploadAvatar not implemented")
 }
 func (UnimplementedProfileServiceServer) mustEmbedUnimplementedProfileServiceServer() {}
 func (UnimplementedProfileServiceServer) testEmbeddedByValue()                        {}
@@ -274,6 +313,31 @@ func _ProfileService_UnDeleteProfile_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ProfileService_GenerateAvatarUploadUrl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateAvatarUploadUrlRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProfileServiceServer).GenerateAvatarUploadUrl(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ProfileService_GenerateAvatarUploadUrl_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProfileServiceServer).GenerateAvatarUploadUrl(ctx, req.(*GenerateAvatarUploadUrlRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ProfileService_UploadAvatar_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(ProfileServiceServer).UploadAvatar(&grpc.GenericServerStream[UploadAvatarRequest, UploadAvatarResponse]{ServerStream: stream})
+}
+
+// This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
+type ProfileService_UploadAvatarServer = grpc.ClientStreamingServer[UploadAvatarRequest, UploadAvatarResponse]
+
 // ProfileService_ServiceDesc is the grpc.ServiceDesc for ProfileService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -305,7 +369,17 @@ var ProfileService_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "UnDeleteProfile",
 			Handler:    _ProfileService_UnDeleteProfile_Handler,
 		},
+		{
+			MethodName: "GenerateAvatarUploadUrl",
+			Handler:    _ProfileService_GenerateAvatarUploadUrl_Handler,
+		},
 	},
-	Streams:  []grpc.StreamDesc{},
+	Streams: []grpc.StreamDesc{
+		{
+			StreamName:    "UploadAvatar",
+			Handler:       _ProfileService_UploadAvatar_Handler,
+			ClientStreams: true,
+		},
+	},
 	Metadata: "profile/v1/profile.proto",
 }

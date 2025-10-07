@@ -85,6 +85,26 @@ public final class ProfileProto {
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_profile_v1_UnDeleteProfileResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_profile_v1_GenerateAvatarUploadUrlRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_profile_v1_GenerateAvatarUploadUrlRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_profile_v1_GenerateAvatarUploadUrlResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_profile_v1_GenerateAvatarUploadUrlResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_profile_v1_UploadAvatarRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_profile_v1_UploadAvatarRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_profile_v1_UploadAvatarResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_profile_v1_UploadAvatarResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -127,26 +147,41 @@ public final class ProfileProto {
       "esponse\022\027\n\007is_done\030\001 \001(\010R\006isDone\";\n\026UnDe" +
       "leteProfileRequest\022!\n\007user_id\030\001 \001(\tB\010\272H\005" +
       "r\003\260\001\001R\006userId\"2\n\027UnDeleteProfileResponse" +
-      "\022\027\n\007is_done\030\001 \001(\010R\006isDone2\246\004\n\016ProfileSer" +
-      "vice\022T\n\rCreateProfile\022 .profile.v1.Creat" +
-      "eProfileRequest\032!.profile.v1.CreateProfi" +
-      "leResponse\022K\n\nGetProfile\022\035.profile.v1.Ge" +
-      "tProfileRequest\032\036.profile.v1.GetProfileR" +
-      "esponse\022T\n\rUpdateProfile\022 .profile.v1.Up" +
-      "dateProfileRequest\032!.profile.v1.UpdatePr" +
-      "ofileResponse\022T\n\rDeleteProfile\022 .profile" +
-      ".v1.DeleteProfileRequest\032!.profile.v1.De" +
-      "leteProfileResponse\022i\n\024DeleteProfileByEm" +
-      "ail\022\'.profile.v1.DeleteProfileByEmailReq" +
-      "uest\032(.profile.v1.DeleteProfileByEmailRe" +
-      "sponse\022Z\n\017UnDeleteProfile\022\".profile.v1.U" +
-      "nDeleteProfileRequest\032#.profile.v1.UnDel" +
-      "eteProfileResponseB\274\001\n\034com.samarthasthan" +
-      ".profile.v1B\014ProfileProtoP\001ZEgithub.com/" +
-      "samarthasthan/services-commons/gen/go/pr" +
-      "ofile/v1;profilev1\242\002\003PXX\252\002\nProfile.V1\312\002\n" +
-      "Profile\\V1\342\002\026Profile\\V1\\GPBMetadata\352\002\013Pr" +
-      "ofile::V1b\006proto3"
+      "\022\027\n\007is_done\030\001 \001(\010R\006isDone\"\225\001\n\036GenerateAv" +
+      "atarUploadUrlRequest\022!\n\007user_id\030\001 \001(\tB\010\272" +
+      "H\005r\003\260\001\001R\006userId\022$\n\tfile_name\030\002 \001(\tB\007\272H\004r" +
+      "\002\020\001R\010fileName\022*\n\014content_type\030\003 \001(\tB\007\272H\004" +
+      "r\002\020\001R\013contentType\"_\n\037GenerateAvatarUploa" +
+      "dUrlResponse\022\035\n\nupload_url\030\001 \001(\tR\tupload" +
+      "Url\022\035\n\navatar_url\030\002 \001(\tR\tavatarUrl\"W\n\023Up" +
+      "loadAvatarRequest\022!\n\007user_id\030\001 \001(\tB\010\272H\005r" +
+      "\003\260\001\001R\006userId\022\035\n\nchunk_data\030\002 \001(\014R\tchunkD" +
+      "ata\"5\n\024UploadAvatarResponse\022\035\n\navatar_ur" +
+      "l\030\001 \001(\tR\tavatarUrl2\357\005\n\016ProfileService\022T\n" +
+      "\rCreateProfile\022 .profile.v1.CreateProfil" +
+      "eRequest\032!.profile.v1.CreateProfileRespo" +
+      "nse\022K\n\nGetProfile\022\035.profile.v1.GetProfil" +
+      "eRequest\032\036.profile.v1.GetProfileResponse" +
+      "\022T\n\rUpdateProfile\022 .profile.v1.UpdatePro" +
+      "fileRequest\032!.profile.v1.UpdateProfileRe" +
+      "sponse\022T\n\rDeleteProfile\022 .profile.v1.Del" +
+      "eteProfileRequest\032!.profile.v1.DeletePro" +
+      "fileResponse\022i\n\024DeleteProfileByEmail\022\'.p" +
+      "rofile.v1.DeleteProfileByEmailRequest\032(." +
+      "profile.v1.DeleteProfileByEmailResponse\022" +
+      "Z\n\017UnDeleteProfile\022\".profile.v1.UnDelete" +
+      "ProfileRequest\032#.profile.v1.UnDeleteProf" +
+      "ileResponse\022r\n\027GenerateAvatarUploadUrl\022*" +
+      ".profile.v1.GenerateAvatarUploadUrlReque" +
+      "st\032+.profile.v1.GenerateAvatarUploadUrlR" +
+      "esponse\022S\n\014UploadAvatar\022\037.profile.v1.Upl" +
+      "oadAvatarRequest\032 .profile.v1.UploadAvat" +
+      "arResponse(\001B\274\001\n\034com.samarthasthan.profi" +
+      "le.v1B\014ProfileProtoP\001ZEgithub.com/samart" +
+      "hasthan/services-commons/gen/go/profile/" +
+      "v1;profilev1\242\002\003PXX\252\002\nProfile.V1\312\002\nProfil" +
+      "e\\V1\342\002\026Profile\\V1\\GPBMetadata\352\002\013Profile:" +
+      ":V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -226,6 +261,30 @@ public final class ProfileProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_profile_v1_UnDeleteProfileResponse_descriptor,
         new java.lang.String[] { "IsDone", });
+    internal_static_profile_v1_GenerateAvatarUploadUrlRequest_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_profile_v1_GenerateAvatarUploadUrlRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_profile_v1_GenerateAvatarUploadUrlRequest_descriptor,
+        new java.lang.String[] { "UserId", "FileName", "ContentType", });
+    internal_static_profile_v1_GenerateAvatarUploadUrlResponse_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_profile_v1_GenerateAvatarUploadUrlResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_profile_v1_GenerateAvatarUploadUrlResponse_descriptor,
+        new java.lang.String[] { "UploadUrl", "AvatarUrl", });
+    internal_static_profile_v1_UploadAvatarRequest_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_profile_v1_UploadAvatarRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_profile_v1_UploadAvatarRequest_descriptor,
+        new java.lang.String[] { "UserId", "ChunkData", });
+    internal_static_profile_v1_UploadAvatarResponse_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_profile_v1_UploadAvatarResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_profile_v1_UploadAvatarResponse_descriptor,
+        new java.lang.String[] { "AvatarUrl", });
     descriptor.resolveAllFeaturesImmutable();
     build.buf.validate.ValidateProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

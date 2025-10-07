@@ -73,6 +73,32 @@ message UnDeleteProfileResponse {
   bool is_done = 1;
 }
 
+// -------------------- New Avatar Upload Feature --------------------
+
+// Option 1: Generate a pre-signed upload URL to upload directly to S3
+message GenerateAvatarUploadUrlRequest {
+  string user_id = 1 [(buf.validate.field).string.uuid = true];
+  string file_name = 2 [(buf.validate.field).string.min_len = 1];
+  string content_type = 3 [(buf.validate.field).string.min_len = 1];
+}
+
+message GenerateAvatarUploadUrlResponse {
+  string upload_url = 1; // Pre-signed S3 URL for uploading
+  string avatar_url = 2; // The final public/read URL after upload
+}
+
+// Option 2: (Optional) Direct upload stream RPC if you want server-handled uploads
+// (you can skip this if using pre-signed URLs)
+message UploadAvatarRequest {
+  string user_id = 1 [(buf.validate.field).string.uuid = true];
+  bytes chunk_data = 2; // For streaming upload chunks
+}
+
+message UploadAvatarResponse {
+  string avatar_url = 1; // Final S3 URL
+}
+
+
 service ProfileService {
   rpc CreateProfile(CreateProfileRequest) returns (CreateProfileResponse);
   rpc GetProfile(GetProfileRequest) returns (GetProfileResponse);
@@ -80,4 +106,9 @@ service ProfileService {
   rpc DeleteProfile(DeleteProfileRequest) returns (DeleteProfileResponse);
   rpc DeleteProfileByEmail(DeleteProfileByEmailRequest) returns (DeleteProfileByEmailResponse);
   rpc UnDeleteProfile(UnDeleteProfileRequest) returns (UnDeleteProfileResponse);
+
+  // New RPCs for Avatar handling
+  rpc GenerateAvatarUploadUrl(GenerateAvatarUploadUrlRequest) returns (GenerateAvatarUploadUrlResponse);
+  // Optional: streaming version if uploading file bytes via gRPC directly
+  rpc UploadAvatar(stream UploadAvatarRequest) returns (UploadAvatarResponse);
 }

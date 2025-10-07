@@ -18,7 +18,7 @@ services:
       start_period: 10s
 
   mongo:
-    image: mongo:latest
+    image: mongo:8.0
     container_name: mongo
     ports:
       - ${MONGO_PORT}:27017
@@ -31,7 +31,7 @@ services:
       - MONGO_INITDB_DATABASE=${MONGO_DATABASE}
 
   postgres:
-    image: postgres:latest
+    image: postgres:17.6-alpine3.21
     container_name: postgres
     networks:
       - services
@@ -49,7 +49,7 @@ services:
       retries: 5
 
   redis:
-    image: redis:latest
+    image: redis:8.2
     container_name: redis
     ports:
       - ${REDIS_PORT}:6379
@@ -125,6 +125,24 @@ services:
     volumes:
       - ./dynamicconfig:/etc/temporal/config/dynamicconfig
 
+  mailer:
+    image: samarthasthan/mail-service:latest
+    container_name: mailer
+    restart: always
+    depends_on:
+      - kafka
+    networks:
+      - services
+    environment:
+      KAFKA_PORT: "29092"
+      KAFKA_HOST: "kafka"
+      KAFKA_GROUP_ID: "mail"
+      KAFKA_TOPIC: "mail"
+      SMTP_SERVER: ${SMTP_SERVER}
+      SMTP_PORT: ${SMTP_PORT}
+      SMTP_LOGIN: ${SMTP_LOGIN}
+      SMTP_PASSWORD: ${SMTP_PASSWORD}
+
   temporal-admin-tools:
     container_name: temporal-admin-tools
     image: temporalio/admin-tools:1.22.3
@@ -137,6 +155,45 @@ services:
     tty: true
     networks:
       - services
+
+  profile-grpc:
+    image: samarthasthan/profile-service:latest
+    container_name: profile-grpc
+    restart: always
+    depends_on:
+      - mongo
+    networks:
+      - services
+    ports:
+      - "50053:50053"
+    environment:
+      PROFILE_SERVICE_HOST: "0.0.0.0"
+      PROFILE_SERVICE_PORT: "50053"
+      MONGO_URL: ${MONGO_URL}
+
+  auth-grpc:
+    image: samarthasthan/auth-service:latest
+    container_name: auth-grpc
+    restart: always
+    depends_on:
+      - mongo
+      - redis
+    networks:
+      - services
+    ports:
+      - "50052:50052"
+    environment:
+      AUTH_SERVICE_HOST: "0.0.0.0"
+      AUTH_SERVICE_PORT: "50052"
+      AUTH_REDIS_HOST: "redis"
+      AUTH_REDIS_PORT: "6379"
+      AUTH_REDIS_PASSWORD: ${REDIS_PASSWORD}
+      AUTH_MONGO_HOST: "mongo"
+      AUTH_MONGO_PORT: "27017"
+      AUTH_MONGO_USER: ${MONGO_USER}
+      AUTH_MONGO_PASSWORD: ${MONGO_PASSWORD}
+      AUTH_MONGO_DATABASE: ${MONGO_DATABASE}
+      SECRET_KEY: ${SECRET_KEY}
 
 networks:
   services:

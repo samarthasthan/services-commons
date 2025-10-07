@@ -1,4 +1,4 @@
-FROM bitnami/kafka:3.6.1
+FROM bitnamilegacy/kafka:3.6.1
 
 WORKDIR /opt/bitnami/kafka/bin
 
