@@ -45,7 +45,7 @@ db-down:
 # Make migrations
 migrate-up:
 	@echo "Making migrations..."
-	@migrate -path ./migrations -database "postgres://root:2Jes25VIViLf5SDm9i2fQl5esYrTx7UyIWwK5N09vnjH6iGehD@localhost:5432/frubay?sslmode=disable" -verbose up	
+	@migrate -path ./migrations -database "postgres://root:2Jes25VIViLf5SDm9i2fQl5esYrTx7UyIWwK5N09vnjH6iGehD@localhost:5432/frubay?sslmode=disable" -verbose up 1	
 	@echo "Migrations completed."
 
 # Delete migrations
