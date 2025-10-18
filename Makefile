@@ -53,8 +53,19 @@ migrate-down:
 	@echo "Deleting migrations..."
 	@migrate -path ./migrations -database "postgres://postgres:postgres@localhost:5432/frubay?sslmode=disable" -verbose down
 
+# up 1 means next one migration if current version is on 1 it will migrate version 2
+# down 1 means migrate down to last version, down 2 means migrate down two versions
+# goto means migrate to specific version like goto 0 means down to version 0, goto 1 means migrate to version 1
+# force 1 means force set the version to 1 without running migrations
 
 migrate-db:
 	@echo "Making migrations..."
-	@migrate -path ./migrations -database "postgres://postgres:postgres@localhost:5432/frubay?sslmode=disable" -verbose up	
+	@migrate -path ./migrations -database "postgres://postgres:postgres@localhost:5432/frubay?sslmode=disable" -verbose up 1
 	@echo "Migrations completed."
+
+migrate-db-down:
+	@echo "Making migrations..."
+	@migrate -path ./migrations -database "postgres://postgres:postgres@localhost:5432/frubay?sslmode=disable" -verbose force 1
+	@echo "Migrations completed."
+
+
