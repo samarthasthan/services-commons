@@ -83,6 +83,7 @@ CREATE TABLE Files (
     Parent_Id UUID REFERENCES Files(Id) ON DELETE CASCADE, -- null = root
     Content_Type VARCHAR(255),
     Size BIGINT NOT NULL,
+    Location VARCHAR(1024) NOT NULL, 
     Is_Public BOOLEAN NOT NULL DEFAULT FALSE,
     Share_Id UUID UNIQUE, -- only if shared publicly
     Created_At INT NOT NULL DEFAULT (EXTRACT(EPOCH FROM CURRENT_TIMESTAMP)),

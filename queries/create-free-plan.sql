@@ -31,6 +31,15 @@ SELECT free_plan.Id, storage_feature.FeatureID, '10', true
 FROM free_plan, storage_feature
 ON CONFLICT (PlanID, FeatureID) DO NOTHING;
 
+WITH free_plan AS (
+    SELECT Id FROM Plans WHERE Name = 'Free' LIMIT 1
+), 
+storage_feature AS (
+    SELECT Id AS FeatureID FROM Features WHERE Key = 'storage_limit_gb'
+),
+vpn_feature AS (
+    SELECT Id AS FeatureID FROM Features WHERE Key = 'vpn_enabled'
+)
 -- Insert VPN feature (disabled)
 INSERT INTO PlansFeatures (PlanID, FeatureID, FeatureValue, IsEnabled)
 SELECT free_plan.Id, vpn_feature.FeatureID, 'false', false

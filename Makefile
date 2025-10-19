@@ -65,7 +65,7 @@ migrate-db:
 
 migrate-db-down:
 	@echo "Making migrations..."
-	@migrate -path ./migrations -database "postgres://postgres:postgres@localhost:5432/frubay?sslmode=disable" -verbose force 1
+	@migrate -path ./migrations -database "postgres://postgres:postgres@localhost:5432/frubay?sslmode=disable" -verbose down 1
 	@echo "Migrations completed."
 
 
