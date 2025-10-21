@@ -30,4 +30,3 @@ DROP TABLE IF EXISTS Files;
 
 
 
-DROP TABLE Users;
