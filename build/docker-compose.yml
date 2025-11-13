@@ -240,6 +240,21 @@ services:
       S3_REGION: ${S3_REGION}
       S3_USE_SSL: ${S3_USE_SSL}
 
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.17.10
+    container_name: kibana
+    depends_on:
+      - elasticsearch
+    networks:
+      - services
+    ports:
+      - "5601:5601" # Expose Kibana dashboard on host
+    environment:
+      ELASTICSEARCH_HOSTS: '["${ES_ADDRESS}"]' # Connect to your Elasticsearch container
+      ELASTICSEARCH_PASSWORD: ${ES_PASSWORD}
+    volumes:
+      - kibana-data:/usr/share/kibana/data # Optional: persist Kibana settings
+
 networks:
   services:
     driver: bridge
@@ -248,3 +263,4 @@ volumes:
   mongo-data:
   postgresql-data:
   elasticsearch-data:
+  kibana-data:

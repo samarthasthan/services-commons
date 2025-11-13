@@ -1,7 +1,6 @@
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-
 CREATE TABLE Users (
-    Id UUID DEFAULT uuid_generate_v4() PRIMARY KEY, 
+    Id BIGSERIAL PRIMARY KEY,                       
+    External_Id VARCHAR(20) UNIQUE NOT NULL, 
     Full_Name VARCHAR(255) NOT NULL,            
     Email VARCHAR(255) NOT NULL UNIQUE,        
     Password VARCHAR(255) NOT NULL,         
@@ -14,7 +13,8 @@ CREATE TABLE Users (
 
 
 CREATE TABLE ContactUs (
-    Id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    Id BIGSERIAL PRIMARY KEY,                       
+    External_Id VARCHAR(20) UNIQUE NOT NULL, 
     FullName VARCHAR(100) NOT NULL,
     WorkEmail VARCHAR(255) NOT NULL,
     CountryRegion VARCHAR(100) NOT NULL,
@@ -25,8 +25,9 @@ CREATE TABLE ContactUs (
 );
 
 CREATE TABLE Blogs (
-    Id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-    Author_Id UUID NOT NULL REFERENCES Users(Id) ON DELETE CASCADE,
+    Id BIGSERIAL PRIMARY KEY,                       
+    External_Id VARCHAR(20) UNIQUE NOT NULL, 
+    Author_Id BIGSERIAL NOT NULL REFERENCES Users(Id) ON DELETE CASCADE,
     Title VARCHAR(255) NOT NULL,
     Slug VARCHAR(255) NOT NULL UNIQUE,
     Thumbnail TEXT,
@@ -39,7 +40,8 @@ CREATE TABLE Blogs (
 );
 
 CREATE TABLE NewsLetters (
-    Id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    Id BIGSERIAL PRIMARY KEY,                       
+    External_Id VARCHAR(20) UNIQUE NOT NULL, 
     Email VARCHAR(255) UNIQUE NOT NULL,
     Status SMALLINT NOT NULL DEFAULT 1,        -- 1=subscribed, 2=unsubscribed
     Subscribed_At INT NOT NULL DEFAULT (EXTRACT(EPOCH FROM CURRENT_TIMESTAMP)),
@@ -71,16 +73,13 @@ WHERE Unsubscribed_At IS NOT NULL;
 
 
 
-
-
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-
 CREATE TABLE Files (
-    Id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    Owner_Id UUID NOT NULL REFERENCES Users(Id) ON DELETE CASCADE,
+    Id BIGSERIAL PRIMARY KEY,                       
+    External_Id VARCHAR(20) UNIQUE NOT NULL, 
+    Owner_Id BIGSERIAL NOT NULL REFERENCES Users(Id) ON DELETE CASCADE,
     Name VARCHAR(255) NOT NULL,
     Type VARCHAR(10) NOT NULL CHECK (Type IN ('file', 'folder')), -- "file" or "folder"
-    Parent_Id UUID REFERENCES Files(Id) ON DELETE CASCADE, -- null = root
+    Parent_Id BIGSERIAL REFERENCES Files(Id) ON DELETE CASCADE, -- null = root
     Content_Type VARCHAR(255),
     Size BIGINT NOT NULL,
     Location VARCHAR(1024) NOT NULL, 
@@ -93,15 +92,15 @@ CREATE TABLE Files (
 
 
 CREATE TABLE FilePermissions (
-    File_Id UUID NOT NULL REFERENCES Files(Id) ON DELETE CASCADE,
-    Shared_With UUID NOT NULL REFERENCES Users(Id) ON DELETE CASCADE,
+    File_Id BIGSERIAL NOT NULL REFERENCES Files(Id) ON DELETE CASCADE,
+    Shared_With BIGSERIAL NOT NULL REFERENCES Users(Id) ON DELETE CASCADE,
     Granted_At INT NOT NULL DEFAULT (EXTRACT(EPOCH FROM CURRENT_TIMESTAMP)),
     PRIMARY KEY (File_Id, Shared_With)
 );
 
 CREATE TABLE FileFavorites (
-    User_Id UUID NOT NULL REFERENCES Users(Id) ON DELETE CASCADE,
-    File_Id UUID NOT NULL REFERENCES Files(Id) ON DELETE CASCADE,
+    User_Id BIGSERIAL NOT NULL REFERENCES Users(Id) ON DELETE CASCADE,
+    File_Id BIGSERIAL NOT NULL REFERENCES Files(Id) ON DELETE CASCADE,
     PRIMARY KEY (User_Id, File_Id)
 );
 

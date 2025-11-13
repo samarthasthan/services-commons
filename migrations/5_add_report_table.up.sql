@@ -1,8 +1,9 @@
 CREATE TABLE Reports (
-    Id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    Id BIGSERIAL PRIMARY KEY,                       
+    External_Id VARCHAR(20) UNIQUE NOT NULL, 
 
-    File_Id UUID NOT NULL REFERENCES Files(Id) ON DELETE CASCADE,
-    User_Id UUID NOT NULL REFERENCES Users(Id) ON DELETE CASCADE,
+    File_Id BIGSERIAL NOT NULL REFERENCES Files(Id) ON DELETE CASCADE,
+    User_Id BIGSERIAL NOT NULL REFERENCES Users(Id) ON DELETE CASCADE,
 
     -- Predefined category enum (add new ones easily later)
     Category VARCHAR(50) NOT NULL CHECK (
@@ -26,7 +27,7 @@ CREATE TABLE Reports (
     ),
 
     -- Optional moderator info
-    Reviewed_By UUID REFERENCES Users(Id) ON DELETE SET NULL,
+    Reviewed_By BIGSERIAL REFERENCES Users(Id) ON DELETE SET NULL,
     Review_Notes TEXT,
 
     Created_At TIMESTAMPTZ NOT NULL DEFAULT NOW(),

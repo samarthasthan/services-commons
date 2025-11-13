@@ -1,8 +1,9 @@
 
 
 CREATE TABLE Thumbnails (
-    Id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    File_Id UUID NOT NULL REFERENCES Files(Id) ON DELETE CASCADE,
+    Id BIGSERIAL PRIMARY KEY,                       
+    External_Id VARCHAR(20) UNIQUE NOT NULL, 
+    File_Id BIGSERIAL NOT NULL REFERENCES Files(Id) ON DELETE CASCADE,
     Label VARCHAR(50) NOT NULL,           -- e.g., small, medium, large
     Width INT NOT NULL,                   -- pixel width
     Height INT NOT NULL,                  -- pixel height
