@@ -24,8 +24,10 @@ const (
 
 type GenerateTokenRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	Role          string                 `protobuf:"bytes,2,opt,name=role,proto3" json:"role,omitempty"`
+	UserId        int64                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ExternalId    string                 `protobuf:"bytes,2,opt,name=external_id,json=externalId,proto3" json:"external_id,omitempty"`
+	Email         string                 `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"`
+	Role          string                 `protobuf:"bytes,4,opt,name=role,proto3" json:"role,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -60,9 +62,23 @@ func (*GenerateTokenRequest) Descriptor() ([]byte, []int) {
 	return file_auth_v1_auth_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *GenerateTokenRequest) GetUserId() string {
+func (x *GenerateTokenRequest) GetUserId() int64 {
 	if x != nil {
 		return x.UserId
+	}
+	return 0
+}
+
+func (x *GenerateTokenRequest) GetExternalId() string {
+	if x != nil {
+		return x.ExternalId
+	}
+	return ""
+}
+
+func (x *GenerateTokenRequest) GetEmail() string {
+	if x != nil {
+		return x.Email
 	}
 	return ""
 }
@@ -164,9 +180,11 @@ func (*ValidateTokenRequest) Descriptor() ([]byte, []int) {
 
 type ValidateTokenResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	Role          string                 `protobuf:"bytes,2,opt,name=role,proto3" json:"role,omitempty"`
-	IsValid       bool                   `protobuf:"varint,3,opt,name=is_valid,json=isValid,proto3" json:"is_valid,omitempty"`
+	UserId        int64                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ExternalId    string                 `protobuf:"bytes,2,opt,name=external_id,json=externalId,proto3" json:"external_id,omitempty"`
+	Email         string                 `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"`
+	Role          string                 `protobuf:"bytes,4,opt,name=role,proto3" json:"role,omitempty"`
+	IsValid       bool                   `protobuf:"varint,5,opt,name=is_valid,json=isValid,proto3" json:"is_valid,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -201,9 +219,23 @@ func (*ValidateTokenResponse) Descriptor() ([]byte, []int) {
 	return file_auth_v1_auth_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *ValidateTokenResponse) GetUserId() string {
+func (x *ValidateTokenResponse) GetUserId() int64 {
 	if x != nil {
 		return x.UserId
+	}
+	return 0
+}
+
+func (x *ValidateTokenResponse) GetExternalId() string {
+	if x != nil {
+		return x.ExternalId
+	}
+	return ""
+}
+
+func (x *ValidateTokenResponse) GetEmail() string {
+	if x != nil {
+		return x.Email
 	}
 	return ""
 }
@@ -458,18 +490,24 @@ var File_auth_v1_auth_proto protoreflect.FileDescriptor
 
 const file_auth_v1_auth_proto_rawDesc = "" +
 	"\n" +
-	"\x12auth/v1/auth.proto\x12\aauth.v1\x1a\x1bbuf/validate/validate.proto\"U\n" +
+	"\x12auth/v1/auth.proto\x12\aauth.v1\x1a\x1bbuf/validate/validate.proto\"\x9e\x01\n" +
 	"\x14GenerateTokenRequest\x12 \n" +
-	"\auser_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x06userId\x12\x1b\n" +
-	"\x04role\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x04role\"_\n" +
+	"\auser_id\x18\x01 \x01(\x03B\a\xbaH\x04\"\x02(\x01R\x06userId\x12(\n" +
+	"\vexternal_id\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\n" +
+	"externalId\x12\x1d\n" +
+	"\x05email\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x05email\x12\x1b\n" +
+	"\x04role\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x04role\"_\n" +
 	"\x15GenerateTokenResponse\x12!\n" +
 	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\x12#\n" +
 	"\rrefresh_token\x18\x02 \x01(\tR\frefreshToken\"\x16\n" +
-	"\x14ValidateTokenRequest\"_\n" +
-	"\x15ValidateTokenResponse\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x12\n" +
-	"\x04role\x18\x02 \x01(\tR\x04role\x12\x19\n" +
-	"\bis_valid\x18\x03 \x01(\bR\aisValid\"\x15\n" +
+	"\x14ValidateTokenRequest\"\xba\x01\n" +
+	"\x15ValidateTokenResponse\x12 \n" +
+	"\auser_id\x18\x01 \x01(\x03B\a\xbaH\x04\"\x02(\x01R\x06userId\x12(\n" +
+	"\vexternal_id\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\n" +
+	"externalId\x12\x1d\n" +
+	"\x05email\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x05email\x12\x1b\n" +
+	"\x04role\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x04role\x12\x19\n" +
+	"\bis_valid\x18\x05 \x01(\bR\aisValid\"\x15\n" +
 	"\x13RefreshTokenRequest\"^\n" +
 	"\x14RefreshTokenResponse\x12!\n" +
 	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\x12#\n" +

@@ -70,8 +70,10 @@ proto.auth.v1.GenerateTokenRequest.prototype.toObject = function(opt_includeInst
  */
 proto.auth.v1.GenerateTokenRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-role: jspb.Message.getFieldWithDefault(msg, 2, "")
+userId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+externalId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+email: jspb.Message.getFieldWithDefault(msg, 3, ""),
+role: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -109,10 +111,18 @@ proto.auth.v1.GenerateTokenRequest.deserializeBinaryFromReader = function(msg, r
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setUserId(value);
       break;
     case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setExternalId(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEmail(value);
+      break;
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setRole(value);
       break;
@@ -146,45 +156,59 @@ proto.auth.v1.GenerateTokenRequest.prototype.serializeBinary = function() {
 proto.auth.v1.GenerateTokenRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getUserId();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f !== 0) {
+    writer.writeInt64(
       1,
       f
     );
   }
-  f = message.getRole();
+  f = message.getExternalId();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
+  f = message.getEmail();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getRole();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
 };
 
 
 /**
- * optional string user_id = 1;
- * @return {string}
+ * optional int64 user_id = 1;
+ * @return {number}
  */
 proto.auth.v1.GenerateTokenRequest.prototype.getUserId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.auth.v1.GenerateTokenRequest} returns this
  */
 proto.auth.v1.GenerateTokenRequest.prototype.setUserId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
 /**
- * optional string role = 2;
+ * optional string external_id = 2;
  * @return {string}
  */
-proto.auth.v1.GenerateTokenRequest.prototype.getRole = function() {
+proto.auth.v1.GenerateTokenRequest.prototype.getExternalId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -193,8 +217,44 @@ proto.auth.v1.GenerateTokenRequest.prototype.getRole = function() {
  * @param {string} value
  * @return {!proto.auth.v1.GenerateTokenRequest} returns this
  */
-proto.auth.v1.GenerateTokenRequest.prototype.setRole = function(value) {
+proto.auth.v1.GenerateTokenRequest.prototype.setExternalId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string email = 3;
+ * @return {string}
+ */
+proto.auth.v1.GenerateTokenRequest.prototype.getEmail = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.auth.v1.GenerateTokenRequest} returns this
+ */
+proto.auth.v1.GenerateTokenRequest.prototype.setEmail = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string role = 4;
+ * @return {string}
+ */
+proto.auth.v1.GenerateTokenRequest.prototype.getRole = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.auth.v1.GenerateTokenRequest} returns this
+ */
+proto.auth.v1.GenerateTokenRequest.prototype.setRole = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

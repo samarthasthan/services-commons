@@ -70,9 +70,11 @@ proto.auth.v1.ValidateTokenResponse.prototype.toObject = function(opt_includeIns
  */
 proto.auth.v1.ValidateTokenResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-role: jspb.Message.getFieldWithDefault(msg, 2, ""),
-isValid: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+userId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+externalId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+email: jspb.Message.getFieldWithDefault(msg, 3, ""),
+role: jspb.Message.getFieldWithDefault(msg, 4, ""),
+isValid: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
   };
 
   if (includeInstance) {
@@ -110,14 +112,22 @@ proto.auth.v1.ValidateTokenResponse.deserializeBinaryFromReader = function(msg, 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setUserId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setRole(value);
+      msg.setExternalId(value);
       break;
     case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEmail(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRole(value);
+      break;
+    case 5:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsValid(value);
       break;
@@ -151,23 +161,37 @@ proto.auth.v1.ValidateTokenResponse.prototype.serializeBinary = function() {
 proto.auth.v1.ValidateTokenResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getUserId();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f !== 0) {
+    writer.writeInt64(
       1,
       f
     );
   }
-  f = message.getRole();
+  f = message.getExternalId();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
+  f = message.getEmail();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getRole();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
   f = message.getIsValid();
   if (f) {
     writer.writeBool(
-      3,
+      5,
       f
     );
   }
@@ -175,28 +199,28 @@ proto.auth.v1.ValidateTokenResponse.serializeBinaryToWriter = function(message, 
 
 
 /**
- * optional string user_id = 1;
- * @return {string}
+ * optional int64 user_id = 1;
+ * @return {number}
  */
 proto.auth.v1.ValidateTokenResponse.prototype.getUserId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.auth.v1.ValidateTokenResponse} returns this
  */
 proto.auth.v1.ValidateTokenResponse.prototype.setUserId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
 /**
- * optional string role = 2;
+ * optional string external_id = 2;
  * @return {string}
  */
-proto.auth.v1.ValidateTokenResponse.prototype.getRole = function() {
+proto.auth.v1.ValidateTokenResponse.prototype.getExternalId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -205,17 +229,53 @@ proto.auth.v1.ValidateTokenResponse.prototype.getRole = function() {
  * @param {string} value
  * @return {!proto.auth.v1.ValidateTokenResponse} returns this
  */
-proto.auth.v1.ValidateTokenResponse.prototype.setRole = function(value) {
+proto.auth.v1.ValidateTokenResponse.prototype.setExternalId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional bool is_valid = 3;
+ * optional string email = 3;
+ * @return {string}
+ */
+proto.auth.v1.ValidateTokenResponse.prototype.getEmail = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.auth.v1.ValidateTokenResponse} returns this
+ */
+proto.auth.v1.ValidateTokenResponse.prototype.setEmail = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string role = 4;
+ * @return {string}
+ */
+proto.auth.v1.ValidateTokenResponse.prototype.getRole = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.auth.v1.ValidateTokenResponse} returns this
+ */
+proto.auth.v1.ValidateTokenResponse.prototype.setRole = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional bool is_valid = 5;
  * @return {boolean}
  */
 proto.auth.v1.ValidateTokenResponse.prototype.getIsValid = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
 };
 
 
@@ -224,7 +284,7 @@ proto.auth.v1.ValidateTokenResponse.prototype.getIsValid = function() {
  * @return {!proto.auth.v1.ValidateTokenResponse} returns this
  */
 proto.auth.v1.ValidateTokenResponse.prototype.setIsValid = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 3, value);
+  return jspb.Message.setProto3BooleanField(this, 5, value);
 };
 
 

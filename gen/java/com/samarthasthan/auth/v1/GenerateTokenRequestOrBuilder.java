@@ -10,24 +10,42 @@ public interface GenerateTokenRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }</code>
+   * <code>int64 user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }</code>
    * @return The userId.
    */
-  java.lang.String getUserId();
-  /**
-   * <code>string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for userId.
-   */
-  com.google.protobuf.ByteString
-      getUserIdBytes();
+  long getUserId();
 
   /**
-   * <code>string role = 2 [json_name = "role", (.buf.validate.field) = { ... }</code>
+   * <code>string external_id = 2 [json_name = "externalId", (.buf.validate.field) = { ... }</code>
+   * @return The externalId.
+   */
+  java.lang.String getExternalId();
+  /**
+   * <code>string external_id = 2 [json_name = "externalId", (.buf.validate.field) = { ... }</code>
+   * @return The bytes for externalId.
+   */
+  com.google.protobuf.ByteString
+      getExternalIdBytes();
+
+  /**
+   * <code>string email = 3 [json_name = "email", (.buf.validate.field) = { ... }</code>
+   * @return The email.
+   */
+  java.lang.String getEmail();
+  /**
+   * <code>string email = 3 [json_name = "email", (.buf.validate.field) = { ... }</code>
+   * @return The bytes for email.
+   */
+  com.google.protobuf.ByteString
+      getEmailBytes();
+
+  /**
+   * <code>string role = 4 [json_name = "role", (.buf.validate.field) = { ... }</code>
    * @return The role.
    */
   java.lang.String getRole();
   /**
-   * <code>string role = 2 [json_name = "role", (.buf.validate.field) = { ... }</code>
+   * <code>string role = 4 [json_name = "role", (.buf.validate.field) = { ... }</code>
    * @return The bytes for role.
    */
   com.google.protobuf.ByteString

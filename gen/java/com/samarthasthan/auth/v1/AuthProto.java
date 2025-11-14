@@ -85,34 +85,38 @@ public final class AuthProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\022auth/v1/auth.proto\022\007auth.v1\032\033buf/valid" +
-      "ate/validate.proto\"U\n\024GenerateTokenReque" +
-      "st\022 \n\007user_id\030\001 \001(\tB\007\272H\004r\002\020\001R\006userId\022\033\n\004" +
-      "role\030\002 \001(\tB\007\272H\004r\002\020\001R\004role\"_\n\025GenerateTok" +
-      "enResponse\022!\n\014access_token\030\001 \001(\tR\013access" +
-      "Token\022#\n\rrefresh_token\030\002 \001(\tR\014refreshTok" +
-      "en\"\026\n\024ValidateTokenRequest\"_\n\025ValidateTo" +
-      "kenResponse\022\027\n\007user_id\030\001 \001(\tR\006userId\022\022\n\004" +
-      "role\030\002 \001(\tR\004role\022\031\n\010is_valid\030\003 \001(\010R\007isVa" +
-      "lid\"\025\n\023RefreshTokenRequest\"^\n\024RefreshTok" +
-      "enResponse\022!\n\014access_token\030\001 \001(\tR\013access" +
-      "Token\022#\n\rrefresh_token\030\002 \001(\tR\014refreshTok" +
-      "en\"\025\n\023DeleteTokensRequest\"\026\n\024DeleteToken" +
-      "sResponse\"\024\n\022RevokeTokenRequest\"\025\n\023Revok" +
-      "eTokenResponse2\221\003\n\013AuthService\022N\n\rGenera" +
-      "teToken\022\035.auth.v1.GenerateTokenRequest\032\036" +
-      ".auth.v1.GenerateTokenResponse\022N\n\rValida" +
-      "teToken\022\035.auth.v1.ValidateTokenRequest\032\036" +
-      ".auth.v1.ValidateTokenResponse\022K\n\014Refres" +
-      "hToken\022\034.auth.v1.RefreshTokenRequest\032\035.a" +
-      "uth.v1.RefreshTokenResponse\022K\n\014DeleteTok" +
-      "ens\022\034.auth.v1.DeleteTokensRequest\032\035.auth" +
-      ".v1.DeleteTokensResponse\022H\n\013RevokeToken\022" +
-      "\033.auth.v1.RevokeTokenRequest\032\034.auth.v1.R" +
-      "evokeTokenResponseB\244\001\n\031com.samarthasthan" +
-      ".auth.v1B\tAuthProtoP\001Z?github.com/samart" +
-      "hasthan/services-commons/gen/go/auth/v1;" +
-      "authv1\242\002\003AXX\252\002\007Auth.V1\312\002\007Auth\\V1\342\002\023Auth\\" +
-      "V1\\GPBMetadata\352\002\010Auth::V1b\006proto3"
+      "ate/validate.proto\"\236\001\n\024GenerateTokenRequ" +
+      "est\022 \n\007user_id\030\001 \001(\003B\007\272H\004\"\002(\001R\006userId\022(\n" +
+      "\013external_id\030\002 \001(\tB\007\272H\004r\002\020\001R\nexternalId\022" +
+      "\035\n\005email\030\003 \001(\tB\007\272H\004r\002\020\001R\005email\022\033\n\004role\030\004" +
+      " \001(\tB\007\272H\004r\002\020\001R\004role\"_\n\025GenerateTokenResp" +
+      "onse\022!\n\014access_token\030\001 \001(\tR\013accessToken\022" +
+      "#\n\rrefresh_token\030\002 \001(\tR\014refreshToken\"\026\n\024" +
+      "ValidateTokenRequest\"\272\001\n\025ValidateTokenRe" +
+      "sponse\022 \n\007user_id\030\001 \001(\003B\007\272H\004\"\002(\001R\006userId" +
+      "\022(\n\013external_id\030\002 \001(\tB\007\272H\004r\002\020\001R\nexternal" +
+      "Id\022\035\n\005email\030\003 \001(\tB\007\272H\004r\002\020\001R\005email\022\033\n\004rol" +
+      "e\030\004 \001(\tB\007\272H\004r\002\020\001R\004role\022\031\n\010is_valid\030\005 \001(\010" +
+      "R\007isValid\"\025\n\023RefreshTokenRequest\"^\n\024Refr" +
+      "eshTokenResponse\022!\n\014access_token\030\001 \001(\tR\013" +
+      "accessToken\022#\n\rrefresh_token\030\002 \001(\tR\014refr" +
+      "eshToken\"\025\n\023DeleteTokensRequest\"\026\n\024Delet" +
+      "eTokensResponse\"\024\n\022RevokeTokenRequest\"\025\n" +
+      "\023RevokeTokenResponse2\221\003\n\013AuthService\022N\n\r" +
+      "GenerateToken\022\035.auth.v1.GenerateTokenReq" +
+      "uest\032\036.auth.v1.GenerateTokenResponse\022N\n\r" +
+      "ValidateToken\022\035.auth.v1.ValidateTokenReq" +
+      "uest\032\036.auth.v1.ValidateTokenResponse\022K\n\014" +
+      "RefreshToken\022\034.auth.v1.RefreshTokenReque" +
+      "st\032\035.auth.v1.RefreshTokenResponse\022K\n\014Del" +
+      "eteTokens\022\034.auth.v1.DeleteTokensRequest\032" +
+      "\035.auth.v1.DeleteTokensResponse\022H\n\013Revoke" +
+      "Token\022\033.auth.v1.RevokeTokenRequest\032\034.aut" +
+      "h.v1.RevokeTokenResponseB\244\001\n\031com.samarth" +
+      "asthan.auth.v1B\tAuthProtoP\001Z?github.com/" +
+      "samarthasthan/services-commons/gen/go/au" +
+      "th/v1;authv1\242\002\003AXX\252\002\007Auth.V1\312\002\007Auth\\V1\342\002" +
+      "\023Auth\\V1\\GPBMetadata\352\002\010Auth::V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -124,7 +128,7 @@ public final class AuthProto {
     internal_static_auth_v1_GenerateTokenRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_auth_v1_GenerateTokenRequest_descriptor,
-        new java.lang.String[] { "UserId", "Role", });
+        new java.lang.String[] { "UserId", "ExternalId", "Email", "Role", });
     internal_static_auth_v1_GenerateTokenResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_auth_v1_GenerateTokenResponse_fieldAccessorTable = new
@@ -142,7 +146,7 @@ public final class AuthProto {
     internal_static_auth_v1_ValidateTokenResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_auth_v1_ValidateTokenResponse_descriptor,
-        new java.lang.String[] { "UserId", "Role", "IsValid", });
+        new java.lang.String[] { "UserId", "ExternalId", "Email", "Role", "IsValid", });
     internal_static_auth_v1_RefreshTokenRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_auth_v1_RefreshTokenRequest_fieldAccessorTable = new

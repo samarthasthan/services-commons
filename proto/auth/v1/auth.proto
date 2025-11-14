@@ -7,8 +7,10 @@ import "buf/validate/validate.proto";
 option go_package = "github.com/samarthasthan/services-commons/gen/go/auth/v1;authv1";
 
 message GenerateTokenRequest {
-  string user_id = 1 [(buf.validate.field).string.min_len = 1];
-  string role = 2 [(buf.validate.field).string.min_len = 1];;
+  int64 user_id = 1 [(buf.validate.field).int64.gte = 1];
+  string external_id = 2 [(buf.validate.field).string.min_len = 1];
+  string email = 3 [(buf.validate.field).string.min_len = 1];
+  string role = 4 [(buf.validate.field).string.min_len = 1];;
 }
 
 message GenerateTokenResponse {
@@ -19,9 +21,11 @@ message GenerateTokenResponse {
 message ValidateTokenRequest {}
 
 message ValidateTokenResponse {
-  string user_id = 1;
-  string role = 2;
-  bool is_valid = 3;
+  int64 user_id = 1 [(buf.validate.field).int64.gte = 1];
+  string external_id = 2 [(buf.validate.field).string.min_len = 1];
+  string email = 3 [(buf.validate.field).string.min_len = 1];
+  string role = 4 [(buf.validate.field).string.min_len = 1];
+  bool is_valid = 5;
 }
 
 message RefreshTokenRequest {}
