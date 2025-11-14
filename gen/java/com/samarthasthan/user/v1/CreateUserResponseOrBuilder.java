@@ -10,14 +10,20 @@ public interface CreateUserResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string user_id = 1 [json_name = "userId"];</code>
+   * <code>int64 user_id = 1 [json_name = "userId"];</code>
    * @return The userId.
    */
-  java.lang.String getUserId();
+  long getUserId();
+
   /**
-   * <code>string user_id = 1 [json_name = "userId"];</code>
-   * @return The bytes for userId.
+   * <code>string external = 2 [json_name = "external"];</code>
+   * @return The external.
+   */
+  java.lang.String getExternal();
+  /**
+   * <code>string external = 2 [json_name = "external"];</code>
+   * @return The bytes for external.
    */
   com.google.protobuf.ByteString
-      getUserIdBytes();
+      getExternalBytes();
 }

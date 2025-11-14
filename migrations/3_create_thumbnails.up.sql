@@ -2,7 +2,7 @@
 
 CREATE TABLE Thumbnails (
     Id BIGSERIAL PRIMARY KEY,                       
-    External_Id VARCHAR(20) UNIQUE NOT NULL, 
+    External_Id VARCHAR(20) UNIQUE, 
     File_Id BIGSERIAL NOT NULL REFERENCES Files(Id) ON DELETE CASCADE,
     Label VARCHAR(50) NOT NULL,           -- e.g., small, medium, large
     Width INT NOT NULL,                   -- pixel width

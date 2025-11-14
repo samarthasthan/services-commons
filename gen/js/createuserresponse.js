@@ -70,7 +70,8 @@ proto.user.v1.CreateUserResponse.prototype.toObject = function(opt_includeInstan
  */
 proto.user.v1.CreateUserResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-userId: jspb.Message.getFieldWithDefault(msg, 1, "")
+userId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+external: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -108,8 +109,12 @@ proto.user.v1.CreateUserResponse.deserializeBinaryFromReader = function(msg, rea
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setUserId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setExternal(value);
       break;
     default:
       reader.skipField();
@@ -141,9 +146,16 @@ proto.user.v1.CreateUserResponse.prototype.serializeBinary = function() {
 proto.user.v1.CreateUserResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getUserId();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+  f = message.getExternal();
   if (f.length > 0) {
     writer.writeString(
-      1,
+      2,
       f
     );
   }
@@ -151,11 +163,29 @@ proto.user.v1.CreateUserResponse.serializeBinaryToWriter = function(message, wri
 
 
 /**
- * optional string user_id = 1;
- * @return {string}
+ * optional int64 user_id = 1;
+ * @return {number}
  */
 proto.user.v1.CreateUserResponse.prototype.getUserId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.user.v1.CreateUserResponse} returns this
+ */
+proto.user.v1.CreateUserResponse.prototype.setUserId = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional string external = 2;
+ * @return {string}
+ */
+proto.user.v1.CreateUserResponse.prototype.getExternal = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -163,8 +193,8 @@ proto.user.v1.CreateUserResponse.prototype.getUserId = function() {
  * @param {string} value
  * @return {!proto.user.v1.CreateUserResponse} returns this
  */
-proto.user.v1.CreateUserResponse.prototype.setUserId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+proto.user.v1.CreateUserResponse.prototype.setExternal = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

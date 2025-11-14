@@ -1,6 +1,6 @@
 CREATE TABLE Users (
     Id BIGSERIAL PRIMARY KEY,                       
-    External_Id VARCHAR(20) UNIQUE NOT NULL, 
+    External_Id CHAR(11) UNIQUE, 
     Full_Name VARCHAR(255) NOT NULL,            
     Email VARCHAR(255) NOT NULL UNIQUE,        
     Password VARCHAR(255) NOT NULL,         
@@ -14,7 +14,7 @@ CREATE TABLE Users (
 
 CREATE TABLE ContactUs (
     Id BIGSERIAL PRIMARY KEY,                       
-    External_Id VARCHAR(20) UNIQUE NOT NULL, 
+    External_Id VARCHAR(20) UNIQUE, 
     FullName VARCHAR(100) NOT NULL,
     WorkEmail VARCHAR(255) NOT NULL,
     CountryRegion VARCHAR(100) NOT NULL,
@@ -26,7 +26,7 @@ CREATE TABLE ContactUs (
 
 CREATE TABLE Blogs (
     Id BIGSERIAL PRIMARY KEY,                       
-    External_Id VARCHAR(20) UNIQUE NOT NULL, 
+    External_Id VARCHAR(20) UNIQUE, 
     Author_Id BIGSERIAL NOT NULL REFERENCES Users(Id) ON DELETE CASCADE,
     Title VARCHAR(255) NOT NULL,
     Slug VARCHAR(255) NOT NULL UNIQUE,
@@ -41,7 +41,7 @@ CREATE TABLE Blogs (
 
 CREATE TABLE NewsLetters (
     Id BIGSERIAL PRIMARY KEY,                       
-    External_Id VARCHAR(20) UNIQUE NOT NULL, 
+    External_Id VARCHAR(20) UNIQUE, 
     Email VARCHAR(255) UNIQUE NOT NULL,
     Status SMALLINT NOT NULL DEFAULT 1,        -- 1=subscribed, 2=unsubscribed
     Subscribed_At INT NOT NULL DEFAULT (EXTRACT(EPOCH FROM CURRENT_TIMESTAMP)),
@@ -75,7 +75,7 @@ WHERE Unsubscribed_At IS NOT NULL;
 
 CREATE TABLE Files (
     Id BIGSERIAL PRIMARY KEY,                       
-    External_Id VARCHAR(20) UNIQUE NOT NULL, 
+    External_Id VARCHAR(20) UNIQUE, 
     Owner_Id BIGSERIAL NOT NULL REFERENCES Users(Id) ON DELETE CASCADE,
     Name VARCHAR(255) NOT NULL,
     Type VARCHAR(10) NOT NULL CHECK (Type IN ('file', 'folder')), -- "file" or "folder"

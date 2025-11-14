@@ -22,7 +22,8 @@ message CreateUserRequest {
 }
 
 message CreateUserResponse {
-  string user_id = 1;
+  int64 user_id = 1;
+  string external = 2;
 }
 
 
