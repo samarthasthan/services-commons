@@ -8,18 +8,19 @@ import "google/protobuf/timestamp.proto";
 option go_package = "github.com/samarthasthan/services-commons/gen/go/profile/v1;profilev1";
 
 message CreateProfileRequest {
-  string user_id = 1 [(buf.validate.field).string.uuid = true];
-  string full_name = 2 [(buf.validate.field).string.min_len = 1];
-  string email = 3 [(buf.validate.field).string.email = true];
+  int64 user_id = 1 [(buf.validate.field).int64.gte = 1];
+  string external_id = 2 [(buf.validate.field).string.min_len = 1];
+  string full_name = 3 [(buf.validate.field).string.min_len = 1];
+  string email = 4 [(buf.validate.field).string.email = true];
 }
 
 message CreateProfileResponse {
   string profile_id = 1; 
-  string user_id = 2;   
+  string external_id = 3 [(buf.validate.field).string.min_len = 1];
 }
 
 message GetProfileRequest {
-  string user_id = 1 [(buf.validate.field).string.uuid = true];
+  string user_id = 1 [(buf.validate.field).string.min_len = 1];
 }
 
 message GetProfileResponse {
@@ -36,7 +37,7 @@ message GetProfileResponse {
 }
 
 message UpdateProfileRequest {
-  string user_id = 1 [(buf.validate.field).string.uuid = true];
+  string user_id = 1 [(buf.validate.field).string.min_len = 1];
   string full_name = 2 ;
   string email = 3 ;
   string bio = 4;
@@ -50,7 +51,7 @@ message UpdateProfileResponse {
 }
 
 message DeleteProfileRequest {
-  string user_id = 1 [(buf.validate.field).string.uuid = true];
+  string user_id = 1 [(buf.validate.field).string.min_len = 1];
 }
 
 message DeleteProfileResponse {
@@ -66,7 +67,7 @@ message DeleteProfileByEmailResponse {
 }
 
 message UnDeleteProfileRequest {
-  string user_id = 1 [(buf.validate.field).string.uuid = true];
+  string user_id = 1 [(buf.validate.field).string.min_len = 1];
 }
 
 message UnDeleteProfileResponse {
@@ -77,7 +78,7 @@ message UnDeleteProfileResponse {
 
 // Option 1: Generate a pre-signed upload URL to upload directly to S3
 message GenerateAvatarUploadUrlRequest {
-  string user_id = 1 [(buf.validate.field).string.uuid = true];
+  string user_id = 1 [(buf.validate.field).string.min_len = 1];
   string file_name = 2 [(buf.validate.field).string.min_len = 1];
   string content_type = 3 [(buf.validate.field).string.min_len = 1];
 }
@@ -90,7 +91,7 @@ message GenerateAvatarUploadUrlResponse {
 // Option 2: (Optional) Direct upload stream RPC if you want server-handled uploads
 // (you can skip this if using pre-signed URLs)
 message UploadAvatarRequest {
-  string user_id = 1 [(buf.validate.field).string.uuid = true];
+  string user_id = 1 [(buf.validate.field).string.min_len = 1];
   bytes chunk_data = 2; // For streaming upload chunks
 }
 

@@ -22,14 +22,14 @@ public interface CreateProfileResponseOrBuilder extends
       getProfileIdBytes();
 
   /**
-   * <code>string user_id = 2 [json_name = "userId"];</code>
-   * @return The userId.
+   * <code>string external_id = 3 [json_name = "externalId", (.buf.validate.field) = { ... }</code>
+   * @return The externalId.
    */
-  java.lang.String getUserId();
+  java.lang.String getExternalId();
   /**
-   * <code>string user_id = 2 [json_name = "userId"];</code>
-   * @return The bytes for userId.
+   * <code>string external_id = 3 [json_name = "externalId", (.buf.validate.field) = { ... }</code>
+   * @return The bytes for externalId.
    */
   com.google.protobuf.ByteString
-      getUserIdBytes();
+      getExternalIdBytes();
 }

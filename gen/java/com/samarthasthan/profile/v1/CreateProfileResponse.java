@@ -28,7 +28,7 @@ private static final long serialVersionUID = 0L;
   }
   private CreateProfileResponse() {
     profileId_ = "";
-    userId_ = "";
+    externalId_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -83,39 +83,39 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int USER_ID_FIELD_NUMBER = 2;
+  public static final int EXTERNAL_ID_FIELD_NUMBER = 3;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object userId_ = "";
+  private volatile java.lang.Object externalId_ = "";
   /**
-   * <code>string user_id = 2 [json_name = "userId"];</code>
-   * @return The userId.
+   * <code>string external_id = 3 [json_name = "externalId", (.buf.validate.field) = { ... }</code>
+   * @return The externalId.
    */
   @java.lang.Override
-  public java.lang.String getUserId() {
-    java.lang.Object ref = userId_;
+  public java.lang.String getExternalId() {
+    java.lang.Object ref = externalId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      userId_ = s;
+      externalId_ = s;
       return s;
     }
   }
   /**
-   * <code>string user_id = 2 [json_name = "userId"];</code>
-   * @return The bytes for userId.
+   * <code>string external_id = 3 [json_name = "externalId", (.buf.validate.field) = { ... }</code>
+   * @return The bytes for externalId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getUserIdBytes() {
-    java.lang.Object ref = userId_;
+      getExternalIdBytes() {
+    java.lang.Object ref = externalId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      userId_ = b;
+      externalId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -139,8 +139,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(profileId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, profileId_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(userId_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 2, userId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(externalId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, externalId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -154,8 +154,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(profileId_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, profileId_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(userId_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, userId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(externalId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, externalId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -174,8 +174,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getProfileId()
         .equals(other.getProfileId())) return false;
-    if (!getUserId()
-        .equals(other.getUserId())) return false;
+    if (!getExternalId()
+        .equals(other.getExternalId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -189,8 +189,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PROFILE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getProfileId().hashCode();
-    hash = (37 * hash) + USER_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getUserId().hashCode();
+    hash = (37 * hash) + EXTERNAL_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getExternalId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -323,7 +323,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       profileId_ = "";
-      userId_ = "";
+      externalId_ = "";
       return this;
     }
 
@@ -361,7 +361,7 @@ private static final long serialVersionUID = 0L;
         result.profileId_ = profileId_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.userId_ = userId_;
+        result.externalId_ = externalId_;
       }
     }
 
@@ -382,8 +382,8 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (!other.getUserId().isEmpty()) {
-        userId_ = other.userId_;
+      if (!other.getExternalId().isEmpty()) {
+        externalId_ = other.externalId_;
         bitField0_ |= 0x00000002;
         onChanged();
       }
@@ -418,11 +418,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 10
-            case 18: {
-              userId_ = input.readStringRequireUtf8();
+            case 26: {
+              externalId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
               break;
-            } // case 18
+            } // case 26
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -512,73 +512,73 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object userId_ = "";
+    private java.lang.Object externalId_ = "";
     /**
-     * <code>string user_id = 2 [json_name = "userId"];</code>
-     * @return The userId.
+     * <code>string external_id = 3 [json_name = "externalId", (.buf.validate.field) = { ... }</code>
+     * @return The externalId.
      */
-    public java.lang.String getUserId() {
-      java.lang.Object ref = userId_;
+    public java.lang.String getExternalId() {
+      java.lang.Object ref = externalId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        userId_ = s;
+        externalId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string user_id = 2 [json_name = "userId"];</code>
-     * @return The bytes for userId.
+     * <code>string external_id = 3 [json_name = "externalId", (.buf.validate.field) = { ... }</code>
+     * @return The bytes for externalId.
      */
     public com.google.protobuf.ByteString
-        getUserIdBytes() {
-      java.lang.Object ref = userId_;
+        getExternalIdBytes() {
+      java.lang.Object ref = externalId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        userId_ = b;
+        externalId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string user_id = 2 [json_name = "userId"];</code>
-     * @param value The userId to set.
+     * <code>string external_id = 3 [json_name = "externalId", (.buf.validate.field) = { ... }</code>
+     * @param value The externalId to set.
      * @return This builder for chaining.
      */
-    public Builder setUserId(
+    public Builder setExternalId(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      userId_ = value;
+      externalId_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * <code>string external_id = 3 [json_name = "externalId", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearUserId() {
-      userId_ = getDefaultInstance().getUserId();
+    public Builder clearExternalId() {
+      externalId_ = getDefaultInstance().getExternalId();
       bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
     /**
-     * <code>string user_id = 2 [json_name = "userId"];</code>
-     * @param value The bytes for userId to set.
+     * <code>string external_id = 3 [json_name = "externalId", (.buf.validate.field) = { ... }</code>
+     * @param value The bytes for externalId to set.
      * @return This builder for chaining.
      */
-    public Builder setUserIdBytes(
+    public Builder setExternalIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      userId_ = value;
+      externalId_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
       return this;

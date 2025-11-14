@@ -116,72 +116,73 @@ public final class ProfileProto {
     java.lang.String[] descriptorData = {
       "\n\030profile/v1/profile.proto\022\nprofile.v1\032\033" +
       "buf/validate/validate.proto\032\037google/prot" +
-      "obuf/timestamp.proto\"~\n\024CreateProfileReq" +
-      "uest\022!\n\007user_id\030\001 \001(\tB\010\272H\005r\003\260\001\001R\006userId\022" +
-      "$\n\tfull_name\030\002 \001(\tB\007\272H\004r\002\020\001R\010fullName\022\035\n" +
-      "\005email\030\003 \001(\tB\007\272H\004r\002`\001R\005email\"O\n\025CreatePr" +
-      "ofileResponse\022\035\n\nprofile_id\030\001 \001(\tR\tprofi" +
-      "leId\022\027\n\007user_id\030\002 \001(\tR\006userId\"6\n\021GetProf" +
-      "ileRequest\022!\n\007user_id\030\001 \001(\tB\010\272H\005r\003\260\001\001R\006u" +
-      "serId\"\366\002\n\022GetProfileResponse\022\035\n\nprofile_" +
-      "id\030\001 \001(\tR\tprofileId\022\027\n\007user_id\030\002 \001(\tR\006us" +
-      "erId\022\032\n\010username\030\003 \001(\tR\010username\022\033\n\tfull" +
-      "_name\030\004 \001(\tR\010fullName\022\024\n\005email\030\005 \001(\tR\005em" +
-      "ail\022\020\n\003bio\030\006 \001(\tR\003bio\022\026\n\006avatar\030\007 \001(\tR\006a" +
-      "vatar\0229\n\ncreated_at\030\010 \001(\0132\032.google.proto" +
-      "buf.TimestampR\tcreatedAt\0229\n\nupdated_at\030\t" +
-      " \001(\0132\032.google.protobuf.TimestampR\tupdate" +
-      "dAt\0229\n\ndeleted_at\030\n \001(\0132\032.google.protobu" +
-      "f.TimestampR\tdeletedAt\"\262\001\n\024UpdateProfile" +
-      "Request\022!\n\007user_id\030\001 \001(\tB\010\272H\005r\003\260\001\001R\006user" +
-      "Id\022\033\n\tfull_name\030\002 \001(\tR\010fullName\022\024\n\005email" +
-      "\030\003 \001(\tR\005email\022\020\n\003bio\030\004 \001(\tR\003bio\022\026\n\006avata" +
-      "r\030\005 \001(\tR\006avatar\022\032\n\010username\030\006 \001(\tR\010usern" +
-      "ame\"O\n\025UpdateProfileResponse\022\035\n\nprofile_" +
-      "id\030\001 \001(\tR\tprofileId\022\027\n\007user_id\030\002 \001(\tR\006us" +
-      "erId\"9\n\024DeleteProfileRequest\022!\n\007user_id\030" +
-      "\001 \001(\tB\010\272H\005r\003\260\001\001R\006userId\"0\n\025DeleteProfile" +
-      "Response\022\027\n\007is_done\030\001 \001(\010R\006isDone\"<\n\033Del" +
-      "eteProfileByEmailRequest\022\035\n\005email\030\001 \001(\tB" +
-      "\007\272H\004r\002`\001R\005email\"7\n\034DeleteProfileByEmailR" +
-      "esponse\022\027\n\007is_done\030\001 \001(\010R\006isDone\";\n\026UnDe" +
-      "leteProfileRequest\022!\n\007user_id\030\001 \001(\tB\010\272H\005" +
-      "r\003\260\001\001R\006userId\"2\n\027UnDeleteProfileResponse" +
-      "\022\027\n\007is_done\030\001 \001(\010R\006isDone\"\225\001\n\036GenerateAv" +
-      "atarUploadUrlRequest\022!\n\007user_id\030\001 \001(\tB\010\272" +
-      "H\005r\003\260\001\001R\006userId\022$\n\tfile_name\030\002 \001(\tB\007\272H\004r" +
-      "\002\020\001R\010fileName\022*\n\014content_type\030\003 \001(\tB\007\272H\004" +
-      "r\002\020\001R\013contentType\"_\n\037GenerateAvatarUploa" +
-      "dUrlResponse\022\035\n\nupload_url\030\001 \001(\tR\tupload" +
-      "Url\022\035\n\navatar_url\030\002 \001(\tR\tavatarUrl\"W\n\023Up" +
-      "loadAvatarRequest\022!\n\007user_id\030\001 \001(\tB\010\272H\005r" +
-      "\003\260\001\001R\006userId\022\035\n\nchunk_data\030\002 \001(\014R\tchunkD" +
-      "ata\"5\n\024UploadAvatarResponse\022\035\n\navatar_ur" +
-      "l\030\001 \001(\tR\tavatarUrl2\357\005\n\016ProfileService\022T\n" +
-      "\rCreateProfile\022 .profile.v1.CreateProfil" +
-      "eRequest\032!.profile.v1.CreateProfileRespo" +
-      "nse\022K\n\nGetProfile\022\035.profile.v1.GetProfil" +
-      "eRequest\032\036.profile.v1.GetProfileResponse" +
-      "\022T\n\rUpdateProfile\022 .profile.v1.UpdatePro" +
-      "fileRequest\032!.profile.v1.UpdateProfileRe" +
-      "sponse\022T\n\rDeleteProfile\022 .profile.v1.Del" +
-      "eteProfileRequest\032!.profile.v1.DeletePro" +
-      "fileResponse\022i\n\024DeleteProfileByEmail\022\'.p" +
-      "rofile.v1.DeleteProfileByEmailRequest\032(." +
-      "profile.v1.DeleteProfileByEmailResponse\022" +
-      "Z\n\017UnDeleteProfile\022\".profile.v1.UnDelete" +
-      "ProfileRequest\032#.profile.v1.UnDeleteProf" +
-      "ileResponse\022r\n\027GenerateAvatarUploadUrl\022*" +
-      ".profile.v1.GenerateAvatarUploadUrlReque" +
-      "st\032+.profile.v1.GenerateAvatarUploadUrlR" +
-      "esponse\022S\n\014UploadAvatar\022\037.profile.v1.Upl" +
-      "oadAvatarRequest\032 .profile.v1.UploadAvat" +
-      "arResponse(\001B\274\001\n\034com.samarthasthan.profi" +
-      "le.v1B\014ProfileProtoP\001ZEgithub.com/samart" +
-      "hasthan/services-commons/gen/go/profile/" +
-      "v1;profilev1\242\002\003PXX\252\002\nProfile.V1\312\002\nProfil" +
-      "e\\V1\342\002\026Profile\\V1\\GPBMetadata\352\002\013Profile:" +
-      ":V1b\006proto3"
+      "obuf/timestamp.proto\"\247\001\n\024CreateProfileRe" +
+      "quest\022 \n\007user_id\030\001 \001(\003B\007\272H\004\"\002(\001R\006userId\022" +
+      "(\n\013external_id\030\002 \001(\tB\007\272H\004r\002\020\001R\nexternalI" +
+      "d\022$\n\tfull_name\030\003 \001(\tB\007\272H\004r\002\020\001R\010fullName\022" +
+      "\035\n\005email\030\004 \001(\tB\007\272H\004r\002`\001R\005email\"`\n\025Create" +
+      "ProfileResponse\022\035\n\nprofile_id\030\001 \001(\tR\tpro" +
+      "fileId\022(\n\013external_id\030\003 \001(\tB\007\272H\004r\002\020\001R\nex" +
+      "ternalId\"5\n\021GetProfileRequest\022 \n\007user_id" +
+      "\030\001 \001(\tB\007\272H\004r\002\020\001R\006userId\"\366\002\n\022GetProfileRe" +
+      "sponse\022\035\n\nprofile_id\030\001 \001(\tR\tprofileId\022\027\n" +
+      "\007user_id\030\002 \001(\tR\006userId\022\032\n\010username\030\003 \001(\t" +
+      "R\010username\022\033\n\tfull_name\030\004 \001(\tR\010fullName\022" +
+      "\024\n\005email\030\005 \001(\tR\005email\022\020\n\003bio\030\006 \001(\tR\003bio\022" +
+      "\026\n\006avatar\030\007 \001(\tR\006avatar\0229\n\ncreated_at\030\010 " +
+      "\001(\0132\032.google.protobuf.TimestampR\tcreated" +
+      "At\0229\n\nupdated_at\030\t \001(\0132\032.google.protobuf" +
+      ".TimestampR\tupdatedAt\0229\n\ndeleted_at\030\n \001(" +
+      "\0132\032.google.protobuf.TimestampR\tdeletedAt" +
+      "\"\261\001\n\024UpdateProfileRequest\022 \n\007user_id\030\001 \001" +
+      "(\tB\007\272H\004r\002\020\001R\006userId\022\033\n\tfull_name\030\002 \001(\tR\010" +
+      "fullName\022\024\n\005email\030\003 \001(\tR\005email\022\020\n\003bio\030\004 " +
+      "\001(\tR\003bio\022\026\n\006avatar\030\005 \001(\tR\006avatar\022\032\n\010user" +
+      "name\030\006 \001(\tR\010username\"O\n\025UpdateProfileRes" +
+      "ponse\022\035\n\nprofile_id\030\001 \001(\tR\tprofileId\022\027\n\007" +
+      "user_id\030\002 \001(\tR\006userId\"8\n\024DeleteProfileRe" +
+      "quest\022 \n\007user_id\030\001 \001(\tB\007\272H\004r\002\020\001R\006userId\"" +
+      "0\n\025DeleteProfileResponse\022\027\n\007is_done\030\001 \001(" +
+      "\010R\006isDone\"<\n\033DeleteProfileByEmailRequest" +
+      "\022\035\n\005email\030\001 \001(\tB\007\272H\004r\002`\001R\005email\"7\n\034Delet" +
+      "eProfileByEmailResponse\022\027\n\007is_done\030\001 \001(\010" +
+      "R\006isDone\":\n\026UnDeleteProfileRequest\022 \n\007us" +
+      "er_id\030\001 \001(\tB\007\272H\004r\002\020\001R\006userId\"2\n\027UnDelete" +
+      "ProfileResponse\022\027\n\007is_done\030\001 \001(\010R\006isDone" +
+      "\"\224\001\n\036GenerateAvatarUploadUrlRequest\022 \n\007u" +
+      "ser_id\030\001 \001(\tB\007\272H\004r\002\020\001R\006userId\022$\n\tfile_na" +
+      "me\030\002 \001(\tB\007\272H\004r\002\020\001R\010fileName\022*\n\014content_t" +
+      "ype\030\003 \001(\tB\007\272H\004r\002\020\001R\013contentType\"_\n\037Gener" +
+      "ateAvatarUploadUrlResponse\022\035\n\nupload_url" +
+      "\030\001 \001(\tR\tuploadUrl\022\035\n\navatar_url\030\002 \001(\tR\ta" +
+      "vatarUrl\"V\n\023UploadAvatarRequest\022 \n\007user_" +
+      "id\030\001 \001(\tB\007\272H\004r\002\020\001R\006userId\022\035\n\nchunk_data\030" +
+      "\002 \001(\014R\tchunkData\"5\n\024UploadAvatarResponse" +
+      "\022\035\n\navatar_url\030\001 \001(\tR\tavatarUrl2\357\005\n\016Prof" +
+      "ileService\022T\n\rCreateProfile\022 .profile.v1" +
+      ".CreateProfileRequest\032!.profile.v1.Creat" +
+      "eProfileResponse\022K\n\nGetProfile\022\035.profile" +
+      ".v1.GetProfileRequest\032\036.profile.v1.GetPr" +
+      "ofileResponse\022T\n\rUpdateProfile\022 .profile" +
+      ".v1.UpdateProfileRequest\032!.profile.v1.Up" +
+      "dateProfileResponse\022T\n\rDeleteProfile\022 .p" +
+      "rofile.v1.DeleteProfileRequest\032!.profile" +
+      ".v1.DeleteProfileResponse\022i\n\024DeleteProfi" +
+      "leByEmail\022\'.profile.v1.DeleteProfileByEm" +
+      "ailRequest\032(.profile.v1.DeleteProfileByE" +
+      "mailResponse\022Z\n\017UnDeleteProfile\022\".profil" +
+      "e.v1.UnDeleteProfileRequest\032#.profile.v1" +
+      ".UnDeleteProfileResponse\022r\n\027GenerateAvat" +
+      "arUploadUrl\022*.profile.v1.GenerateAvatarU" +
+      "ploadUrlRequest\032+.profile.v1.GenerateAva" +
+      "tarUploadUrlResponse\022S\n\014UploadAvatar\022\037.p" +
+      "rofile.v1.UploadAvatarRequest\032 .profile." +
+      "v1.UploadAvatarResponse(\001B\274\001\n\034com.samart" +
+      "hasthan.profile.v1B\014ProfileProtoP\001ZEgith" +
+      "ub.com/samarthasthan/services-commons/ge" +
+      "n/go/profile/v1;profilev1\242\002\003PXX\252\002\nProfil" +
+      "e.V1\312\002\nProfile\\V1\342\002\026Profile\\V1\\GPBMetada" +
+      "ta\352\002\013Profile::V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -194,13 +195,13 @@ public final class ProfileProto {
     internal_static_profile_v1_CreateProfileRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_profile_v1_CreateProfileRequest_descriptor,
-        new java.lang.String[] { "UserId", "FullName", "Email", });
+        new java.lang.String[] { "UserId", "ExternalId", "FullName", "Email", });
     internal_static_profile_v1_CreateProfileResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_profile_v1_CreateProfileResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_profile_v1_CreateProfileResponse_descriptor,
-        new java.lang.String[] { "ProfileId", "UserId", });
+        new java.lang.String[] { "ProfileId", "ExternalId", });
     internal_static_profile_v1_GetProfileRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_profile_v1_GetProfileRequest_fieldAccessorTable = new

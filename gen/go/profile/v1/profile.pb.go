@@ -25,9 +25,10 @@ const (
 
 type CreateProfileRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	FullName      string                 `protobuf:"bytes,2,opt,name=full_name,json=fullName,proto3" json:"full_name,omitempty"`
-	Email         string                 `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"`
+	UserId        int64                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ExternalId    string                 `protobuf:"bytes,2,opt,name=external_id,json=externalId,proto3" json:"external_id,omitempty"`
+	FullName      string                 `protobuf:"bytes,3,opt,name=full_name,json=fullName,proto3" json:"full_name,omitempty"`
+	Email         string                 `protobuf:"bytes,4,opt,name=email,proto3" json:"email,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -62,9 +63,16 @@ func (*CreateProfileRequest) Descriptor() ([]byte, []int) {
 	return file_profile_v1_profile_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *CreateProfileRequest) GetUserId() string {
+func (x *CreateProfileRequest) GetUserId() int64 {
 	if x != nil {
 		return x.UserId
+	}
+	return 0
+}
+
+func (x *CreateProfileRequest) GetExternalId() string {
+	if x != nil {
+		return x.ExternalId
 	}
 	return ""
 }
@@ -86,7 +94,7 @@ func (x *CreateProfileRequest) GetEmail() string {
 type CreateProfileResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	ProfileId     string                 `protobuf:"bytes,1,opt,name=profile_id,json=profileId,proto3" json:"profile_id,omitempty"`
-	UserId        string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ExternalId    string                 `protobuf:"bytes,3,opt,name=external_id,json=externalId,proto3" json:"external_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -128,9 +136,9 @@ func (x *CreateProfileResponse) GetProfileId() string {
 	return ""
 }
 
-func (x *CreateProfileResponse) GetUserId() string {
+func (x *CreateProfileResponse) GetExternalId() string {
 	if x != nil {
-		return x.UserId
+		return x.ExternalId
 	}
 	return ""
 }
@@ -911,17 +919,20 @@ var File_profile_v1_profile_proto protoreflect.FileDescriptor
 const file_profile_v1_profile_proto_rawDesc = "" +
 	"\n" +
 	"\x18profile/v1/profile.proto\x12\n" +
-	"profile.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"~\n" +
-	"\x14CreateProfileRequest\x12!\n" +
-	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\x12$\n" +
-	"\tfull_name\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\bfullName\x12\x1d\n" +
-	"\x05email\x18\x03 \x01(\tB\a\xbaH\x04r\x02`\x01R\x05email\"O\n" +
+	"profile.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xa7\x01\n" +
+	"\x14CreateProfileRequest\x12 \n" +
+	"\auser_id\x18\x01 \x01(\x03B\a\xbaH\x04\"\x02(\x01R\x06userId\x12(\n" +
+	"\vexternal_id\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\n" +
+	"externalId\x12$\n" +
+	"\tfull_name\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\bfullName\x12\x1d\n" +
+	"\x05email\x18\x04 \x01(\tB\a\xbaH\x04r\x02`\x01R\x05email\"`\n" +
 	"\x15CreateProfileResponse\x12\x1d\n" +
 	"\n" +
-	"profile_id\x18\x01 \x01(\tR\tprofileId\x12\x17\n" +
-	"\auser_id\x18\x02 \x01(\tR\x06userId\"6\n" +
-	"\x11GetProfileRequest\x12!\n" +
-	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\"\xf6\x02\n" +
+	"profile_id\x18\x01 \x01(\tR\tprofileId\x12(\n" +
+	"\vexternal_id\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\n" +
+	"externalId\"5\n" +
+	"\x11GetProfileRequest\x12 \n" +
+	"\auser_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x06userId\"\xf6\x02\n" +
 	"\x12GetProfileResponse\x12\x1d\n" +
 	"\n" +
 	"profile_id\x18\x01 \x01(\tR\tprofileId\x12\x17\n" +
@@ -937,9 +948,9 @@ const file_profile_v1_profile_proto_rawDesc = "" +
 	"updated_at\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\x129\n" +
 	"\n" +
 	"deleted_at\x18\n" +
-	" \x01(\v2\x1a.google.protobuf.TimestampR\tdeletedAt\"\xb2\x01\n" +
-	"\x14UpdateProfileRequest\x12!\n" +
-	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\x12\x1b\n" +
+	" \x01(\v2\x1a.google.protobuf.TimestampR\tdeletedAt\"\xb1\x01\n" +
+	"\x14UpdateProfileRequest\x12 \n" +
+	"\auser_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x06userId\x12\x1b\n" +
 	"\tfull_name\x18\x02 \x01(\tR\bfullName\x12\x14\n" +
 	"\x05email\x18\x03 \x01(\tR\x05email\x12\x10\n" +
 	"\x03bio\x18\x04 \x01(\tR\x03bio\x12\x16\n" +
@@ -948,30 +959,30 @@ const file_profile_v1_profile_proto_rawDesc = "" +
 	"\x15UpdateProfileResponse\x12\x1d\n" +
 	"\n" +
 	"profile_id\x18\x01 \x01(\tR\tprofileId\x12\x17\n" +
-	"\auser_id\x18\x02 \x01(\tR\x06userId\"9\n" +
-	"\x14DeleteProfileRequest\x12!\n" +
-	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\"0\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\"8\n" +
+	"\x14DeleteProfileRequest\x12 \n" +
+	"\auser_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x06userId\"0\n" +
 	"\x15DeleteProfileResponse\x12\x17\n" +
 	"\ais_done\x18\x01 \x01(\bR\x06isDone\"<\n" +
 	"\x1bDeleteProfileByEmailRequest\x12\x1d\n" +
 	"\x05email\x18\x01 \x01(\tB\a\xbaH\x04r\x02`\x01R\x05email\"7\n" +
 	"\x1cDeleteProfileByEmailResponse\x12\x17\n" +
-	"\ais_done\x18\x01 \x01(\bR\x06isDone\";\n" +
-	"\x16UnDeleteProfileRequest\x12!\n" +
-	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\"2\n" +
+	"\ais_done\x18\x01 \x01(\bR\x06isDone\":\n" +
+	"\x16UnDeleteProfileRequest\x12 \n" +
+	"\auser_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x06userId\"2\n" +
 	"\x17UnDeleteProfileResponse\x12\x17\n" +
-	"\ais_done\x18\x01 \x01(\bR\x06isDone\"\x95\x01\n" +
-	"\x1eGenerateAvatarUploadUrlRequest\x12!\n" +
-	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\x12$\n" +
+	"\ais_done\x18\x01 \x01(\bR\x06isDone\"\x94\x01\n" +
+	"\x1eGenerateAvatarUploadUrlRequest\x12 \n" +
+	"\auser_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x06userId\x12$\n" +
 	"\tfile_name\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\bfileName\x12*\n" +
 	"\fcontent_type\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\vcontentType\"_\n" +
 	"\x1fGenerateAvatarUploadUrlResponse\x12\x1d\n" +
 	"\n" +
 	"upload_url\x18\x01 \x01(\tR\tuploadUrl\x12\x1d\n" +
 	"\n" +
-	"avatar_url\x18\x02 \x01(\tR\tavatarUrl\"W\n" +
-	"\x13UploadAvatarRequest\x12!\n" +
-	"\auser_id\x18\x01 \x01(\tB\b\xbaH\x05r\x03\xb0\x01\x01R\x06userId\x12\x1d\n" +
+	"avatar_url\x18\x02 \x01(\tR\tavatarUrl\"V\n" +
+	"\x13UploadAvatarRequest\x12 \n" +
+	"\auser_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x06userId\x12\x1d\n" +
 	"\n" +
 	"chunk_data\x18\x02 \x01(\fR\tchunkData\"5\n" +
 	"\x14UploadAvatarResponse\x12\x1d\n" +
