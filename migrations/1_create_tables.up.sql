@@ -79,7 +79,7 @@ CREATE TABLE Files (
     Owner_Id BIGSERIAL NOT NULL REFERENCES Users(Id) ON DELETE CASCADE,
     Name VARCHAR(255) NOT NULL,
     Type VARCHAR(10) NOT NULL CHECK (Type IN ('file', 'folder')), -- "file" or "folder"
-    Parent_Id BIGSERIAL REFERENCES Files(Id) ON DELETE CASCADE, -- null = root
+    Parent_Id BIGINT REFERENCES Files(Id) ON DELETE SET NULL, -- null = root
     Content_Type VARCHAR(255),
     Size BIGINT NOT NULL,
     Location VARCHAR(1024) NOT NULL, 
