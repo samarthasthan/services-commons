@@ -1107,12 +1107,13 @@ func (x *CheckIfUserExistsRequest) GetEmail() string {
 }
 
 type CheckIfUserExistsResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	FullName      string                 `protobuf:"bytes,2,opt,name=full_name,json=fullName,proto3" json:"full_name,omitempty"`
-	Email         string                 `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	UserId         int64                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	UserExternalId string                 `protobuf:"bytes,2,opt,name=user_external_id,json=userExternalId,proto3" json:"user_external_id,omitempty"`
+	FullName       string                 `protobuf:"bytes,3,opt,name=full_name,json=fullName,proto3" json:"full_name,omitempty"`
+	Email          string                 `protobuf:"bytes,4,opt,name=email,proto3" json:"email,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *CheckIfUserExistsResponse) Reset() {
@@ -1145,9 +1146,16 @@ func (*CheckIfUserExistsResponse) Descriptor() ([]byte, []int) {
 	return file_user_v1_user_proto_rawDescGZIP(), []int{23}
 }
 
-func (x *CheckIfUserExistsResponse) GetUserId() string {
+func (x *CheckIfUserExistsResponse) GetUserId() int64 {
 	if x != nil {
 		return x.UserId
+	}
+	return 0
+}
+
+func (x *CheckIfUserExistsResponse) GetUserExternalId() string {
+	if x != nil {
+		return x.UserExternalId
 	}
 	return ""
 }
@@ -1211,12 +1219,13 @@ func (x *CheckIfUserExistsByIDRequest) GetUserId() string {
 }
 
 type CheckIfUserExistsByIDResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	FullName      string                 `protobuf:"bytes,2,opt,name=full_name,json=fullName,proto3" json:"full_name,omitempty"`
-	Email         string                 `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	UserId         int64                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	UserExternalId string                 `protobuf:"bytes,2,opt,name=user_external_id,json=userExternalId,proto3" json:"user_external_id,omitempty"`
+	FullName       string                 `protobuf:"bytes,3,opt,name=full_name,json=fullName,proto3" json:"full_name,omitempty"`
+	Email          string                 `protobuf:"bytes,4,opt,name=email,proto3" json:"email,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *CheckIfUserExistsByIDResponse) Reset() {
@@ -1249,9 +1258,16 @@ func (*CheckIfUserExistsByIDResponse) Descriptor() ([]byte, []int) {
 	return file_user_v1_user_proto_rawDescGZIP(), []int{25}
 }
 
-func (x *CheckIfUserExistsByIDResponse) GetUserId() string {
+func (x *CheckIfUserExistsByIDResponse) GetUserId() int64 {
 	if x != nil {
 		return x.UserId
+	}
+	return 0
+}
+
+func (x *CheckIfUserExistsByIDResponse) GetUserExternalId() string {
+	if x != nil {
+		return x.UserExternalId
 	}
 	return ""
 }
@@ -1465,17 +1481,19 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\x15ResetPasswordResponse\x12\x17\n" +
 	"\ais_done\x18\x01 \x01(\bR\x06isDone\"0\n" +
 	"\x18CheckIfUserExistsRequest\x12\x14\n" +
-	"\x05email\x18\x01 \x01(\tR\x05email\"g\n" +
+	"\x05email\x18\x01 \x01(\tR\x05email\"\x91\x01\n" +
 	"\x19CheckIfUserExistsResponse\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x1b\n" +
-	"\tfull_name\x18\x02 \x01(\tR\bfullName\x12\x14\n" +
-	"\x05email\x18\x03 \x01(\tR\x05email\"7\n" +
+	"\auser_id\x18\x01 \x01(\x03R\x06userId\x12(\n" +
+	"\x10user_external_id\x18\x02 \x01(\tR\x0euserExternalId\x12\x1b\n" +
+	"\tfull_name\x18\x03 \x01(\tR\bfullName\x12\x14\n" +
+	"\x05email\x18\x04 \x01(\tR\x05email\"7\n" +
 	"\x1cCheckIfUserExistsByIDRequest\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\tR\x06userId\"k\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\"\x95\x01\n" +
 	"\x1dCheckIfUserExistsByIDResponse\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x1b\n" +
-	"\tfull_name\x18\x02 \x01(\tR\bfullName\x12\x14\n" +
-	"\x05email\x18\x03 \x01(\tR\x05email\"\x9b\x02\n" +
+	"\auser_id\x18\x01 \x01(\x03R\x06userId\x12(\n" +
+	"\x10user_external_id\x18\x02 \x01(\tR\x0euserExternalId\x12\x1b\n" +
+	"\tfull_name\x18\x03 \x01(\tR\bfullName\x12\x14\n" +
+	"\x05email\x18\x04 \x01(\tR\x05email\"\x9b\x02\n" +
 	"\x10ContactUsRequest\x12&\n" +
 	"\tfull_name\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\bfullName\x12&\n" +
 	"\n" +

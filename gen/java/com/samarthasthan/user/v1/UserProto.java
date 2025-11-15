@@ -215,59 +215,61 @@ public final class UserProto {
       "H\004r\002\020\010R\020tempraryPassword\"0\n\025ResetPasswor" +
       "dResponse\022\027\n\007is_done\030\001 \001(\010R\006isDone\"0\n\030Ch" +
       "eckIfUserExistsRequest\022\024\n\005email\030\001 \001(\tR\005e" +
-      "mail\"g\n\031CheckIfUserExistsResponse\022\027\n\007use" +
-      "r_id\030\001 \001(\tR\006userId\022\033\n\tfull_name\030\002 \001(\tR\010f" +
-      "ullName\022\024\n\005email\030\003 \001(\tR\005email\"7\n\034CheckIf" +
-      "UserExistsByIDRequest\022\027\n\007user_id\030\001 \001(\tR\006" +
-      "userId\"k\n\035CheckIfUserExistsByIDResponse\022" +
-      "\027\n\007user_id\030\001 \001(\tR\006userId\022\033\n\tfull_name\030\002 " +
-      "\001(\tR\010fullName\022\024\n\005email\030\003 \001(\tR\005email\"\233\002\n\020" +
-      "ContactUsRequest\022&\n\tfull_name\030\001 \001(\tB\t\272H\006" +
-      "r\004\020\001\030dR\010fullName\022&\n\nwork_email\030\002 \001(\tB\007\272H" +
-      "\004r\002`\001R\tworkEmail\0220\n\016country_region\030\003 \001(\t" +
-      "B\t\272H\006r\004\020\001\030dR\rcountryRegion\0221\n\017company_we" +
-      "bsite\030\004 \001(\tB\010\272H\005r\003\210\001\001R\016companyWebsite\022,\n" +
-      "\014job_function\030\005 \001(\tB\t\272H\006r\004\020\001\030dR\013jobFunct" +
-      "ion\022$\n\007message\030\006 \001(\tB\n\272H\007r\005\020\001\030\320\017R\007messag" +
-      "e\"L\n\021ContactUsResponse\022\030\n\007success\030\001 \001(\010R" +
-      "\007success\022\035\n\ncontact_id\030\002 \001(\tR\tcontactId2" +
-      "\362\t\n\013UserService\022E\n\nCreateUser\022\032.user.v1." +
-      "CreateUserRequest\032\033.user.v1.CreateUserRe" +
-      "sponse\022J\n\017CreateAdminUser\022\032.user.v1.Crea" +
-      "teUserRequest\032\033.user.v1.CreateUserRespon" +
-      "se\022Q\n\016RemoveUserById\022\036.user.v1.RemoveUse" +
-      "rByIdRequest\032\037.user.v1.RemoveUserByIdRes" +
-      "ponse\022f\n\025SendVerificationEmail\022%.user.v1" +
-      ".SendVerificationEmailRequest\032&.user.v1." +
-      "SendVerificationEmailResponse\0229\n\006SignIn\022" +
-      "\026.user.v1.SignInRequest\032\027.user.v1.SignIn" +
-      "Response\022Q\n\016DeleteUserById\022\036.user.v1.Del" +
-      "eteUserByIdRequest\032\037.user.v1.DeleteUserB" +
-      "yIdResponse\022W\n\020UnDeleteUserById\022 .user.v" +
-      "1.UnDeleteUserByIdRequest\032!.user.v1.UnDe" +
-      "leteUserByIdResponse\022E\n\nVerifyUser\022\032.use" +
-      "r.v1.VerifyUserRequest\032\033.user.v1.VerifyU" +
-      "serResponse\022W\n\020ResendVerifyUser\022 .user.v" +
-      "1.ResendVerifyUserRequest\032!.user.v1.Rese" +
-      "ndVerifyUserResponse\022Q\n\016ForgotPassword\022\036" +
-      ".user.v1.ForgotPasswordRequest\032\037.user.v1" +
-      ".ForgotPasswordResponse\022c\n\024VerifyForgotP" +
-      "assword\022$.user.v1.VerifyForgotPasswordRe" +
-      "quest\032%.user.v1.VerifyForgotPasswordResp" +
-      "onse\022N\n\rResetPassword\022\035.user.v1.ResetPas" +
-      "swordRequest\032\036.user.v1.ResetPasswordResp" +
-      "onse\022Z\n\021CheckIfUserExists\022!.user.v1.Chec" +
-      "kIfUserExistsRequest\032\".user.v1.CheckIfUs" +
-      "erExistsResponse\022f\n\025CheckIfUserExistsByI" +
-      "D\022%.user.v1.CheckIfUserExistsByIDRequest" +
-      "\032&.user.v1.CheckIfUserExistsByIDResponse" +
-      "\022B\n\tContactUs\022\031.user.v1.ContactUsRequest" +
-      "\032\032.user.v1.ContactUsResponseB\244\001\n\031com.sam" +
-      "arthasthan.user.v1B\tUserProtoP\001Z?github." +
-      "com/samarthasthan/services-commons/gen/g" +
-      "o/user/v1;userv1\242\002\003UXX\252\002\007User.V1\312\002\007User\\" +
-      "V1\342\002\023User\\V1\\GPBMetadata\352\002\010User::V1b\006pro" +
-      "to3"
+      "mail\"\221\001\n\031CheckIfUserExistsResponse\022\027\n\007us" +
+      "er_id\030\001 \001(\003R\006userId\022(\n\020user_external_id\030" +
+      "\002 \001(\tR\016userExternalId\022\033\n\tfull_name\030\003 \001(\t" +
+      "R\010fullName\022\024\n\005email\030\004 \001(\tR\005email\"7\n\034Chec" +
+      "kIfUserExistsByIDRequest\022\027\n\007user_id\030\001 \001(" +
+      "\tR\006userId\"\225\001\n\035CheckIfUserExistsByIDRespo" +
+      "nse\022\027\n\007user_id\030\001 \001(\003R\006userId\022(\n\020user_ext" +
+      "ernal_id\030\002 \001(\tR\016userExternalId\022\033\n\tfull_n" +
+      "ame\030\003 \001(\tR\010fullName\022\024\n\005email\030\004 \001(\tR\005emai" +
+      "l\"\233\002\n\020ContactUsRequest\022&\n\tfull_name\030\001 \001(" +
+      "\tB\t\272H\006r\004\020\001\030dR\010fullName\022&\n\nwork_email\030\002 \001" +
+      "(\tB\007\272H\004r\002`\001R\tworkEmail\0220\n\016country_region" +
+      "\030\003 \001(\tB\t\272H\006r\004\020\001\030dR\rcountryRegion\0221\n\017comp" +
+      "any_website\030\004 \001(\tB\010\272H\005r\003\210\001\001R\016companyWebs" +
+      "ite\022,\n\014job_function\030\005 \001(\tB\t\272H\006r\004\020\001\030dR\013jo" +
+      "bFunction\022$\n\007message\030\006 \001(\tB\n\272H\007r\005\020\001\030\320\017R\007" +
+      "message\"L\n\021ContactUsResponse\022\030\n\007success\030" +
+      "\001 \001(\010R\007success\022\035\n\ncontact_id\030\002 \001(\tR\tcont" +
+      "actId2\362\t\n\013UserService\022E\n\nCreateUser\022\032.us" +
+      "er.v1.CreateUserRequest\032\033.user.v1.Create" +
+      "UserResponse\022J\n\017CreateAdminUser\022\032.user.v" +
+      "1.CreateUserRequest\032\033.user.v1.CreateUser" +
+      "Response\022Q\n\016RemoveUserById\022\036.user.v1.Rem" +
+      "oveUserByIdRequest\032\037.user.v1.RemoveUserB" +
+      "yIdResponse\022f\n\025SendVerificationEmail\022%.u" +
+      "ser.v1.SendVerificationEmailRequest\032&.us" +
+      "er.v1.SendVerificationEmailResponse\0229\n\006S" +
+      "ignIn\022\026.user.v1.SignInRequest\032\027.user.v1." +
+      "SignInResponse\022Q\n\016DeleteUserById\022\036.user." +
+      "v1.DeleteUserByIdRequest\032\037.user.v1.Delet" +
+      "eUserByIdResponse\022W\n\020UnDeleteUserById\022 ." +
+      "user.v1.UnDeleteUserByIdRequest\032!.user.v" +
+      "1.UnDeleteUserByIdResponse\022E\n\nVerifyUser" +
+      "\022\032.user.v1.VerifyUserRequest\032\033.user.v1.V" +
+      "erifyUserResponse\022W\n\020ResendVerifyUser\022 ." +
+      "user.v1.ResendVerifyUserRequest\032!.user.v" +
+      "1.ResendVerifyUserResponse\022Q\n\016ForgotPass" +
+      "word\022\036.user.v1.ForgotPasswordRequest\032\037.u" +
+      "ser.v1.ForgotPasswordResponse\022c\n\024VerifyF" +
+      "orgotPassword\022$.user.v1.VerifyForgotPass" +
+      "wordRequest\032%.user.v1.VerifyForgotPasswo" +
+      "rdResponse\022N\n\rResetPassword\022\035.user.v1.Re" +
+      "setPasswordRequest\032\036.user.v1.ResetPasswo" +
+      "rdResponse\022Z\n\021CheckIfUserExists\022!.user.v" +
+      "1.CheckIfUserExistsRequest\032\".user.v1.Che" +
+      "ckIfUserExistsResponse\022f\n\025CheckIfUserExi" +
+      "stsByID\022%.user.v1.CheckIfUserExistsByIDR" +
+      "equest\032&.user.v1.CheckIfUserExistsByIDRe" +
+      "sponse\022B\n\tContactUs\022\031.user.v1.ContactUsR" +
+      "equest\032\032.user.v1.ContactUsResponseB\244\001\n\031c" +
+      "om.samarthasthan.user.v1B\tUserProtoP\001Z?g" +
+      "ithub.com/samarthasthan/services-commons" +
+      "/gen/go/user/v1;userv1\242\002\003UXX\252\002\007User.V1\312\002" +
+      "\007User\\V1\342\002\023User\\V1\\GPBMetadata\352\002\010User::V" +
+      "1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -417,7 +419,7 @@ public final class UserProto {
     internal_static_user_v1_CheckIfUserExistsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_user_v1_CheckIfUserExistsResponse_descriptor,
-        new java.lang.String[] { "UserId", "FullName", "Email", });
+        new java.lang.String[] { "UserId", "UserExternalId", "FullName", "Email", });
     internal_static_user_v1_CheckIfUserExistsByIDRequest_descriptor =
       getDescriptor().getMessageTypes().get(24);
     internal_static_user_v1_CheckIfUserExistsByIDRequest_fieldAccessorTable = new
@@ -429,7 +431,7 @@ public final class UserProto {
     internal_static_user_v1_CheckIfUserExistsByIDResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_user_v1_CheckIfUserExistsByIDResponse_descriptor,
-        new java.lang.String[] { "UserId", "FullName", "Email", });
+        new java.lang.String[] { "UserId", "UserExternalId", "FullName", "Email", });
     internal_static_user_v1_ContactUsRequest_descriptor =
       getDescriptor().getMessageTypes().get(26);
     internal_static_user_v1_ContactUsRequest_fieldAccessorTable = new

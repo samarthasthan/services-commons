@@ -119,9 +119,10 @@ message CheckIfUserExistsRequest {
 }
 
 message CheckIfUserExistsResponse {
-  string user_id = 1;
-  string full_name = 2;
-  string email = 3;
+  int64 user_id = 1;
+  string user_external_id = 2;
+  string full_name = 3;
+  string email = 4;
 }
 
 message CheckIfUserExistsByIDRequest {
@@ -129,9 +130,10 @@ message CheckIfUserExistsByIDRequest {
 }
 
 message CheckIfUserExistsByIDResponse {
-  string user_id = 1;
-  string full_name = 2;
-  string email = 3;
+  int64 user_id = 1;
+  string user_external_id = 2;
+  string full_name = 3;
+  string email = 4;
 }
 
 message ContactUsRequest {

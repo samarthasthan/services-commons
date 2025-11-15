@@ -10,36 +10,42 @@ public interface CheckIfUserExistsByIDResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string user_id = 1 [json_name = "userId"];</code>
+   * <code>int64 user_id = 1 [json_name = "userId"];</code>
    * @return The userId.
    */
-  java.lang.String getUserId();
-  /**
-   * <code>string user_id = 1 [json_name = "userId"];</code>
-   * @return The bytes for userId.
-   */
-  com.google.protobuf.ByteString
-      getUserIdBytes();
+  long getUserId();
 
   /**
-   * <code>string full_name = 2 [json_name = "fullName"];</code>
+   * <code>string user_external_id = 2 [json_name = "userExternalId"];</code>
+   * @return The userExternalId.
+   */
+  java.lang.String getUserExternalId();
+  /**
+   * <code>string user_external_id = 2 [json_name = "userExternalId"];</code>
+   * @return The bytes for userExternalId.
+   */
+  com.google.protobuf.ByteString
+      getUserExternalIdBytes();
+
+  /**
+   * <code>string full_name = 3 [json_name = "fullName"];</code>
    * @return The fullName.
    */
   java.lang.String getFullName();
   /**
-   * <code>string full_name = 2 [json_name = "fullName"];</code>
+   * <code>string full_name = 3 [json_name = "fullName"];</code>
    * @return The bytes for fullName.
    */
   com.google.protobuf.ByteString
       getFullNameBytes();
 
   /**
-   * <code>string email = 3 [json_name = "email"];</code>
+   * <code>string email = 4 [json_name = "email"];</code>
    * @return The email.
    */
   java.lang.String getEmail();
   /**
-   * <code>string email = 3 [json_name = "email"];</code>
+   * <code>string email = 4 [json_name = "email"];</code>
    * @return The bytes for email.
    */
   com.google.protobuf.ByteString
